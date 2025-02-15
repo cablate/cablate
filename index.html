@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="全端工程師與 AI Agent 工程師的個人網站 - 展示專業技能、項目經驗與技術文章" />
+    <meta name="keywords" content="全端開發, AI Agent, 工程師, 網頁開發, 人工智能, 技術文章" />
+    <title>CabLate - 全端與 AI Agent 工程師</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#4F46E5",
+              secondary: "#22D3EE",
+              dark: "#1E293B",
+              light: "#F8FAFC",
+            },
+            animation: {
+              float: "float 3s ease-in-out infinite",
+            },
+            keyframes: {
+              float: {
+                "0%, 100%": { transform: "translateY(0)" },
+                "50%": { transform: "translateY(-10px)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <script src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <!-- Schema.org 結構化資料 -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "CabLate",
+        "jobTitle": "全端工程師 & AI Agent 工程師",
+        "url": "https://cablate.com",
+        "sameAs": ["https://github.com/您的帳號", "https://linkedin.com/in/您的帳號", "https://twitter.com/您的帳號"]
+      }
+    </script>
+    <style>
+      body {
+        background: linear-gradient(135deg, #1e293b, #334155);
+        min-height: 100vh;
+        overflow-y: auto;
+        scroll-behavior: smooth;
+      }
+      .glass-effect {
+        background: rgba(255, 255, 255, 0.1);
+        /* backdrop-filter: blur(8px); */
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .text-shadow {
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .nav-glass {
+        background: rgba(30, 41, 59, 0.95);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      section {
+        scroll-margin-top: 5rem;
+      }
+      .back-to-top {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        z-index: 40;
+        transition: opacity 0.3s;
+      }
+      @media (prefers-reduced-motion: no-preference) {
+        .transition-colors {
+          transition: color 0.15s ease;
+        }
+      }
+      .social-icon {
+        transition: all 0.3s ease;
+        position: relative;
+      }
+      .social-icon:hover {
+        transform: scale(1.2) rotate(8deg);
+      }
+      .social-icon::after {
+        content: "";
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        right: -5px;
+        bottom: -5px;
+        border-radius: 9999px;
+        background: rgba(34, 211, 238, 0.2);
+        z-index: -1;
+        opacity: 0;
+        transition: all 0.3s ease;
+      }
+      .social-icon:hover::after {
+        opacity: 1;
+        box-shadow: 0 0 20px rgba(34, 211, 238, 0.4);
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+      }
+      .pulse-on-load {
+        animation: pulse 2s ease-in-out infinite;
+      }
+    </style>
+  </head>
+  <body
+    class="gradient-bg min-h-screen"
+    x-data="{ 
+    isOpen: false, 
+    showBackToTop: false,
+    lang: 'zh',
+    getExperienceYears() {
+      const startDate = new Date('2021-06-01');
+      const now = new Date();
+      const diffInMonths = (now.getFullYear() - startDate.getFullYear()) * 12 + now.getMonth() - startDate.getMonth();
+      const years = Math.floor(diffInMonths / 12);
+      const months = diffInMonths % 12;
+      return this.lang === 'zh' ? 
+        `${years} 年 ${months} 個月開發經驗` : 
+        `${years} Years and ${months} Months of Experience`;
+    },
+    uiText: {
+      zh: {
+        about: '關於我',
+        experience: '工作經歷',
+        projects: '開發專案',
+        blog: '文章',
+        contact: '聯絡我',
+        recommendations: '推薦',
+        role: '網頁全端工程師 & AI Agent 工程師',
+        featuredProjects: '個人作品',
+        moreProjects: '更多作品',
+        noMoreProjects: '尚未釋出更多作品',
+        openSourceProjects: '開源合作',
+        viewDetails: '查看詳情',
+        view: '查看',
+        projectRole: '擔任角色',
+        projectContribution: '主要貢獻',
+        maintainer: '專案維護者',
+        contributor: '專案貢獻者',
+        collaborator: '協同開發者',
+        viewGithub: '查看 GitHub',
+        viewDemo: '查看展示',
+        featuredArticles: '精選文章',
+        allArticles: '所有文章',
+        readingTime: '分鐘閱讀',
+        contactMe: '聯絡方式',
+        aboutFooter: '網頁全端工程師與 AI Agent 工程師，致力於創造優質的使用者體驗。',
+        quickLinks: '快速連結',
+        skills: '技能專長',
+        frontEnd: '前端開發',
+        backEnd: '後端開發',
+        aiDev: 'AI 開發',
+        socialMedia: '社群媒體',
+        allRightsReserved: '版權所有',
+        backToTop: '回到頂部',
+        recommendations: '推薦內容',
+        recommendedProjects: '推薦專案',
+        recommendedArticles: '推薦文章',
+        projectType: '專案類型',
+        articleType: '文章類型',
+        personalProject: '個人作品',
+        openSourceWork: '開源貢獻',
+        recommendedWork: '推薦作品',
+        personalArticle: '原創文章',
+        sharedArticle: '分享文章',
+        originalAuthor: '原作者',
+        projectOwner: '專案擁有者',
+        recommendReason: '推薦原因',
+        freelanceProjects: '接案經驗',
+        projectCategory: '類型',
+        projectPeriod: '開發週期',
+        projectHighlights: '重點',
+        clientPrivacy: '為保護客戶隱私與商業機密，以下內容僅列舉部分專案並概述專案性質與重點'
+      },
+      en: {
+        about: 'About',
+        experience: 'Work Experience',
+        projects: 'Projects',
+        blog: 'Blog',
+        contact: 'Contact Me',
+        recommendations: 'Recommendations',
+        role: 'Web Full-stack & AI Agent Engineer',
+        featuredProjects: 'Personal Projects',
+        moreProjects: 'More Projects',
+        noMoreProjects: 'No more projects available yet',
+        openSourceProjects: 'Open Source',
+        viewDetails: 'View Details',
+        view: 'View',
+        projectRole: 'Role',
+        projectContribution: 'Contributions',
+        maintainer: 'Maintainer',
+        contributor: 'Contributor',
+        collaborator: 'Collaborator',
+        viewGithub: 'View on GitHub',
+        viewDemo: 'View Demo',
+        featuredArticles: 'Featured Articles',
+        allArticles: 'All Articles',
+        readingTime: 'min read',
+        contactMe: 'Contact Info',
+        aboutFooter: 'Web Full-stack and AI Agent Engineer, dedicated to creating excellent digital experiences.',
+        quickLinks: 'Quick Links',
+        skills: 'Skills',
+        frontEnd: 'Front-end',
+        backEnd: 'Back-end',
+        aiDev: 'AI Related',
+        socialMedia: 'Social Media',
+        allRightsReserved: 'All rights reserved',
+        backToTop: 'Back to Top',
+        recommendations: 'Recommendations',
+        recommendedProjects: 'Recommended Projects',
+        recommendedArticles: 'Recommended Articles',
+        projectType: 'Project Type',
+        articleType: 'Article Type',
+        personalProject: 'Personal Project',
+        openSourceWork: 'Open Source Work',
+        recommendedWork: 'Recommended Work',
+        personalArticle: 'Original Article',
+        sharedArticle: 'Shared Article',
+        originalAuthor: 'Original Author',
+        projectOwner: 'Project Owner',
+        recommendReason: 'Why Recommended',
+        freelanceProjects: 'Freelance Experience',
+        projectCategory: 'Category',
+        projectPeriod: 'Development Period',
+        projectHighlights: 'Highlights',
+        clientPrivacy: 'To protect client privacy and business confidentiality, the following content only outlines a few projects and their nature and highlights'
+      }
+    },
+    content: {
+      zh: {
+        aboutMe: '我是一位專注於全端開發與 AI Agent 開發的資深工程師，擁有豐富的實戰經驗。在過去的職業生涯中，我參與過多項專案的開發，並且持續關注新技術的發展趨勢。',
+        skills: {
+          frontEnd: 'React, Flutter',
+          backEnd: 'Node.js, DB',
+          aiDev: 'Generator Agent, MCP',
+          devOps: 'Docker'
+        },
+        experience: [
+          {
+            title: '全端工程師',
+            period: '2021 - 至今',
+            achievements: [
+              '領導開發團隊完成大型專案',
+              '優化程式架構',
+              '導入工具、改善開發流程與效率'
+            ]
+          }
+        ],
+        featuredProjects: [
+          {
+            title: '打詐文本分析系統',
+            description: '透過大型語言模型（LLM）進行文本分析的系統，旨在分析詐騙訊息、提昇防詐意識。',
+            image: '/assets/fraud_prevention_banner.png',
+            icon: '/assets/fraud_prevention_icon.png',
+            demoLink: '#',
+            githubLink: 'https://github.com/cablate/Fraud-Prevention'
+          },
+          {
+            title: 'Dive App',
+            description: '支援介接 Dive Desktop Server API 的行動裝置 AI Agent  App',
+            image: '/assets/dive_app_banner.png',
+            icon: '/assets/dive_desktop_icon.svg',
+            demoLink: '#',
+            githubLink: 'https://github.com/cablate/Dive-APP'
+          }
+        ],
+        openSourceProjects: [
+          {
+            title: 'Rice Call (rc-voice)',
+            description: 'RaidCall 非官方復刻網頁版',
+            role: 'contributor',
+            contributions: [
+              '優化前端網頁效能',
+              '優化資料儲存結構',
+              'Bug 修復'
+            ],
+            icon: '/assets/rice_call_icon.png',
+            githubLink: 'https://github.com/Nerdy-Home-ReOpen/rc-voice'
+          }
+        ],
+        recommendedProjects: [
+          {
+            title: 'Dive',
+            description: '支援多桌面平台的 AI Agent 桌面應用程式，並且整合了 MCP Server，可以讓使用者更方便地使用 AI Agent。',
+            owner: 'OpenAgentPlatform',
+            ownerLink: 'https://github.com/OpenAgentPlatform',
+            icon: 'assets/dive_desktop_icon.svg',
+            githubLink: 'https://github.com/OpenAgentPlatform/Dive',
+            reason: '支援多桌面平台的 AI Agent 桌面應用程式，並且整合了 MCP Server，可以讓使用者更方便地使用 AI Agent。'
+          }
+        ],
+        freelanceProjects: [
+          {
+            title: '簡易購物平台網站',
+            category: '電子商務',
+            period: '3個月',
+            highlights: [
+              '會員管理與商品管理',
+              '購物車與訂單管理',
+              '支援超商取貨等資訊'
+            ]
+          },
+          {
+            title: 'LINE 記事本爬蟲工具',
+            category: '數據爬取與分析',
+            highlights: [
+              '爬取文章作者與標題',
+              '擷取文章內容與留言',
+              '結構化整理與儲存',
+              '支援批量處理'
+            ]
+          },
+          {
+            title: '資料整理與後台展示系統',
+            category: '數據處理與視覺化',
+            highlights: [
+              '整合並整理既有數據',
+              '分散數據的統一分類',
+              '提供最終狀態分析',
+              '表格化後台視覺展示'
+            ]
+          },
+          {
+            title: 'ERP 管理系統',
+            category: '企業應用系統',
+            highlights: [
+              '專為主管與管理層設計',
+              '數據電子化與現代化管理',
+              '提升業務流程效率',
+              '支援多角色權限管理'
+            ]
+          },
+          {
+            title: '2D 小遊戲 APP',
+            category: '遊戲開發',
+            highlights: [
+              '簡易 2D 文本冒險遊戲',
+              '適用於 Android 平台',
+              '支援基本互動與分支劇情',
+              '輕量級遊戲體驗'
+            ]
+          }
+        ]
+      },
+      en: {
+        aboutMe: 'I am a senior engineer focused on full-stack development and AI Agent development, with rich practical experience. Throughout my career, I have participated in multiple large-scale projects while keeping up with emerging technology trends.',
+        skills: {
+          frontEnd: 'React, Flutter',
+          backEnd: 'Node.js, DB',
+          aiDev: 'Generator Agent, MCP',
+          devOps: 'Docker'
+        },
+        experience: [
+          {
+            title: 'Full-stack Engineer',
+            period: '2021 - Present',
+            achievements: [
+              'Led development team in completing major projects',
+              'Optimized program architecture',
+              'Introduced tools, improved development process and efficiency'
+            ]
+          }
+        ],
+        featuredProjects: [
+          {
+            title: 'AI Anti-Scam Text Analysis System',
+            description: 'A system for text analysis using large language models (LLMs), designed to analyze scam messages and enhance fraud awareness.',
+            image: '/assets/fraud_prevention_banner.png',
+            icon: '/assets/fraud_prevention_icon.png',
+            demoLink: '#',
+            githubLink: 'https://github.com/cablate/Fraud-Prevention'
+          },
+          {
+            title: 'Dive App',
+            description: 'A mobile AI Agent app that supports Dive Desktop Server API',
+            image: '/assets/dive_app_banner.png',
+            icon: '/assets/dive_desktop_icon.svg',
+            demoLink: '#',
+            githubLink: 'https://github.com/cablate/Dive-APP'
+          }
+        ],
+        openSourceProjects: [
+          {
+            title: 'Rice Call (rc-voice)',
+            description: 'Unofficial web version recreation of RaidCall',
+            role: 'contributor',
+            contributions: [
+              'Optimized front-end performance',
+              'Optimized data storage structure',
+              'Bug fixes'
+            ],
+            icon: '/assets/rice_call_icon.png',
+            githubLink: 'https://github.com/Nerdy-Home-ReOpen/rc-voice'
+          }
+        ],
+        recommendedProjects: [
+          {
+            title: 'Dive',
+            description: 'A cross-platform AI Agent desktop application that seamlessly integrates any Tools Call-supported LLM with MCP Server',
+            owner: 'OpenAgentPlatform',
+            ownerLink: 'https://github.com/OpenAgentPlatform',
+            icon: 'assets/dive_desktop_icon.svg',
+            githubLink: 'https://github.com/OpenAgentPlatform/Dive',
+            reason: 'A powerful AI Agent desktop application that supports multiple platforms and integrates with MCP Server, making it easier for users to work with AI Agents.'
+          }
+        ],
+        freelanceProjects: [
+        {
+          title: 'Simple E-Commerce Platform Website',
+          category: 'E-Commerce',
+          highlights: [
+            'User and product management',
+            'Shopping cart and order management',
+            'Integration with convenience store pickup'
+          ]
+        },
+        {
+          title: 'LINE Notebook Crawler Tool',
+          category: 'Data Scraping & Analysis',
+          highlights: [
+            'Extracts article author and title',
+            'Retrieves article content and comments',
+            'Structured data storage',
+            'Supports batch processing'
+          ]
+        },
+        {
+          title: 'Data Processing & Backend Display System',
+          category: 'Data Processing & Visualization',
+          highlights: [
+            'Organized existing database data',
+            'Unified classification of scattered data',
+            'Final state analysis',
+            'Tabular backend visualization'
+          ]
+        },
+        {
+          title: 'ERP Management System',
+          category: 'Enterprise Applications',
+          highlights: [
+            'Designed for managers and executives',
+            'Digitalization and modernization of data management',
+            'Improved business process efficiency',
+            'Multi-role permission management'
+          ]
+        },
+        {
+          title: '2D Mini Game App',
+          category: 'Game Development',
+          highlights: [
+            'Simple 2D text adventure game',
+            'Developed for Android platform',
+            'Basic interaction and branching storylines',
+            'Lightweight gaming experience'
+          ]
+        }
+      ],
+      moreProjects: [
+
+      ]
+      
+      }
+    }
+  }"
+    @scroll.window="showBackToTop = window.pageYOffset > 300"
+  >
+    <!-- 導航欄 -->
+    <nav class="fixed w-full nav-glass z-40">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+          <div class="flex items-center">
+            <a href="#" class="text-2xl font-bold text-white">CabLate</a>
+          </div>
+          <!-- 桌面版選單 -->
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="#about" class="text-white hover:text-secondary transition-colors duration-200" x-text="uiText[lang].about">關於我</a>
+            <a href="#experience" class="text-white hover:text-secondary transition-colors duration-200" x-text="uiText[lang].experience">經歷</a>
+            <a href="#projects" class="text-white hover:text-secondary transition-colors duration-200" x-text="uiText[lang].projects">作品</a>
+            <a href="#recommendations" class="text-white hover:text-secondary transition-colors duration-200" x-text="uiText[lang].recommendations">推薦</a>
+            <a href="#contact" class="text-white hover:text-secondary transition-colors duration-200" x-text="uiText[lang].contact">聯絡</a>
+            <!-- 桌面版語言切換按鈕 -->
+            <div class="flex space-x-2 ml-4">
+              <button @click="lang = 'zh'" class="px-2 py-1 rounded-md text-sm" :class="lang === 'zh' ? 'bg-secondary text-white' : 'glass-effect text-gray-300'">中文</button>
+              <button @click="lang = 'en'" class="px-2 py-1 rounded-md text-sm" :class="lang === 'en' ? 'bg-secondary text-white' : 'glass-effect text-gray-300'">EN</button>
+            </div>
+          </div>
+          <!-- 手機版選單按鈕 -->
+          <div class="md:hidden flex items-center space-x-4">
+            <!-- 手機版語言切換按鈕 -->
+            <div class="flex space-x-2">
+              <button @click="lang = 'zh'" class="px-2 py-1 rounded-md text-sm" :class="lang === 'zh' ? 'bg-secondary text-white' : 'glass-effect text-gray-300'">中文</button>
+              <button @click="lang = 'en'" class="px-2 py-1 rounded-md text-sm" :class="lang === 'en' ? 'bg-secondary text-white' : 'glass-effect text-gray-300'">EN</button>
+            </div>
+            <button @click="isOpen = !isOpen" class="text-gray-700 dark:text-white">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path x-show="!isOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                <path x-show="isOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- 手機版選單內容 -->
+      <div x-show="isOpen" class="md:hidden">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <a href="#about" class="text-white block px-3 py-2 text-gray-700 hover:text-primary dark:text-gray-300 dark:hover:text-white" x-text="uiText[lang].about">關於我</a>
+          <a href="#experience" class="text-white block px-3 py-2 text-gray-700 hover:text-primary dark:text-gray-300 dark:hover:text-white" x-text="uiText[lang].experience">經歷</a>
+          <a href="#projects" class="text-white block px-3 py-2 text-gray-700 hover:text-primary dark:text-gray-300 dark:hover:text-white" x-text="uiText[lang].projects">作品</a>
+          <a href="#recommendations" class="text-white block px-3 py-2 text-gray-700 hover:text-primary dark:text-gray-300 dark:hover:text-white" x-text="uiText[lang].recommendations">推薦</a>
+          <a href="#contact" class="text-white block px-3 py-2 text-gray-700 hover:text-primary dark:text-gray-300 dark:hover:text-white" x-text="uiText[lang].contact">聯絡</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="gradient-bg"></div>
+    <div class="content-wrapper">
+      <!-- 首頁區塊 -->
+      <header class="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+          <div class="text-center">
+            <h1 class="text-5xl sm:text-6xl md:text-7xl font-bold text-white mb-6 text-shadow animate-float">CabLate</h1>
+            <p class="text-xl sm:text-2xl text-gray-200 mb-4" x-text="uiText[lang].role">全端工程師 & AI Agent 工程師</p>
+            <p class="text-lg text-secondary mb-12" x-text="getExperienceYears()"></p>
+            <div class="flex justify-center space-x-6">
+              <a href="https://github.com/cablate" target="_blank" rel="noopener noreferrer" class="glass-effect p-4 rounded-full text-gray-200 hover:text-white transition-colors duration-200 social-icon pulse-on-load">
+                <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+                </svg>
+              </a>
+              <!-- <a href="#" target="" rel="noopener noreferrer" class="glass-effect p-4 rounded-full text-gray-200 hover:text-white transition-colors duration-200 social-icon pulse-on-load" style="animation-delay: 0.2s">
+                <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                </svg>
+              </a> -->
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- 關於我 -->
+        <section id="about" class="mb-20">
+          <h2 class="text-4xl font-bold text-white mb-12 text-center text-shadow" x-text="uiText[lang].about">關於我</h2>
+          <div class="glass-effect rounded-xl p-8">
+            <p class="text-gray-200 mb-4" x-text="content[lang].aboutMe"></p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8">
+              <div class="glass-effect p-6 rounded-lg text-center">
+                <h3 class="font-bold text-secondary mb-2" x-text="uiText[lang].frontEnd">前端開發</h3>
+                <p class="text-gray-200">React, Flutter</p>
+              </div>
+              <div class="glass-effect p-6 rounded-lg text-center">
+                <h3 class="font-bold text-secondary mb-2" x-text="uiText[lang].backEnd">後端開發</h3>
+                <p class="text-gray-200">Node.js, DB</p>
+              </div>
+              <div class="glass-effect p-6 rounded-lg text-center">
+                <h3 class="font-bold text-secondary mb-2" x-text="uiText[lang].aiDev">AI 開發</h3>
+                <p class="text-gray-200">Generator Agent, MCP</p>
+              </div>
+              <div class="glass-effect p-6 rounded-lg text-center">
+                <h3 class="font-bold text-secondary mb-2">DevOps</h3>
+                <p class="text-gray-200">Docker</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 工作經歷 -->
+        <section id="experience" class="mb-20">
+          <h2 class="text-4xl font-bold text-white mb-12 text-center text-shadow" x-text="uiText[lang].experience">工作經歷</h2>
+          <div class="space-y-8">
+            <template x-for="(exp, index) in content[lang].experience" :key="index">
+              <div class="glass-effect rounded-xl p-8">
+                <div class="flex justify-between items-start mb-4">
+                  <div>
+                    <h3 class="text-xl font-bold text-white" x-text="exp.title"></h3>
+                    <p class="text-secondary"></p>
+                  </div>
+                  <span class="text-gray-300" x-text="exp.period"></span>
+                </div>
+                <ul class="list-disc list-inside text-gray-200 space-y-2">
+                  <template x-for="(achievement, i) in exp.achievements" :key="i">
+                    <li x-text="achievement"></li>
+                  </template>
+                </ul>
+              </div>
+            </template>
+          </div>
+        </section>
+
+        <!-- 接案經驗 -->
+        <section class="mb-20">
+          <h2 class="text-4xl font-bold text-white mb-12 text-center text-shadow" x-text="uiText[lang].freelanceProjects">接案經驗</h2>
+          <div class="glass-effect rounded-xl p-8">
+            <p class="text-gray-300 text-center mb-8 italic" x-text="uiText[lang].clientPrivacy"></p>
+            <div class="space-y-8">
+              <template x-for="(project, index) in content[lang].freelanceProjects" :key="index">
+                <div class="glass-effect rounded-xl p-6">
+                  <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
+                    <div class="flex-grow">
+                      <h3 class="text-xl font-bold text-white mb-2" x-text="project.title"></h3>
+                      <div class="flex flex-wrap gap-4 text-sm">
+                        <div class="flex items-center">
+                          <span class="text-secondary mr-2" x-text="uiText[lang].projectCategory"></span>
+                          <span class="text-gray-200" x-text="project.category"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mt-4">
+                    <h4 class="text-secondary text-sm mb-2" x-text="uiText[lang].projectHighlights"></h4>
+                    <ul class="list-disc list-inside text-gray-200 space-y-2">
+                      <template x-for="(highlight, i) in project.highlights" :key="i">
+                        <li x-text="highlight"></li>
+                      </template>
+                    </ul>
+                  </div>
+                </div>
+              </template>
+            </div>
+          </div>
+        </section>
+
+        <!-- 作品展示 -->
+        <section id="projects" class="mb-20">
+          <h2 class="text-4xl font-bold text-white mb-12 text-center text-shadow" x-text="uiText[lang].projects">作品展示</h2>
+
+          <!-- 精選作品 -->
+          <div class="mb-16">
+            <div class="flex items-center space-x-2 mb-6">
+              <h3 class="text-2xl font-bold text-white" x-text="uiText[lang].featuredProjects">精選作品</h3>
+              <span class="text-secondary text-sm px-2 py-1 rounded glass-effect" x-text="uiText[lang].personalProject">個人作品</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <template x-for="(project, index) in content[lang].featuredProjects" :key="index">
+                <div class="glass-effect rounded-xl overflow-hidden flex flex-col">
+                  <img :src="project.image" :alt="project.title" class="w-full h-48 object-contain hover:object-cover transition-all duration-300" />
+                  <div class="p-6 flex-1 flex flex-col">
+                    <div class="flex items-center gap-4 mb-4">
+                      <img :src="project.icon" :alt="project.title + ' Icon'" class="w-12 h-12 rounded-lg object-contain glass-effect p-2 bg-white/5" />
+                      <h3 class="text-xl font-bold text-white" x-text="project.title"></h3>
+                    </div>
+                    <p class="text-gray-200 mb-4" x-text="project.description"></p>
+                    <div class="mt-auto">
+                      <a :href="project.githubLink" target="_blank" class="text-secondary hover:text-white transition-colors duration-200" x-text="uiText[lang].viewGithub"></a>
+                    </div>
+                  </div>
+                </div>
+              </template>
+            </div>
+          </div>
+
+          <!-- 開源合作 -->
+          <div class="mb-16">
+            <div class="flex items-center space-x-2 mb-6">
+              <h3 class="text-2xl font-bold text-white" x-text="uiText[lang].openSourceProjects">開源合作</h3>
+              <span class="text-secondary text-sm px-2 py-1 rounded glass-effect" x-text="uiText[lang].openSourceWork">開源貢獻</span>
+            </div>
+            <div class="space-y-6">
+              <template x-for="(project, index) in content[lang].openSourceProjects" :key="index">
+                <div class="glass-effect rounded-xl p-6">
+                  <div class="flex gap-6">
+                    <div class="flex-shrink-0">
+                      <img :src="project.icon" :alt="project.title + ' Logo'" class="w-32 h-20 rounded-lg object-contain glass-effect p-2 bg-white" />
+                    </div>
+                    <div class="flex-grow">
+                      <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
+                        <div>
+                          <h4 class="text-lg font-semibold text-white" x-text="project.title"></h4>
+                          <p class="text-gray-300 text-sm mb-2" x-text="project.description"></p>
+                          <div class="flex items-center space-x-4">
+                            <span class="text-secondary text-sm" x-text="uiText[lang].projectRole"></span>
+                            <span class="text-gray-200 text-sm" x-text="uiText[lang][project.role]"></span>
+                          </div>
+                        </div>
+                        <div class="flex space-x-4 mt-4 md:mt-0">
+                          <a :href="project.githubLink" target="_blank" rel="noopener noreferrer" class="text-secondary hover:text-white transition-colors duration-200 text-sm" x-text="uiText[lang].viewGithub"></a>
+                        </div>
+                      </div>
+                      <div class="mt-4">
+                        <h5 class="text-white text-sm mb-2" x-text="uiText[lang].projectContribution"></h5>
+                        <ul class="list-disc list-inside text-gray-200 text-sm space-y-1">
+                          <template x-for="(contribution, i) in project.contributions" :key="i">
+                            <li x-text="contribution"></li>
+                          </template>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </template>
+            </div>
+          </div>
+
+          <!-- 其他作品列表 -->
+          <div>
+            <h3 class="text-2xl font-bold text-white mb-6" x-text="uiText[lang].moreProjects">更多作品</h3>
+            <div class="glass-effect rounded-xl p-6">
+              <template x-if="content[lang].moreProjects && content[lang].moreProjects.length > 0">
+                <ul class="space-y-4">
+                  <template x-for="(project, index) in content[lang].moreProjects" :key="index">
+                    <li class="border-b border-gray-700 pb-4 last:border-b-0 last:pb-0">
+                      <div class="flex justify-between items-center">
+                        <div>
+                          <h4 class="text-lg font-semibold text-white" x-text="project.title"></h4>
+                          <p class="text-gray-300 text-sm" x-text="project.description"></p>
+                        </div>
+                        <div class="flex space-x-4">
+                          <a :href="project.githubLink" class="text-secondary hover:text-white transition-colors duration-200 text-sm" x-text="uiText[lang].viewGithub"></a>
+                        </div>
+                      </div>
+                    </li>
+                  </template>
+                </ul>
+              </template>
+              <template x-if="!content[lang].moreProjects || content[lang].moreProjects.length === 0">
+                <p class="text-gray-400 text-center py-4" x-text="uiText[lang].noMoreProjects"></p>
+              </template>
+            </div>
+          </div>
+        </section>
+
+        <!-- 技術文章 -->
+        <section id="blog" class="mb-20" style="display: none">
+          <h2 class="text-4xl font-bold text-white mb-12 text-center text-shadow" x-text="uiText[lang].blog">技術文章</h2>
+          <!-- 精選文章 -->
+          <div class="mb-16">
+            <div class="flex items-center space-x-2 mb-6">
+              <h3 class="text-2xl font-bold text-white" x-text="uiText[lang].featuredArticles">精選文章</h3>
+              <span class="text-secondary text-sm px-2 py-1 rounded glass-effect" x-text="uiText[lang].personalArticle">原創文章</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <article class="glass-effect rounded-xl p-8">
+                <h3 class="text-xl font-bold text-white mb-2">
+                  <a href="#" class="hover:text-secondary transition-colors duration-200">aaaaa</a>
+                </h3>
+                <p class="text-gray-200 mb-4">bbbb</p>
+                <div class="flex items-center text-sm text-gray-400">
+                  <span>cccc</span>
+                  <span class="mx-2">·</span>
+                  <span>dddd</span>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <!-- 文章列表 -->
+          <div>
+            <h3 class="text-2xl font-bold text-white mb-6" x-text="uiText[lang].allArticles">所有文章</h3>
+            <div class="glass-effect rounded-xl p-6">
+              <ul class="space-y-4">
+                <li class="border-b border-gray-700 pb-4 last:border-b-0 last:pb-0">
+                  <div class="flex justify-between items-start">
+                    <div>
+                      <h4 class="text-lg font-semibold text-white hover:text-secondary transition-colors duration-200">
+                        <a href="#">aaaaa</a>
+                      </h4>
+                      <div class="flex items-center text-sm text-gray-400 mt-1">
+                        <span>bbbb</span>
+                        <span class="mx-2">·</span>
+                        <span>cccc</span>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- 推薦分享 -->
+        <section id="recommendations" class="mb-20">
+          <h2 class="text-4xl font-bold text-white mb-12 text-center text-shadow" x-text="uiText[lang].recommendations">推薦分享</h2>
+
+          <!-- 推薦專案 -->
+          <div class="mb-16">
+            <div class="flex items-center space-x-2 mb-6">
+              <h3 class="text-2xl font-bold text-white" x-text="uiText[lang].recommendedProjects">推薦專案</h3>
+              <span class="text-secondary text-sm px-2 py-1 rounded glass-effect" x-text="uiText[lang].recommendedWork">推薦作品</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <template x-for="(project, index) in content[lang].recommendedProjects" :key="index">
+                <div class="glass-effect rounded-xl p-6">
+                  <div class="flex gap-6">
+                    <div class="flex-shrink-0">
+                      <img :src="project.icon" :alt="project.title + ' Logo'" class="w-32 h-20 rounded-lg object-contain glass-effect p-2 bg-white/1" />
+                    </div>
+                    <div class="flex-grow">
+                      <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
+                        <div>
+                          <h4 class="text-lg font-semibold text-white" x-text="project.title"></h4>
+                          <p class="text-gray-300 text-sm mb-2" x-text="project.description"></p>
+                          <div class="flex items-center space-x-4 mb-2">
+                            <span class="text-secondary text-sm" x-text="uiText[lang].projectOwner"></span>
+                            <a :href="project.ownerLink" class="text-secondary hover:text-white transition-colors duration-200 text-sm" x-text="project.owner"></a>
+                          </div>
+                        </div>
+                        <div class="flex flex-shrink-0 space-x-4 mt-4 md:mt-0">
+                          <a :href="project.githubLink" class="text-secondary hover:text-white transition-colors duration-200 text-sm" x-text="uiText[lang].viewGithub"></a>
+                        </div>
+                      </div>
+                      <div class="mt-4">
+                        <h5 class="text-white text-sm mb-2" x-text="uiText[lang].recommendReason"></h5>
+                        <p class="text-gray-200 text-sm" x-text="project.reason"></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </template>
+            </div>
+          </div>
+
+          <!-- 推薦文章 -->
+          <div style="display: none">
+            <div class="flex items-center space-x-2 mb-6">
+              <h3 class="text-2xl font-bold text-white" x-text="uiText[lang].recommendedArticles">推薦文章</h3>
+              <span class="text-secondary text-sm px-2 py-1 rounded glass-effect" x-text="uiText[lang].sharedArticle">分享文章</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <template x-for="(article, index) in content[lang].recommendedArticles" :key="index">
+                <article class="glass-effect rounded-xl p-8">
+                  <h3 class="text-xl font-bold text-white mb-2">
+                    <a :href="article.link" class="hover:text-secondary transition-colors duration-200" x-text="article.title"></a>
+                  </h3>
+                  <div class="flex items-center text-sm text-gray-400 mb-4">
+                    <span class="text-secondary" x-text="uiText[lang].originalAuthor"></span>
+                    <span class="mx-2">·</span>
+                    <span x-text="article.author"></span>
+                  </div>
+                  <p class="text-gray-200 mb-4" x-text="article.description"></p>
+                  <div class="mt-4">
+                    <h5 class="text-white text-sm mb-2" x-text="uiText[lang].recommendReason"></h5>
+                    <p class="text-gray-200 text-sm" x-text="article.reason"></p>
+                  </div>
+                </article>
+              </template>
+            </div>
+          </div>
+        </section>
+
+        <!-- 聯絡資訊 -->
+        <section id="contact" class="mb-20">
+          <h2 class="text-4xl font-bold text-white mb-12 text-center text-shadow" x-text="uiText[lang].contact">聯絡我</h2>
+          <div class="glass-effect rounded-xl p-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <h3 class="text-xl font-bold text-white mb-4" x-text="uiText[lang].contactMe">聯絡方式</h3>
+                <div class="space-y-4">
+                  <p class="flex items-center text-gray-200">
+                    <svg class="h-6 w-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    reahtuoo310109@gmail.com
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="glass-effect py-12 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+              <h3 class="text-xl font-bold text-white mb-4" x-text="uiText[lang].about">關於我</h3>
+              <p class="text-gray-300" x-text="uiText[lang].aboutFooter">全端工程師與 AI Agent 工程師，致力於創造優質的數位體驗。</p>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-white mb-4" x-text="uiText[lang].quickLinks">快速連結</h3>
+              <ul class="space-y-2">
+                <li><a href="#about" class="text-gray-300 hover:text-white transition-colors duration-200" x-text="uiText[lang].about">關於我</a></li>
+                <li><a href="#experience" class="text-gray-300 hover:text-white transition-colors duration-200" x-text="uiText[lang].experience">經歷</a></li>
+                <li><a href="#projects" class="text-gray-300 hover:text-white transition-colors duration-200" x-text="uiText[lang].projects">作品</a></li>
+                <li><a href="#recommendations" class="text-gray-300 hover:text-white transition-colors duration-200" x-text="uiText[lang].recommendations">推薦</a></li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-white mb-4" x-text="uiText[lang].socialMedia">社群媒體</h3>
+              <div class="flex space-x-4">
+                <a href="https://github.com/cablate" class="text-gray-300 hover:text-white transition-colors duration-200">
+                  <span class="sr-only">GitHub</span>
+                  <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+                  </svg>
+                </a>
+                <!-- <a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">
+                  <span class="sr-only">LinkedIn</span>
+                  <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                  </svg>
+                </a>
+                <a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">
+                  <span class="sr-only">Twitter</span>
+                  <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                  </svg>
+                </a> -->
+              </div>
+            </div>
+          </div>
+          <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
+            <p>&copy; 2025 CabLate. <span x-text="uiText[lang].allRightsReserved"></span></p>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <!-- 回到頂部按鈕 -->
+    <button @click="window.scrollTo({top: 0})" class="back-to-top glass-effect p-3 rounded-full text-white hover:text-secondary transition-colors duration-200" :class="{ 'opacity-0 pointer-events-none': !showBackToTop, 'opacity-100': showBackToTop }" :aria-label="uiText[lang].backToTop">
+      <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+      </svg>
+    </button>
+  </body>
+</html>
