@@ -1,0 +1,37 @@
+{
+  "name": "CabLate - 全端與 AI Agent 工程師",
+  "short_name": "CabLate",
+  "description": "全端工程師與 AI Agent 工程師的個人網站 | Full-stack & AI Agent Engineer's Personal Website",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1E293B",
+  "theme_color": "#1E293B",
+  "icons": [
+    {
+      "src": "/assets/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "lang": "zh-Hant-TW",
+  "dir": "ltr",
+  "orientation": "any",
+  "categories": ["business", "productivity", "technology"],
+  "shortcuts": [
+    {
+      "name": "關於我 | About",
+      "url": "/#about",
+      "description": "了解更多關於我的資訊 | Learn more about me"
+    },
+    {
+      "name": "作品集 | Projects",
+      "url": "/#projects",
+      "description": "查看我的作品集 | View my projects"
+    }
+  ]
+}
