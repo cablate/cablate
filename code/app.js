@@ -196,6 +196,14 @@ document.addEventListener("alpine:init", () => {
             icon: "/assets/rice_call_icon.png",
             githubLink: "https://github.com/Nerdy-Home-ReOpen/rc-voice",
           },
+          {
+            title: "麦麦！MaiMBot",
+            description: "麥麥 QQ 水群聊天互動機器人",
+            role: "contributor",
+            contributions: ["支援 Telegram 與 Discord 平台"],
+            icon: "https://github.com/SengokuCola/MaiMBot/raw/main/docs/video.png",
+            githubLink: "https://github.com/SengokuCola/MaiMBot",
+          }
         ],
         recommendedProjects: [
           {
@@ -206,7 +214,7 @@ document.addEventListener("alpine:init", () => {
             icon: "assets/dive_desktop_icon.svg",
             githubLink: "https://github.com/OpenAgentPlatform/Dive",
             reason: "支援多桌面平台的 AI Agent 桌面應用程式，並且整合了 MCP Server，可以讓使用者更方便地使用 AI Agent。",
-          },
+          }
         ],
         freelanceProjects: [
           {
@@ -279,6 +287,14 @@ document.addEventListener("alpine:init", () => {
             icon: "/assets/rice_call_icon.png",
             githubLink: "https://github.com/Nerdy-Home-ReOpen/rc-voice",
           },
+          {
+            title: "MaiMBot",
+            description: "MaiMBot QQ group chat interaction robot",
+            role: "contributor",
+            contributions: ["Supports Telegram and Discord platforms"],
+            icon: "https://github.com/SengokuCola/MaiMBot/raw/main/docs/video.png",
+            githubLink: "https://github.com/SengokuCola/MaiMBot",
+          }
         ],
         recommendedProjects: [
           {
