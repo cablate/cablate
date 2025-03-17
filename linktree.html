@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CabLate - Web 全端與 AI Agent 開發者 | 個人連結集</title>
+    <meta name="description" content="CabLate 的個人連結集，Web 全端與 AI Agent 開發者。查看我的個人網站、GitHub、Threads 和 Medium 文章。" />
+    <meta name="keywords" content="CabLate, Web 開發, AI Agent, 全端開發, 開發者, 程式設計師" />
+    <meta name="author" content="CabLate" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- 規範連結 -->
+    <link rel="canonical" href="https://cablate.com/linktree" />
+
+    <!-- Open Graph 標籤 -->
+    <meta property="og:title" content="CabLate - Web 全端與 AI Agent 開發者" />
+    <meta property="og:description" content="CabLate 的個人連結集，Web 全端與 AI Agent 開發者。查看我的個人網站、GitHub、Threads 和 Medium 文章。" />
+    <meta property="og:image" content="https://cablate.com/assets/icon-512x512.jpg" />
+    <meta property="og:url" content="https://cablate.com/linktree" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="CabLate" />
+
+    <!-- Twitter 卡片 -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="CabLate - Web 全端與 AI Agent 開發者" />
+    <meta name="twitter:description" content="CabLate 的個人連結集，Web 全端與 AI Agent 開發者。查看我的個人網站、GitHub、Threads 和 Medium 文章。" />
+    <meta name="twitter:image" content="https://cablate.com/assets/icon-512x512.jpg" />
+
+    <!-- 網站圖標 -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
+
+    <style>
+      :root {
+        --bg-color: #0d0d1a;
+        --glow-color: #7b2ff7;
+        --accent-color: #14f7ff;
+        --text-color: #ffffff;
+      }
+
+      body {
+        max-height: 100dvh;
+        min-height: 100vh;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        opacity: 0.25;
+        background: radial-gradient(circle at 50% 50%, var(--glow-color), transparent 70%);
+      }
+
+      .fluid-shape {
+        position: absolute;
+        width: 40vw;
+        height: 40vw;
+        border-radius: 50%;
+        background: linear-gradient(45deg, var(--glow-color), var(--accent-color));
+        filter: blur(60px);
+        animation: fluid-movement 20s infinite alternate ease-in-out;
+        z-index: -1;
+        opacity: 0.5;
+      }
+
+      .fluid-shape:nth-child(1) {
+        top: -20%;
+        left: -10%;
+        animation-delay: -2s;
+      }
+
+      .fluid-shape:nth-child(2) {
+        bottom: -20%;
+        right: -10%;
+        animation-delay: -5s;
+      }
+
+      @keyframes fluid-movement {
+        0% {
+          transform: translate(0, 0) scale(1);
+        }
+        33% {
+          transform: translate(5%, 5%) scale(1.1);
+        }
+        66% {
+          transform: translate(-5%, 5%) scale(0.9);
+        }
+        100% {
+          transform: translate(0, 0) scale(1);
+        }
+      }
+
+      .container {
+        max-width: 500px;
+        width: 90%;
+        padding: 2rem;
+        position: relative;
+        z-index: 1;
+      }
+
+      .profile {
+        text-align: center;
+        margin-bottom: 2.5rem;
+        animation: fade-in 1s ease-out forwards;
+      }
+
+      .profile-image-container {
+        position: relative;
+        width: 120px;
+        height: 120px;
+        margin: 0 auto;
+      }
+
+      .profile-image {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 0 20px rgba(123, 47, 247, 0.5);
+        transition: all 0.5s ease;
+        filter: contrast(110%);
+      }
+
+      .profile-glow {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: transparent;
+        box-shadow: 0 0 25px var(--glow-color);
+        animation: pulse 3s infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          box-shadow: 0 0 25px var(--glow-color);
+        }
+        50% {
+          box-shadow: 0 0 40px var(--glow-color);
+        }
+      }
+
+      .name {
+        font-size: 1.8rem;
+        margin: 1.5rem 0 0.5rem;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        position: relative;
+        display: inline-block;
+        color: white;
+        text-shadow: 0 0 5px var(--bg-color), 0 0 10px var(--bg-color), 0 0 15px var(--bg-color), 0 0 20px var(--accent-color), 0 0 30px var(--accent-color), 0 0 40px var(--accent-color);
+        padding: 0.2em 0.5em;
+        border-radius: 8px;
+        background: rgba(13, 13, 26, 0.7);
+        box-shadow: 0 0 10px rgba(20, 247, 255, 0.5), 0 0 20px rgba(123, 47, 247, 0.3);
+        border: 1px solid rgba(20, 247, 255, 0.3);
+      }
+
+      .bio {
+        font-size: 1.1rem;
+        opacity: 0.85;
+        margin-bottom: 1.5rem;
+        line-height: 1.5;
+        max-width: 85%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .links {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+      }
+
+      .link-card {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(5px);
+        border-radius: 12px;
+        padding: 1rem 1.5rem;
+        text-decoration: none;
+        color: var(--text-color);
+        display: flex;
+        align-items: center;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        animation: slide-up 0.5s ease-out forwards;
+        animation-fill-mode: both;
+        opacity: 0;
+      }
+
+      .link-card:nth-child(1) {
+        animation-delay: 0.2s;
+      }
+
+      .link-card:nth-child(2) {
+        animation-delay: 0.3s;
+      }
+
+      .link-card:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+
+      .link-card:nth-child(4) {
+        animation-delay: 0.5s;
+      }
+
+      @keyframes slide-up {
+        from {
+          transform: translateY(20px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      .link-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+        transform: translateX(-100%);
+        transition: transform 0.6s ease;
+      }
+
+      .link-card:hover::before {
+        transform: translateX(100%);
+      }
+
+      .link-card:hover {
+        transform: scale(1.03);
+        box-shadow: 0 0 20px rgba(123, 47, 247, 0.3);
+        border-color: rgba(255, 255, 255, 0.2);
+      }
+
+      .link-card:active {
+        transform: scale(0.98);
+      }
+
+      .link-icon {
+        width: 24px;
+        height: 24px;
+        margin-right: 1rem;
+        stroke: var(--accent-color);
+        stroke-width: 2;
+        transition: all 0.3s ease;
+      }
+
+      .link-card:hover .link-icon {
+        transform: scale(1.2);
+        stroke: var(--text-color);
+      }
+
+      /* 為 Threads 圖標添加特殊懸停效果 */
+      .link-card:hover .link-icon[viewBox="0 0 192 192"] {
+        fill: var(--text-color);
+      }
+
+      .link-title {
+        font-weight: 500;
+        flex-grow: 1;
+        letter-spacing: 0.5px;
+        transition: all 0.3s ease;
+      }
+
+      .link-card:hover .link-title {
+        transform: translateX(5px);
+      }
+
+      .arrow {
+        opacity: 0.6;
+        transition: all 0.3s ease;
+      }
+
+      .link-card:hover .arrow {
+        opacity: 1;
+        transform: translateX(5px);
+      }
+
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-top: 2.5rem;
+      }
+
+      .social-icon {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        position: relative;
+        overflow: hidden;
+        animation: fade-in 0.5s ease-out forwards;
+        animation-delay: 0.5s;
+        opacity: 0;
+      }
+
+      @keyframes fade-in {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .social-icon:hover {
+        transform: translateY(-5px) scale(1.1);
+        box-shadow: 0 0 20px rgba(123, 47, 247, 0.3);
+        border-color: var(--accent-color);
+      }
+
+      .social-icon svg {
+        stroke: var(--text-color);
+        transition: all 0.3s ease;
+      }
+
+      .social-icon:hover svg {
+        stroke: var(--accent-color);
+        transform: scale(1.2);
+      }
+
+      .footer {
+        text-align: center;
+        margin-top: 3rem;
+        font-size: 0.85rem;
+        opacity: 0.5;
+        letter-spacing: 1px;
+        animation: fade-in 1s ease-out forwards;
+        animation-delay: 0.7s;
+        opacity: 0;
+      }
+
+      @media (max-width: 480px) {
+        .container {
+          padding: 1.5rem;
+        }
+
+        .profile-image-container {
+          width: 100px;
+          height: 100px;
+        }
+
+        .fluid-shape {
+          width: 70vw;
+          height: 70vw;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="background"></div>
+    <div class="fluid-shape"></div>
+    <div class="fluid-shape"></div>
+
+    <div class="container">
+      <div class="profile">
+        <div class="profile-image-container">
+          <div class="profile-glow"></div>
+          <img src="https://avatars.githubusercontent.com/u/85614048?v=4" alt="CabLate 個人照片" class="profile-image" />
+        </div>
+        <h1 class="name">CabLate</h1>
+        <p class="bio">Web Full Stack & AI Agent Developer</p>
+      </div>
+
+      <div class="links">
+        <a href="https://cablate.com" class="link-card" target="_blank" rel="noopener noreferrer" aria-label="訪問 CabLate 的個人網站">
+          <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+          </svg>
+          <span class="link-title">Personal Website</span>
+          <span class="arrow">→</span>
+        </a>
+
+        <a href="https://github.com/cablate" class="link-card" target="_blank" rel="noopener noreferrer" aria-label="訪問 CabLate 的 GitHub 頁面">
+          <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+          </svg>
+          <span class="link-title">Github</span>
+          <span class="arrow">→</span>
+        </a>
+
+        <a href="https://www.threads.net/@cab_late" class="link-card" target="_blank" rel="noopener noreferrer" aria-label="訪問 CabLate 的 Threads 頁面">
+          <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" fill="var(--accent-color)" stroke="none">
+            <path
+              d="M141.537 88.9883C140.71 88.5919 139.87 88.2104 139.019 87.8451C137.537 60.5382 122.616 44.905 97.5619 44.745C97.4484 44.7443 97.3355 44.7443 97.222 44.7443C82.2364 44.7443 69.7731 51.1409 62.102 62.7807L75.881 72.2328C81.6116 63.5383 90.6052 61.6848 97.2286 61.6848C97.3051 61.6848 97.3819 61.6848 97.4576 61.6855C105.707 61.7381 111.932 64.1366 115.961 68.814C118.893 72.2193 120.854 76.925 121.825 82.8638C114.511 81.6207 106.601 81.2385 98.145 81.7233C74.3247 83.0954 59.0111 96.9879 60.0396 116.292C60.5615 126.084 65.4397 134.508 73.775 140.011C80.8224 144.663 89.899 146.938 99.3323 146.423C111.79 145.74 121.563 140.987 128.381 132.296C133.559 125.696 136.834 117.143 138.28 106.366C144.217 109.949 148.617 114.664 151.047 120.332C155.179 129.967 155.42 145.8 142.501 158.708C131.182 170.016 117.576 174.908 97.0135 175.059C74.2042 174.89 56.9538 167.575 45.7381 153.317C35.2355 139.966 29.8077 120.682 29.6052 96C29.8077 71.3178 35.2355 52.0336 45.7381 38.6827C56.9538 24.4249 74.2039 17.11 97.0132 16.9405C119.988 17.1113 137.539 24.4614 149.184 38.788C154.894 45.8136 159.199 54.6488 162.037 64.9503L178.184 60.6422C174.744 47.9622 169.331 37.0357 161.965 27.974C147.036 9.60668 125.202 0.195148 97.0695 0H96.9569C68.8816 0.19447 47.2921 9.6418 32.7883 28.0793C19.8819 44.4864 13.2244 67.3157 13.0007 95.9325L13 96L13.0007 96.0675C13.2244 124.684 19.8819 147.514 32.7883 163.921C47.2921 182.358 68.8816 191.806 96.9569 192H97.0695C122.03 191.827 139.624 185.292 154.118 170.811C173.081 151.866 172.51 128.119 166.26 113.541C161.776 103.087 153.227 94.5962 141.537 88.9883ZM98.4405 129.507C88.0005 130.095 77.1544 125.409 76.6196 115.372C76.2232 107.93 81.9158 99.626 99.0812 98.6368C101.047 98.5234 102.976 98.468 104.871 98.468C111.106 98.468 116.939 99.0737 122.242 100.233C120.264 124.935 108.662 128.946 98.4405 129.507Z"
+            ></path>
+          </svg>
+          <span class="link-title">Threads</span>
+          <span class="arrow">→</span>
+        </a>
+
+        <a href="https://medium.com/@reahtuoo310109" class="link-card" target="_blank" rel="noopener noreferrer" aria-label="閱讀 CabLate 的 Medium 文章">
+          <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2.846 6.887c.03-.295-.083-.586-.303-.784l-2.24-2.7v-.403h6.958l5.378 11.795 4.728-11.795h6.633v.403l-1.916 1.837c-.165.126-.247.333-.213.538v13.498c-.034.204.048.411.213.537l1.871 1.837v.403h-9.412v-.403l1.939-1.882c.19-.19.19-.246.19-.537v-10.91l-5.389 13.688h-.728l-6.275-13.688v9.174c-.052.385.076.774.347 1.052l2.521 3.058v.404h-7.148v-.404l2.521-3.058c.27-.279.39-.67.325-1.052v-10.608z"></path>
+          </svg>
+          <span class="link-title">Medium</span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+
+      <!-- <div class="social-links">
+        <a href="#" class="social-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+        </a>
+      </div> -->
+
+      <div class="footer">© 2025 CabLate • All Rights Reserved</div>
+    </div>
+
+    <!-- 結構化數據 - 個人資料 -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "CabLate",
+        "url": "https://cablate.com",
+        "image": "https://avatars.githubusercontent.com/u/85614048?v=4",
+        "jobTitle": "Web Full Stack & AI Agent Developer",
+        "sameAs": ["https://github.com/cablate", "https://www.threads.net/@cab_late", "https://medium.com/@reahtuoo310109"]
+      }
+    </script>
+  </body>
+</html>
