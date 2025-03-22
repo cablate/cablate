@@ -3,7 +3,7 @@
     { "src": "/", "dest": "/index.html" },
     { "src": "/linktree", "dest": "/linktree.html" },
     { "src": "/linktree/", "dest": "/linktree.html" },
-    { "src": "/AnxiousStock", "dest": "/projects/anxiousstock/index.html" },
-    { "src": "/AnxiousStock/", "dest": "/projects/anxiousstock/index.html" }
+    { "src": "/AnxiousStock", "dest": "/projects/AnxiousStock/index.html" },
+    { "src": "/AnxiousStock/", "dest": "/projects/AnxiousStock/index.html" }
   ]
 }
