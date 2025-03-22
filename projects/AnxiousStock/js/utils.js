@@ -1,0 +1,1 @@
+export function getProfitLossClass(e){return e>0?"positive":e<0?"negative":""}export function formatCurrency(e){return parseFloat(parseFloat(e).toFixed(2)).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g,",")}export function formatPercentage(e){return parseFloat(parseFloat(e).toFixed(2)).toFixed(2)+"%"}
