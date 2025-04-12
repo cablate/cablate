@@ -71,6 +71,8 @@ document.addEventListener("alpine:init", () => {
         allArticles: "所有文章",
         readingTime: "分鐘閱讀",
         contactMe: "聯絡方式",
+        supportMe: "支持我",
+        buyMeCoffee: "請我喝杯咖啡",
         aboutFooter: "網頁全端工程師與 AI Agent 工程師，致力於創造優質的使用者體驗。",
         quickLinks: "快速連結",
         skills: "技能專長",
@@ -124,6 +126,8 @@ document.addEventListener("alpine:init", () => {
         allArticles: "All Articles",
         readingTime: "min read",
         contactMe: "Contact Info",
+        supportMe: "Support Me",
+        buyMeCoffee: "Buy me a coffee",
         aboutFooter: "Web Full-stack and AI Agent Engineer, dedicated to creating excellent digital experiences.",
         quickLinks: "Quick Links",
         skills: "Skills",
@@ -203,7 +207,7 @@ document.addEventListener("alpine:init", () => {
             contributions: ["支援 Telegram 與 Discord 平台"],
             icon: "https://github.com/SengokuCola/MaiMBot/raw/main/docs/video.png",
             githubLink: "https://github.com/SengokuCola/MaiMBot",
-          }
+          },
         ],
         recommendedProjects: [
           {
@@ -214,7 +218,7 @@ document.addEventListener("alpine:init", () => {
             icon: "assets/dive_desktop_icon.svg",
             githubLink: "https://github.com/OpenAgentPlatform/Dive",
             reason: "支援多桌面平台的 AI Agent 桌面應用程式，並且整合了 MCP Server，可以讓使用者更方便地使用 AI Agent。",
-          }
+          },
         ],
         freelanceProjects: [
           {
@@ -294,7 +298,7 @@ document.addEventListener("alpine:init", () => {
             contributions: ["Supports Telegram and Discord platforms"],
             icon: "https://github.com/SengokuCola/MaiMBot/raw/main/docs/video.png",
             githubLink: "https://github.com/SengokuCola/MaiMBot",
-          }
+          },
         ],
         recommendedProjects: [
           {
