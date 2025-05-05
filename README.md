@@ -59,7 +59,6 @@ I'm a engineer focused on full-stack development and AI Agent development, with 
 
 <div align="center">
   <a href="https://github.com/cablate"><img src="https://img.shields.io/badge/-GitHub-181717?logo=github&logoColor=white&style=for-the-badge" alt="GitHub"/></a>
-  <a href="https://www.threads.net/@cab_late"><img src="https://img.shields.io/badge/-Threads-000000?logo=threads&logoColor=white&style=for-the-badge" alt="Threads"/></a>
   <a href="https://medium.com/@reahtuoo310109"><img src="https://img.shields.io/badge/-Medium-12100E?logo=medium&logoColor=white&style=for-the-badge" alt="Medium"/></a>
 </div>
 
