@@ -23,6 +23,69 @@ section {
   scroll-margin-top: 5rem;
 }
 
+.newsletter-floating-btn {
+  position: fixed;
+  top: 50%;
+  right: 2rem;
+  transform: translateY(-50%);
+  z-index: 40;
+  padding: 1rem 1.5rem;
+  border-radius: 2rem;
+  background: linear-gradient(135deg, #4f46e5, #22d3ee);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 25px rgba(79, 70, 229, 0.4);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  animation: newsletter-glow 3s ease-in-out infinite;
+  color: white;
+}
+
+.newsletter-floating-btn:hover {
+  transform: translateY(-50%) scale(1.05);
+  box-shadow: 0 15px 35px rgba(79, 70, 229, 0.6);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.newsletter-floating-btn .newsletter-text {
+  transition: transform 0.3s ease;
+}
+
+.newsletter-floating-btn:hover .newsletter-text {
+  transform: translateX(2px);
+}
+
+@keyframes newsletter-glow {
+  0%,
+  100% {
+    box-shadow: 0 10px 25px rgba(79, 70, 229, 0.4);
+  }
+  50% {
+    box-shadow: 0 15px 35px rgba(79, 70, 229, 0.6);
+  }
+}
+
+@media (max-width: 768px) {
+  .newsletter-floating-btn {
+    right: 1rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    border-radius: 1.5rem;
+    min-width: 120px;
+  }
+
+  .newsletter-floating-btn .newsletter-text {
+    display: block;
+  }
+
+  .newsletter-floating-btn .newsletter-text .text-sm {
+    font-size: 0.75rem;
+  }
+
+  .newsletter-floating-btn .newsletter-text .text-xs {
+    font-size: 0.625rem;
+  }
+}
+
 .back-to-top {
   position: fixed;
   bottom: 2rem;

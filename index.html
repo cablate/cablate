@@ -172,6 +172,7 @@
                   </g>
                 </svg>
               </a>
+
               <a href="https://www.buymeacoffee.com/cablate" target="_blank" rel="noopener noreferrer" class="glass-effect p-4 rounded-full text-amber-300 hover:text-white transition-colors duration-200 social-icon pulse-on-load" style="animation-delay: 0.4s">
                 <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
@@ -569,6 +570,7 @@
                     </g>
                   </svg>
                 </a>
+
                 <a href="https://www.buymeacoffee.com/cablate" class="text-amber-300 hover:text-white transition-colors duration-200">
                   <span class="sr-only">Buy me a coffee</span>
                   <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
@@ -588,6 +590,20 @@
         </div>
       </footer>
     </div>
+    <!-- 電子報訂閱浮動按鈕 -->
+    <a href="https://cablate.kit.com/5d20d59e1c" target="_blank" rel="noopener noreferrer" class="newsletter-floating-btn text-white transition-all duration-300">
+      <div class="flex items-center space-x-3">
+        <svg class="h-6 w-6 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+          <polyline points="22,6 12,13 2,6"></polyline>
+        </svg>
+        <div class="newsletter-text">
+          <div class="text-sm font-semibold leading-tight">訂閱電子報</div>
+          <div class="text-xs opacity-80 leading-tight">技術隨筆分享</div>
+        </div>
+      </div>
+    </a>
+
     <!-- 回到頂部按鈕 -->
     <button @click="window.scrollTo({top: 0})" class="back-to-top glass-effect p-3 rounded-full text-white hover:text-secondary transition-colors duration-200" :class="{ 'opacity-0 pointer-events-none': !showBackToTop, 'opacity-100': showBackToTop }" :aria-label="uiText[lang].backToTop">
       <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
