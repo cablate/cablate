@@ -1,10 +1,9 @@
 {
-  "routes": [
-    { "src": "/", "dest": "/index.html" },
-    { "src": "/linktree", "dest": "/linktree.html" },
-    { "src": "/linktree/", "dest": "/linktree.html" },
-    { "src": "/llms.txt", "dest": "/llms.txt" },
-    { "src": "/projects/AnxiousStock/index", "dest": "/projects/AnxiousStock/index.html" }
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/linktree", "destination": "/linktree.html" },
+    { "source": "/linktree/", "destination": "/linktree.html" },
+    { "source": "/projects/AnxiousStock/index", "destination": "/projects/AnxiousStock/index.html" }
   ],
   "headers": [
     {
