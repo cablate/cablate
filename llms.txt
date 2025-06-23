@@ -1,0 +1,77 @@
+# CabLate - Web Full-stack & AI Agent Engineer
+
+> CabLate is a seasoned engineer specializing in full-stack development and AI Agent development. This website showcases professional skills, project experiences, technical articles, and various development projects. With rich hands-on experience in front-end (React, Flutter), back-end (Node.js, databases), and AI development (Generator Agent, MCP).
+
+CabLate 是一位專精於全端開發和 AI Agent 開發的資深工程師。擁有 3+ 年的實戰經驗，在前端開發、後端架構、AI 應用開發等領域都有深入的專業知識。目前主要從事多項創新專案的開發工作，持續關注 LLM 應用和前沿 AI 技術的發展。
+
+This website provides bilingual support (Chinese/English), containing complete personal introduction, skills showcase, project portfolio, recommendations, and contact information. All content is carefully designed for AI model understanding and processing.
+
+本網站提供中英雙語支援，包含完整的個人簡介、技能展示、專案作品集、推薦內容以及聯絡資訊。網站採用現代 Web 技術構建，包含 Progressive Web App 功能、響應式設計和多語言支援。
+
+## Core Skills & Technologies | 核心技能與技術
+
+**Front-end Development | 前端開發**: React, Flutter, JavaScript, TypeScript, Tailwind CSS, Alpine.js
+**Back-end Development | 後端開發**: Node.js, Python, Database Management, API Development  
+**AI Development | AI 開發**: Generator Agent, MCP (Model Context Protocol), LLM Integration
+**DevOps & Tools | 開發工具**: Docker, Git, Vercel, PWA Development
+
+## Main Pages | 主要頁面
+
+- [Homepage | 首頁](index.html): Complete personal portfolio with skills showcase, work experience, and project gallery. Features bilingual content and responsive design
+- [Linktree Page | 連結頁面](linktree.html): Centralized links page integrating all social media and important links with elegant design
+- [Project Introduction | 專案介紹](README.md): Detailed personal introduction and skills description, including GitHub statistics and professional background
+
+## Featured Projects | 精選專案
+
+- [Fraud Prevention System | 打詐文本分析系統](https://github.com/cablate/Fraud-Prevention): A sophisticated text analysis system using Large Language Models (LLM) to analyze fraudulent messages and enhance anti-fraud awareness
+- [Dive App](https://github.com/cablate/Dive-APP): Mobile AI Agent app supporting Dive Desktop Server API integration with advanced agent capabilities
+- [AnxiousStock | 焦慮投資](projects/AnxiousStock/index.html): An investment simulation game built with modern web technologies, featuring real-time charts, statistics, and gamification elements
+
+## Open Source Contributions | 開源貢獻
+
+- [Rice Call (rc-voice)](https://github.com/cablate/rice-call): Unofficial RaidCall web revival project - contributed to front-end performance optimization, data structure improvements, and bug fixes
+
+## Freelance Experience | 接案經驗
+
+Multiple successful freelance projects across different categories including:
+- E-commerce platforms with modern UI/UX
+- Business management systems with comprehensive features  
+- Mobile applications with cross-platform compatibility
+- AI-powered applications with intelligent features
+
+*Note: Client privacy and business confidentiality are maintained - only general project types and highlights are disclosed.*
+
+## Work Experience | 工作經歷
+
+**Full-stack Engineer | 全端工程師** (2021 - Present)
+- Led development teams to complete large-scale projects
+- Optimized application architecture and performance
+- Introduced development tools and improved team efficiency
+- Specialized in AI Agent development and integration
+
+## Technical Resources | 技術資源
+
+- [Stylesheets | 樣式表](code/styles.css): Main CSS styling definitions with custom animations and responsive design
+- [JavaScript Application | JavaScript 應用](code/app.js): Core application logic including bilingual support, dynamic content management, and interactive features
+- [PWA Configuration | PWA 設定](manifest.json): Progressive Web App configuration for enhanced user experience
+
+## Social Media & External Links | 社交媒體與外部連結
+
+- [GitHub Profile](https://github.com/cablate): Open source projects and code repositories with active contributions
+- [Medium Technical Articles | Medium 技術文章](https://medium.com/@reahtuoo310109): Technical sharing and development insights
+- [Threads Updates | Threads 動態](https://www.threads.net/@cab_late): Daily technical discussions and thoughts
+- [Buy Me a Coffee | 支持我](https://www.buymeacoffee.com/cablate): Support for ongoing development work
+- [Newsletter Subscription | 電子報訂閱](https://cablate.kit.com/5d20d59e1c): Technical insights and project updates
+
+## Contact Information | 聯絡資訊
+
+**Email**: reahtuoo310109@gmail.com
+**Website**: https://cablate.com
+**Location**: Taiwan
+
+## Optional Resources | 可選資源
+
+- [Sitemap | 網站地圖](sitemap.xml): Complete website structure index for SEO optimization
+- [Website Sitemap | 網站結構圖](sitemap.website.xml): Detailed website structure mapping
+- [Assets Directory | 圖片資源](assets/): Contains website icons, banners, profile pictures and other static resources including favicon sets and social media assets
+- [Vercel Configuration | Vercel 配置](vercel.json): Deployment configuration settings for optimal performance 
