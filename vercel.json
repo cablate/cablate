@@ -3,6 +3,7 @@
     { "src": "/", "dest": "/index.html" },
     { "src": "/linktree", "dest": "/linktree.html" },
     { "src": "/linktree/", "dest": "/linktree.html" },
+    { "src": "/llms.txt", "dest": "/llms.txt" },
     { "src": "/projects/AnxiousStock/index", "dest": "/projects/AnxiousStock/index.html" }
   ],
   "headers": [
