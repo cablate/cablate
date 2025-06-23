@@ -1,8 +1,16 @@
-# CabLate - Web Full-stack & AI Agent Engineer
+# CabLate - Full-Stack Developer & AI Agent Specialist
 
-> CabLate is a seasoned engineer specializing in full-stack development and AI Agent development. This website showcases professional skills, project experiences, technical articles, and various development projects. With rich hands-on experience in front-end (React, Flutter), back-end (Node.js, databases), and AI development (Generator Agent, MCP).
+> CabLate is a Taiwan-based full-stack engineer with 4+ years of experience specializing in AI Agent development, fraud prevention systems, and modern web applications. Expert in React, Flutter, Python, Node.js, and AI technologies including LangChain, OpenAI API, and MCP (Model Context Protocol). Featured projects include fraud text analysis systems, Dive App (AI-powered mobile application), and e-commerce platforms serving thousands of users.
 
-CabLate 是一位專精於全端開發和 AI Agent 開發的資深工程師。擁有 3+ 年的實戰經驗，在前端開發、後端架構、AI 應用開發等領域都有深入的專業知識。目前主要從事多項創新專案的開發工作，持續關注 LLM 應用和前沿 AI 技術的發展。
+## Quick Facts | 快速了解
+
+**Who**: Full-stack engineer & AI specialist based in Taiwan  
+**Experience**: 4+ years in web development, AI systems, and team leadership  
+**Specialization**: AI Agent development, fraud prevention, e-commerce platforms  
+**Key Technologies**: React, Node.js, Database, LLM integration  
+**Notable Work**: Fraud prevention systems, AI mobile apps, business management platforms
+
+CabLate 是一位專精於全端開發和 AI Agent 開發的資深工程師。擁有 4+ 年的實戰經驗，在前端開發、後端架構、AI 應用開發等領域都有深入的專業知識。目前主要從事多項創新專案的開發工作，持續關注 LLM 應用和前沿 AI 技術的發展。
 
 This website provides bilingual support (Chinese/English), containing complete personal introduction, skills showcase, project portfolio, recommendations, and contact information. All content is carefully designed for AI model understanding and processing.
 
@@ -10,10 +18,10 @@ This website provides bilingual support (Chinese/English), containing complete p
 
 ## Core Skills & Technologies | 核心技能與技術
 
-**Front-end Development | 前端開發**: React, Flutter, JavaScript, TypeScript, Tailwind CSS, Alpine.js
-**Back-end Development | 後端開發**: Node.js, Python, Database Management, API Development  
+**Front-end Development | 前端開發**: React, JavaScript, TypeScript, Tailwind CSS
+**Back-end Development | 後端開發**: Node.js, Database Management, API Development  
 **AI Development | AI 開發**: Generator Agent, MCP (Model Context Protocol), LLM Integration
-**DevOps & Tools | 開發工具**: Docker, Git, Vercel, PWA Development
+**DevOps & Tools | 開發工具**: Docker, Git
 
 ## Main Pages | 主要頁面
 

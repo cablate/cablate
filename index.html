@@ -488,6 +488,26 @@
           </div>
         </section>
 
+        <!-- FAQ Section for AEO Optimization -->
+        <section id="faq" class="mb-20">
+          <h2 class="text-4xl font-bold text-white mb-12 text-center text-shadow" x-text="uiText[lang].faq || 'Frequently Asked Questions'">常見問題</h2>
+          <div class="space-y-6" x-data="{ openFaq: null }">
+            <template x-for="(faq, index) in content[lang].faqs" :key="index">
+              <div class="glass-effect rounded-xl p-6">
+                <button @click="openFaq = openFaq === index ? null : index" class="w-full text-left flex justify-between items-center">
+                  <h3 class="text-lg font-semibold text-white" x-text="faq.question"></h3>
+                  <svg class="h-5 w-5 text-secondary transition-transform duration-200" :class="{ 'rotate-180': openFaq === index }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div x-show="openFaq === index" x-collapse>
+                  <div class="mt-4 text-gray-200" x-html="faq.answer"></div>
+                </div>
+              </div>
+            </template>
+          </div>
+        </section>
+
         <!-- 聯絡資訊 -->
         <section id="contact" class="mb-20">
           <h2 class="text-4xl font-bold text-white mb-12 text-center text-shadow" x-text="uiText[lang].contact">聯絡我</h2>
@@ -611,6 +631,84 @@
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
       </svg>
     </button>
+
+    <!-- FAQ Schema Markup for AEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "什麼是 AI Agent 開發？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "AI Agent 開發是指創建能夠自主執行任務的智能代理程式。這些代理能夠理解用戶需求、做出決策，並與外部系統進行交互。我專精於使用 LangChain、OpenAI API 和 MCP (Model Context Protocol) 來構建高效的 AI Agent 系統。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "您有哪些專業技能和經驗？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "我擁有 3+ 年的全端開發經驗，專精於前端開發（React、TypeScript、Tailwind CSS）、後端開發（Node.js、資料庫管理、API 開發）、AI 開發（Generator Agent、MCP、LLM 整合）以及 DevOps（Docker、Git、Vercel、PWA 開發）。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "如何與您聯絡合作？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "您可以透過 Email: reahtuoo310109@gmail.com、GitHub: @cablate、或 Threads: @cab_late 與我聯絡。我樂意討論各種技術專案合作機會。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "您曾經手的專案有哪些？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "我的主要專案包括打詐文本分析系統（使用 LLM 技術分析詐騙訊息）、Dive App（AI Agent 移動應用程式）、AnxiousStock（投資模擬遊戲），以及多個電商平台和企業管理系統的開發。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "您接受接案委託或合作邀約嗎？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "是的，我接受各種規模的專案委託，包括電商平台開發、企業管理系統、AI 應用程式開發、移動應用程式、數據處理與分析系統。為保護客戶隱私，我會遵守嚴格的保密協議。"
+            }
+          }
+        ]
+      }
+    </script>
+
+    <!-- Person Schema Markup -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "CabLate",
+        "jobTitle": "Full-Stack Developer & AI Agent Specialist",
+        "description": "Taiwan-based full-stack engineer with 3+ years of experience specializing in AI Agent development, fraud prevention systems, and modern web applications.",
+        "url": "https://cablate.com",
+        "sameAs": ["https://github.com/cablate", "https://www.threads.net/@cab_late", "https://medium.com/@reahtuoo310109"],
+        "email": "reahtuoo310109@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "Taiwan"
+        },
+        "knowsAbout": ["Full-Stack Development", "AI Agent Development", "React", "Flutter", "Python", "Node.js", "LangChain", "OpenAI API", "MCP Protocol", "Fraud Prevention Systems", "E-commerce Development"],
+        "hasOccupation": {
+          "@type": "Occupation",
+          "name": "Full-Stack Developer",
+          "occupationLocation": {
+            "@type": "Country",
+            "name": "Taiwan"
+          },
+          "skills": ["React", "Flutter", "Python", "Node.js", "AI Development", "LangChain", "OpenAI API"]
+        }
+      }
+    </script>
 
     <!-- Speed Insights -->
     <script>

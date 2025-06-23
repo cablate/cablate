@@ -100,6 +100,7 @@ document.addEventListener("alpine:init", () => {
         projectPeriod: "開發週期",
         projectHighlights: "重點",
         clientPrivacy: "為保護客戶隱私與商業機密，以下內容僅列舉部分專案並概述專案性質與重點",
+        faq: "常見問題",
       },
       en: {
         about: "About",
@@ -155,6 +156,7 @@ document.addEventListener("alpine:init", () => {
         projectPeriod: "Development Period",
         projectHighlights: "Highlights",
         clientPrivacy: "To protect client privacy and business confidentiality, the following content only outlines a few projects and their nature and highlights",
+        faq: "Frequently Asked Questions",
       },
     },
     content: {
@@ -248,6 +250,28 @@ document.addEventListener("alpine:init", () => {
             highlights: ["簡易 2D 文本冒險遊戲", "適用於 Android 平台", "支援基本互動與分支劇情", "輕量級遊戲體驗"],
           },
         ],
+        faqs: [
+          {
+            question: "什麼是 AI Agent 開發？",
+            answer: "AI Agent 開發是指創建能夠自主執行任務的智能代理程式。這些代理能夠理解用戶需求、做出決策，並與外部系統進行交互。我專精於使用 LangChain、OpenAI API 和 MCP (Model Context Protocol) 來構建高效的 AI Agent 系統。",
+          },
+          {
+            question: "您有哪些專業技能和經驗？",
+            answer: "我擁有 3+ 年的全端開發經驗，專精於：<br>• <strong>前端開發</strong>：React、TypeScript、Tailwind CSS<br>• <strong>後端開發</strong>：Node.js、資料庫管理、API 開發<br>• <strong>AI 開發</strong>：Generator Agent、MCP、LLM 整合<br>• <strong>DevOps</strong>：Docker、Git、Vercel、PWA 開發",
+          },
+          {
+            question: "如何與您聯絡合作？",
+            answer: "您可以透過以下方式與我聯絡：<br>• Email: reahtuoo310109@gmail.com<br>• GitHub: <a href='https://github.com/cablate' class='text-secondary hover:text-white transition-colors'>@cablate</a><br>• Threads: <a href='https://www.threads.net/@cab_late' class='text-secondary hover:text-white transition-colors'>@cab_late</a><br>我樂意討論各種技術專案合作機會。",
+          },
+          {
+            question: "您曾經手的專案有哪些？",
+            answer: "我的主要專案包括：<br>• <strong>打詐文本分析系統</strong>：使用 LLM 技術分析詐騙訊息<br>• <strong>Dive App</strong>：AI Agent 移動應用程式<br>• <strong>AnxiousStock</strong>：投資模擬遊戲<br>• 多個電商平台和企業管理系統的開發",
+          },
+          {
+            question: "您接受接案委託或合作邀約嗎？",
+            answer: "是的，我有專業團隊，可以接受各種規模的專案委託，包括：<br>• 電商平台開發<br>• 企業管理系統<br>• AI 應用程式開發<br>• 移動應用程式<br>• 數據處理與分析系統<br>為保護客戶隱私，我會遵守嚴格的保密協議。",
+          },
+        ],
       },
       en: {
         aboutMe: "I am a senior engineer focused on full-stack development and AI Agent development, with rich practical experience. Throughout my career, I have participated in multiple large-scale projects while keeping up with emerging technology trends.",
@@ -336,6 +360,28 @@ document.addEventListener("alpine:init", () => {
             title: "2D Mini Game App",
             category: "Game Development",
             highlights: ["Simple 2D text adventure game", "Developed for Android platform", "Basic interaction and branching storylines", "Lightweight gaming experience"],
+          },
+        ],
+        faqs: [
+          {
+            question: "What is AI Agent development?",
+            answer: "AI Agent development involves creating intelligent software agents that can autonomously execute tasks. These agents can understand user requirements, make decisions, and interact with external systems. I specialize in using LangChain, OpenAI API, and MCP (Model Context Protocol) to build efficient AI Agent systems.",
+          },
+          {
+            question: "What are your professional skills and experience?",
+            answer: "I have 3+ years of full-stack development experience, specializing in:<br>• <strong>Frontend Development</strong>: React, TypeScript, Tailwind CSS<br>• <strong>Backend Development</strong>: Node.js, Database Management, API Development<br>• <strong>AI Development</strong>: Generator Agent, MCP, LLM Integration<br>• <strong>DevOps</strong>: Docker, Git, Vercel, PWA Development",
+          },
+          {
+            question: "How can I contact you for collaboration?",
+            answer: "You can reach me through the following channels:<br>• Email: reahtuoo310109@gmail.com<br>• GitHub: <a href='https://github.com/cablate' class='text-secondary hover:text-white transition-colors'>@cablate</a><br>• Threads: <a href='https://www.threads.net/@cab_late' class='text-secondary hover:text-white transition-colors'>@cab_late</a><br>I'm always open to discussing technical project collaboration opportunities.",
+          },
+          {
+            question: "What projects did you work?",
+            answer: "My past projects include:<br>• <strong>AI Anti-Scam Text Analysis System</strong>: Using LLM technology to analyze fraudulent messages<br>• <strong>Dive App</strong>: AI Agent mobile application<br>• <strong>AnxiousStock</strong>: Investment simulation game<br>• Multiple e-commerce platforms and enterprise management systems",
+          },
+          {
+            question: "Do you accept freelance projects?",
+            answer: "Yes, I accept projects of various scales, including:<br>• E-commerce platform development<br>• Enterprise management systems<br>• AI application development<br>• Mobile applications<br>• Data processing and analysis systems<br>I maintain strict confidentiality agreements to protect client privacy.",
           },
         ],
         moreProjects: [],

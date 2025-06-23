@@ -1,23 +1,8 @@
 {
-  "rewrites": [
-    { "source": "/", "destination": "/index.html" },
-    { "source": "/linktree", "destination": "/linktree.html" },
-    { "source": "/linktree/", "destination": "/linktree.html" },
-    { "source": "/projects/AnxiousStock/index", "destination": "/projects/AnxiousStock/index.html" }
-  ],
-  "headers": [
-    {
-      "source": "/llms.txt",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "text/plain; charset=utf-8"
-        },
-        {
-          "key": "X-Robots-Tag",
-          "value": "llms-txt"
-        }
-      ]
-    }
+  "routes": [
+    { "src": "/", "dest": "/index.html" },
+    { "src": "/linktree", "dest": "/linktree.html" },
+    { "src": "/linktree/", "dest": "/linktree.html" },
+    { "src": "/projects/AnxiousStock/index", "dest": "/projects/AnxiousStock/index.html" }
   ]
 }
