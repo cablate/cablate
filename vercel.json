@@ -4,6 +4,6 @@
     { "src": "/linktree", "dest": "/linktree.html" },
     { "src": "/linktree/", "dest": "/linktree.html" },
     { "src": "/projects/AnxiousStock/index", "dest": "/projects/AnxiousStock/index.html" },
-    { "src": "/claude-code-install-on-windows", "dest": "/claude-code-install.html" }
+    { "src": "/confirm-subscription", "dest": "/mail-confirm-subscription.html" }
   ]
 }
