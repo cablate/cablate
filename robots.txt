@@ -1,40 +1,48 @@
+# Robots.txt for cablate.com
+# Allow all search engines to crawl the site
+
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.git/
 
-# Allow all AI crawlers and LLMs
-User-agent: GPTBot
+# Sitemap location
+Sitemap: https://www.cablate.com/sitemap.xml
+
+# CabMeme specific paths
+Allow: /cabmeme
+Allow: /projects/CabMeme/
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Special directives for major search engines
+User-agent: Googlebot
 Allow: /
+Crawl-delay: 0
 
-User-agent: ChatGPT-User
+User-agent: Bingbot
 Allow: /
+Crawl-delay: 0
 
-User-agent: CCBot
+User-agent: Slurp
 Allow: /
+Crawl-delay: 1
 
-User-agent: anthropic-ai
+User-agent: DuckDuckBot
 Allow: /
+Crawl-delay: 1
 
-User-agent: Claude-Web
-Allow: /
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
 
-User-agent: PerplexityBot
-Allow: /
+User-agent: SemrushBot
+Disallow: /
 
-User-agent: GoogleOther
-Allow: /
+User-agent: DotBot
+Disallow: /
 
-# Important files for AI understanding
-Allow: /llms.txt
-Allow: /manifest.json
-Allow: /sitemap.xml
-
-# Optimize crawl budget
-Disallow: /_next/
-Disallow: /_vercel/
-Disallow: /api/
-
-# Sitemaps
-Sitemap: https://cablate.com/sitemap.xml
-
-# LLMs.txt for AI optimization
-# AI-readable content available at: https://cablate.com/llms.txt 
+User-agent: MJ12bot
+Disallow: /

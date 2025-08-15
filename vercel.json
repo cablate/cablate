@@ -4,6 +4,34 @@
     { "src": "/linktree", "dest": "/linktree.html" },
     { "src": "/linktree/", "dest": "/linktree.html" },
     { "src": "/projects/AnxiousStock/index", "dest": "/projects/AnxiousStock/index.html" },
-    { "src": "/confirm-subscription", "dest": "/mail-confirm-subscription.html" }
+    { "src": "/confirm-subscription", "dest": "/mail-confirm-subscription.html" },
+    { "src": "/cabmeme", "dest": "/projects/CabMeme/index.html" },
+    { "src": "/cabmeme/", "dest": "/projects/CabMeme/index.html" },
+    { "src": "/projects/CabMeme", "dest": "/projects/CabMeme/index.html" },
+    { "src": "/projects/CabMeme/", "dest": "/projects/CabMeme/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/projects/CabMeme/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, s-maxage=86400"
+        }
+      ]
+    },
+    {
+      "source": "/projects/CabMeme/(.*).mp4",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        },
+        {
+          "key": "Accept-Ranges",
+          "value": "bytes"
+        }
+      ]
+    }
   ]
 }
