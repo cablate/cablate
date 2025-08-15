@@ -661,7 +661,7 @@
             <div class="spinner"></div>
             <div class="video-container" id="videoContainer">
                 <video id="calculationVideo" controls>
-                    <source src="./video.mp4" type="video/mp4">
+                    <!-- src 會由 JavaScript 動態設定 -->
                     您的瀏覽器不支援影片播放。
                 </video>
             </div>
@@ -834,11 +834,20 @@
             const video = document.getElementById('calculationVideo');
             const sorryMessage = document.getElementById('sorryMessage');
             
+            // 檢測是否為本地開發環境
+            const isLocal = window.location.hostname === 'localhost' || 
+                           window.location.hostname === '127.0.0.1' || 
+                           window.location.hostname === '' ||
+                           window.location.protocol === 'file:';
+            
+            // 根據環境設定基礎路徑
+            const basePath = isLocal ? '.' : '/projects/CabMeme';
+            
             // 根據不同題目設定不同影片
             if (currentProblem === '25×4') {
-                video.src = './25x4.mp4';
+                video.src = `${basePath}/25x4.mp4`;
             } else {
-                video.src = './video.mp4';
+                video.src = `${basePath}/video.mp4`;
             }
             
             modal.style.display = 'block';
