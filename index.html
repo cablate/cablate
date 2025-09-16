@@ -558,6 +558,7 @@
                 <li><a href="#experience" class="text-gray-300 hover:text-white transition-colors duration-200" x-text="uiText[lang].experience">經歷</a></li>
                 <li><a href="#projects" class="text-gray-300 hover:text-white transition-colors duration-200" x-text="uiText[lang].projects">作品</a></li>
                 <li><a href="#recommendations" class="text-gray-300 hover:text-white transition-colors duration-200" x-text="uiText[lang].recommendations">推薦</a></li>
+                <li><a href="https://cablate.com/recommend" class="text-gray-300 hover:text-white transition-colors duration-200">🌟 CabLate 推薦清單</a></li>
               </ul>
             </div>
             <div>
@@ -605,11 +606,27 @@
               </div>
             </div>
           </div>
-          <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
-            <p>&copy; 2025 CabLate. <span x-text="uiText[lang].allRightsReserved"></span></p>
+          <div class="mt-8 pt-8 border-t border-gray-700 text-center">
+            <div class="mb-4">
+              <a href="https://cablate.com/recommend" class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-lg hover:from-blue-600 hover:to-cyan-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.97a1 1 0 00.95.69h4.18c.969 0 1.371 1.24.588 1.81l-3.392 2.46a1 1 0 00-.364 1.118l1.286 3.97c.3.922-.755 1.688-1.54 1.118l-3.392-2.46a1 1 0 00-1.176 0l-3.392 2.46c-.785.57-1.84-.196-1.54-1.118l1.286-3.97a1 1 0 00-.364-1.118L2.075 9.397c-.783-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69l1.286-3.97z"></path>
+                </svg>
+                探索 CabLate 精選課程與學習資源
+              </a>
+            </div>
+            <p class="text-gray-400">&copy; 2025 CabLate. <span x-text="uiText[lang].allRightsReserved"></span></p>
           </div>
         </div>
       </footer>
+
+      <!-- SEO 優化：隱藏的推薦課程連結（增加內部連結權重） -->
+      <div style="position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden;" aria-hidden="true">
+        <a href="https://cablate.com/recommend" rel="dofollow">CabLate 推薦清單 - 精選課程與學習資源</a>
+        <a href="https://cablate.com/recommend/courses/miss_marketing_0to1" rel="dofollow">自媒體經營從 0~1 實戰手冊 - Miss Marketing 課程完整評價與心得</a>
+        <a href="https://cablate.com/recommend/courses/mky_danow_0to1" rel="dofollow">小米 x 租大腦 接案講座 - 從行銷接案到創業心得分享</a>
+        <span>相關推薦：線上課程評價、學習資源推薦、自媒體經營教學、接案技巧分享</span>
+      </div>
     </div>
     <!-- 電子報訂閱浮動按鈕 -->
     <a href="https://cablate.kit.com/5d20d59e1c" target="_blank" rel="noopener noreferrer" class="newsletter-floating-btn text-white transition-all duration-300">

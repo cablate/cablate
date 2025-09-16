@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
     <link rel="alternate icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⭐</text></svg>" />
 
     <!-- SEO Meta Tags - 替換成實際課程資訊 -->
@@ -13,15 +13,15 @@
     <meta name="description" content="CabLate 的 [課程名稱] 完整評價，包含課程內容、學習心得、優缺點分析。幫助你了解這門課是否適合你。" />
     <meta name="keywords" content="CabLate, [課程名稱], [課程名稱]評價, [課程名稱]心得, [講師名]課程, 線上課程推薦" />
     <meta name="author" content="CabLate" />
-    <link rel="canonical" href="https://yoursite.com/courses/[course-id].html" />
+    <link rel="canonical" href="https://cablate.com/recommend/courses/[course-id]" />
 
     <!-- Open Graph -->
     <meta property="og:title" content="[課程名稱] - CabLate 真實評價與心得" />
     <meta property="og:description" content="CabLate 的[課程名稱]學習心得，包含完整評價與購買建議" />
     <meta property="og:site_name" content="CabLate 推薦清單" />
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://yoursite.com/courses/[course-id].html" />
-    <meta property="og:image" content="https://yoursite.com/images/courses/[course-id].jpg" />
+    <meta property="og:url" content="https://cablate.com/recommend/courses/[course-id]" />
+    <meta property="og:image" content="https://cablate.com/recommend/courses/[course-id]/image.webp" />
 
     <!-- Schema.org 結構化數據 -->
     <script type="application/ld+json">
@@ -37,13 +37,33 @@
         "aggregateRating": {
           "@type": "AggregateRating",
           "ratingValue": "4.8",
-          "reviewCount": "234"
+          "reviewCount": "234",
+          "bestRating": "5"
         },
         "offers": {
           "@type": "Offer",
           "price": "3600",
           "priceCurrency": "TWD",
-          "availability": "https://schema.org/InStock"
+          "availability": "https://schema.org/InStock",
+          "url": "https://cablate.com/recommend/courses/[course-id]"
+        },
+        "review": {
+          "@type": "Review",
+          "itemReviewed": {
+            "@type": "Course",
+            "name": "[課程名稱]"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "CabLate"
+          },
+          "datePublished": "[發布日期]",
+          "reviewBody": "[評論內容]",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          }
         }
       }
     </script>
@@ -529,14 +549,14 @@
       <!-- Navigation -->
       <nav>
         <div class="nav-content">
-          <a href="/" class="back-link"> ← 回到 CabLate 推薦清單 </a>
+          <a href="/recommend/" class="back-link"> ← 回到 CabLate 推薦清單 </a>
           <div class="nav-title">CabLate 課程評價</div>
         </div>
       </nav>
 
       <!-- Course Hero -->
       <section class="course-hero">
-        <div class="breadcrumb"><a href="/">首頁</a> / <a href="/#courses">課程</a> / [課程名稱]</div>
+        <div class="breadcrumb"><a href="/recommend/">首頁</a> / <a href="/recommend/#courses">課程</a> / [課程名稱]</div>
 
         <div class="course-header">
           <div class="course-image">
@@ -577,15 +597,24 @@
         <p class="summary-content">如果你想從零開始學 Python 並成為全端工程師，這是目前中文圈最完整的課程之一。老師教學清楚，社群支援強大，CP值很高。</p>
       </section>
 
-      <!-- My Experience -->
-      <section class="content-section">
+      <!-- My Experience / CabLate Review -->
+      <article class="content-section" itemscope itemtype="https://schema.org/Review">
+        <div itemprop="itemReviewed" itemscope itemtype="https://schema.org/Course">
+          <meta itemprop="name" content="[課程名稱]" />
+        </div>
+        <meta itemprop="author" content="CabLate" />
+        <meta itemprop="datePublished" content="[發布日期]" />
+        <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+          <meta itemprop="ratingValue" content="5" />
+          <meta itemprop="bestRating" content="5" />
+        </div>
         <h2 class="section-title">📚 我的學習歷程</h2>
-        <div class="section-content">
+        <div class="section-content" itemprop="reviewBody">
           <p>我從 2024 年 1 月開始學習這門課，當時完全沒有程式基礎。選擇這門課是因為看到很多人推薦，而且王老師的教學評價都很好。</p>
           <p>前兩週專心學基礎語法，老師會用很多生活化的例子來解釋抽象概念，讓我這個新手也能理解。第三週開始寫小專案，慢慢建立信心。</p>
           <p>現在三個月過去，我已經能獨立完成簡單的網站了！雖然離專業工程師還有距離，但進步很明顯。</p>
         </div>
-      </section>
+      </article>
 
       <!-- Pros and Cons -->
       <section class="content-section">
@@ -668,15 +697,15 @@
       <section class="content-section">
         <h2 class="section-title">🔗 相關課程推薦</h2>
         <div class="related-grid">
-          <a href="/courses/django-api.html" class="related-card">
+          <a href="#" class="related-card">
             <div class="related-title">Django REST API 開發</div>
             <div class="related-meta">同講師 • 進階課程</div>
           </a>
-          <a href="/courses/javascript.html" class="related-card">
+          <a href="#" class="related-card">
             <div class="related-title">JavaScript 全攻略</div>
             <div class="related-meta">前端開發 • 新手友善</div>
           </a>
-          <a href="/courses/data-science.html" class="related-card">
+          <a href="#" class="related-card">
             <div class="related-title">Python 數據分析</div>
             <div class="related-meta">數據科學 • Python</div>
           </a>
@@ -685,7 +714,7 @@
 
       <!-- Footer -->
       <footer>
-        <p>© 2024 CabLate • <a href="/">回到首頁</a></p>
+        <p>© 2024 CabLate • <a href="/recommend/">回到首頁</a></p>
       </footer>
     </div>
 
