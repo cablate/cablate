@@ -4,7 +4,10 @@
     { "source": "/projects/AnxiousStock/index", "destination": "/projects/AnxiousStock/index.html" },
     { "source": "/confirm-subscription", "destination": "/mail-confirm-subscription.html" },
     { "source": "/cabmeme", "destination": "/projects/CabMeme/index.html" },
-    { "source": "/projects/CabMeme", "destination": "/projects/CabMeme/index.html" }
+    { "source": "/projects/CabMeme", "destination": "/projects/CabMeme/index.html" },
+    { "source": "/recommend", "destination": "/recommend/index.html" },
+    { "source": "/recommend/courses/miss_marketing_0to1", "destination": "/recommend/courses/miss_marketing_0to1/index.html" },
+    { "source": "/recommend/courses/mky_danow_0to1", "destination": "/recommend/courses/mky_danow_0to1/index.html" }
   ],
   "headers": [
     {

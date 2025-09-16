@@ -1,0 +1,41 @@
+{
+  "name": "job-analysis-viewer",
+  "version": "1.0.0",
+  "description": "智能職缺分析與履歷建議系統 - 提供現代化的職缺資料瀏覽與分析介面",
+  "main": "api-example.js",
+  "scripts": {
+    "start": "node api-example.js",
+    "dev": "nodemon api-example.js",
+    "serve": "http-server . -p 8080 -c-1",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "keywords": [
+    "job-analysis",
+    "resume",
+    "career",
+    "frontend",
+    "api",
+    "express"
+  ],
+  "author": "@CabLate",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1",
+    "http-server": "^14.1.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "."
+  },
+  "bugs": {
+    "url": "."
+  },
+  "homepage": "."
+}

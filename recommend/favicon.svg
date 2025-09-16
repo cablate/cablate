@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <!-- Ocean 漸變色 -->
+    <linearGradient id="oceanGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#58a6ff;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#79c0ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a5d6ff;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- 發光效果 -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- 背景圓 -->
+  <circle cx="50" cy="50" r="48" fill="#0d1117" stroke="url(#oceanGradient)" stroke-width="1" opacity="0.3"/>
+
+  <!-- 星星主體 -->
+  <path d="M50,20 L57,39 L77,39 L61,51 L68,70 L50,58 L32,70 L39,51 L23,39 L43,39 Z"
+        fill="url(#oceanGradient)"
+        filter="url(#glow)"/>
+
+  <!-- 小星點裝飾 -->
+  <circle cx="25" cy="25" r="2" fill="#a5d6ff" opacity="0.6"/>
+  <circle cx="75" cy="30" r="1.5" fill="#79c0ff" opacity="0.8"/>
+  <circle cx="70" cy="75" r="1" fill="#a5d6ff" opacity="0.7"/>
+</svg>

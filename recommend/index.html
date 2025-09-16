@@ -1,0 +1,1782 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CabLate 推薦清單 | 精選課程與學習資源</title>
+    <meta name="description" content="CabLate 親自體驗過的優質課程與學習資源推薦。真實心得分享，幫你找到適合的學習方向。" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="alternate icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⭐</text></svg>" />
+
+    <!-- Additional SEO -->
+    <meta name="author" content="CabLate" />
+    <meta name="keywords" content="CabLate, 課程推薦, 線上學習, 學習資源, 課程評價, 真實心得" />
+    <meta property="og:title" content="CabLate 推薦清單 | 精選優質學習資源" />
+    <meta property="og:description" content="CabLate 親自體驗的課程推薦，包含程式開發、UI/UX設計等學習資源" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="CabLate 推薦清單" />
+
+    <style>
+      :root {
+        /* Ocean Theme - 深海柔和配色 */
+        --bg: #0d1117; /* 深墨藍 */
+        --bg-card: #161b22; /* 暗鯨藍 */
+        --text: #e6f1ff; /* 主文字 */
+        --text-dim: #8b949e; /* 次要文字 */
+        --accent: #58a6ff; /* 天空藍 */
+        --accent-light: #79c0ff; /* 柔霧藍 */
+        --accent-lighter: #a5d6ff; /* 冰晶藍 */
+        --border: rgba(88, 166, 255, 0.15);
+        --success: #7ee3f0; /* 淺湖藍 */
+        --warning: #79c0ff; /* 柔霧藍 */
+        --glow: 0 0 20px rgba(88, 166, 255, 0.3);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+        min-height: 100vh;
+        position: relative;
+      }
+
+      /* Ocean Galaxy background with Stars */
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background:
+                /* Large bright stars */ radial-gradient(4px 4px at 15% 25%, white, transparent), radial-gradient(3px 3px at 75% 15%, var(--accent-lighter), transparent), radial-gradient(4px 4px at 85% 45%, white, transparent), radial-gradient(3px 3px at 25% 75%, var(--accent-lighter), transparent), radial-gradient(4px 4px at 65% 85%, white, transparent), /* Medium stars */ radial-gradient(2px 2px at 35% 15%, white, transparent), radial-gradient(2px 2px at 55% 35%, var(--accent-light), transparent), radial-gradient(2px 2px at 15% 55%, white, transparent), radial-gradient(2px 2px at 95% 65%, var(--accent-light), transparent), radial-gradient(2px 2px at 45% 95%, white, transparent), /* Small stars */ radial-gradient(1px 1px at 10% 10%, white, transparent), radial-gradient(1px 1px at 30% 30%, white, transparent), radial-gradient(1px 1px at 50% 50%, white, transparent), radial-gradient(1px 1px at 70% 70%, white, transparent),
+          radial-gradient(1px 1px at 90% 90%, white, transparent), /* Galaxy glow */ radial-gradient(circle at 20% 50%, rgba(88, 166, 255, 0.03) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(121, 192, 255, 0.02) 0%, transparent 50%), radial-gradient(circle at 40% 20%, rgba(165, 214, 255, 0.02) 0%, transparent 50%);
+        background-size:
+                /* Large stars */ 200% 200%, 200% 200%, 200% 200%, 200% 200%, 200% 200%, /* Medium stars */ 150% 150%, 150% 150%, 150% 150%, 150% 150%, 150% 150%, /* Small stars */ 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, /* Galaxy */ 100% 100%, 100% 100%, 100% 100%;
+        pointer-events: none;
+        z-index: -1;
+        animation: starsFloat 100s linear infinite;
+      }
+
+      @keyframes starsFloat {
+        from {
+          transform: translateY(0);
+        }
+        to {
+          transform: translateY(-100px);
+        }
+      }
+
+      /* Nebula effect */
+      body::after {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(ellipse at bottom, rgba(88, 166, 255, 0.08) 0%, transparent 40%), radial-gradient(ellipse at top, rgba(121, 192, 255, 0.05) 0%, transparent 40%);
+        pointer-events: none;
+        z-index: -1;
+        animation: nebulaShift 20s ease-in-out infinite;
+      }
+
+      @keyframes nebulaShift {
+        0%,
+        100% {
+          opacity: 0.3;
+        }
+        50% {
+          opacity: 0.8;
+        }
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        position: relative;
+      }
+
+      /* Cosmic dust particles */
+      @keyframes drift {
+        0% {
+          transform: translateY(0) translateX(0);
+          opacity: 0;
+        }
+        10% {
+          opacity: 1;
+        }
+        90% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-100vh) translateX(100px);
+          opacity: 0;
+        }
+      }
+
+      .cosmic-dust {
+        position: fixed;
+        width: 3px;
+        height: 3px;
+        background: var(--accent-lighter);
+        border-radius: 50%;
+        animation: drift 15s linear infinite;
+        z-index: -1;
+      }
+
+      .cosmic-dust:nth-child(1) {
+        left: 10%;
+        animation-delay: 0s;
+      }
+      .cosmic-dust:nth-child(2) {
+        left: 30%;
+        animation-delay: 3s;
+      }
+      .cosmic-dust:nth-child(3) {
+        left: 50%;
+        animation-delay: 6s;
+      }
+      .cosmic-dust:nth-child(4) {
+        left: 70%;
+        animation-delay: 9s;
+      }
+      .cosmic-dust:nth-child(5) {
+        left: 90%;
+        animation-delay: 12s;
+      }
+
+      /* Header - Galaxy Style */
+      header {
+        padding: 3rem 0;
+        margin-bottom: 3rem;
+        background: radial-gradient(ellipse at top, rgba(88, 166, 255, 0.15) 0%, transparent 50%), linear-gradient(180deg, rgba(22, 27, 34, 0.9) 0%, transparent 100%);
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Stars animation - Enhanced */
+      header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: radial-gradient(3px 3px at 20% 30%, white, transparent), radial-gradient(2px 2px at 60% 70%, var(--accent-lighter), transparent), radial-gradient(2px 2px at 80% 20%, white, transparent), radial-gradient(1px 1px at 40% 60%, var(--accent-light), transparent), radial-gradient(2px 2px at 10% 80%, white, transparent), radial-gradient(3px 3px at 90% 10%, var(--accent-lighter), transparent), radial-gradient(1px 1px at 30% 40%, white, transparent), radial-gradient(2px 2px at 70% 90%, var(--accent-light), transparent);
+        background-size: 300px 300px, 400px 400px, 350px 350px, 450px 450px, 320px 320px, 380px 380px, 420px 420px, 360px 360px;
+        background-repeat: repeat;
+        opacity: 0.6;
+        animation: twinkle 5s ease-in-out infinite;
+        pointer-events: none;
+      }
+
+      @keyframes twinkle {
+        0%,
+        100% {
+          opacity: 0.6;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1.02);
+        }
+      }
+
+      header::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--accent) 20%, var(--accent-light) 50%, var(--accent) 80%, transparent);
+        box-shadow: 0 0 20px rgba(88, 166, 255, 0.5);
+      }
+
+      .header-content {
+        text-align: center;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Galaxy orbs */
+      .header-content::before,
+      .header-content::after {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(40px);
+        animation: float 8s ease-in-out infinite;
+        pointer-events: none;
+      }
+
+      .header-content::before {
+        width: 150px;
+        height: 150px;
+        background: radial-gradient(circle, rgba(88, 166, 255, 0.3) 0%, transparent 70%);
+        top: -50px;
+        left: -50px;
+      }
+
+      .header-content::after {
+        width: 200px;
+        height: 200px;
+        background: radial-gradient(circle, rgba(121, 192, 255, 0.2) 0%, transparent 70%);
+        bottom: -100px;
+        right: -100px;
+        animation-delay: 4s;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translate(0, 0);
+        }
+        25% {
+          transform: translate(20px, -20px);
+        }
+        50% {
+          transform: translate(-20px, 20px);
+        }
+        75% {
+          transform: translate(20px, 20px);
+        }
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        letter-spacing: 2px;
+        position: relative;
+        display: inline-block;
+        background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 25%, var(--accent-lighter) 50%, var(--accent-light) 75%, var(--accent) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        background-size: 200% 200%;
+        animation: gradientShift 3s ease infinite;
+        text-shadow: 0 0 40px rgba(88, 166, 255, 0.5);
+        filter: drop-shadow(0 0 20px rgba(88, 166, 255, 0.3));
+      }
+
+      @keyframes gradientShift {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      h1::before {
+        content: "✦ ";
+        position: absolute;
+        left: -30px;
+        color: var(--accent-light);
+        animation: pulse 2s infinite;
+      }
+
+      h1::after {
+        content: " ✦";
+        position: absolute;
+        right: -30px;
+        color: var(--accent-light);
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 0.5;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1.2);
+        }
+      }
+
+      .tagline {
+        color: var(--text-dim);
+        font-size: 1.1rem;
+        margin-top: 0.5rem;
+        letter-spacing: 1px;
+        opacity: 0;
+        animation: fadeInUp 1s ease forwards;
+        animation-delay: 0.3s;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .disclosure {
+        background: linear-gradient(135deg, rgba(88, 166, 255, 0.15) 0%, rgba(121, 192, 255, 0.05) 100%), radial-gradient(ellipse at center, rgba(88, 166, 255, 0.1) 0%, transparent 70%);
+        border: 1px solid transparent;
+        border-image: linear-gradient(135deg, var(--accent), var(--accent-light), var(--accent), var(--accent-light));
+        border-image-slice: 1;
+        border-radius: 12px;
+        padding: 1rem 2rem;
+        margin: 2rem auto;
+        max-width: 600px;
+        font-size: 0.95rem;
+        text-align: center;
+        color: var(--accent-lighter);
+        position: relative;
+        overflow: hidden;
+        box-shadow: inset 0 0 30px rgba(88, 166, 255, 0.1), 0 0 30px rgba(88, 166, 255, 0.2);
+        animation: floatDisclosure 6s ease-in-out infinite;
+      }
+
+      @keyframes floatDisclosure {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-5px);
+        }
+      }
+
+      .disclosure::before {
+        content: "";
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: linear-gradient(45deg, var(--accent), transparent 30%, transparent 70%, var(--accent-light));
+        border-radius: 12px;
+        opacity: 0.5;
+        z-index: -1;
+        animation: rotateGradient 4s linear infinite;
+      }
+
+      @keyframes rotateGradient {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .disclosure::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        animation: shimmer 3s infinite;
+      }
+
+      @keyframes shimmer {
+        0% {
+          left: -100%;
+        }
+        100% {
+          left: 200%;
+        }
+      }
+
+      .disclosure-icon {
+        display: inline-block;
+        font-size: 1.2rem;
+        animation: sparkle 2s ease-in-out infinite;
+      }
+
+      .disclosure-icon:nth-child(1) {
+        animation-delay: 0s;
+      }
+
+      .disclosure-icon:nth-child(3) {
+        animation-delay: 1s;
+      }
+
+      @keyframes sparkle {
+        0%,
+        100% {
+          transform: scale(1) rotate(0deg);
+          opacity: 0.8;
+        }
+        50% {
+          transform: scale(1.3) rotate(180deg);
+          opacity: 1;
+        }
+      }
+
+      .disclosure-text {
+        margin: 0 1rem;
+        letter-spacing: 0.5px;
+      }
+
+      /* Navigation Tabs - Galaxy Enhanced */
+      .tabs {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        border-bottom: 1px solid var(--border);
+        overflow-x: hidden; /* 改為 hidden 防止滾動條 */
+        overflow-y: visible;
+        position: relative;
+        background: linear-gradient(90deg, transparent, rgba(88, 166, 255, 0.03), transparent), radial-gradient(ellipse at center, rgba(88, 166, 255, 0.02) 0%, transparent 70%);
+        padding: 0.5rem;
+        border-radius: 12px 12px 0 0;
+      }
+
+      .tabs::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--accent) 20%, var(--accent-light) 50%, var(--accent) 80%, transparent);
+        opacity: 0.3;
+        animation: glowPulse 4s ease-in-out infinite;
+      }
+
+      .tabs::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--accent-light) 30%, var(--accent-lighter) 50%, var(--accent-light) 70%, transparent);
+        opacity: 0.5;
+        animation: slideGlow 3s linear infinite;
+      }
+
+      @keyframes glowPulse {
+        0%,
+        100% {
+          opacity: 0.3;
+        }
+        50% {
+          opacity: 0.6;
+        }
+      }
+
+      @keyframes slideGlow {
+        0% {
+          transform: translateX(-100%);
+        }
+        100% {
+          transform: translateX(100%);
+        }
+      }
+
+      .tab {
+        padding: 0.75rem 1.5rem;
+        color: var(--text-dim);
+        text-decoration: none;
+        border-bottom: 3px solid transparent;
+        white-space: nowrap;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        border-radius: 8px 8px 0 0;
+        overflow: hidden;
+        flex-shrink: 0; /* 防止 tab 收縮 */
+      }
+
+      .tab::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(88, 166, 255, 0.2), transparent);
+        transition: left 0.5s;
+      }
+
+      .tab:hover::before {
+        left: 100%;
+      }
+
+      .tab:hover {
+        color: var(--accent-light);
+        transform: translateY(-1px); /* 減少位移避免溢出 */
+        background: rgba(88, 166, 255, 0.05);
+      }
+
+      .tab.active {
+        color: var(--text);
+        border-bottom-color: var(--accent);
+        background: linear-gradient(135deg, rgba(88, 166, 255, 0.1) 0%, rgba(121, 192, 255, 0.05) 100%);
+        text-shadow: 0 0 15px rgba(88, 166, 255, 0.6);
+        box-shadow: inset 0 -3px 0 var(--accent), 0 0 20px rgba(88, 166, 255, 0.2);
+      }
+
+      .tab.active::after {
+        content: "✦";
+        position: absolute;
+        right: 0.5rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--accent-lighter);
+        animation: twinkle 2s infinite;
+        font-size: 0.8rem;
+      }
+
+      /* Product Grid */
+      .products-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+        position: relative;
+      }
+
+      /* Stagger animation for cards */
+      .product-card {
+        opacity: 0;
+        animation: fadeInUp 0.6s forwards;
+      }
+
+      .product-card:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      .product-card:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .product-card:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .product-card {
+        background: linear-gradient(135deg, var(--bg-card) 0%, rgba(22, 27, 34, 0.8) 100%), radial-gradient(ellipse at top right, rgba(88, 166, 255, 0.05) 0%, transparent 50%);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(88, 166, 255, 0.1);
+      }
+
+      /* Cosmic glow border */
+      .product-card::before {
+        content: "";
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: linear-gradient(45deg, var(--accent), transparent 40%, transparent 60%, var(--accent-light));
+        border-radius: 16px;
+        opacity: 0;
+        z-index: -1;
+        transition: opacity 0.4s;
+        animation: rotateGlow 8s linear infinite;
+      }
+
+      @keyframes rotateGlow {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Star particles on hover */
+      .product-card::after {
+        content: "✦ ✧ ✦";
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        color: var(--accent-lighter);
+        font-size: 0.8rem;
+        opacity: 0;
+        transition: all 0.4s;
+        transform: translateY(10px);
+      }
+
+      .product-card:hover::before {
+        opacity: 0.6;
+      }
+
+      .product-card:hover::after {
+        opacity: 0.5;
+        transform: translateY(0);
+      }
+
+      .product-card:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 20px 40px rgba(88, 166, 255, 0.3), 0 10px 20px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(88, 166, 255, 0.3), inset 0 -1px 0 rgba(88, 166, 255, 0.3);
+        border-color: var(--accent);
+        background: linear-gradient(135deg, rgba(22, 27, 34, 0.95) 0%, rgba(22, 27, 34, 0.8) 100%), radial-gradient(ellipse at top right, rgba(88, 166, 255, 0.1) 0%, transparent 50%);
+      }
+
+      .product-image {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+        background: linear-gradient(135deg, #58a6ff 0%, #79c0ff 100%);
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Nebula effect in image */
+      .product-image::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(circle at 30% 50%, rgba(165, 214, 255, 0.3) 0%, transparent 40%), radial-gradient(circle at 70% 30%, rgba(121, 192, 255, 0.2) 0%, transparent 40%), radial-gradient(circle at 50% 80%, rgba(88, 166, 255, 0.2) 0%, transparent 40%);
+        animation: nebulaDrift 10s ease-in-out infinite;
+      }
+
+      @keyframes nebulaDrift {
+        0%,
+        100% {
+          transform: scale(1) rotate(0deg);
+        }
+        50% {
+          transform: scale(1.1) rotate(5deg);
+        }
+      }
+
+      /* Shimmer sweep effect */
+      .product-image::after {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.2) 48%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.2) 52%, transparent 70%);
+        transform: rotate(45deg) translateY(100%);
+        transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .product-card:hover .product-image::after {
+        transform: rotate(45deg) translateY(-100%);
+      }
+
+      /* Placeholder stars */
+      .product-image:not([src])::after {
+        content: "✦";
+        position: absolute;
+        font-size: 3rem;
+        color: rgba(255, 255, 255, 0.2);
+        animation: pulse 2s infinite;
+      }
+
+      .product-content {
+        padding: 1.25rem;
+        position: relative;
+      }
+
+      .product-content::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 1.25rem;
+        right: 1.25rem;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(88, 166, 255, 0.2), transparent);
+      }
+
+      .product-title {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+        color: var(--text);
+        transition: color 0.3s;
+      }
+
+      .product-card:hover .product-title {
+        color: var(--accent-light);
+        text-shadow: 0 0 5px rgba(121, 192, 255, 0.3);
+      }
+
+      .product-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.75rem;
+        padding-bottom: 0.75rem;
+        border-bottom: 1px solid rgba(88, 166, 255, 0.1);
+      }
+
+      .product-price {
+        color: var(--success);
+        font-weight: 600;
+        font-size: 1.1rem;
+        text-shadow: 0 0 20px rgba(126, 227, 240, 0.5);
+      }
+
+      .product-discount {
+        background: rgba(121, 192, 255, 0.2);
+        color: var(--accent-light);
+        padding: 0.2rem 0.5rem;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        border: 1px solid var(--accent-light);
+      }
+
+      .product-reason {
+        color: var(--text-dim);
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+        line-height: 1.4;
+        position: relative;
+        padding-left: 1.2rem;
+      }
+
+      .product-reason::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: var(--accent);
+        font-weight: bold;
+      }
+
+      .product-feedback {
+        background: rgba(121, 192, 255, 0.08);
+        border-left: 3px solid var(--accent-light);
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+        font-size: 0.85rem;
+        color: var(--accent-lighter);
+        font-style: italic;
+      }
+
+      .btn-buy {
+        display: block;
+        width: 100%;
+        padding: 0.75rem;
+        background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+        color: var(--bg);
+        text-align: center;
+        text-decoration: none;
+        border-radius: 10px;
+        font-weight: 600;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 1px solid rgba(88, 166, 255, 0.3);
+        position: relative;
+        overflow: hidden;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 4px 15px rgba(88, 166, 255, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      }
+
+      /* Cosmic shimmer effect */
+      .btn-buy::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(45deg, transparent 40%, rgba(255, 255, 255, 0.3) 50%, transparent 60%);
+        transform: rotate(45deg) translateX(-100%);
+        transition: transform 0.6s;
+      }
+
+      .btn-buy::after {
+        content: "→";
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: transform 0.3s;
+        opacity: 0.8;
+      }
+
+      .btn-buy:hover {
+        background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent-lighter) 100%);
+        box-shadow: 0 8px 25px rgba(88, 166, 255, 0.4), 0 0 40px rgba(88, 166, 255, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        transform: translateY(-3px) scale(1.02);
+        border-color: var(--accent-light);
+      }
+
+      .btn-buy:hover::before {
+        transform: rotate(45deg) translateX(100%);
+      }
+
+      .btn-buy:hover::after {
+        transform: translateY(-50%) translateX(3px);
+      }
+
+      .coupon-code {
+        display: inline-block;
+        background: rgba(126, 227, 240, 0.1);
+        color: var(--success);
+        padding: 0.25rem 0.75rem;
+        border-radius: 4px;
+        font-family: monospace;
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+        cursor: pointer;
+        transition: all 0.2s;
+        border: 1px solid rgba(126, 227, 240, 0.3);
+      }
+
+      .coupon-code:hover {
+        background: rgba(126, 227, 240, 0.2);
+        box-shadow: 0 0 10px rgba(126, 227, 240, 0.3);
+      }
+
+      /* Section Headers - Galaxy Enhanced */
+      .section-header {
+        margin-bottom: 2rem;
+        position: relative;
+        padding-left: 1.5rem;
+      }
+
+      .section-header::before {
+        content: "◈";
+        position: absolute;
+        left: 0;
+        top: 0.2rem;
+        color: var(--accent);
+        font-size: 1.2rem;
+        animation: spin 10s linear infinite;
+      }
+
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+        background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 30%, var(--accent-lighter) 50%, var(--accent-light) 70%, var(--accent) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        background-size: 200% 200%;
+        animation: gradientFlow 4s ease infinite;
+        display: inline-block;
+        position: relative;
+        letter-spacing: 1px;
+        text-shadow: 0 0 30px rgba(88, 166, 255, 0.4);
+        filter: drop-shadow(0 0 10px rgba(88, 166, 255, 0.2));
+      }
+
+      @keyframes gradientFlow {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, var(--accent) 0%, var(--accent-light) 50%, var(--accent) 100%);
+        opacity: 0.5;
+        animation: shimmer 3s infinite;
+      }
+
+      .section-subtitle {
+        color: var(--text-dim);
+        font-size: 0.95rem;
+        opacity: 0.9;
+        letter-spacing: 0.5px;
+        margin-left: 1.5rem;
+        position: relative;
+      }
+
+      .section-subtitle::before {
+        content: "✦";
+        position: absolute;
+        left: -1rem;
+        color: var(--accent-lighter);
+        opacity: 0.5;
+        animation: pulse 2s infinite;
+      }
+
+      /* Creator Section - Galaxy Enhanced */
+      .creator-group {
+        background: linear-gradient(135deg, rgba(22, 27, 34, 0.95) 0%, rgba(22, 27, 34, 0.7) 100%), radial-gradient(ellipse at top left, rgba(88, 166, 255, 0.08) 0%, transparent 50%), radial-gradient(ellipse at bottom right, rgba(121, 192, 255, 0.06) 0%, transparent 50%);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 1.8rem;
+        margin-bottom: 1.5rem;
+        position: relative;
+        box-shadow: inset 0 1px 0 rgba(88, 166, 255, 0.2), inset 0 -1px 0 rgba(88, 166, 255, 0.1), 0 10px 30px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+        backdrop-filter: blur(10px);
+        transition: all 0.4s;
+      }
+
+      /* Animated cosmic border */
+      .creator-group::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--accent) 20%, var(--accent-light) 40%, var(--accent-lighter) 50%, var(--accent-light) 60%, var(--accent) 80%, transparent);
+        animation: borderFlow 5s linear infinite;
+      }
+
+      @keyframes borderFlow {
+        0% {
+          transform: translateX(-100%);
+        }
+        100% {
+          transform: translateX(100%);
+        }
+      }
+
+      /* Constellation dots */
+      .creator-group::after {
+        content: "· · · · ·";
+        position: absolute;
+        top: 1rem;
+        right: 1.5rem;
+        color: var(--accent);
+        opacity: 0.3;
+        letter-spacing: 0.5rem;
+        font-size: 1.2rem;
+        animation: twinkle 3s infinite;
+      }
+
+      .creator-group:hover {
+        transform: translateY(-2px);
+        box-shadow: inset 0 1px 0 rgba(88, 166, 255, 0.3), inset 0 -1px 0 rgba(88, 166, 255, 0.2), 0 15px 35px rgba(0, 0, 0, 0.4), 0 5px 15px rgba(88, 166, 255, 0.2);
+        border-color: rgba(88, 166, 255, 0.5);
+      }
+
+      .creator-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+      }
+
+      .creator-name {
+        font-size: 1.2rem;
+        color: var(--accent);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .creator-name::before {
+        content: "✦";
+        color: var(--accent-light);
+        font-size: 1rem;
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.5;
+        }
+      }
+
+      .creator-link {
+        padding: 0.4rem 0.8rem;
+        background: rgba(88, 166, 255, 0.1);
+        color: var(--accent);
+        text-decoration: none;
+        border-radius: 6px;
+        font-size: 0.85rem;
+        border: 1px solid var(--accent);
+        transition: all 0.3s;
+      }
+
+      .creator-link:hover {
+        background: var(--accent);
+        color: var(--bg);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(88, 166, 255, 0.3);
+      }
+
+      .creator-products {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .creator-product {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.75rem;
+        background: linear-gradient(135deg, var(--bg) 0%, rgba(13, 17, 23, 0.8) 100%);
+        border-radius: 8px;
+        border: 1px solid rgba(88, 166, 255, 0.1);
+        transition: all 0.3s;
+      }
+
+      .creator-product:hover {
+        background: linear-gradient(135deg, rgba(13, 17, 23, 0.9) 0%, rgba(22, 27, 34, 0.9) 100%);
+        border-color: var(--accent);
+        transform: translateX(5px);
+      }
+
+      .creator-product-info {
+        flex: 1;
+      }
+
+      .creator-product-name {
+        font-weight: 500;
+        margin-bottom: 0.25rem;
+      }
+
+      .creator-product-type {
+        color: var(--text-dim);
+        font-size: 0.85rem;
+      }
+
+      .product-actions {
+        display: flex;
+        gap: 0.5rem;
+      }
+
+      .btn-small {
+        padding: 0.5rem 1rem;
+        background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+        color: var(--bg);
+        text-decoration: none;
+        border-radius: 6px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        transition: all 0.3s;
+        position: relative;
+        overflow: hidden;
+        border: none;
+        cursor: pointer;
+      }
+
+      .btn-small::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        transition: width 0.6s, height 0.6s;
+      }
+
+      .btn-small:hover::before {
+        width: 300%;
+        height: 300%;
+      }
+
+      .btn-small:hover {
+        opacity: 0.9;
+        box-shadow: 0 0 15px rgba(88, 166, 255, 0.3);
+        transform: translateY(-1px);
+      }
+
+      .btn-feedback {
+        background: linear-gradient(135deg, rgba(126, 227, 240, 0.2) 0%, rgba(126, 227, 240, 0.1) 100%);
+        color: var(--success);
+        border: 1px solid var(--success);
+      }
+
+      .btn-feedback:hover {
+        background: var(--success);
+        color: var(--bg);
+      }
+
+      /* Modal */
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 10000;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .modal.active {
+        display: flex;
+        animation: fadeIn 0.3s;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .modal-content {
+        background: var(--bg-card);
+        border-radius: 15px;
+        max-width: 600px;
+        width: 100%;
+        max-height: 80vh;
+        overflow-y: auto;
+        border: 1px solid var(--accent);
+        box-shadow: 0 0 50px rgba(88, 166, 255, 0.3);
+        animation: slideUp 0.3s;
+      }
+
+      @keyframes slideUp {
+        from {
+          transform: translateY(30px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      .modal-header {
+        padding: 1.5rem;
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: linear-gradient(135deg, rgba(88, 166, 255, 0.1) 0%, transparent 100%);
+      }
+
+      .modal-title {
+        font-size: 1.3rem;
+        color: var(--accent);
+      }
+
+      .modal-close {
+        background: none;
+        border: none;
+        color: var(--text-dim);
+        font-size: 1.5rem;
+        cursor: pointer;
+        padding: 0;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: all 0.3s;
+      }
+
+      .modal-close:hover {
+        background: rgba(88, 166, 255, 0.1);
+        color: var(--accent);
+        transform: rotate(90deg);
+      }
+
+      .modal-body {
+        padding: 1.5rem;
+      }
+
+      .feedback-section {
+        margin-bottom: 2rem;
+      }
+
+      .feedback-section h3 {
+        color: var(--accent-light);
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+      }
+
+      .feedback-section p {
+        color: var(--text-dim);
+        line-height: 1.8;
+        margin-bottom: 1rem;
+      }
+
+      .feedback-date {
+        color: var(--text-dim);
+        font-size: 0.85rem;
+        opacity: 0.7;
+        margin-top: 0.5rem;
+      }
+
+      .feedback-highlight {
+        background: rgba(88, 166, 255, 0.1);
+        border-left: 3px solid var(--accent);
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 5px;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .tabs {
+          gap: 0.5rem;
+          padding: 0.5rem 0.25rem; /* 減少 padding 避免溢出 */
+          overflow-x: auto; /* 小螢幕允許滾動 */
+          overflow-y: hidden;
+          -webkit-overflow-scrolling: touch; /* iOS 平滑滾動 */
+          scrollbar-width: none; /* Firefox 隱藏滾動條 */
+        }
+
+        .tabs::-webkit-scrollbar {
+          display: none; /* Chrome/Safari 隱藏滾動條 */
+        }
+
+        .tab {
+          padding: 0.5rem 1rem;
+          font-size: 0.9rem;
+          flex-shrink: 0; /* 防止 tab 被壓縮 */
+        }
+
+        .products-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .creator-header {
+          flex-direction: column;
+          gap: 1rem;
+          align-items: flex-start;
+        }
+
+        .product-actions {
+          flex-direction: column;
+          width: 100%;
+        }
+
+        .btn-small {
+          width: 100%;
+        }
+      }
+
+      /* Footer */
+      footer {
+        margin-top: 4rem;
+        padding: 2rem 0;
+        border-top: 1px solid var(--border);
+        text-align: center;
+        color: var(--text-dim);
+        font-size: 0.9rem;
+        position: relative;
+      }
+
+      footer::before {
+        content: "";
+        position: absolute;
+        top: -1px;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      }
+
+      /* Ocean theme animations */
+      @keyframes subtle-glow {
+        0% {
+          box-shadow: 0 0 5px rgba(88, 166, 255, 0.1);
+        }
+        50% {
+          box-shadow: 0 0 20px rgba(88, 166, 255, 0.2);
+        }
+        100% {
+          box-shadow: 0 0 5px rgba(88, 166, 255, 0.1);
+        }
+      }
+
+      /* Subtle Shooting star effect */
+      @keyframes shootingStar {
+        0% {
+          transform: translateX(300px) translateY(-300px);
+          opacity: 0;
+        }
+        5% {
+          opacity: 1;
+        }
+        70% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateX(-600px) translateY(600px);
+          opacity: 0;
+        }
+      }
+
+      .shooting-star {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 1px;
+        height: 1px;
+        background: white;
+        animation: shootingStar 8s linear infinite;
+        z-index: 1;
+      }
+
+      .shooting-star::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50px;
+        height: 1px;
+        background: linear-gradient(to left, transparent, rgba(255, 255, 255, 0.8), white);
+        transform: translateX(-50px) rotate(-45deg);
+        transform-origin: right center;
+      }
+
+      .shooting-star:nth-child(2) {
+        animation-delay: 3s;
+        animation-duration: 10s;
+      }
+
+      .shooting-star:nth-child(3) {
+        animation-delay: 6s;
+        animation-duration: 12s;
+      }
+
+      /* Static stars decoration */
+      .stars-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
+      }
+
+      .star {
+        position: absolute;
+        color: white;
+        text-shadow: 0 0 3px rgba(255, 255, 255, 0.8);
+        animation: starTwinkle 4s ease-in-out infinite;
+        z-index: 1;
+        opacity: 0.7;
+      }
+
+      @keyframes starTwinkle {
+        0%,
+        100% {
+          opacity: 0.3;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.9;
+          transform: scale(1.1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Stars Background -->
+    <div class="stars-bg">
+      <span class="star" style="top: 5%; left: 10%; font-size: 10px">✦</span>
+      <span class="star" style="top: 15%; left: 85%; font-size: 8px; animation-delay: 0.5s">·</span>
+      <span class="star" style="top: 25%; left: 25%; font-size: 12px; animation-delay: 1s">✦</span>
+      <span class="star" style="top: 35%; left: 70%; font-size: 6px; animation-delay: 1.5s">·</span>
+      <span class="star" style="top: 45%; left: 40%; font-size: 10px; animation-delay: 2s">✧</span>
+      <span class="star" style="top: 55%; left: 90%; font-size: 8px; animation-delay: 2.5s">·</span>
+      <span class="star" style="top: 65%; left: 15%; font-size: 14px; animation-delay: 0.8s">✦</span>
+      <span class="star" style="top: 75%; left: 60%; font-size: 6px; animation-delay: 1.3s">·</span>
+      <span class="star" style="top: 85%; left: 35%; font-size: 10px; animation-delay: 1.8s">✧</span>
+      <span class="star" style="top: 10%; left: 50%; font-size: 4px; animation-delay: 0.3s">·</span>
+      <span class="star" style="top: 30%; left: 5%; font-size: 12px; animation-delay: 2.3s">✦</span>
+      <span class="star" style="top: 50%; left: 75%; font-size: 8px; animation-delay: 0.7s">·</span>
+      <span class="star" style="top: 70%; left: 45%; font-size: 10px; animation-delay: 1.7s">✧</span>
+      <span class="star" style="top: 20%; left: 65%; font-size: 12px; animation-delay: 2.7s">✦</span>
+      <span class="star" style="top: 90%; left: 80%; font-size: 6px; animation-delay: 0.2s">·</span>
+      <span class="star" style="top: 8%; left: 30%; font-size: 4px; animation-delay: 1.2s">·</span>
+      <span class="star" style="top: 40%; left: 95%; font-size: 8px; animation-delay: 0.9s">✧</span>
+      <span class="star" style="top: 60%; left: 8%; font-size: 6px; animation-delay: 2.1s">·</span>
+      <span class="star" style="top: 12%; left: 72%; font-size: 10px; animation-delay: 0.6s">✦</span>
+      <span class="star" style="top: 80%; left: 20%; font-size: 8px; animation-delay: 1.9s">·</span>
+    </div>
+
+    <!-- Cosmic particles -->
+    <div class="shooting-star"></div>
+    <div class="shooting-star"></div>
+    <div class="shooting-star"></div>
+    <div class="cosmic-dust"></div>
+    <div class="cosmic-dust"></div>
+    <div class="cosmic-dust"></div>
+    <div class="cosmic-dust"></div>
+    <div class="cosmic-dust"></div>
+
+    <div class="container">
+      <!-- Header -->
+      <header>
+        <div class="header-content">
+          <h1>CabLate 推薦清單</h1>
+        </div>
+      </header>
+
+      <!-- Disclosure -->
+      <div class="disclosure">
+        <span class="disclosure-icon">✨</span>
+        <span class="disclosure-text">這些是我自己買過、用過覺得不錯的學習資源</span>
+        <span class="disclosure-icon">✨</span>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="tabs">
+        <a href="#all" class="tab active">全部</a>
+        <a href="#courses" class="tab">線上課程</a>
+        <a href="#creators" class="tab">支持創作者</a>
+      </nav>
+
+      <!-- Recommended Courses -->
+      <section id="courses">
+        <div class="section-header">
+          <h2 class="section-title">推薦學習資源</h2>
+          <p class="section-subtitle">我正在學或學過的好課程與書籍</p>
+        </div>
+
+        <div class="products-grid">
+          <!-- Book 1 - Self Media Handbook -->
+          <div class="product-card">
+            <div class="product-image" style="background-image: url('courses/miss_marketing_0to1/image.webp'); background-size: cover; background-position: center"></div>
+            <div class="product-content">
+              <h3 class="product-title">自媒體經營從 0~1 實戰手冊</h3>
+              <div class="product-meta">
+                <span class="product-price">NT$ 1,099</span>
+                <span class="product-discount">電子書</span>
+              </div>
+              <p class="product-reason">從零打造個人品牌，邊看邊做邊變現的實戰系統</p>
+              <div class="product-feedback">"看完真的開始經營自媒體，3個月就有第一筆收入！"</div>
+              <a href="courses/miss_marketing_0to1.html" class="btn-buy">查看詳情 →</a>
+              <span class="coupon-code" onclick="copyCode(this)">優惠碼: cablate</span>
+            </div>
+          </div>
+
+          <!-- Course 2 - 接案講座 -->
+          <div class="product-card">
+            <div class="product-image" style="background-image: url('courses/mky_danow_0to1/image.webp'); background-size: cover; background-position: center"></div>
+            <div class="product-content">
+              <h3 class="product-title">小米 x 租大腦 接案講座</h3>
+              <div class="product-meta">
+                <span class="product-price">NT$ 688</span>
+                <span class="product-discount">講座回放</span>
+              </div>
+              <p class="product-reason">從行銷接案到創業第一桶金的實戰經驗</p>
+              <div class="product-feedback">"很多踩過的坑都有一語道破的解法！"</div>
+              <a href="courses/mky_danow_0to1/index.html" class="btn-buy">查看詳情 →</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Creators Section -->
+      <section id="creators">
+        <div class="section-header">
+          <h2 class="section-title">支持的創作者</h2>
+          <p class="section-subtitle">這些創作者的內容都很優質</p>
+        </div>
+
+        <!-- Miss Marketing -->
+        <div class="creator-group">
+          <div class="creator-header">
+            <h3 class="creator-name">Miss Marketing 市場部小姐</h3>
+            <a href="https://portaly.cc/miss-market" target="_blank" class="creator-link">Portaly</a>
+          </div>
+          <div class="creator-products">
+            <div class="creator-product">
+              <div class="creator-product-info">
+                <div class="creator-product-name">自媒體經營從 0~1 實戰手冊</div>
+                <div class="creator-product-type">電子書 • 6大章節+實戰表單</div>
+              </div>
+              <div class="product-actions">
+                <!-- <button class="btn-small btn-feedback" onclick="showFeedback('marketing-0to1')">我的心得</button> -->
+                <a href="courses/miss_marketing_0to1" class="btn-small">查看詳情</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 小米 -->
+        <div class="creator-group">
+          <div class="creator-header">
+            <h3 class="creator-name">小米 MiTime</h3>
+            <a href="https://portaly.cc/mitime-mkt" target="_blank" class="creator-link">Portaly</a>
+          </div>
+          <div class="creator-products">
+            <div class="creator-product">
+              <div class="creator-product-info">
+                <div class="creator-product-name">從行銷接案到創業的第一桶金</div>
+                <div class="creator-product-type">講座回放 • 120分鐘</div>
+              </div>
+              <div class="product-actions">
+                <a href="courses/mky_danow_0to1/index.html" class="btn-small">查看詳情</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Footer -->
+      <footer>
+        <p>© 2025 CabLate • 商品服務推薦</p>
+      </footer>
+    </div>
+
+    <!-- Feedback Modal -->
+    <div id="feedbackModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="modalTitle">課程心得</h2>
+          <button class="modal-close" onclick="closeModal()">&times;</button>
+        </div>
+        <div class="modal-body" id="modalBody">
+          <!-- Content will be inserted here -->
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Feedback data
+      const feedbackData = {
+        "marketing-0to1": {
+          title: "自媒體經營從 0~1 實戰手冊 - 我的閱讀心得",
+          content: `
+                    <div class="feedback-section">
+                        <h3>📚 為什麼買這本書</h3>
+                        <p>一直想開始經營自媒體但不知道怎麼開始，看到 Miss Marketing 這本實戰手冊，內容很系統化，而且有提供實作表單，感覺很實用就買了。</p>
+                        <div class="feedback-date">更新日期：2024/12/15</div>
+                    </div>
+
+                    <div class="feedback-section">
+                        <h3>💡 最大收穫</h3>
+                        <div class="feedback-highlight">
+                            <p>✅ 學會金三角定位法，找到自己的自媒體定位<br>
+                            ✅ 掌握內容產出技巧，不再沒梗<br>
+                            ✅ 了解變現模式，知道如何規劃收入<br>
+                            ✅ 建立完整的自媒體經營思維</p>
+                        </div>
+                    </div>
+
+                    <div class="feedback-section">
+                        <h3>📖 內容特色</h3>
+                        <p>這不是一本理論書，而是真的「邊看邊做」的實戰手冊。每個章節都有實戰練習表單，幫助你立即執行。從定位、品牌打造到變現，每個步驟都很清楚。</p>
+                        <p>特別喜歡「無限內容延伸術」這個章節，學會後真的不怕沒內容可寫了！</p>
+                    </div>
+
+                    <div class="feedback-section">
+                        <h3>🎯 實踐成果</h3>
+                        <p>看完書後的3個月，我的 IG 粉絲從200成長到3000，也開始有廠商詢問合作。現在正在規劃第一個線上產品，感謝這本書給的系統化指引！</p>
+                    </div>
+                `,
+        },
+        "python-fullstack": {
+          title: "Python 全端開發實戰 - 我的學習心得",
+          content: `
+                    <div class="feedback-section">
+                        <h3>📚 學習歷程</h3>
+                        <p>我從 2024 年 1 月開始學習這門課，當時完全沒有程式基礎。王老師的教學方式真的很適合新手，每個概念都會用生活化的例子解釋。</p>
+                        <p>前兩週專心學基礎語法，第三週開始寫小專案，現在已經能獨立完成簡單的網站了！</p>
+                        <div class="feedback-date">更新日期：2024/03/15</div>
+                    </div>
+
+                    <div class="feedback-section">
+                        <h3>💡 最大收穫</h3>
+                        <div class="feedback-highlight">
+                            <p>✅ 從零基礎到能寫網站後端<br>
+                            ✅ 學會使用 Django 框架<br>
+                            ✅ 了解資料庫設計原理<br>
+                            ✅ 掌握 RESTful API 開發</p>
+                        </div>
+                    </div>
+
+                    <div class="feedback-section">
+                        <h3>💬 真實感受</h3>
+                        <p>Discord 群組真的很活躍，有問題通常半小時內就有人回答。老師也會定期直播答疑，這點很加分。</p>
+                        <p>唯一小缺點是某些章節的影片畫質可以再好一點，但不影響學習。</p>
+                    </div>
+
+                    <div class="feedback-section">
+                        <h3>🎯 適合對象</h3>
+                        <p>如果你是完全新手，或是想轉職成為後端工程師，這門課真的很適合。但如果你已經有 Python 基礎，可以考慮從第 10 章開始看。</p>
+                    </div>
+                `,
+        },
+        "uiux-design": {
+          title: "UI/UX 設計實務 - 我的學習心得",
+          content: `
+                    <div class="feedback-section">
+                        <h3>🎨 為什麼選這門課</h3>
+                        <p>身為前端工程師，一直想加強設計能力。Alice 老師的作品集很吸引我，而且課程有包含開發者需要知道的設計知識。</p>
+                        <div class="feedback-date">更新日期：2024/02/28</div>
+                    </div>
+
+                    <div class="feedback-section">
+                        <h3>✨ 課程亮點</h3>
+                        <div class="feedback-highlight">
+                            <p>✅ Figma 從零到進階完整教學<br>
+                            ✅ 設計系統建立方法<br>
+                            ✅ 每週作業都有詳細批改<br>
+                            ✅ 包含實際接案流程分享</p>
+                        </div>
+                    </div>
+
+                    <div class="feedback-section">
+                        <h3>📝 學習筆記</h3>
+                        <p>老師強調的「設計不是美術，是解決問題」這個觀念改變了我對設計的看法。現在做專案會先思考使用者需求，而不是急著做漂亮的介面。</p>
+                        <p>作業批改超用心，每次都會收到 10 分鐘以上的影片回饋，指出可以改進的地方。</p>
+                    </div>
+
+                    <div class="feedback-section">
+                        <h3>💰 CP 值評估</h3>
+                        <p>以內容深度和老師的用心程度來說，這個價格很值得。特別是如果你想從工程師跨足設計領域，這門課能省下很多摸索時間。</p>
+                    </div>
+                `,
+        },
+      };
+
+      // Show feedback modal
+      function showFeedback(courseId) {
+        const modal = document.getElementById("feedbackModal");
+        const modalBody = document.getElementById("modalBody");
+        const modalTitle = document.getElementById("modalTitle");
+
+        const feedback = feedbackData[courseId];
+        if (feedback) {
+          modalTitle.textContent = feedback.title;
+          modalBody.innerHTML = feedback.content;
+          modal.classList.add("active");
+        }
+      }
+
+      // Close modal
+      function closeModal() {
+        const modal = document.getElementById("feedbackModal");
+        modal.classList.remove("active");
+      }
+
+      // Close modal when clicking outside
+      document.getElementById("feedbackModal").addEventListener("click", function (e) {
+        if (e.target === this) {
+          closeModal();
+        }
+      });
+
+      // ESC key to close modal
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          closeModal();
+        }
+      });
+
+      // Simple affiliate tracking
+      document.querySelectorAll(".btn-buy").forEach((btn) => {
+        btn.addEventListener("click", function (e) {
+          e.preventDefault();
+          const course = this.dataset.course;
+          console.log("Tracking:", course);
+
+          // Handle different course actions
+          if (course === "marketing-0to1") {
+            // 直接前往詳情頁，不阻止預設行為
+            return;
+          }
+
+          // Replace with actual affiliate URLs for other courses
+          const affiliateUrls = {
+            "python-fullstack": "https://example.com/python?ref=mysite",
+            javascript: "https://example.com/js?ref=mysite",
+            uiux: "https://example.com/design?ref=mysite",
+          };
+
+          // Simple redirect notice for other courses
+          if (confirm("即將前往課程頁面（聯盟連結）")) {
+            window.open(affiliateUrls[course] || "#", "_blank");
+          }
+        });
+      });
+
+      // Copy coupon code
+      function copyCode(element) {
+        const code = element.textContent.replace("優惠碼: ", "");
+        navigator.clipboard.writeText(code).then(() => {
+          const original = element.textContent;
+          element.textContent = "✓ 已複製！";
+          setTimeout(() => {
+            element.textContent = original;
+          }, 2000);
+        });
+      }
+
+      // Simple tab navigation
+      document.querySelectorAll(".tab").forEach((tab) => {
+        tab.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelectorAll(".tab").forEach((t) => t.classList.remove("active"));
+          this.classList.add("active");
+
+          // Simple section toggle
+          const target = this.getAttribute("href").substring(1);
+          if (target === "all") {
+            document.querySelectorAll("section").forEach((s) => (s.style.display = "block"));
+          } else {
+            document.querySelectorAll("section").forEach((s) => (s.style.display = "none"));
+            const targetSection = document.getElementById(target);
+            if (targetSection) targetSection.style.display = "block";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

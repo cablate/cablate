@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>n8n 104 職缺履歷分析模板</title>
+    <script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2.6.0/webcomponents-loader.js"></script>
+    <script src="https://unpkg.com/lit@2.7.0/polyfill-support.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@n8n_io/n8n-demo-component/n8n-demo.bundled.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+
+        --n8n-workflow-min-height: 600px;
+      }
+
+      n8n-demo {
+        display: block;
+        width: 100%;
+        height: 600px;
+        min-height: 600px;
+        max-height: 600px;
+      }
+      .embedded_workflow frame {
+        width: 100vw;
+        height: 100vh;
+        border: none;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <n8n-demo workflow="{}" style="width: 100%; height: 100%"></n8n-demo>
+
+    <script>
+      function resetWorkflow() {
+        const defaultWorkflow = {
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## Author: @cab_late\n## Reference: @ironv.careerlife\n \n參考 **@ironv.careerlife** 的 **n8n 面試大師模板** 進行流程優化調整、UI展示、並調整為針對 104 職缺。\n\n此模板沒有介接 Perplexity，可以參考 **@ironv.careerlife** 的文章，在 AI Agent 的 Tool 加入。\n\nhttps://www.threads.com/@ironv.careerlife/post/DLSYmadRRKM?xmt=AQF0RXmeO6mJ_ueWfgXKO-_G7qk8-Tv0RuhapD2Ua9T6sw\n\n使用須知:\n1. Vector Store 都以 ID 作為查詢 Key，如果要更改，就要所有 Vector Store 節點都修改。\n2. 履歷讀取進向量資料庫，已經勾選 **Clear Store**，如果要自己調整支援單獨更新履歷的功能，請注意每次向量資料庫中你所指定的 ID 永遠只會有一筆資料。\n3. 儲存的 Google Sheet 目前儲存兩個資料欄位，分別是 **job_urls** 與 **result**，請記得新增。\n4. **記得設定 Drive 節點的履歷檔案位置、Embeddings 節點都使用相同模型**\n5. **想在下方 Chat 查看結果，將最後的 google sheet 和 Parser 斷開就好**",
+        "height": 440,
+        "width": 600
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1920,
+        100
+      ],
+      "id": "460b3b14-0936-4f99-a144-3228a2e4924a",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "content": "## 分析履歷、獲取 104 職缺內容、存入 Google Sheet",
+        "height": 860,
+        "width": 780
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        440,
+        20
+      ],
+      "id": "f8c1db52-80c8-4214-839c-049a46d14787",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "content": "## 將 Drive 指定的履歷 PDF 存入向量資料庫\n你需要編輯 Drive 節點，指定 PDF 檔案",
+        "height": 580,
+        "width": 780
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -420,
+        460
+      ],
+      "id": "3f2b7f42-0dcc-4e02-9091-76d40ebdff94",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "content": "## 確認向量資料庫是否有履歷資料",
+        "height": 460,
+        "width": 600
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1120,
+        40
+      ],
+      "id": "664794d8-e956-4468-9217-80345583779d",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "path": "interview-analysis",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -1140,
+        -480
+      ],
+      "id": "b8b7661e-5ebe-4067-88f6-9a6f27e9b977",
+      "name": "WebSite",
+      "webhookId": "7c61518e-3984-4181-b7eb-a120a6cdbfa5"
+    },
+    {
+      "parameters": {
+        "path": "resume-analysis",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -1140,
+        -220
+      ],
+      "id": "a60cd2e0-8c2f-4b1e-a5f2-5960734c1ba4",
+      "name": "Get Analysis Data API",
+      "webhookId": "8451bd88-d992-4769-b9a5-76f2b35661b7"
+    },
+    {
+      "parameters": {
+        "content": "## 瀏覽網頁 & API 具有密碼上鎖機制\n你需要先在 **Check Pwd** 中設定你的密碼\nAPI 同樣受該密碼機制影響，測試時請先移除密碼檢查",
+        "height": 680,
+        "width": 1360
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1260,
+        -700
+      ],
+      "id": "e95b77b1-664c-4915-aebd-b8219c223e5d",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "jsCode": "const pwdKey = \"userPassword\";\n\nconst cookieString = $input.first().json.headers?.cookie\n\nif (!cookieString) return { pwd: \"\" } ;\n\nlet cookies = {};      \ncookieString.split(';').forEach(cookie => {\n  const parts = cookie.trim().split('=');\n  if (parts.length === 2) {\n    const key = parts[0].trim();\n    const value = decodeURIComponent(parts[1].trim());\n    cookies[key] = value;\n  }\n});\nreturn {\n  pwd: cookies[pwdKey]\n}"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -920,
+        -480
+      ],
+      "id": "69880598-8bd1-473b-909c-8e0d4eca1a02",
+      "name": "Read Cookies 1"
+    },
+    {
+      "parameters": {
+        "jsCode": "const pwdKey = \"userPassword\";\n\nconst cookieString = $input.first().json.headers?.cookie\n\nif (!cookieString) return { pwd: \"\" } ;\n\nlet cookies = {};      \ncookieString.split(';').forEach(cookie => {\n  const parts = cookie.trim().split('=');\n  if (parts.length === 2) {\n    const key = parts[0].trim();\n    const value = decodeURIComponent(parts[1].trim());\n    cookies[key] = value;\n  }\n});\nreturn {\n  pwd: cookies[pwdKey]\n}"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -920,
+        -220
+      ],
+      "id": "435ffac1-9e5d-4599-a6f0-75a11f58fc12",
+      "name": "Read Cookies"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "e1591aae-d16c-4255-93cb-b0efbbf0969e",
+              "leftValue": "={{ $json.pwd }}",
+              "rightValue": "YourPwd",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -700,
+        -220
+      ],
+      "id": "5203a73d-57b7-4990-ac1f-ca11e58a2620",
+      "name": "Check Pwd1"
+    },
+    {
+      "parameters": {
+        "jsCode": "return {\n  webHTML: '<!DOCTYPE html>\\r\\n<html lang=\\\"zh-TW\\\">\\r\\n  <head>\\r\\n    <meta charset=\\\"UTF-8\\\" \\/>\\r\\n    <meta name=\\\"viewport\\\" content=\\\"width=device-width, initial-scale=1.0\\\" \\/>\\r\\n    <meta name=\\\"description\\\" content=\\\"\\u8077\\u7F3A\\u5206\\u6790\\u700F\\u89BD\\u5668 - \\u667A\\u80FD\\u8077\\u7F3A\\u5206\\u6790\\u8207\\u5C65\\u6B77\\u5EFA\\u8B70\\u7CFB\\u7D71\\\" \\/>\\r\\n    <title>\\u8077\\u7F3A\\u5206\\u6790\\u700F\\u89BD\\u5668<\\/title>\\r\\n    <style>\\r\\n      * {\\r\\n        margin: 0;\\r\\n        padding: 0;\\r\\n        box-sizing: border-box;\\r\\n      }\\r\\n\\r\\n      body {\\r\\n        font-family: \\\"Segoe UI\\\", Tahoma, Geneva, Verdana, sans-serif;\\r\\n        line-height: 1.6;\\r\\n        color: #333;\\r\\n        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\\r\\n        min-height: 100vh;\\r\\n      }\\r\\n\\r\\n      .container {\\r\\n        max-width: 1200px;\\r\\n        margin: 0 auto;\\r\\n        padding: 20px;\\r\\n      }\\r\\n\\r\\n      .header {\\r\\n        text-align: center;\\r\\n        color: white;\\r\\n        margin-bottom: 40px;\\r\\n      }\\r\\n\\r\\n      .header h1 {\\r\\n        font-size: 2.5rem;\\r\\n        margin-bottom: 10px;\\r\\n        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);\\r\\n      }\\r\\n\\r\\n      .header p {\\r\\n        font-size: 1.2rem;\\r\\n        opacity: 0.9;\\r\\n      }\\r\\n\\r\\n      .controls {\\r\\n        background: white;\\r\\n        padding: 20px;\\r\\n        border-radius: 12px;\\r\\n        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);\\r\\n        margin-bottom: 30px;\\r\\n        display: flex;\\r\\n        gap: 15px;\\r\\n        align-items: center;\\r\\n        flex-wrap: wrap;\\r\\n      }\\r\\n\\r\\n      .search-box {\\r\\n        flex: 1;\\r\\n        min-width: 300px;\\r\\n      }\\r\\n\\r\\n      .search-box input {\\r\\n        width: 100%;\\r\\n        padding: 12px 16px;\\r\\n        border: 2px solid #e1e5e9;\\r\\n        border-radius: 8px;\\r\\n        font-size: 16px;\\r\\n        transition: border-color 0.3s ease;\\r\\n      }\\r\\n\\r\\n      .search-box input:focus {\\r\\n        outline: none;\\r\\n        border-color: #667eea;\\r\\n      }\\r\\n\\r\\n      .btn {\\r\\n        padding: 12px 24px;\\r\\n        border: none;\\r\\n        border-radius: 8px;\\r\\n        font-size: 16px;\\r\\n        cursor: pointer;\\r\\n        transition: all 0.3s ease;\\r\\n        font-weight: 500;\\r\\n      }\\r\\n\\r\\n      .btn-primary {\\r\\n        background: #667eea;\\r\\n        color: white;\\r\\n      }\\r\\n\\r\\n      .btn-primary:hover {\\r\\n        background: #5a6fd8;\\r\\n        transform: translateY(-2px);\\r\\n      }\\r\\n\\r\\n      .btn-secondary {\\r\\n        background: #f8f9fa;\\r\\n        color: #333;\\r\\n        border: 2px solid #e1e5e9;\\r\\n      }\\r\\n\\r\\n      .btn-secondary:hover {\\r\\n        background: #e9ecef;\\r\\n      }\\r\\n\\r\\n      .loading {\\r\\n        text-align: center;\\r\\n        padding: 40px;\\r\\n        color: white;\\r\\n        font-size: 1.2rem;\\r\\n      }\\r\\n\\r\\n      .job-grid {\\r\\n        display: grid;\\r\\n        gap: 25px;\\r\\n        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));\\r\\n      }\\r\\n\\r\\n      .job-card {\\r\\n        background: white;\\r\\n        border-radius: 16px;\\r\\n        padding: 30px;\\r\\n        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);\\r\\n        transition: all 0.3s ease;\\r\\n        border: 1px solid #e1e5e9;\\r\\n      }\\r\\n\\r\\n      .job-card:hover {\\r\\n        transform: translateY(-5px);\\r\\n        box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);\\r\\n      }\\r\\n\\r\\n      .job-urls {\\r\\n        margin-bottom: 20px;\\r\\n      }\\r\\n\\r\\n      .job-urls h3 {\\r\\n        color: #667eea;\\r\\n        margin-bottom: 15px;\\r\\n        font-size: 1.3rem;\\r\\n        display: flex;\\r\\n        align-items: center;\\r\\n        gap: 8px;\\r\\n      }\\r\\n\\r\\n      .job-url {\\r\\n        background: #f8f9fa;\\r\\n        padding: 12px 16px;\\r\\n        margin: 8px 0;\\r\\n        border-radius: 8px;\\r\\n        border-left: 4px solid #667eea;\\r\\n      }\\r\\n\\r\\n      .job-url a {\\r\\n        text-decoration: none;\\r\\n        color: #333;\\r\\n        font-weight: 500;\\r\\n        transition: color 0.3s ease;\\r\\n      }\\r\\n\\r\\n      .job-url a:hover {\\r\\n        color: #667eea;\\r\\n      }\\r\\n\\r\\n      .job-result {\\r\\n        margin-top: 20px;\\r\\n      }\\r\\n\\r\\n      .job-result h3 {\\r\\n        color: #764ba2;\\r\\n        margin-bottom: 15px;\\r\\n        font-size: 1.3rem;\\r\\n        display: flex;\\r\\n        align-items: center;\\r\\n        gap: 8px;\\r\\n      }\\r\\n\\r\\n      .result-content {\\r\\n        background: #f8f9fa;\\r\\n        padding: 20px;\\r\\n        border-radius: 8px;\\r\\n        line-height: 1.8;\\r\\n        white-space: pre-wrap;\\r\\n        max-height: 400px;\\r\\n        overflow-y: auto;\\r\\n        border: 1px solid #e1e5e9;\\r\\n      }\\r\\n\\r\\n      .result-content::-webkit-scrollbar {\\r\\n        width: 6px;\\r\\n      }\\r\\n\\r\\n      .result-content::-webkit-scrollbar-track {\\r\\n        background: #f1f1f1;\\r\\n        border-radius: 3px;\\r\\n      }\\r\\n\\r\\n      .result-content::-webkit-scrollbar-thumb {\\r\\n        background: #c1c1c1;\\r\\n        border-radius: 3px;\\r\\n      }\\r\\n\\r\\n      .result-content::-webkit-scrollbar-thumb:hover {\\r\\n        background: #a8a8a8;\\r\\n      }\\r\\n\\r\\n      .empty-state {\\r\\n        text-align: center;\\r\\n        padding: 60px 20px;\\r\\n        color: white;\\r\\n      }\\r\\n\\r\\n      .empty-state h3 {\\r\\n        font-size: 1.8rem;\\r\\n        margin-bottom: 15px;\\r\\n        opacity: 0.9;\\r\\n      }\\r\\n\\r\\n      .empty-state p {\\r\\n        font-size: 1.1rem;\\r\\n        opacity: 0.7;\\r\\n      }\\r\\n\\r\\n      .stats {\\r\\n        background: rgba(255, 255, 255, 0.1);\\r\\n        color: white;\\r\\n        padding: 15px 25px;\\r\\n        border-radius: 12px;\\r\\n        margin-bottom: 20px;\\r\\n        display: flex;\\r\\n        justify-content: space-between;\\r\\n        align-items: center;\\r\\n        backdrop-filter: blur(10px);\\r\\n      }\\r\\n\\r\\n      .icon {\\r\\n        width: 20px;\\r\\n        height: 20px;\\r\\n        display: inline-block;\\r\\n      }\\r\\n\\r\\n      @media (max-width: 768px) {\\r\\n        .header h1 {\\r\\n          font-size: 2rem;\\r\\n        }\\r\\n\\r\\n        .job-grid {\\r\\n          grid-template-columns: 1fr;\\r\\n        }\\r\\n\\r\\n        .controls {\\r\\n          flex-direction: column;\\r\\n          align-items: stretch;\\r\\n        }\\r\\n\\r\\n        .search-box {\\r\\n          min-width: auto;\\r\\n        }\\r\\n      }\\r\\n    <\\/style>\\r\\n  <\\/head>\\r\\n  <body>\\r\\n    <div class=\\\"container\\\">\\r\\n      <header class=\\\"header\\\">\\r\\n        <h1>\\uD83C\\uDFAF \\u8077\\u7F3A\\u5206\\u6790\\u700F\\u89BD\\u5668<\\/h1>\\r\\n        <p>\\u667A\\u80FD\\u8077\\u7F3A\\u5206\\u6790\\u8207\\u5C65\\u6B77\\u5EFA\\u8B70\\u7CFB\\u7D71<\\/p>\\r\\n      <\\/header>\\r\\n\\r\\n      <div class=\\\"controls\\\">\\r\\n        <div class=\\\"search-box\\\">\\r\\n          <input type=\\\"text\\\" id=\\\"searchInput\\\" placeholder=\\\"\\u641C\\u5C0B\\u8077\\u7F3A\\u95DC\\u9375\\u5B57...\\\" \\/>\\r\\n        <\\/div>\\r\\n        <button class=\\\"btn btn-primary\\\" onclick=\\\"loadJobData()\\\">\\uD83D\\uDCCA \\u8F09\\u5165\\u8077\\u7F3A\\u8CC7\\u6599<\\/button>\\r\\n        <button class=\\\"btn btn-secondary\\\" onclick=\\\"clearData()\\\">\\uD83D\\uDDD1\\uFE0F \\u6E05\\u9664\\u8CC7\\u6599<\\/button>\\r\\n      <\\/div>\\r\\n\\r\\n      <div id=\\\"stats\\\" class=\\\"stats\\\" style=\\\"display: none\\\">\\r\\n        <span>\\uD83D\\uDCC8 \\u7E3D\\u8A08\\u8077\\u7F3A\\u6578\\u91CF: <strong id=\\\"totalCount\\\">0<\\/strong><\\/span>\\r\\n        <span>\\uD83D\\uDD0D \\u986F\\u793A\\u7D50\\u679C: <strong id=\\\"displayCount\\\">0<\\/strong><\\/span>\\r\\n      <\\/div>\\r\\n\\r\\n      <div id=\\\"loading\\\" class=\\\"loading\\\" style=\\\"display: none\\\">\\r\\n        <p>\\uD83D\\uDCE1 \\u6B63\\u5728\\u8F09\\u5165\\u8077\\u7F3A\\u8CC7\\u6599...<\\/p>\\r\\n      <\\/div>\\r\\n\\r\\n      <div id=\\\"jobContainer\\\" class=\\\"job-grid\\\"><\\/div>\\r\\n\\r\\n      <div id=\\\"emptyState\\\" class=\\\"empty-state\\\">\\r\\n        <h3>\\uD83D\\uDE80 \\u958B\\u59CB\\u63A2\\u7D22\\u8077\\u7F3A\\u6A5F\\u6703<\\/h3>\\r\\n        <p>\\u9EDE\\u64CA\\u300C\\u8F09\\u5165\\u8077\\u7F3A\\u8CC7\\u6599\\u300D\\u6309\\u9215\\u958B\\u59CB\\u700F\\u89BD\\u8077\\u7F3A\\u5206\\u6790\\u7D50\\u679C<\\/p>\\r\\n      <\\/div>\\r\\n    <\\/div>\\r\\n\\r\\n    <script>\\r\\n      \\/\\/ \\u5168\\u57DF\\u8B8A\\u6578\\r\\n      let jobData = [];\\r\\n      let filteredData = [];\\r\\n\\r\\n      \\/\\/ DOM \\u5143\\u7D20\\r\\n      const jobContainer = document.getElementById(\\\"jobContainer\\\");\\r\\n      const searchInput = document.getElementById(\\\"searchInput\\\");\\r\\n      const loading = document.getElementById(\\\"loading\\\");\\r\\n      const emptyState = document.getElementById(\\\"emptyState\\\");\\r\\n      const stats = document.getElementById(\\\"stats\\\");\\r\\n      const totalCount = document.getElementById(\\\"totalCount\\\");\\r\\n      const displayCount = document.getElementById(\\\"displayCount\\\");\\r\\n\\r\\n      \\/\\/ \\u641C\\u5C0B\\u529F\\u80FD\\r\\n      searchInput.addEventListener(\\\"input\\\", (e) => {\\r\\n        const searchTerm = e.target.value.toLowerCase();\\r\\n        filterJobs(searchTerm);\\r\\n      });\\r\\n\\r\\n      \\/\\/ \\u8F09\\u5165\\u8077\\u7F3A\\u8CC7\\u6599\\r\\n      async function loadJobData() {\\r\\n        try {\\r\\n          showLoading(true);\\r\\n\\r\\n          \\/\\/ \\u6A21\\u64EC API \\u547C\\u53EB - \\u60A8\\u53EF\\u4EE5\\u66FF\\u63DB\\u70BA\\u5BE6\\u969B\\u7684 API \\u7AEF\\u9EDE\\r\\n          const response = await fetch(\\\"https:\\/\\/n8n-cablate.zeabur.app\\/webhook\\/resume-analysis\\\");\\r\\n\\r\\n          if (!response.ok) {\\r\\n            \\/\\/ \\u5982\\u679C API \\u4E0D\\u5B58\\u5728\\uFF0C\\u4F7F\\u7528\\u793A\\u4F8B\\u8CC7\\u6599\\r\\n            jobData = getSampleData();\\r\\n          } else {\\r\\n            jobData = await response.json();\\r\\n          }\\r\\n\\r\\n          filteredData = [...jobData];\\r\\n          renderJobs();\\r\\n          updateStats();\\r\\n          showLoading(false);\\r\\n        } catch (error) {\\r\\n          console.log(\\\"API \\u7AEF\\u9EDE\\u4E0D\\u5B58\\u5728\\uFF0C\\u4F7F\\u7528\\u793A\\u4F8B\\u8CC7\\u6599\\\");\\r\\n          jobData = getSampleData();\\r\\n          filteredData = [...jobData];\\r\\n          renderJobs();\\r\\n          updateStats();\\r\\n          showLoading(false);\\r\\n        }\\r\\n      }\\r\\n\\r\\n      \\/\\/ \\u986F\\u793A\\/\\u96B1\\u85CF\\u8F09\\u5165\\u72C0\\u614B\\r\\n      function showLoading(isLoading) {\\r\\n        loading.style.display = isLoading ? \\\"block\\\" : \\\"none\\\";\\r\\n        emptyState.style.display = isLoading ? \\\"none\\\" : jobData.length === 0 ? \\\"block\\\" : \\\"none\\\";\\r\\n        jobContainer.style.display = isLoading ? \\\"none\\\" : \\\"block\\\";\\r\\n        stats.style.display = isLoading ? \\\"none\\\" : jobData.length > 0 ? \\\"flex\\\" : \\\"none\\\";\\r\\n      }\\r\\n\\r\\n      \\/\\/ \\u904E\\u6FFE\\u8077\\u7F3A\\r\\n      function filterJobs(searchTerm) {\\r\\n        if (!searchTerm) {\\r\\n          filteredData = [...jobData];\\r\\n        } else {\\r\\n          filteredData = jobData.filter((job) => job.job_urls.toLowerCase().includes(searchTerm) || job.result.toLowerCase().includes(searchTerm));\\r\\n        }\\r\\n        renderJobs();\\r\\n        updateStats();\\r\\n      }\\r\\n\\r\\n      \\/\\/ \\u6E32\\u67D3\\u8077\\u7F3A\\u5361\\u7247\\r\\n      function renderJobs() {\\r\\n        jobContainer.innerHTML = \\\"\\\";\\r\\n\\r\\n        if (filteredData.length === 0 && jobData.length > 0) {\\r\\n          jobContainer.innerHTML = `\\r\\n                    <div style=\\\"text-align: center; color: white; padding: 40px;\\\">\\r\\n                        <h3>\\uD83D\\uDD0D \\u627E\\u4E0D\\u5230\\u7B26\\u5408\\u689D\\u4EF6\\u7684\\u8077\\u7F3A<\\/h3>\\r\\n                        <p>\\u8A66\\u8A66\\u5176\\u4ED6\\u95DC\\u9375\\u5B57\\u6216\\u6E05\\u9664\\u641C\\u5C0B\\u689D\\u4EF6<\\/p>\\r\\n                    <\\/div>\\r\\n                `;\\r\\n          return;\\r\\n        }\\r\\n\\r\\n        filteredData.forEach((job, index) => {\\r\\n          const jobCard = createJobCard(job, index);\\r\\n          jobContainer.appendChild(jobCard);\\r\\n        });\\r\\n      }\\r\\n\\r\\n      \\/\\/ \\u5EFA\\u7ACB\\u8077\\u7F3A\\u5361\\u7247\\r\\n      function createJobCard(job, index) {\\r\\n        const card = document.createElement(\\\"div\\\");\\r\\n        card.className = \\\"job-card\\\";\\r\\n\\r\\n        \\/\\/ \\u89E3\\u6790\\u8077\\u7F3A\\u9023\\u7D50\\r\\n        const jobUrls = parseJobUrls(job.job_urls);\\r\\n\\r\\n        card.innerHTML = `\\r\\n                <div class=\\\"job-urls\\\">\\r\\n                    <h3><span class=\\\"icon\\\">\\uD83D\\uDD17<\\/span> \\u8077\\u7F3A\\u9023\\u7D50<\\/h3>\\r\\n                    ${jobUrls\\r\\n                      .map(\\r\\n                        (url) => `\\r\\n                        <div class=\\\"job-url\\\">\\r\\n                            <a href=\\\"${url.link}\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">\\r\\n                                ${url.title}\\r\\n                            <\\/a>\\r\\n                        <\\/div>\\r\\n                    `\\r\\n                      )\\r\\n                      .join(\\\"\\\")}\\r\\n                <\\/div>\\r\\n                \\r\\n                <div class=\\\"job-result\\\">\\r\\n                    <h3><span class=\\\"icon\\\">\\uD83D\\uDCCB<\\/span> \\u5206\\u6790\\u7D50\\u679C<\\/h3>\\r\\n                    <div class=\\\"result-content\\\">${job.result}<\\/div>\\r\\n                <\\/div>\\r\\n            `;\\r\\n\\r\\n        return card;\\r\\n      }\\r\\n\\r\\n      \\/\\/ \\u89E3\\u6790\\u8077\\u7F3A URL \\u5B57\\u4E32\\r\\n      function parseJobUrls(urlString) {\\r\\n        const urlPattern = \\/\\\\[([^\\\\]]+)\\\\]\\\\(([^)]+)\\\\)\\/g;\\r\\n        const urls = [];\\r\\n        let match;\\r\\n\\r\\n        while ((match = urlPattern.exec(urlString)) !== null) {\\r\\n          urls.push({\\r\\n            title: match[1],\\r\\n            link: match[2],\\r\\n          });\\r\\n        }\\r\\n\\r\\n        return urls;\\r\\n      }\\r\\n\\r\\n      \\/\\/ \\u66F4\\u65B0\\u7D71\\u8A08\\u8CC7\\u8A0A\\r\\n      function updateStats() {\\r\\n        totalCount.textContent = jobData.length;\\r\\n        displayCount.textContent = filteredData.length;\\r\\n      }\\r\\n\\r\\n      \\/\\/ \\u6E05\\u9664\\u8CC7\\u6599\\r\\n      function clearData() {\\r\\n        jobData = [];\\r\\n        filteredData = [];\\r\\n        jobContainer.innerHTML = \\\"\\\";\\r\\n        searchInput.value = \\\"\\\";\\r\\n        stats.style.display = \\\"none\\\";\\r\\n        emptyState.style.display = \\\"block\\\";\\r\\n      }\\r\\n\\r\\n      \\/\\/ \\u793A\\u4F8B\\u8CC7\\u6599\\r\\n      function getSampleData() {\\r\\n        return [\\r\\n          {\\r\\n            job_urls: \\\"[\\u53CB\\u9054\\u5149\\u96FB\\u80A1\\u4EFD\\u6709\\u9650\\u516C\\u53F8 - \\u3010\\u6578\\u4F4D\\u6280\\u8853\\u3011\\u8CC7\\u6DF1\\u5F8C\\u7AEF\\u7814\\u767C\\u5DE5\\u7A0B\\u5E2B-\\u9AD8\\u96C4\\u8FA6\\u516C\\u5BA4-R08](https:\\/\\/www.104.com.tw\\/job\\/8nuh4)\\\\n[\\u7DEF\\u5275\\u8CC7\\u901A\\u80A1\\u4EFD\\u6709\\u9650\\u516C\\u53F8 - \\u6578\\u4F4D\\u5C08\\u6848\\u5DE5\\u7A0B\\u5E2B_\\u9AD8\\u96C4\\/\\u6C55\\u6B62_04785](https:\\/\\/www.104.com.tw\\/job\\/8ogdi)\\\",\\r\\n            result:\\r\\n              \\\"\\u91DD\\u5C0D\\u60A8\\u63D0\\u4F9B\\u7684\\u5169\\u500B\\u8077\\u7F3A\\uFF0C\\u9032\\u884C\\u8A73\\u7D30\\u5206\\u6790\\u4E26\\u63D0\\u51FA\\u91DD\\u5C0D\\u60A8\\u5C65\\u6B77\\u7684\\u5EFA\\u8B70\\u8207\\u9762\\u8A66\\u6E96\\u5099\\uFF1A\\\\n\\\\n\\u4E00\\u3001\\u8077\\u7F3A\\u5206\\u6790\\\\n\\\\n1. \\u53CB\\u9054\\u5149\\u96FB\\u80A1\\u4EFD\\u6709\\u9650\\u516C\\u53F8 \\u3010\\u6578\\u4F4D\\u6280\\u8853\\u3011\\u8CC7\\u6DF1\\u5F8C\\u7AEF\\u7814\\u767C\\u5DE5\\u7A0B\\u5E2B\\\\n- \\u8077\\u8CAC\\uFF1A\\u8CA0\\u8CAC\\u5F8C\\u7AEF\\u7CFB\\u7D71\\u958B\\u767C\\u8207\\u7DAD\\u8B77\\uFF0C\\u8A2D\\u8A08\\u9AD8\\u6548\\u80FD\\u4E14\\u53EF\\u64F4\\u5145\\u7684 API \\u8207\\u670D\\u52D9\\uFF0C\\u8207\\u524D\\u7AEF\\u3001\\u7522\\u54C1\\u53CA\\u7CFB\\u7D71\\u5206\\u6790\\u5E2B\\u5408\\u4F5C\\uFF0C\\u63A8\\u52D5 DevOps\\u3001CI\\/CD \\u53CA\\u96F2\\u7AEF\\u90E8\\u7F72\\uFF08Kubernetes\\u3001Docker\\uFF09\\u3002\\\\n- \\u8981\\u6C42\\uFF1A\\u81F3\\u5C11\\u4E09\\u5E74\\u5F8C\\u7AEF\\u958B\\u767C\\u7D93\\u9A57\\uFF0C\\u7CBE\\u901AJava\\u3001Node.js\\u6216Go\\u5176\\u4E2D\\u4E00\\u7A2E\\u8A9E\\u8A00\\u53CA\\u6846\\u67B6\\uFF08Spring Boot\\u3001Express\\u3001Gin\\uFF09\\uFF0C\\u719F\\u6089API\\u8A2D\\u8A08\\u539F\\u5247\\uFF0C\\u8CC7\\u6599\\u5EAB(SQL\\/NoSQL)\\uFF0C\\u5BB9\\u5668\\u6280\\u8853Docker\\u8207Kubernetes\\uFF0CGit\\u7248\\u672C\\u63A7\\u5236\\u53CACI\\/CD\\u7D93\\u9A57\\u3002\\\\n\\\\n2. \\u7DEF\\u5275\\u8CC7\\u901A\\u80A1\\u4EFD\\u6709\\u9650\\u516C\\u53F8 \\u6578\\u4F4D\\u5C08\\u6848\\u5DE5\\u7A0B\\u5E2B\\\\n- \\u8077\\u8CAC\\uFF1A\\u8CA0\\u8CAC\\u8A2D\\u8A08\\u8207\\u958B\\u767C\\u9AD8\\u6548\\u80FD\\u7DB2\\u9801\\u61C9\\u7528\\u7A0B\\u5F0F\\uFF0C\\u78BA\\u4FDD\\u826F\\u597D\\u4F7F\\u7528\\u8005\\u9AD4\\u9A57\\uFF0C\\u53C3\\u8207\\u7CFB\\u7D71\\u9700\\u6C42\\u5206\\u6790\\u8207\\u6280\\u8853\\u89E3\\u6C7A\\u65B9\\u6848\\uFF0C\\u7A4D\\u6975\\u53C3\\u8207\\u7A0B\\u5F0F\\u78BC\\u5BE9\\u67E5\\u53CA\\u54C1\\u8CEA\\u628A\\u95DC\\uFF0C\\u4F7F\\u7528\\u654F\\u6377\\u958B\\u767C\\u5FEB\\u901F\\u8FED\\u4EE3\\u3002\\\\n- \\u8981\\u6C42\\uFF1A\\u4E09\\u5E74\\u4EE5\\u4E0A\\u524D\\u5F8C\\u7AEF\\u958B\\u767C\\u7D93\\u9A57\\uFF0C\\u719F\\u6089HTML\\u3001CSS\\u3001JavaScript\\u3001C#\\u3001Python\\uFF0CDevOps\\u5DE5\\u5177\\u5982CI\\/CD\\u3001GitLab Runner\\u3001Docker\\u3001Kubernetes\\uFF0C\\u5177\\u5099\\u826F\\u597D\\u7CFB\\u7D71\\u7DAD\\u8B77\\u8207\\u554F\\u984C\\u6392\\u9664\\u80FD\\u529B\\uFF0C\\u5718\\u968A\\u5408\\u4F5C\\u8207\\u6E9D\\u901A\\u80FD\\u529B\\u5F37\\u3002\\\\n\\\\n\\u4E8C\\u3001\\u5C65\\u6B77\\u5206\\u6790\\u5EFA\\u8B70\\\\n\\\\n1. \\u6280\\u80FD\\u5448\\u73FE\\uFF1A\\u8ACB\\u660E\\u78BA\\u4E14\\u8A73\\u76E1\\u5217\\u51FA\\u60A8\\u5728\\u5F8C\\u7AEF\\u8207\\u524D\\u7AEF\\u7684\\u7A0B\\u5F0F\\u8A9E\\u8A00\\u53CA\\u6846\\u67B6\\u7D93\\u9A57\\uFF0C\\u5C24\\u5176\\u662FJava\\u3001Node.js\\u3001Go\\u3001Spring Boot\\u3001Express\\u3001Gin\\u7B49\\u5F8C\\u7AEF\\u6280\\u8853\\uFF0C\\u4EE5\\u53CA\\u524D\\u7AEFHTML\\u3001CSS\\u3001JavaScript\\u7B49\\u6280\\u80FD\\u3002\\u80FD\\u7A81\\u51FA\\u60A8\\u5C0DAPI\\u8A2D\\u8A08\\u53CA\\u8CC7\\u6599\\u5EAB\\u7BA1\\u7406(SQL\\u53CANoSQL)\\u7684\\u719F\\u6089\\u5EA6\\u3002\\\\n\\\\n2. \\u5C08\\u6848\\u7D93\\u9A57\\u7D30\\u5316\\uFF1A\\u91DD\\u5C0D\\u6BCF\\u9805\\u5C08\\u6848\\u9673\\u8FF0\\u5177\\u9AD4\\u7684\\u4EFB\\u52D9\\uFF08Task\\uFF09\\u3001\\u884C\\u52D5\\uFF08Action\\uFF09\\u3001\\u7D50\\u679C\\uFF08Result\\uFF09\\u3002\\u4F8B\\u5982\\u5728\\u67D0\\u5C08\\u6848\\u4E2D\\u60A8\\u5982\\u4F55\\u63D0\\u5347\\u5F8C\\u7AEF\\u6548\\u80FD\\u3001\\u512A\\u5316API\\u7D50\\u69CB\\u6216\\u6210\\u529F\\u5C0E\\u5165CI\\/CD\\u6D41\\u7A0B\\u3002\\\\n\\\\n3. DevOps\\u8207\\u5BB9\\u5668\\u6280\\u8853\\uFF1A\\u82E5\\u60A8\\u6709\\u76F8\\u95DC\\u7D93\\u9A57\\uFF0C\\u8ACB\\u8A73\\u7D30\\u8AAA\\u660E\\u5982\\u4F55\\u4F7F\\u7528Docker\\u3001Kubernetes\\u9032\\u884C\\u90E8\\u7F72\\u548C\\u7DAD\\u8B77\\uFF0C\\u4EE5\\u53CA\\u5982\\u4F55\\u904B\\u7528\\u7248\\u672C\\u63A7\\u5236\\u5DE5\\u5177Git\\u53CACI\\/CD\\u5BE6\\u73FE\\u81EA\\u52D5\\u5316\\u6D41\\u7A0B\\u3002\\\\n\\\\n4. \\u5718\\u968A\\u5354\\u4F5C\\u8207\\u6E9D\\u901A\\uFF1A\\u5F37\\u8ABF\\u60A8\\u8207\\u8DE8\\u90E8\\u9580\\u5408\\u4F5C\\u7684\\u7D93\\u6B77\\uFF0C\\u5982\\u4F55\\u5354\\u52A9\\u89E3\\u6C7A\\u7CFB\\u7D71\\u554F\\u984C\\u6216\\u5E36\\u9818\\u5718\\u968A\\u5BE6\\u73FE\\u529F\\u80FD\\u76EE\\u6A19\\u3002\\\\n\\\\n5. \\u500B\\u4EBA\\u7279\\u8CEA\\u8207\\u5B78\\u7FD2\\u529B\\uFF1A\\u5C55\\u73FE\\u60A8\\u7684\\u5B78\\u7FD2\\u71B1\\u5FF1\\u3001\\u81EA\\u6211\\u9A45\\u52D5\\u529B\\uFF0C\\u4EE5\\u53CA\\u5982\\u4F55\\u6301\\u7E8C\\u8FFD\\u8E64\\u65B0\\u6280\\u8853\\u4E26\\u5C0E\\u5165\\u5DE5\\u4F5C\\u3002\\\\n\\\\n\\u4E09\\u3001\\u9762\\u8A66\\u6E96\\u5099\\u5EFA\\u8B70\\\\n\\\\n1. \\u8ACB\\u6E96\\u5099\\u8AAA\\u660E\\u60A8\\u904E\\u53BB\\u5C08\\u6848\\u4E2D\\u9047\\u5230\\u7684\\u6280\\u8853\\u6311\\u6230\\uFF0C\\u5982\\u4F55\\u5206\\u6790\\u554F\\u984C\\u3001\\u63D0\\u51FA\\u65B9\\u6848\\u4E26\\u843D\\u5BE6\\u6539\\u5584\\uFF08STAR\\u6CD5\\u5247\\uFF1ASituation, Task, Action, Result\\uFF09\\u3002\\\\n2. \\u91DD\\u5C0DAPI\\u8A2D\\u8A08\\u3001\\u5B89\\u5168\\u6027\\u3001\\u5F8C\\u7AEF\\u6548\\u80FD\\u512A\\u5316\\u3001\\u8CC7\\u6599\\u5EAB\\u8A2D\\u8A08\\u53CA\\u67E5\\u8A62\\u512A\\u5316\\u7B49\\u6280\\u8853\\u9762\\u554F\\u984C\\u505A\\u597D\\u6E96\\u5099\\u3002\\\\n3. \\u719F\\u6089DevOps\\u6D41\\u7A0B\\u5982CI\\/CD\\u5EFA\\u7F6E\\u53CA\\u5BB9\\u5668\\u90E8\\u7F72\\uFF0C\\u6E96\\u5099\\u5206\\u4EAB\\u5BE6\\u52D9\\u7D93\\u9A57\\u3002\\\\n4. \\u6E2C\\u8A66\\u60A8\\u7684\\u5718\\u968A\\u6E9D\\u901A\\u6848\\u4F8B\\uFF0C\\u5982\\u4F55\\u8207\\u7522\\u54C1\\u3001\\u524D\\u7AEF\\u53CA\\u5176\\u4ED6\\u5DE5\\u7A0B\\u5E2B\\u5354\\u4F5C\\u63A8\\u52D5\\u5C08\\u6848\\u3002\\\\n5. \\u5FC5\\u5099\\u57FA\\u790E\\u7A0B\\u5F0F\\u8A2D\\u8A08\\u53CA\\u554F\\u984C\\u89E3\\u6C7A\\u6F14\\u7B97\\u6CD5\\u80FD\\u529B\\u6E2C\\u9A57\\u3002\\\\n6. \\u95DC\\u6CE8\\u8A72\\u516C\\u53F8\\u7522\\u54C1\\u8207\\u6280\\u8853\\u67B6\\u69CB\\uFF0C\\u6E96\\u5099\\u9069\\u7576\\u554F\\u984C\\u4EE5\\u5C55\\u73FE\\u60A8\\u7684\\u8208\\u8DA3\\u8207\\u9069\\u61C9\\u5EA6\\u3002\\\\n\\\\n\\u56DB\\u3001\\u5EFA\\u8B70\\u5C65\\u6B77\\u4FEE\\u6B63\\u65B9\\u5411\\\\n\\\\n- \\u5F37\\u5316\\u6280\\u8853\\u8A5E\\u5F59\\u8207\\u5C08\\u6848\\u7D30\\u7BC0\\uFF0C\\u4F7F\\u6280\\u8853\\u5C08\\u696D\\u76F4\\u63A5\\u5C0D\\u61C9\\u8077\\u7F3A\\u8981\\u6C42\\u3002\\\\n- \\u589E\\u52A0\\u5177\\u9AD4\\u6210\\u5C31\\u6578\\u64DA\\uFF0C\\u5982\\u63D0\\u5347\\u7CFB\\u7D71\\u6548\\u80FD\\u767E\\u5206\\u6BD4\\u3001\\u7E2E\\u77ED\\u90E8\\u7F72\\u6642\\u9593\\u3001\\u964D\\u4F4E\\u932F\\u8AA4\\u7387\\u7B49\\u3002\\\\n- \\u6A19\\u660E\\u719F\\u7DF4\\u5EA6\\uFF08\\u7CBE\\u901A\\u3001\\u719F\\u6089\\u3001\\u4E86\\u89E3\\uFF09\\u8207\\u5DE5\\u4F5C\\u5E74\\u9650\\uFF0C\\u8B93HR\\u5FEB\\u901F\\u5224\\u65B7\\u6280\\u8853\\u5339\\u914D\\u5EA6\\u3002\\\\n- \\u6E96\\u5099\\u4E00\\u6BB5\\u81EA\\u6211\\u4ECB\\u7D39\\uFF0C\\u660E\\u78BA\\u8AAA\\u660E\\u60A8\\u70BA\\u4F55\\u7B26\\u5408\\u8A72\\u8077\\u7F3A\\u8207\\u60A8\\u7684\\u8077\\u696D\\u76EE\\u6A19\\u3002\\\\n\\\\n\\u5982\\u9700\\u91DD\\u5C0D\\u60A8\\u7684\\u5C65\\u6B77\\u6587\\u6848\\u9032\\u884C\\u66F4\\u6DF1\\u5165\\u512A\\u5316\\uFF0C\\u8ACB\\u63D0\\u4F9B\\u60A8\\u7684\\u5C65\\u6B77\\u5167\\u5BB9\\uFF0C\\u6211\\u53EF\\u5354\\u52A9\\u60A8\\u7D30\\u90E8\\u4FEE\\u98FE\\u8207\\u91CD\\u9EDE\\u589E\\u5F37\\u3002\\\",\\r\\n          },\\r\\n        ];\\r\\n      }\\r\\n\\r\\n      \\/\\/ \\u521D\\u59CB\\u5316\\r\\n      document.addEventListener(\\\"DOMContentLoaded\\\", function () {\\r\\n        console.log(\\\"\\u8077\\u7F3A\\u5206\\u6790\\u700F\\u89BD\\u5668\\u5DF2\\u521D\\u59CB\\u5316\\\");\\r\\n      });\\r\\n    <\\/script>\\r\\n  <\\/body>\\r\\n<\\/html>\\r\\n'\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -480,
+        -580
+      ],
+      "id": "8c2da05d-c9ee-4b94-830f-d67d4b81d192",
+      "name": "System Page"
+    },
+    {
+      "parameters": {
+        "jsCode": "return {\n  webHTML: '<!DOCTYPE html>\\r\\n<html lang=\\\"zh-TW\\\">\\r\\n  <head>\\r\\n    <meta charset=\\\"UTF-8\\\" \\/>\\r\\n    <meta name=\\\"viewport\\\" content=\\\"width=device-width, initial-scale=1.0\\\" \\/>\\r\\n    <title>\\u5BC6\\u78BC\\u8F38\\u5165\\u9801<\\/title>\\r\\n    <style>\\r\\n      * {\\r\\n        margin: 0;\\r\\n        padding: 0;\\r\\n        box-sizing: border-box;\\r\\n      }\\r\\n\\r\\n      body {\\r\\n        font-family: -apple-system, BlinkMacSystemFont, \\\"Segoe UI\\\",\\r\\n          \\\"PingFang TC\\\", \\\"Hiragino Sans GB\\\", \\\"Microsoft YaHei\\\", sans-serif;\\r\\n        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\\r\\n        min-height: 100vh;\\r\\n        display: flex;\\r\\n        align-items: center;\\r\\n        justify-content: center;\\r\\n        padding: 20px;\\r\\n      }\\r\\n\\r\\n      .login-container {\\r\\n        background: white;\\r\\n        padding: 40px;\\r\\n        border-radius: 12px;\\r\\n        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);\\r\\n        width: 100%;\\r\\n        max-width: 400px;\\r\\n        text-align: center;\\r\\n      }\\r\\n\\r\\n      .logo {\\r\\n        font-size: 2.5rem;\\r\\n        color: #667eea;\\r\\n        margin-bottom: 10px;\\r\\n      }\\r\\n\\r\\n      h1 {\\r\\n        color: #333;\\r\\n        margin-bottom: 30px;\\r\\n        font-size: 1.5rem;\\r\\n        font-weight: 300;\\r\\n      }\\r\\n\\r\\n      .form-group {\\r\\n        margin-bottom: 25px;\\r\\n        text-align: left;\\r\\n      }\\r\\n\\r\\n      label {\\r\\n        display: block;\\r\\n        margin-bottom: 8px;\\r\\n        color: #555;\\r\\n        font-weight: 500;\\r\\n      }\\r\\n\\r\\n      input[type=\\\"password\\\"] {\\r\\n        width: 100%;\\r\\n        padding: 15px;\\r\\n        border: 2px solid #e1e5e9;\\r\\n        border-radius: 8px;\\r\\n        font-size: 16px;\\r\\n        transition: border-color 0.3s ease;\\r\\n        background-color: #f8f9fa;\\r\\n      }\\r\\n\\r\\n      input[type=\\\"password\\\"]:focus {\\r\\n        outline: none;\\r\\n        border-color: #667eea;\\r\\n        background-color: white;\\r\\n      }\\r\\n\\r\\n      .submit-btn {\\r\\n        width: 100%;\\r\\n        padding: 15px;\\r\\n        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\\r\\n        color: white;\\r\\n        border: none;\\r\\n        border-radius: 8px;\\r\\n        font-size: 16px;\\r\\n        font-weight: 600;\\r\\n        cursor: pointer;\\r\\n        transition: transform 0.2s ease, box-shadow 0.2s ease;\\r\\n      }\\r\\n\\r\\n      .submit-btn:hover {\\r\\n        transform: translateY(-2px);\\r\\n        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);\\r\\n      }\\r\\n\\r\\n      .submit-btn:active {\\r\\n        transform: translateY(0);\\r\\n      }\\r\\n\\r\\n      .submit-btn:disabled {\\r\\n        opacity: 0.6;\\r\\n        cursor: not-allowed;\\r\\n        transform: none;\\r\\n      }\\r\\n\\r\\n      .loading {\\r\\n        display: none;\\r\\n        margin-top: 15px;\\r\\n        color: #667eea;\\r\\n      }\\r\\n\\r\\n      .success-message {\\r\\n        display: none;\\r\\n        margin-top: 15px;\\r\\n        padding: 10px;\\r\\n        background-color: #d4edda;\\r\\n        color: #155724;\\r\\n        border-radius: 5px;\\r\\n        border: 1px solid #c3e6cb;\\r\\n      }\\r\\n\\r\\n      .password-requirements {\\r\\n        font-size: 0.875rem;\\r\\n        color: #6c757d;\\r\\n        margin-top: 8px;\\r\\n        text-align: left;\\r\\n      }\\r\\n\\r\\n      @media (max-width: 480px) {\\r\\n        .login-container {\\r\\n          padding: 30px 20px;\\r\\n        }\\r\\n\\r\\n        h1 {\\r\\n          font-size: 1.25rem;\\r\\n        }\\r\\n      }\\r\\n    <\\/style>\\r\\n  <\\/head>\\r\\n  <body>\\r\\n    <div class=\\\"login-container\\\">\\r\\n      <div class=\\\"logo\\\">\\uD83D\\uDD10<\\/div>\\r\\n      <h1>\\u8ACB\\u8F38\\u5165\\u5BC6\\u78BC<\\/h1>\\r\\n\\r\\n      <form id=\\\"passwordForm\\\" autocomplete=\\\"on\\\">\\r\\n        <!-- Hidden username field to help browsers understand this is a login form -->\\r\\n        <input\\r\\n          type=\\\"text\\\"\\r\\n          name=\\\"username\\\"\\r\\n          autocomplete=\\\"username\\\"\\r\\n          style=\\\"display: none\\\"\\r\\n          value=\\\"user\\\"\\r\\n        \\/>\\r\\n\\r\\n        <div class=\\\"form-group\\\">\\r\\n          <label for=\\\"password\\\">\\u5BC6\\u78BC<\\/label>\\r\\n          <input\\r\\n            type=\\\"password\\\"\\r\\n            id=\\\"password\\\"\\r\\n            name=\\\"password\\\"\\r\\n            autocomplete=\\\"current-password\\\"\\r\\n            required\\r\\n            placeholder=\\\"\\u8ACB\\u8F38\\u5165\\u60A8\\u7684\\u5BC6\\u78BC\\\"\\r\\n          \\/>\\r\\n          <div class=\\\"password-requirements\\\">\\r\\n            \\u5BC6\\u78BC\\u5C07\\u6703\\u5B89\\u5168\\u5730\\u5132\\u5B58\\u5728\\u60A8\\u7684\\u700F\\u89BD\\u5668\\u4E2D\\r\\n          <\\/div>\\r\\n        <\\/div>\\r\\n\\r\\n        <button type=\\\"submit\\\" class=\\\"submit-btn\\\" id=\\\"submitBtn\\\">\\u767B\\u5165<\\/button>\\r\\n      <\\/form>\\r\\n\\r\\n      <div class=\\\"loading\\\" id=\\\"loading\\\">\\u6B63\\u5728\\u8655\\u7406\\u4E2D...<\\/div>\\r\\n\\r\\n      <div class=\\\"success-message\\\" id=\\\"successMessage\\\">\\r\\n        \\u5BC6\\u78BC\\u5DF2\\u6210\\u529F\\u5132\\u5B58\\uFF01\\u9801\\u9762\\u5373\\u5C07\\u91CD\\u65B0\\u6574\\u7406...\\r\\n      <\\/div>\\r\\n    <\\/div>\\r\\n\\r\\n    <script>\\r\\n      \\/\\/ \\u5BC6\\u78BC\\u8868\\u55AE\\u8655\\u7406\\r\\n      const form = document.getElementById(\\\"passwordForm\\\");\\r\\n      const passwordInput = document.getElementById(\\\"password\\\");\\r\\n      const submitBtn = document.getElementById(\\\"submitBtn\\\");\\r\\n      const loading = document.getElementById(\\\"loading\\\");\\r\\n      const successMessage = document.getElementById(\\\"successMessage\\\");\\r\\n\\r\\n      \\/\\/ Cookie \\u64CD\\u4F5C\\u51FD\\u5F0F\\r\\n      function setCookie(name, value, days = 30) {\\r\\n        const expires = new Date();\\r\\n        expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);\\r\\n        const secure = window.location.protocol === \\\"https:\\\" ? \\\"; Secure\\\" : \\\"\\\";\\r\\n        document.cookie = `${name}=${encodeURIComponent(\\r\\n          value\\r\\n        )}; expires=${expires.toUTCString()}; path=\\/; SameSite=Strict${secure}`;\\r\\n      }\\r\\n\\r\\n      function getCookie(name) {\\r\\n        const nameEQ = name + \\\"=\\\";\\r\\n        const ca = document.cookie.split(\\\";\\\");\\r\\n        for (let i = 0; i < ca.length; i++) {\\r\\n          let c = ca[i];\\r\\n          while (c.charAt(0) === \\\" \\\") c = c.substring(1, c.length);\\r\\n          if (c.indexOf(nameEQ) === 0)\\r\\n            return decodeURIComponent(c.substring(nameEQ.length, c.length));\\r\\n        }\\r\\n        return null;\\r\\n      }\\r\\n\\r\\n      \\/\\/ \\u9801\\u9762\\u8F09\\u5165\\u6642\\u6AA2\\u67E5\\u662F\\u5426\\u5DF2\\u6709\\u5132\\u5B58\\u7684\\u5BC6\\u78BC\\r\\n      window.addEventListener(\\\"load\\\", function () {\\r\\n        const savedPassword = getCookie(\\\"userPassword\\\");\\r\\n        if (savedPassword) {\\r\\n          \\/\\/ \\u5982\\u679C\\u5DF2\\u6709\\u5BC6\\u78BC\\uFF0C\\u53EF\\u4EE5\\u9078\\u64C7\\u81EA\\u52D5\\u586B\\u5165\\u6216\\u63D0\\u793A\\u7528\\u6236\\r\\n          console.log(\\\"\\u5DF2\\u6AA2\\u6E2C\\u5230\\u5132\\u5B58\\u7684\\u5BC6\\u78BC\\\");\\r\\n        }\\r\\n      });\\r\\n\\r\\n      \\/\\/ \\u8868\\u55AE\\u63D0\\u4EA4\\u8655\\u7406\\r\\n      form.addEventListener(\\\"submit\\\", function (e) {\\r\\n        e.preventDefault();\\r\\n\\r\\n        const password = passwordInput.value.trim();\\r\\n\\r\\n        if (!password) {\\r\\n          alert(\\\"\\u8ACB\\u8F38\\u5165\\u5BC6\\u78BC\\\");\\r\\n          passwordInput.focus();\\r\\n          return;\\r\\n        }\\r\\n\\r\\n        \\/\\/ \\u986F\\u793A\\u8F09\\u5165\\u72C0\\u614B\\r\\n        submitBtn.disabled = true;\\r\\n        submitBtn.textContent = \\\"\\u8655\\u7406\\u4E2D...\\\";\\r\\n        loading.style.display = \\\"block\\\";\\r\\n\\r\\n        \\/\\/ \\u6A21\\u64EC\\u8655\\u7406\\u6642\\u9593\\r\\n        setTimeout(() => {\\r\\n          try {\\r\\n            \\/\\/ \\u5C07\\u5BC6\\u78BC\\u5132\\u5B58\\u5230 Cookie\\uFF08\\u6CE8\\u610F\\uFF1A\\u5BE6\\u969B\\u61C9\\u7528\\u4E2D\\u61C9\\u8A72\\u52A0\\u5BC6\\u8655\\u7406\\uFF09\\r\\n            setCookie(\\\"userPassword\\\", password, 30);\\r\\n\\r\\n            \\/\\/ \\u5132\\u5B58\\u6642\\u9593\\u6233\\r\\n            setCookie(\\\"passwordSavedAt\\\", new Date().toISOString(), 30);\\r\\n\\r\\n            \\/\\/ \\u986F\\u793A\\u6210\\u529F\\u8A0A\\u606F\\r\\n            loading.style.display = \\\"none\\\";\\r\\n            successMessage.style.display = \\\"block\\\";\\r\\n\\r\\n            \\/\\/ 2\\u79D2\\u5F8C\\u91CD\\u65B0\\u6574\\u7406\\u9801\\u9762\\r\\n            setTimeout(() => {\\r\\n              window.location.reload();\\r\\n            }, 1000);\\r\\n          } catch (error) {\\r\\n            console.error(\\\"\\u5132\\u5B58\\u5BC6\\u78BC\\u6642\\u767C\\u751F\\u932F\\u8AA4:\\\", error);\\r\\n            alert(\\\"\\u5132\\u5B58\\u5BC6\\u78BC\\u6642\\u767C\\u751F\\u932F\\u8AA4\\uFF0C\\u8ACB\\u91CD\\u8A66\\\");\\r\\n\\r\\n            \\/\\/ \\u6062\\u5FA9\\u6309\\u9215\\u72C0\\u614B\\r\\n            submitBtn.disabled = false;\\r\\n            submitBtn.textContent = \\\"\\u767B\\u5165\\\";\\r\\n            loading.style.display = \\\"none\\\";\\r\\n          }\\r\\n        }, 1000);\\r\\n      });\\r\\n\\r\\n      \\/\\/ \\u5BC6\\u78BC\\u8F38\\u5165\\u6642\\u7684\\u5373\\u6642\\u9A57\\u8B49\\r\\n      passwordInput.addEventListener(\\\"input\\\", function () {\\r\\n        const password = this.value;\\r\\n\\r\\n        \\/\\/ \\u53EF\\u4EE5\\u5728\\u9019\\u88E1\\u6DFB\\u52A0\\u5BC6\\u78BC\\u5F37\\u5EA6\\u6AA2\\u67E5\\r\\n        if (password.length > 0) {\\r\\n          submitBtn.style.opacity = \\\"1\\\";\\r\\n        } else {\\r\\n          submitBtn.style.opacity = \\\"0.6\\\";\\r\\n        }\\r\\n      });\\r\\n\\r\\n      \\/\\/ Enter \\u9375\\u5FEB\\u6377\\u63D0\\u4EA4\\r\\n      passwordInput.addEventListener(\\\"keypress\\\", function (e) {\\r\\n        if (e.key === \\\"Enter\\\") {\\r\\n          form.dispatchEvent(new Event(\\\"submit\\\"));\\r\\n        }\\r\\n      });\\r\\n\\r\\n      \\/\\/ \\u958B\\u767C\\u7528\\uFF1A\\u63D0\\u4F9B\\u6E05\\u9664 Cookie \\u7684\\u529F\\u80FD\\uFF08\\u53EF\\u9078\\uFF09\\r\\n      window.clearStoredPassword = function () {\\r\\n        document.cookie =\\r\\n          \\\"userPassword=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=\\/;\\\";\\r\\n        document.cookie =\\r\\n          \\\"passwordSavedAt=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=\\/;\\\";\\r\\n        console.log(\\\"\\u5DF2\\u6E05\\u9664\\u5132\\u5B58\\u7684\\u5BC6\\u78BC\\\");\\r\\n      };\\r\\n    <\\/script>\\r\\n  <\\/body>\\r\\n<\\/html>\\r\\n'\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -480,
+        -380
+      ],
+      "id": "3f6ed9ce-4231-4d61-90f5-ac3f9ab87a59",
+      "name": "Pwd Login Page"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "e1591aae-d16c-4255-93cb-b0efbbf0969e",
+              "leftValue": "={{ $json.pwd }}",
+              "rightValue": "YourPwd",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -700,
+        -480
+      ],
+      "id": "ceea0a56-99df-46ad-b3b7-d4d7fcece9c0",
+      "name": "Check Pwd"
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "={{ $json.webHTML }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        -260,
+        -480
+      ],
+      "id": "09b886a4-b2ee-46d6-9d92-9f8da18f7ee3",
+      "name": "Respond-Web-Data"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -1260,
+        120
+      ],
+      "id": "27555fe5-23b3-49f8-9da6-eb23ff057405",
+      "name": "When chat message received",
+      "webhookId": "12b81636-dc40-422a-abb5-8d4fcef5189b"
+    },
+    {
+      "parameters": {
+        "respondWith": "allIncomingItems",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        -180,
+        -220
+      ],
+      "id": "d3bdbee9-b95a-4c4a-9ffc-ae2f385d393b",
+      "name": "Respond to Webhook"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "18Xy_dBgXLZHnL177AWrY3Q83i9jemTckPL2D7GYEd04",
+          "mode": "list",
+          "cachedResultName": "n8n-面試大師",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/18Xy_dBgXLZHnL177AWrY3Q83i9jemTckPL2D7GYEd04/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "工作表1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/18Xy_dBgXLZHnL177AWrY3Q83i9jemTckPL2D7GYEd04/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        -400,
+        -220
+      ],
+      "id": "9db02512-86b9-4d8c-b4f5-3ff6fe4a86ef",
+      "name": "Google Sheets",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "TKwDY3e2ln6z0nGq",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "memoryKey": {
+          "__rl": true,
+          "mode": "id",
+          "value": "interview_data"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreInMemory",
+      "typeVersion": 1.2,
+      "position": [
+        520,
+        540
+      ],
+      "id": "043c086a-9017-4583-990b-5eb315088029",
+      "name": "Retrieve Vector Store"
+    },
+    {
+      "parameters": {
+        "mode": "load",
+        "memoryKey": {
+          "__rl": true,
+          "value": "interview_data",
+          "mode": "id"
+        },
+        "prompt": "only get my resume"
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreInMemory",
+      "typeVersion": 1.2,
+      "position": [
+        -1020,
+        120
+      ],
+      "id": "771727f6-6c45-4dba-8eb5-21eef741361c",
+      "name": "Search Vector Store"
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "=",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        -380,
+        560
+      ],
+      "id": "21dbb522-878d-4d01-b12f-779ec4e48971",
+      "name": "Get Resume PDF",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "Hvrh7ZKJ6IObwqpM",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "18Xy_dBgXLZHnL177AWrY3Q83i9jemTckPL2D7GYEd04",
+          "mode": "list",
+          "cachedResultName": "n8n-面試大師",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/18Xy_dBgXLZHnL177AWrY3Q83i9jemTckPL2D7GYEd04/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "工作表1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/18Xy_dBgXLZHnL177AWrY3Q83i9jemTckPL2D7GYEd04/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "job_urls": "={{ $json.output.job_urls }}",
+            "result": "={{ $json.output.result }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "job_urls",
+              "displayName": "job_urls",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "result",
+              "displayName": "result",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        880,
+        100
+      ],
+      "id": "403aa9fc-20f4-470c-a19f-bbcba1c309b1",
+      "name": "Save to Sheets",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "TKwDY3e2ln6z0nGq",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n\t\"job_urls\": \"\",\n\t\"result\": \"\"\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        1100,
+        340
+      ],
+      "id": "52c952af-683e-45c1-a4b6-87e58e1c776e",
+      "name": "Structured Output Parser"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "92d78a90-11ca-4ff0-b71d-88138dcacdab",
+              "leftValue": "={{ $json.document }}",
+              "rightValue": "",
+              "operator": {
+                "type": "object",
+                "operation": "exists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -660,
+        120
+      ],
+      "id": "5f8b46ca-24ab-40a2-93c6-a89b7cb31a93",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "model": "text-embedding-3-large",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -940,
+        340
+      ],
+      "id": "23a02e2d-778a-4412-99bc-13ca1115de0e",
+      "name": "Embeddings OpenAI2",
+      "credentials": {
+        "openAiApi": {
+          "id": "MhcI09RJQX4bCXqA",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('URL', `104’s job API Endpoint`, 'string') }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Referer",
+              "value": "https://www.104.com.tw"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.2,
+      "position": [
+        960,
+        340
+      ],
+      "id": "98a01918-ebd6-4be9-a2ed-8a45fa344684",
+      "name": "104 API"
+    },
+    {
+      "parameters": {
+        "mode": "insert",
+        "memoryKey": {
+          "__rl": true,
+          "value": "interview_data",
+          "mode": "id"
+        },
+        "embeddingBatchSize": 10000,
+        "clearStore": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreInMemory",
+      "typeVersion": 1.2,
+      "position": [
+        60,
+        560
+      ],
+      "id": "a7684973-8bd9-4753-8e1e-8d5901065d74",
+      "name": "Insert Doc to Vector Store"
+    },
+    {
+      "parameters": {
+        "chunkSize": 10000,
+        "chunkOverlap": 1000,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
+      "typeVersion": 1,
+      "position": [
+        140,
+        900
+      ],
+      "id": "a9d33c8f-3c85-47ae-8cfa-b087469afa1d",
+      "name": "Recursive Character Text Splitter"
+    },
+    {
+      "parameters": {
+        "model": "text-embedding-3-large",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -60,
+        760
+      ],
+      "id": "c67d9cd4-bd30-40ed-a56b-599a7f039b2e",
+      "name": "Embeddings OpenAI1",
+      "credentials": {
+        "openAiApi": {
+          "id": "MhcI09RJQX4bCXqA",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsonMode": "expressionData",
+        "jsonData": "={{ $json.text }}",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+      "typeVersion": 1,
+      "position": [
+        60,
+        760
+      ],
+      "id": "6cbb773b-a581-4683-bdd6-46502e9ed2ce",
+      "name": "Default Data Loader"
+    },
+    {
+      "parameters": {
+        "operation": "pdf",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        -160,
+        560
+      ],
+      "id": "5b462e88-657f-4c5e-863a-08f8ef9dadfe",
+      "name": "Extract from File"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4.1-mini",
+          "mode": "list",
+          "cachedResultName": "gpt-4.1-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        820,
+        540
+      ],
+      "id": "e2de3b6e-6342-413a-9711-c1c784309c4d",
+      "name": "OpenAI Chat Model1",
+      "credentials": {
+        "openAiApi": {
+          "id": "MhcI09RJQX4bCXqA",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "description": "This is the user’s resume, including work experience, skills, education, personal statements, and other background details.\nIt is used to assist with job matching, interview preparation, and career analysis.",
+        "topK": 50
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolVectorStore",
+      "typeVersion": 1.1,
+      "position": [
+        640,
+        340
+      ],
+      "id": "5afb9036-055e-4aaf-bdf0-0f79957ad157",
+      "name": "Answer questions with a vector store"
+    },
+    {
+      "parameters": {
+        "model": "text-embedding-3-large",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        600,
+        740
+      ],
+      "id": "40fdbd80-749a-4dba-93b1-3626bb7d4ecf",
+      "name": "Embeddings OpenAI",
+      "credentials": {
+        "openAiApi": {
+          "id": "MhcI09RJQX4bCXqA",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4.1-mini",
+          "mode": "list",
+          "cachedResultName": "gpt-4.1-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        500,
+        340
+      ],
+      "id": "a0191998-fe75-49d1-9a73-f198ff21191e",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "MhcI09RJQX4bCXqA",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $('When chat message received').item.json.chatInput }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "<CRITICAL>\n- Always respond in 繁體中文.\n- You must prioritize retrieving the user's resume or personal background from the vector store before answering.\nDo not assume or fabricate any information if no resume is found.\nIf the resume data is unavailable, clearly state \"Resume data not found\" and skip.\n</CRITICAL>\n\n<Resume_Search>\nUse keywords such as “resume,” “CV,” “self-introduction,” “work experience,” or “background information” to search the vector store for relevant entries.\n</Resume_Search>\n\n</Endpoint_Transfor> \nThe user will provide a job URL, and you need to convert it to specific API Endpoint.\nFor example:\nhttps://www.104.com.tw/job/89pn9 → https://www.104.com.tw/job/ajax/content/89pn9\n</Endpoint_Transfor>\n \nOnce you have the job description and user's resume:\n\n1. **Review her resume:**\n\n   * What’s missing or undersold?\n   * Where are skill or experience gaps?\n   * How can language be improved to match the role?\n\n2. **Interview prep:**\n\n   * Suggest 5–7 likely questions\n   * Recommend how she can frame her experience (use STAR if helpful)\n\n<Job_Urls_Output>\nYou need to output the job url with job-title and company name.\nExample: [CompanyName - JobTitle](origin job url, not API Endpoint)\n</Job_Urls_Output>"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        520,
+        100
+      ],
+      "id": "62556b03-690c-4df7-b0ed-d5feae00b6bd",
+      "name": "AI Agent"
+    }
+  ],
+  "connections": {
+    "WebSite": {
+      "main": [
+        [
+          {
+            "node": "Read Cookies 1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Analysis Data API": {
+      "main": [
+        [
+          {
+            "node": "Read Cookies",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Cookies 1": {
+      "main": [
+        [
+          {
+            "node": "Check Pwd",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Cookies": {
+      "main": [
+        [
+          {
+            "node": "Check Pwd1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Pwd1": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "System Page": {
+      "main": [
+        [
+          {
+            "node": "Respond-Web-Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pwd Login Page": {
+      "main": [
+        [
+          {
+            "node": "Respond-Web-Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Pwd": {
+      "main": [
+        [
+          {
+            "node": "System Page",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Pwd Login Page",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "Search Vector Store",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Retrieve Vector Store": {
+      "ai_vectorStore": [
+        [
+          {
+            "node": "Answer questions with a vector store",
+            "type": "ai_vectorStore",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Search Vector Store": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Resume PDF": {
+      "main": [
+        [
+          {
+            "node": "Extract from File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Get Resume PDF",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI2": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Search Vector Store",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "104 API": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Insert Doc to Vector Store": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Recursive Character Text Splitter": {
+      "ai_textSplitter": [
+        [
+          {
+            "node": "Default Data Loader",
+            "type": "ai_textSplitter",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI1": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Insert Doc to Vector Store",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Default Data Loader": {
+      "ai_document": [
+        [
+          {
+            "node": "Insert Doc to Vector Store",
+            "type": "ai_document",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract from File": {
+      "main": [
+        [
+          {
+            "node": "Insert Doc to Vector Store",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Answer questions with a vector store",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Answer questions with a vector store": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Retrieve Vector Store",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Save to Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "f079a1ba8f5a48acc497a7765366a05ac125896e8efd3c2b693faaa714a7378c"
+  }
+}
+
+        const oldDemo = document.querySelector("n8n-demo");
+        if (oldDemo) {
+          oldDemo.remove();
+        }
+
+        const newDemo = document.createElement("n8n-demo");
+        newDemo.setAttribute("workflow", JSON.stringify(defaultWorkflow));
+        newDemo.setAttribute("frame", "true");
+
+        document.body.appendChild(newDemo);
+      }
+
+      // 頁面載入時初始化
+      document.addEventListener("DOMContentLoaded", function () {
+        resetWorkflow();
+      });
+    </script>
+  </body>
+</html>
