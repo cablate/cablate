@@ -1723,25 +1723,10 @@
       // Simple affiliate tracking
       document.querySelectorAll(".btn-buy").forEach((btn) => {
         btn.addEventListener("click", function (e) {
-          e.preventDefault();
+          // 不阻止預設行為，讓連結正常工作
           const course = this.dataset.course;
           console.log("Tracking:", course);
-
-          // Handle different course actions
-          if (course === "marketing-0to1") {
-            // 直接前往詳情頁，不阻止預設行為
-            return;
-          }
-
-          // Replace with actual affiliate URLs for other courses
-          const affiliateUrls = {
-            "python-fullstack": "https://example.com/python?ref=mysite",
-            javascript: "https://example.com/js?ref=mysite",
-            uiux: "https://example.com/design?ref=mysite",
-          };
-
-          // Simple redirect notice for other courses
-
+          // 可以在這裡加入追蹤代碼
         });
       });
 
