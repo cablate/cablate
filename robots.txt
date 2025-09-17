@@ -8,14 +8,16 @@ Disallow: /private/
 Disallow: /.git/
 
 # Sitemap location
-Sitemap: https://www.cablate.com/sitemap.xml
+Sitemap: https://cablate.com/sitemap.xml
 
 # CabMeme specific paths
 Allow: /cabmeme
 Allow: /projects/CabMeme/
+Allow: /recommend/
+Allow: /recommend/courses/
 
-# Crawl-delay for respectful crawling
-Crawl-delay: 1
+# Crawl-delay removed for faster indexing
+# Crawl-delay: 1
 
 # Special directives for major search engines
 User-agent: Googlebot
@@ -36,10 +38,12 @@ Crawl-delay: 1
 
 # Block bad bots
 User-agent: AhrefsBot
-Disallow: /
+Allow: /
+Crawl-delay: 10
 
 User-agent: SemrushBot
-Disallow: /
+Allow: /
+Crawl-delay: 10
 
 User-agent: DotBot
 Disallow: /
