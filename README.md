@@ -52,7 +52,7 @@ I'm a engineer focused on full-stack development and AI Agent development, with 
 
 ## 📫 Contact Me
 
-- 📧 Email: reahtuoo310109@gmail.com
+- 📧 Email: cablate@cablate.com
 - 🌐 Website: [CabLate](https://www.cablate.com/)
 
 ## 🔗 Social Media

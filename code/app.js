@@ -261,7 +261,7 @@ document.addEventListener("alpine:init", () => {
           },
           {
             question: "如何與您聯絡合作？",
-            answer: "您可以透過以下方式與我聯絡：<br>• Email: reahtuoo310109@gmail.com<br>• GitHub: <a href='https://github.com/cablate' class='text-secondary hover:text-white transition-colors'>@cablate</a><br>• Threads: <a href='https://www.threads.net/@cab_late' class='text-secondary hover:text-white transition-colors'>@cab_late</a><br>我樂意討論各種技術專案合作機會。",
+            answer: "您可以透過以下方式與我聯絡：<br>• Email: cablate@cablate.com<br>• GitHub: <a href='https://github.com/cablate' class='text-secondary hover:text-white transition-colors'>@cablate</a><br>• Threads: <a href='https://www.threads.net/@cab_late' class='text-secondary hover:text-white transition-colors'>@cab_late</a><br>我樂意討論各種技術專案合作機會。",
           },
           {
             question: "您曾經手的專案有哪些？",
@@ -373,7 +373,7 @@ document.addEventListener("alpine:init", () => {
           },
           {
             question: "How can I contact you for collaboration?",
-            answer: "You can reach me through the following channels:<br>• Email: reahtuoo310109@gmail.com<br>• GitHub: <a href='https://github.com/cablate' class='text-secondary hover:text-white transition-colors'>@cablate</a><br>• Threads: <a href='https://www.threads.net/@cab_late' class='text-secondary hover:text-white transition-colors'>@cab_late</a><br>I'm always open to discussing technical project collaboration opportunities.",
+            answer: "You can reach me through the following channels:<br>• Email: cablate@cablate.com<br>• GitHub: <a href='https://github.com/cablate' class='text-secondary hover:text-white transition-colors'>@cablate</a><br>• Threads: <a href='https://www.threads.net/@cab_late' class='text-secondary hover:text-white transition-colors'>@cab_late</a><br>I'm always open to discussing technical project collaboration opportunities.",
           },
           {
             question: "What projects did you work?",
