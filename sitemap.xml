@@ -55,5 +55,17 @@
   <priority>0.7</priority>
 </url>
 
+<url>
+  <loc>https://cablate.com/recommend/courses/brickverse_ai_beginner</loc>
+  <lastmod>2025-09-18T16:44:15+00:00</lastmod>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://cablate.com/recommend/courses/brickverse_ai_advanced</loc>
+  <lastmod>2025-09-18T16:44:15+00:00</lastmod>
+  <priority>0.7</priority>
+</url>
+
 
 </urlset>

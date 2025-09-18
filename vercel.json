@@ -7,7 +7,9 @@
     { "source": "/projects/CabMeme", "destination": "/projects/CabMeme/index.html" },
     { "source": "/recommend", "destination": "/recommend/index.html" },
     { "source": "/recommend/courses/miss_marketing_0to1", "destination": "/recommend/courses/miss_marketing_0to1/index.html" },
-    { "source": "/recommend/courses/mky_danow_0to1", "destination": "/recommend/courses/mky_danow_0to1/index.html" }
+    { "source": "/recommend/courses/mky_danow_0to1", "destination": "/recommend/courses/mky_danow_0to1/index.html" },
+    { "source": "/recommend/courses/brickverse_ai_beginner", "destination": "/recommend/courses/brickverse_ai_beginner/index.html" },
+    { "source": "/recommend/courses/brickverse_ai_advanced", "destination": "/recommend/courses/brickverse_ai_advanced/index.html" }
   ],
   "headers": [
     {
