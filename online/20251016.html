@@ -956,7 +956,43 @@
                 </div>
             </section>
 
-            <!-- Slide 20：一對一技術諮詢服務 -->
+            <!-- Slide 20：快速自查清單 -->
+            <section>
+                <div class="content-wrapper">
+                    <h2 style="font-size: 2rem; margin-bottom: 1rem; color: var(--primary-blue);">快速自查清單</h2>
+                    <p style="font-size: 1rem; margin-bottom: 1.5rem; color: var(--text-secondary);">實際操作前，用這六個問題確認自己站在資安友善的軌道上。</p>
+                    <div style="max-width: 820px; margin: 0 auto;">
+                        <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: 0.9rem;">
+                            <li style="background: var(--background-tertiary); padding: 1rem 1.2rem; border-radius: var(--radius-medium); font-size: 0.95rem; line-height: 1.45; color: var(--text-primary);">
+                                <strong style="color: var(--primary-blue); display: block; margin-bottom: 0.3rem;">心態校準</strong>
+                                前端只負責介面，權限與驗證都交給後端；遇到異常先暫停並回報。
+                            </li>
+                            <li style="background: var(--background-tertiary); padding: 1rem 1.2rem; border-radius: var(--radius-medium); font-size: 0.95rem; line-height: 1.45; color: var(--text-primary);">
+                                <strong style="color: var(--primary-blue); display: block; margin-bottom: 0.3rem;">請求體檢視</strong>
+                                檢查 API request body，有沒有 price、role 等敏感數值；後端是否直接依這些值處理？那是 NG。
+                            </li>
+                            <li style="background: var(--background-tertiary); padding: 1rem 1.2rem; border-radius: var(--radius-medium); font-size: 0.95rem; line-height: 1.45; color: var(--text-primary);">
+                                <strong style="color: var(--primary-blue); display: block; margin-bottom: 0.3rem;">輸入與顯示</strong>
+                                留言、備註等欄位是否經過跳脫或驗證？畫面有沒有直接呈現使用者輸入的 HTML？
+                            </li>
+                            <li style="background: var(--background-tertiary); padding: 1rem 1.2rem; border-radius: var(--radius-medium); font-size: 0.95rem; line-height: 1.45; color: var(--text-primary);">
+                                <strong style="color: var(--primary-blue); display: block; margin-bottom: 0.3rem;">登入安全</strong>
+                                Cookie 設定 SameSite=Lax/Strict、HttpOnly 嗎？敏感操作會再要求 OTP 或再次輸入密碼嗎？
+                            </li>
+                            <li style="background: var(--background-tertiary); padding: 1rem 1.2rem; border-radius: var(--radius-medium); font-size: 0.95rem; line-height: 1.45; color: var(--text-primary);">
+                                <strong style="color: var(--primary-blue); display: block; margin-bottom: 0.3rem;">第三方資源</strong>
+                                列出外部 JS / CDN 來源，確認維運者可信且有備援方案，必要時考慮自建或鎖版。
+                            </li>
+                            <li style="background: var(--background-tertiary); padding: 1rem 1.2rem; border-radius: var(--radius-medium); font-size: 0.95rem; line-height: 1.45; color: var(--text-primary);">
+                                <strong style="color: var(--primary-blue); display: block; margin-bottom: 0.3rem;">異常處理</strong>
+                                發現異常價格或登入紀錄時，有沒有既定的紀錄方式、通報名單與回應流程？
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 21：一對一技術諮詢服務 -->
             <section>
                 <div class="content-wrapper">
                     <h2 style="font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--primary-blue);">一對一技術諮詢服務</h2>
@@ -1035,7 +1071,7 @@
                 </div>
             </section>
 
-            <!-- Slide 21：Q&A -->
+            <!-- Slide 22：Q&A -->
             <section>
                 <div class="content-wrapper">
                     <h2 style="font-size: 3rem; margin-bottom: 1.5rem; color: var(--primary-blue);">問題時間</h2>
