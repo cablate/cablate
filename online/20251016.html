@@ -207,7 +207,7 @@
               <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.8rem; margin-bottom: 0.9rem">
                 <!-- 案例 1：XSS 相關 -->
 
-                <div style="background: rgba(255, 59, 48, 0.1); padding: 1rem; border-radius: var(--radius-medium); border: 2px solid rgba(255, 59, 48, 0.3)">
+                <div class="fragment" style="background: rgba(255, 59, 48, 0.1); padding: 1rem; border-radius: var(--radius-medium); border: 2px solid rgba(255, 59, 48, 0.3)">
                   <h3 style="color: #ff3b30; margin-bottom: 0.5rem; font-size: 1rem">🦠 留言板被植入惡意腳本</h3>
 
                   <p style="font-size: 0.85rem; line-height: 1.4; margin-bottom: 0.3rem">→ 使用者點擊假優惠按鈕</p>
@@ -219,7 +219,7 @@
 
                 <!-- 案例 2：CSRF 相關 -->
 
-                <div style="background: rgba(255, 149, 0, 0.1); padding: 1rem; border-radius: var(--radius-medium); border: 2px solid rgba(255, 149, 0, 0.3)">
+                <div class="fragment" style="background: rgba(255, 149, 0, 0.1); padding: 1rem; border-radius: var(--radius-medium); border: 2px solid rgba(255, 149, 0, 0.3)">
                   <h3 style="color: #ff9500; margin-bottom: 0.5rem; font-size: 1rem">🎭 跨站請求偽造攻擊</h3>
 
                   <p style="font-size: 0.85rem; line-height: 1.4; margin-bottom: 0.3rem">→ 使用者在其他分頁被偷轉帳</p>
@@ -229,7 +229,7 @@
 
                 <!-- 案例 3：前端竄改 -->
 
-                <div style="background: rgba(175, 82, 222, 0.1); padding: 1rem; border-radius: var(--radius-medium); border: 2px solid rgba(175, 82, 222, 0.3)">
+                <div class="fragment" style="background: rgba(175, 82, 222, 0.1); padding: 1rem; border-radius: var(--radius-medium); border: 2px solid rgba(175, 82, 222, 0.3)">
                   <h3 style="color: #af52de; margin-bottom: 0.5rem; font-size: 1rem">😈 前端價格被竄改</h3>
 
                   <p style="font-size: 0.85rem; line-height: 1.4; margin-bottom: 0.3rem">→ 後端未驗證直接接受</p>
@@ -241,7 +241,7 @@
 
                 <!-- 案例 4：Token/密碼外洩 -->
 
-                <div style="background: rgba(255, 45, 85, 0.1); padding: 1rem; border-radius: var(--radius-medium); border: 2px solid rgba(255, 45, 85, 0.3)">
+                <div class="fragment" style="background: rgba(255, 45, 85, 0.1); padding: 1rem; border-radius: var(--radius-medium); border: 2px solid rgba(255, 45, 85, 0.3)">
                   <h3 style="color: #ff2d55; margin-bottom: 0.5rem; font-size: 1rem">🔐 明碼密碼外洩</h3>
 
                   <p style="font-size: 0.85rem; line-height: 1.4; margin-bottom: 0.3rem">→ 資料庫被駭、密碼全曝光</p>
@@ -424,11 +424,11 @@
 
               <!-- 攻擊流程圖 -->
 
-              <div style="display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; margin-bottom: 0.7rem">
+              <div class="fragment" style="display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; margin-bottom: 0.7rem">
                 <div style="flex: 1; background: rgba(255, 59, 48, 0.1); padding: 0.6rem; border-radius: 6px; border: 2px solid #ff3b30; text-align: center">
                   <div style="font-size: 1.2rem; margin-bottom: 0.2rem">😈</div>
 
-                  <p style="font-size: 0.65rem; font-weight: 600; color: #ff3b30">前端竄改<br />price: $1</p>
+                  <p style="font-size: 0.85rem; font-weight: 600; color: #ff3b30">前端竄改<br />price: $1</p>
                 </div>
 
                 <div style="font-size: 1.2rem; color: #ff3b30">→</div>
@@ -436,7 +436,7 @@
                 <div style="flex: 1; background: rgba(175, 82, 222, 0.1); padding: 0.6rem; border-radius: 6px; border: 2px solid #af52de; text-align: center">
                   <div style="font-size: 1.2rem; margin-bottom: 0.2rem">📡</div>
 
-                  <p style="font-size: 0.65rem; font-weight: 600; color: #af52de">發送請求<br />POST /cart</p>
+                  <p style="font-size: 0.85rem; font-weight: 600; color: #af52de">發送請求<br />POST /cart</p>
                 </div>
 
                 <div style="font-size: 1.2rem; color: #ff3b30">→</div>
@@ -444,7 +444,7 @@
                 <div style="flex: 1; background: rgba(255, 149, 0, 0.1); padding: 0.6rem; border-radius: 6px; border: 2px solid #ff9500; text-align: center">
                   <div style="font-size: 1.2rem; margin-bottom: 0.2rem">💾</div>
 
-                  <p style="font-size: 0.65rem; font-weight: 600; color: #ff9500">後端直接接受<br />建立購物車</p>
+                  <p style="font-size: 0.85rem; font-weight: 600; color: #ff9500">後端直接接受<br />建立購物車</p>
                 </div>
 
                 <div style="font-size: 1.2rem; color: #34c759">→</div>
@@ -452,20 +452,20 @@
                 <div style="flex: 1; background: rgba(52, 199, 89, 0.1); padding: 0.6rem; border-radius: 6px; border: 2px solid #34c759; text-align: center">
                   <div style="font-size: 1.2rem; margin-bottom: 0.2rem">🎉</div>
 
-                  <p style="font-size: 0.65rem; font-weight: 600; color: #34c759">攻擊成功<br />$1 買到商品！</p>
+                  <p style="font-size: 0.85rem; font-weight: 600; color: #34c759">攻擊成功<br />$1 買到商品！</p>
                 </div>
               </div>
 
               <!-- 解決方案 -->
 
-              <div style="background: rgba(52, 199, 89, 0.1); padding: 0.9rem; border-radius: var(--radius-medium); border-left: 4px solid #34c759">
-                <h3 style="color: #34c759; font-size: 0.95rem; margin-bottom: 0.4rem">✅ 正確做法</h3>
+              <div class="fragment" style="background: rgba(52, 199, 89, 0.1); padding: 0.9rem; border-radius: var(--radius-medium); border-left: 4px solid #34c759">
+                <h3 style="color: #34c759; font-size: 1.1rem; margin-bottom: 0.4rem">✅ 正確做法</h3>
 
-                <p style="font-size: 0.75rem; line-height: 1.4; margin-bottom: 0.3rem">• <strong>前端只傳：</strong>產品 ID + 數量</p>
+                <p style="font-size: 0.9rem; line-height: 1.4; margin-bottom: 0.3rem">• <strong>前端只傳：</strong>產品 ID + 數量</p>
 
-                <p style="font-size: 0.75rem; line-height: 1.4; margin-bottom: 0.3rem">• <strong>後端計算：</strong>查詢資料庫取得正確價格</p>
+                <p style="font-size: 0.9rem; line-height: 1.4; margin-bottom: 0.3rem">• <strong>後端計算：</strong>查詢資料庫取得正確價格</p>
 
-                <p style="font-size: 0.75rem; line-height: 1.4">• <strong>永遠驗證：</strong>所有金額計算都在後端完成</p>
+                <p style="font-size: 0.9rem; line-height: 1.4">• <strong>永遠驗證：</strong>所有金額計算都在後端完成</p>
               </div>
             </div>
           </div>
