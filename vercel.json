@@ -10,7 +10,7 @@
     { "source": "/recommend/courses/mky_danow_0to1", "destination": "/recommend/courses/mky_danow_0to1/index.html" },
     { "source": "/recommend/courses/brickverse_ai_beginner", "destination": "/recommend/courses/brickverse_ai_beginner/index.html" },
     { "source": "/recommend/courses/brickverse_ai_advanced", "destination": "/recommend/courses/brickverse_ai_advanced/index.html" },
-{ "source": "/online/20251016", "destination": "/online/20251016.html" }
+    { "source": "/online/20251016", "destination": "/online/20251016.html" }
   ],
   "headers": [
     {
