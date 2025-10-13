@@ -987,3 +987,21 @@ button:active {
 }
 
 
+
+/* Fragment 控制：review 模式下所有 fragment 都顯示 */
+body.review-mode .fragment {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* 預設模式下 fragment 需要逐步顯示 */
+.reveal .fragment {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+
+.reveal .fragment.visible {
+    opacity: 1;
+    visibility: visible;
+}
