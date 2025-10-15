@@ -10,7 +10,7 @@
 
 I'm a engineer focused on full-stack development and AI Agent development, with rich practical experience. Throughout my career, I've participated in multiple projects while keeping up with emerging technology trends.
 
-- 🔭 Currently working on AI Dive
+- 🔭 Currently working on  Coding-With-AI and Agent-Knowledge
 - 🌱 Continuously learning about LLM applications and cutting-edge AI technologies
 - 💼 Engaged in full-stack and AI development
 - 👯 Looking for open source collaboration opportunities
