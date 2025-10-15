@@ -1,3 +1,5 @@
+<img src="/assets/my/rivooo-banner.jpg" alt="rivooo"/>
+
 # 👋 Hi, I'm CabLate!
 
 <div align="center">
