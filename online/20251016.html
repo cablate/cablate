@@ -141,15 +141,16 @@
         <section id="security-essence">
           <div class="content-wrapper">
             <h2 style="font-size: 2.2rem; margin-bottom: 1rem; color: var(--primary-blue)">資安的本質是什麼？</h2>
-            <p style="font-size: 1rem; margin-bottom: 1.2rem; color: var(--text-secondary)">在學技術之前，先建立正確心態</p>
+            <p style="font-size: 1rem; margin-bottom: 1.2rem; color: var(--text-secondary)">Mindset</p>
             <div style="max-width: 900px; margin: 0 auto">
               <!-- 核心觀念網格 -->
               <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-bottom: 1.2rem">
                 <!-- 觀念 1 -->
                 <div class="fragment" style="background: rgba(0, 122, 255, 0.08); padding: 1.2rem; border-radius: var(--radius-medium); border-left: 4px solid var(--primary-blue)">
-                  <h3 style="color: var(--primary-blue); font-size: 1.1rem; margin-bottom: 0.6rem">🎯 提高攻擊成本</h3>
+                  <h3 style="color: var(--primary-blue); font-size: 1.1rem; margin-bottom: 0.6rem">🎯 提高攻擊成本、降低災害影響</h3>
                   <p style="font-size: 0.85rem; line-height: 1.4; color: #666; margin-bottom: 0.4rem">不是絕對防禦</p>
-                  <p style="font-size: 0.9rem; line-height: 1.4; font-weight: 600">鎖門不是擋小偷，而是讓小偷覺得不好偷</p>
+                  <p style="font-size: 0.9rem; line-height: 1.4; font-weight: 600">裝防盜門是讓小偷覺得你家不好偷</p>
+                  <p style="font-size: 0.9rem; line-height: 1.4; font-weight: 600">好找的東西都是不值錢的，就算小偷進來了也不會有很大的損失</p>
                 </div>
 
                 <!-- 觀念 2 -->
@@ -188,8 +189,6 @@
         <section>
           <div class="content-wrapper">
             <h2 style="font-size: 2rem; margin-bottom: 1rem; color: var(--primary-blue)">真實案例快訊</h2>
-
-            <p style="font-size: 1rem; margin-bottom: 1.2rem; color: var(--text-secondary)">這一年間被攻擊的不是別人，是真實產品與團隊的血淚。</p>
 
             <div style="display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); max-width: 900px; margin: 0 auto">
               <div class="fragment" style="background: rgba(255, 59, 48, 0.08); border-radius: var(--radius-medium); border: 2px solid rgba(255, 59, 48, 0.25); padding: 1.1rem">
@@ -341,7 +340,7 @@
           <div class="content-wrapper">
             <h2 style="font-size: 2.2rem; margin-bottom: 0.8rem; color: var(--primary-blue)">DevTool 實戰演示</h2>
 
-            <p style="font-size: 1rem; margin-bottom: 1.2rem; color: var(--text-secondary)">三個任何人都能做、大大小小的「攻擊」</p>
+            <p style="font-size: 1rem; margin-bottom: 1.2rem; color: var(--text-secondary)">三個任何人都能做、大大小小的「攻擊嘗試」</p>
 
             <div style="max-width: 800px; margin: 0 auto">
               <div style="display: flex; flex-direction: column; gap: 1rem">
@@ -472,11 +471,11 @@
 
         <section>
           <div class="content-wrapper">
-            <h2 style="font-size: 2.4rem; margin-bottom: 1.5rem; color: var(--primary-blue)">為什麼「前端不可信」？</h2>
+            <h2 style="font-size: 2.4rem; margin-bottom: 1.5rem; color: var(--primary-blue)">這就是為什麼「前端不可信」</h2>
 
             <div style="max-width: 700px; margin: 0 auto">
               <div style="background: rgba(255, 149, 0, 0.1); padding: 2rem; border-radius: var(--radius-large); margin-bottom: 1.5rem; border: 2px solid rgba(255, 149, 0, 0.4)">
-                <p style="font-size: 1.2rem; line-height: 1.6; margin-bottom: 1rem">前端執行在<span style="color: #ff9500; font-weight: 700">使用者端</span></p>
+                <p style="font-size: 1.2rem; line-height: 1.6; margin-bottom: 1rem">前端執行在<span style="color: #ff9500; font-weight: 700">用戶端</span></p>
 
                 <p style="font-size: 1.2rem; line-height: 1.6; margin-bottom: 1rem">→ 使用者可修改 DOM / JS</p>
 
@@ -576,7 +575,7 @@
 
                     <p style="font-size: 1.3rem; color: #333; margin-bottom: 0.3rem">看看這個優惠！</p>
 
-                    <button onclick="alert(`${localStorage.getItem('token')} \n\n ⚠️ XSS 攻擊演示！\n\n如果這是真的惡意腳本：\n• 可以讀取 localStorage token\n• 可以發送到攻擊者伺服器\n• 可以以你的身分執行操作`)" style="padding: 0.25rem 0.5rem; background: linear-gradient(135deg, #ff3b30 0%, #ff6b6b 100%); color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 1rem">🎁 點擊領取優惠</button>
+                    <button onclick="alert(`偷到你的 Token 了！\n駭客現在可以用這個 Token 假冒你的身分！ \n\n ⚠️ XSS 攻擊演示！\n\n如果這是真的惡意腳本：\n• 可以讀取 localStorage token\n• 可以發送到攻擊者伺服器\n• 可以以你的身分執行操作`)" style="padding: 0.25rem 0.5rem; background: linear-gradient(135deg, #ff3b30 0%, #ff6b6b 100%); color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 1rem">🎁 點擊領取優惠</button>
                   </div>
                 </div>
 
