@@ -120,18 +120,42 @@
           <div class="content-wrapper">
             <h2 style="font-size: 2.2rem; margin-bottom: 1.5rem; color: var(--primary-blue)">今日議程</h2>
 
-            <div class="course-topics-container">
-              <app-card title="開場與目標" description="<br>為什麼資安與你有關"></app-card>
+            <div class="course-topics-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; max-width: 1200px; margin: 0 auto">
+              <div style="position: relative; background: linear-gradient(135deg, rgba(0, 122, 255, 0.12) 0%, rgba(0, 122, 255, 0.05) 100%); border: 2px solid #007aff; border-radius: 12px; padding: 1.5rem; min-height: 140px; display: flex; flex-direction: column; justify-content: center; box-shadow: 0 4px 15px rgba(0, 122, 255, 0.2); transition: all 0.3s ease" onmouseover="this.style.boxShadow='0 8px 25px rgba(0, 122, 255, 0.35)'; this.style.transform='translateY(-4px)'" onmouseout="this.style.boxShadow='0 4px 15px rgba(0, 122, 255, 0.2)'; this.style.transform='translateY(0)'">
+                <div style="position: absolute; top: -12px; left: 16px; background: #007aff; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.1rem; box-shadow: 0 2px 8px rgba(0, 122, 255, 0.3)">①</div>
+                <h3 style="font-size: 1.2rem; font-weight: 700; color: #007aff; margin: 0.5rem 0 0.5rem 0">開場與目標</h3>
+                <p style="font-size: 0.95rem; color: var(--text-secondary); margin: 0">為什麼資安與你有關</p>
+              </div>
 
-              <app-card title="DevTool" description="<br>網頁的透視眼鏡 / 三個攻擊場景"></app-card>
+              <div style="position: relative; background: linear-gradient(135deg, rgba(255, 149, 0, 0.12) 0%, rgba(255, 149, 0, 0.05) 100%); border: 2px solid #ff9500; border-radius: 12px; padding: 1.5rem; min-height: 140px; display: flex; flex-direction: column; justify-content: center; box-shadow: 0 4px 15px rgba(255, 149, 0, 0.2); transition: all 0.3s ease" onmouseover="this.style.boxShadow='0 8px 25px rgba(255, 149, 0, 0.35)'; this.style.transform='translateY(-4px)'" onmouseout="this.style.boxShadow='0 4px 15px rgba(255, 149, 0, 0.2)'; this.style.transform='translateY(0)'">
+                <div style="position: absolute; top: -12px; left: 16px; background: #ff9500; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.1rem; box-shadow: 0 2px 8px rgba(255, 149, 0, 0.3)">②</div>
+                <h3 style="font-size: 1.2rem; font-weight: 700; color: #ff9500; margin: 0.5rem 0 0.5rem 0">DevTool</h3>
+                <p style="font-size: 0.95rem; color: var(--text-secondary); margin: 0">網頁的透視眼鏡 / 三個攻擊場景</p>
+              </div>
 
-              <app-card title="前端安全" description="<br>XSS / CSRF / 第三方腳本"></app-card>
+              <div style="position: relative; background: linear-gradient(135deg, rgba(52, 199, 89, 0.12) 0%, rgba(52, 199, 89, 0.05) 100%); border: 2px solid #34c759; border-radius: 12px; padding: 1.5rem; min-height: 140px; display: flex; flex-direction: column; justify-content: center; box-shadow: 0 4px 15px rgba(52, 199, 89, 0.2); transition: all 0.3s ease" onmouseover="this.style.boxShadow='0 8px 25px rgba(52, 199, 89, 0.35)'; this.style.transform='translateY(-4px)'" onmouseout="this.style.boxShadow='0 4px 15px rgba(52, 199, 89, 0.2)'; this.style.transform='translateY(0)'">
+                <div style="position: absolute; top: -12px; left: 16px; background: #34c759; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.1rem; box-shadow: 0 2px 8px rgba(52, 199, 89, 0.3)">③</div>
+                <h3 style="font-size: 1.2rem; font-weight: 700; color: #34c759; margin: 0.5rem 0 0.5rem 0">前端安全</h3>
+                <p style="font-size: 0.95rem; color: var(--text-secondary); margin: 0">XSS / CSRF / 第三方腳本</p>
+              </div>
 
-              <app-card title="Token 機制" description="<br>通行證比喻"></app-card>
+              <div style="position: relative; background: linear-gradient(135deg, rgba(175, 82, 222, 0.12) 0%, rgba(175, 82, 222, 0.05) 100%); border: 2px solid #af52de; border-radius: 12px; padding: 1.5rem; min-height: 140px; display: flex; flex-direction: column; justify-content: center; box-shadow: 0 4px 15px rgba(175, 82, 222, 0.2); transition: all 0.3s ease" onmouseover="this.style.boxShadow='0 8px 25px rgba(175, 82, 222, 0.35)'; this.style.transform='translateY(-4px)'" onmouseout="this.style.boxShadow='0 4px 15px rgba(175, 82, 222, 0.2)'; this.style.transform='translateY(0)'">
+                <div style="position: absolute; top: -12px; left: 16px; background: #af52de; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.1rem; box-shadow: 0 2px 8px rgba(175, 82, 222, 0.3)">④</div>
+                <h3 style="font-size: 1.2rem; font-weight: 700; color: #af52de; margin: 0.5rem 0 0.5rem 0">Token 機制</h3>
+                <p style="font-size: 0.95rem; color: var(--text-secondary); margin: 0">通行證比喻</p>
+              </div>
 
-              <app-card title="基本架構觀" description="<br>三層架構 / 誤區"></app-card>
+              <div style="position: relative; background: linear-gradient(135deg, rgba(255, 59, 48, 0.12) 0%, rgba(255, 59, 48, 0.05) 100%); border: 2px solid #ff3b30; border-radius: 12px; padding: 1.5rem; min-height: 140px; display: flex; flex-direction: column; justify-content: center; box-shadow: 0 4px 15px rgba(255, 59, 48, 0.2); transition: all 0.3s ease" onmouseover="this.style.boxShadow='0 8px 25px rgba(255, 59, 48, 0.35)'; this.style.transform='translateY(-4px)'" onmouseout="this.style.boxShadow='0 4px 15px rgba(255, 59, 48, 0.2)'; this.style.transform='translateY(0)'">
+                <div style="position: absolute; top: -12px; left: 16px; background: #ff3b30; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.1rem; box-shadow: 0 2px 8px rgba(255, 59, 48, 0.3)">⑤</div>
+                <h3 style="font-size: 1.2rem; font-weight: 700; color: #ff3b30; margin: 0.5rem 0 0.5rem 0">基本架構觀</h3>
+                <p style="font-size: 0.95rem; color: var(--text-secondary); margin: 0">三層架構 / 誤區</p>
+              </div>
 
-              <app-card title="附件 與 Q&A" description="<br>附件 / 服務介紹 / 問答"></app-card>
+              <div style="position: relative; background: linear-gradient(135deg, rgba(0, 199, 190, 0.12) 0%, rgba(0, 199, 190, 0.05) 100%); border: 2px solid #00c7be; border-radius: 12px; padding: 1.5rem; min-height: 140px; display: flex; flex-direction: column; justify-content: center; box-shadow: 0 4px 15px rgba(0, 199, 190, 0.2); transition: all 0.3s ease" onmouseover="this.style.boxShadow='0 8px 25px rgba(0, 199, 190, 0.35)'; this.style.transform='translateY(-4px)'" onmouseout="this.style.boxShadow='0 4px 15px rgba(0, 199, 190, 0.2)'; this.style.transform='translateY(0)'">
+                <div style="position: absolute; top: -12px; left: 16px; background: #00c7be; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.1rem; box-shadow: 0 2px 8px rgba(0, 199, 190, 0.3)">⑥</div>
+                <h3 style="font-size: 1.2rem; font-weight: 700; color: #00c7be; margin: 0.5rem 0 0.5rem 0">附件 與 Q&A</h3>
+                <p style="font-size: 0.95rem; color: var(--text-secondary); margin: 0">附件 / 服務介紹 / 問答</p>
+              </div>
             </div>
           </div>
         </section>
@@ -187,9 +211,9 @@
 
         <section>
           <div class="content-wrapper">
-            <h2 style="font-size: 2rem; margin-bottom: 1rem; color: var(--primary-blue)">真實案例快訊</h2>
+            <h2 style="font-size: 2rem; margin-bottom: 0.8rem; color: var(--primary-blue)">真實案例快訊</h2>
 
-            <div style="display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); max-width: 900px; margin: 0 auto">
+            <div style="display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); max-width: 900px; margin: 0 auto; margin-bottom: 1.2rem">
               <div class="fragment" style="background: rgba(255, 59, 48, 0.08); border-radius: var(--radius-medium); border: 2px solid rgba(255, 59, 48, 0.25); padding: 1.1rem">
                 <div style="font-size: 1.4rem; margin-bottom: 0.4rem">⚠️</div>
 
@@ -214,60 +238,72 @@
                 <p style="font-size: 0.9rem; line-height: 1.45; color: var(--text-primary)">GitGuardian 統計，<br />2024 年就在 GitHub 公開庫<br />偵測到<strong style="color: red"> 23,770,171 </strong>萬筆秘密金鑰（含 AWS Key、API Token），<br />其中多起被自動化工具濫用。</p>
               </div>
             </div>
+
+            <!-- 白話解釋一列 -->
+            <div style="display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); max-width: 900px; margin: 0 auto">
+              <div class="fragment" style="background: rgba(255, 59, 48, 0.15); border-radius: var(--radius-medium); border: 2px solid rgba(255, 59, 48, 0.4); padding: 0.9rem; text-align: center">
+                <p style="font-size: 0.9rem; line-height: 1.4; margin: 0; color: #c41e3a">
+                  <strong>你點進惡意網站<br />被執行程式碼和攻擊</strong>
+                </p>
+              </div>
+
+              <div class="fragment" style="background: rgba(255, 149, 0, 0.15); border-radius: var(--radius-medium); border: 2px solid rgba(255, 149, 0, 0.4); padding: 0.9rem; text-align: center">
+                <p style="font-size: 0.9rem; line-height: 1.4; margin: 0; color: #d67107">
+                  <strong>偷渡官方工具<br />使用時根本不知道被下毒</strong>
+                </p>
+              </div>
+
+              <div class="fragment" style="background: rgba(0, 122, 255, 0.15); border-radius: var(--radius-medium); border: 2px solid rgba(0, 122, 255, 0.4); padding: 0.9rem; text-align: center">
+                <p style="font-size: 0.9rem; line-height: 1.4; margin: 0; color: #0051ba">
+                  <strong>密碼金鑰被放上網<br />機器人立刻拿去免費使用</strong>
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 
-        <!-- Slide 2：開場故事 -->
+        <!-- Slide 2：資安的影響規模 -->
 
         <section>
           <div class="content-wrapper">
-            <h2 style="font-size: 2rem; margin-bottom: 0.9rem; color: var(--primary-blue)">為什麼在意資安？</h2>
+            <h2 style="font-size: 2rem; margin-bottom: 0.9rem; color: var(--primary-blue)">資安的影響規模</h2>
 
-            <div style="max-width: 850px; margin: 0 auto">
-              <!-- 案例網格 -->
+            <div style="max-width: 900px; margin: 0 auto">
+              <!-- 影響規模網格 -->
 
-              <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.8rem; margin-bottom: 0.9rem">
-                <!-- 案例 1：XSS 相關 -->
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin-bottom: 0.8rem">
+                <!-- 用戶規模 -->
 
-                <div class="fragment" style="background: rgba(255, 59, 48, 0.1); padding: 1rem; border-radius: var(--radius-medium); border: 2px solid rgba(255, 59, 48, 0.3)">
-                  <h3 style="color: #ff3b30; margin-bottom: 0.5rem; font-size: 1rem">🦠 留言板被植入惡意腳本</h3>
+                <div class="fragment" style="background: rgba(255, 59, 48, 0.1); padding: 1.2rem; border-radius: var(--radius-medium); border: 2px solid rgba(255, 59, 48, 0.3); text-align: center">
+                  <div style="font-size: 2.5rem; margin-bottom: 0.4rem">👥</div>
 
-                  <p style="font-size: 0.85rem; line-height: 1.4; margin-bottom: 0.3rem">→ 使用者點擊假優惠按鈕</p>
-
-                  <p style="font-size: 1rem; line-height: 1.4; color: #ff3b30; font-weight: 700">→ 3 萬帳號被盜</p>
-
-                  <p style="font-size: 0.85rem; line-height: 1.4">→ 客訴爆炸、品牌重創</p>
+                  <h3 style="color: #ff3b30; font-size: 1.1rem; margin-bottom: 0.5rem">用戶規模</h3>
                 </div>
 
-                <!-- 案例 2：CSRF 相關 -->
+                <!-- 經濟損失 -->
 
-                <div class="fragment" style="background: rgba(255, 149, 0, 0.1); padding: 1rem; border-radius: var(--radius-medium); border: 2px solid rgba(255, 149, 0, 0.3)">
-                  <h3 style="color: #ff9500; margin-bottom: 0.5rem; font-size: 1rem">🎭 跨站請求偽造攻擊</h3>
+                <div class="fragment" style="background: rgba(255, 149, 0, 0.1); padding: 1.2rem; border-radius: var(--radius-medium); border: 2px solid rgba(255, 149, 0, 0.3); text-align: center">
+                  <div style="font-size: 2.5rem; margin-bottom: 0.4rem">💰</div>
 
-                  <p style="font-size: 0.85rem; line-height: 1.4; margin-bottom: 0.3rem">→ 使用者在其他分頁被偷轉帳</p>
-
-                  <p style="font-size: 1rem; line-height: 1.4; color: #ff9500; font-weight: 700">→ 單日損失 500 萬</p>
+                  <h3 style="color: #ff9500; font-size: 1.1rem; margin-bottom: 0.5rem">經濟損失</h3>
                 </div>
 
-                <!-- 案例 3：前端竄改 -->
+                <!-- 品牌信任 -->
 
-                <div class="fragment" style="background: rgba(175, 82, 222, 0.1); padding: 1rem; border-radius: var(--radius-medium); border: 2px solid rgba(175, 82, 222, 0.3)">
-                  <h3 style="color: #af52de; margin-bottom: 0.5rem; font-size: 1rem">😈 前端價格被竄改</h3>
+                <div class="fragment" style="background: rgba(175, 82, 222, 0.1); padding: 1.2rem; border-radius: var(--radius-medium); border: 2px solid rgba(175, 82, 222, 0.3); text-align: center">
+                  <div style="font-size: 2.5rem; margin-bottom: 0.4rem">💔</div>
 
-                  <p style="font-size: 0.85rem; line-height: 1.4; margin-bottom: 0.3rem">→ 後端未驗證直接接受</p>
-
-                  <p style="font-size: 1rem; line-height: 1.4; color: #af52de; font-weight: 700">→ $1 買到高價商品</p>
-
-                  <p style="font-size: 0.85rem; line-height: 1.4">→ 一夜損失 200 萬營收</p>
+                  <h3 style="color: #af52de; font-size: 1.1rem; margin-bottom: 0.5rem">品牌損傷</h3>
                 </div>
+              </div>
 
-                <!-- 案例 4：Token/密碼外洩 -->
+              <!-- 核心訊息 -->
 
-                <div class="fragment" style="background: rgba(255, 45, 85, 0.1); padding: 1rem; border-radius: var(--radius-medium); border: 2px solid rgba(255, 45, 85, 0.3)">
-                  <h3 style="color: #ff2d55; margin-bottom: 0.5rem; font-size: 1rem">🔐 明碼密碼外洩</h3>
-
-                  <p style="font-size: 0.85rem; line-height: 1.4; margin-bottom: 0.3rem">→ 資料庫被駭、密碼全曝光</p>
-                </div>
+              <div class="fragment" style="background: linear-gradient(135deg, rgba(255, 59, 48, 0.12) 0%, rgba(255, 149, 0, 0.12) 100%); padding: 1.2rem; border-radius: var(--radius-large); border: 2px solid rgba(255, 59, 48, 0.3); text-align: center">
+                <p style="font-size: 1.1rem; line-height: 1.6; margin: 0">
+                  <strong>一次資安事件</strong><br />
+                  可能 = 金錢損失 + 用戶受害 + 品牌信任瓦解
+                </p>
               </div>
             </div>
           </div>
@@ -323,16 +359,6 @@
           </div>
         </section>
 
-        <!-- Slide 3.5: F12 趣味展示 -->
-        <section>
-          <div class="content-wrapper">
-            <h2 style="font-size: 2.2rem; margin-bottom: 1.5rem; color: var(--primary-blue)">F12 改餘額</h2>
-            <img src="Image/用F12改餘額.jpeg" alt="用F12改餘額" style="max-width: 80%; border-radius: var(--radius-medium); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2)" />
-            <p style="font-size: 1rem; color: var(--text-secondary); margin-top: 1.5rem">(來源: CSDN)</p>
-            <p style="font-size: 1rem; color: var(--text-secondary); margin-top: 1.5rem">帳戶餘額一秒變富翁？<br /><span style="font-size: 0.9rem">當然，這只是改了前端畫面，重新整理就沒了</span></p>
-          </div>
-        </section>
-
         <!-- Slide 4：DevTool 實戰演示 -->
 
         <section>
@@ -343,22 +369,10 @@
 
             <div style="max-width: 800px; margin: 0 auto">
               <div style="display: flex; flex-direction: column; gap: 1rem">
-                <!-- 場景 1 -->
-
-                <div style="background: rgba(255, 59, 48, 0.1); padding: 1.2rem; border-radius: var(--radius-medium); border-left: 4px solid #ff3b30">
-                  <h3 style="color: #ff3b30; font-size: 1.2rem; margin-bottom: 0.6rem">💰 場景 1: 改價格</h3>
-
-                  <p style="font-size: 0.95rem; line-height: 1.5">
-                    Elements → 找到價格欄位 → Edit as HTML → 改成 $1<br />
-
-                    <span style="color: #666">→ 畫面上的 $1,999 變成 $1（但後端不會接受）</span>
-                  </p>
-                </div>
-
-                <!-- 場景 2 -->
+                <!-- 場景 1：挖出隱藏功能 -->
 
                 <div style="background: rgba(255, 149, 0, 0.1); padding: 1.2rem; border-radius: var(--radius-medium); border-left: 4px solid #ff9500">
-                  <h3 style="color: #ff9500; font-size: 1.2rem; margin-bottom: 0.6rem">🔓 場景 2: 挖出隱藏功能</h3>
+                  <h3 style="color: #ff9500; font-size: 1.2rem; margin-bottom: 0.6rem">⛏️ 場景 1: 挖出隱藏功能</h3>
 
                   <p style="font-size: 0.95rem; line-height: 1.5">
                     Elements → 搜尋 "hidden" → 刪除 display:none<br />
@@ -368,17 +382,54 @@
                   </p>
                 </div>
 
-                <!-- 場景 3 -->
+                <!-- 場景 2：看到 Token -->
 
                 <div style="background: rgba(175, 82, 222, 0.1); padding: 1.2rem; border-radius: var(--radius-medium); border-left: 4px solid #af52de">
-                  <h3 style="color: #af52de; font-size: 1.2rem; margin-bottom: 0.6rem">🎫 場景 3: 看到 Token</h3>
+                  <h3 style="color: #af52de; font-size: 1.2rem; margin-bottom: 0.6rem">🎫 場景 2: 看到各種 Cookies、連線請求詳情、程式碼</h3>
 
                   <p style="font-size: 0.95rem; line-height: 1.5">
                     Application → Cookies → 找到 "token"<br />
-
-                    <span style="color: #666">→ 直接拿去寫一個自動腳本狂打 API</span>
+                    Application → Source → 找到程式碼<br />
+                    Application → Network → 找到所有連線請求<br />
+                    <br />
+                    <span style="color: red">直接拿去寫一個自動腳本狂打 API</span>
                   </p>
                 </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 4.1：改餘額演示 -->
+
+        <section>
+          <div class="content-wrapper">
+            <h2 style="font-size: 2rem; margin-bottom: 0.4rem; color: var(--primary-blue)">F12 改餘額演示</h2>
+
+            <div style="max-width: 850px; margin: 0 auto; overflow: hidden">
+              <img src="Image/用F12改餘額.jpeg" alt="F12改餘額演示" style="width: 100%; height: auto; border-radius: var(--radius-medium); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); margin-bottom: 0.6rem" />
+
+              <div style="background: rgba(255, 59, 48, 0.1); padding: 0.6rem; border-radius: var(--radius-medium); border: 2px solid rgba(255, 59, 48, 0.3); text-align: center">
+                <p style="font-size: 0.9rem; line-height: 1.3; margin: 0">
+                  <strong>帳戶餘額一秒變富翁？</strong><br />
+                  <span style="font-size: 0.8rem; color: #666">只要改了前端畫面，重新整理就沒了</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 4.2：改價格欺騙演示 -->
+
+        <section>
+          <div class="content-wrapper">
+            <h2 style="font-size: 2rem; margin-bottom: 0.6rem; color: var(--primary-blue)">改價格欺騙</h2>
+
+            <div style="max-width: 700px; margin: 0 auto; overflow: hidden">
+              <img src="Image/改價格欺騙.jpeg" alt="改價格欺騙演示" style="width: 100%; height: auto; border-radius: var(--radius-medium); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); margin-bottom: 0.8rem" />
+
+              <div style="background: rgba(255, 149, 0, 0.1); padding: 0.8rem; border-radius: var(--radius-medium); border: 2px solid rgba(255, 149, 0, 0.3); text-align: center">
+                <p style="font-size: 0.95rem; line-height: 1.4; margin: 0"><strong>改成浮誇的折扣價，截圖騙人點擊</strong><br /></p>
               </div>
             </div>
           </div>
@@ -659,12 +710,67 @@
           </div>
         </section>
 
+        <!-- Slide 9.5：Cookie 概念解釋 -->
+
+        <section>
+          <div class="content-wrapper">
+            <h2 style="font-size: 2rem; margin-bottom: 1.5rem; color: var(--primary-blue)">🍪 什麼是 Cookie？</h2>
+
+            <div style="max-width: 900px; margin: 0 auto">
+              <div style="background: rgba(52, 199, 89, 0.1); padding: 1.8rem; border-radius: var(--radius-large); border: 2px solid rgba(52, 199, 89, 0.3); margin-bottom: 2rem">
+                <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-primary); margin: 0">你可以把 Cookie 想成是<strong>瀏覽器寄存在你電腦裡的小紙條或身份證</strong>。當你登入網站後，網站會發給你一張「小紙條」（Cookie），裡面寫著你的登入狀態或其他資訊。你的瀏覽器之後每次拜訪這個網站時，都會<strong>自動連同這張小紙條一起送回去</strong>，這樣網站就知道「哦，是你登入了！」就不用你每次都重新輸入帳號密碼。</p>
+              </div>
+
+              <!-- Cookie 流程示意圖 -->
+              <div style="display: flex; flex-direction: column; gap: 1.2rem; margin-bottom: 1.5rem">
+                <!-- 步驟 1 -->
+                <div style="display: flex; align-items: center; justify-content: center; gap: 1rem">
+                  <div style="background: rgba(52, 199, 89, 0.15); padding: 1rem 1.5rem; border-radius: 8px; border-left: 4px solid #34c759; flex: 1; text-align: center">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem">👤</div>
+                    <p style="font-size: 0.95rem; font-weight: 600; margin: 0">1. 使用者登入</p>
+                  </div>
+                  <div style="font-size: 1.5rem; color: #34c759">→</div>
+                  <div style="background: rgba(52, 199, 89, 0.15); padding: 1rem 1.5rem; border-radius: 8px; border-left: 4px solid #34c759; flex: 1; text-align: center">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem">🍪</div>
+                    <p style="font-size: 0.95rem; font-weight: 600; margin: 0">2. 獲得 Cookie</p>
+                  </div>
+                </div>
+
+                <!-- 步驟 2 -->
+                <div style="display: flex; align-items: center; justify-content: center; gap: 1rem">
+                  <div style="background: rgba(52, 199, 89, 0.15); padding: 1rem 1.5rem; border-radius: 8px; border-left: 4px solid #34c759; flex: 1; text-align: center">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem">💾</div>
+                    <p style="font-size: 0.95rem; font-weight: 600; margin: 0">3. 儲存在電腦</p>
+                  </div>
+                  <div style="font-size: 1.5rem; color: #34c759">→</div>
+                  <div style="background: rgba(52, 199, 89, 0.15); padding: 1rem 1.5rem; border-radius: 8px; border-left: 4px solid #34c759; flex: 1; text-align: center">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem">📤</div>
+                    <p style="font-size: 0.95rem; font-weight: 600; margin: 0">4. 自動發送</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Cookie 好處 -->
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem">
+                <div style="background: rgba(0, 122, 255, 0.1); padding: 1rem; border-radius: 8px; border: 1px solid rgba(0, 122, 255, 0.3)">
+                  <p style="font-size: 0.9rem; font-weight: 600; color: #007aff; margin: 0 0 0.5rem 0">✅ 使用者體驗</p>
+                  <p style="font-size: 0.85rem; margin: 0">無需每次重新登入</p>
+                </div>
+                <div style="background: rgba(0, 122, 255, 0.1); padding: 1rem; border-radius: 8px; border: 1px solid rgba(0, 122, 255, 0.3)">
+                  <p style="font-size: 0.9rem; font-weight: 600; color: #007aff; margin: 0 0 0.5rem 0">✅ 伺服器效率</p>
+                  <p style="font-size: 0.85rem; margin: 0">減少伺服器負擔</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <!-- Slide 10：CSRF — 原理與互動演示 -->
 
         <section>
           <div class="content-wrapper">
             <h2 style="font-size: 1.9rem; margin-bottom: 0.7rem; color: var(--primary-blue)">CSRF 原理與演示</h2>
-
+            <p style="font-size: 1rem; margin-bottom: 1.2rem; color: var(--text-secondary)">現在你已經了解 Cookie 是什麼，讓我們看看攻擊者如何利用它來執行 CSRF 攻擊。</p>
             <div style="max-width: 950px; margin: 0 auto">
               <!-- 視覺化流程 -->
 
