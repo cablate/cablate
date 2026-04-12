@@ -34,9 +34,6 @@ Connecting language models to real-world services through the MCP protocol.
 |--------|-----------------|---|
 | **[mcp-google-map](https://github.com/cablate/mcp-google-map)** | Google Maps — geocoding, places, directions, Street View | ![Stars](https://img.shields.io/github/stars/cablate/mcp-google-map?style=flat&color=70A5FD) |
 | [Agentic-MCP-Skill](https://github.com/cablate/Agentic-MCP-Skill) | Progressive MCP client — three-layer lazy loading for token efficiency | ![Stars](https://img.shields.io/github/stars/cablate/Agentic-MCP-Skill?style=flat&color=70A5FD) |
-| [mcp-doc-forge](https://github.com/cablate/mcp-doc-forge) | Document processing — PDF, DOCX, CSV, HTML, TXT | ![Stars](https://img.shields.io/github/stars/cablate/mcp-doc-forge?style=flat&color=70A5FD) |
-| [mcp-google-calendar](https://github.com/cablate/mcp-google-calendar) | Google Calendar integration for AI agents | ![Stars](https://img.shields.io/github/stars/cablate/mcp-google-calendar?style=flat&color=70A5FD) |
-| [mcp-google-gmail](https://github.com/cablate/mcp-google-gmail) | Gmail — read, send, search, manage labels | ![Stars](https://img.shields.io/github/stars/cablate/mcp-google-gmail?style=flat&color=70A5FD) |
 | [memory-lancedb-mcp](https://github.com/cablate/memory-lancedb-mcp) | Long-term memory — hybrid Vector + BM25 retrieval | ![Stars](https://img.shields.io/github/stars/cablate/memory-lancedb-mcp?style=flat&color=70A5FD) |
 
 ### Claude Code Ecosystem
