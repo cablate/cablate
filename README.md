@@ -6,6 +6,7 @@
   <img src="https://img.shields.io/badge/Full%20Stack-Engineer-blue" alt="Full Stack Engineer"/>
   <img src="https://img.shields.io/badge/AI%20Agent-Developer-orange" alt="AI Agent Developer"/>
   <a href="https://www.buymeacoffee.com/cablate"><img src="https://img.shields.io/badge/Buy%20Me%20A%20Coffee-amber?logo=buy-me-a-coffee" alt="Buy Me A Coffee"/></a>
+  <a href="https://tokscale.ai/u/cablate"><img src="https://tokscale.ai/api/embed/cablate/svg?compact=1" alt="Tokscale Stats"/></a>
 </div>
 
 ## 🧑‍💻 About Me
