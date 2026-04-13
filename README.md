@@ -71,5 +71,7 @@ Tools, research, and infrastructure for the Claude Code community.
 <a href="https://www.cablate.com/"><img src="https://img.shields.io/badge/Website-cablate.com-70A5FD?style=flat&logo=safari&logoColor=white" /></a>
 &nbsp;&nbsp;
 <a href="https://medium.com/@reahtuoo310109"><img src="https://img.shields.io/badge/Medium-@reahtuoo310109-70A5FD?style=flat&logo=medium&logoColor=white" /></a>
+&nbsp;&nbsp;
+<a href="https://www.youtube.com/channel/UCgwsSu8CGDt514CryVSDsYw"><img src="https://img.shields.io/badge/YouTube-CabLate-70A5FD?style=flat&logo=youtube&logoColor=white" /></a>
 
 </div>
