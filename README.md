@@ -60,9 +60,7 @@ Reusable pieces will be extracted when they can be shared without exposing priva
   <img alt="React" src="https://img.shields.io/badge/React-20232a?style=flat-square&logo=react&logoColor=61dafb">
   <img alt="Next.js" src="https://img.shields.io/badge/Next.js-111827?style=flat-square&logo=nextdotjs&logoColor=white">
   <br>
-  <img alt="MCP Protocol" src="https://img.shields.io/badge/MCP_Protocol-7c3aed?style=flat-square">
-  <img alt="Claude Code" src="https://img.shields.io/badge/Claude_Code-0891b2?style=flat-square">
-  <img alt="OpenAI API" src="https://img.shields.io/badge/OpenAI_API-111827?style=flat-square&logo=openai&logoColor=white">
+  <img alt="AI Agent Systems" src="https://img.shields.io/badge/AI_Agent_Systems-7c3aed?style=flat-square">
 </p>
 
 ---
