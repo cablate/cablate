@@ -55,20 +55,14 @@ Reusable pieces will be extracted when they can be shared without exposing priva
 
 <p>
   <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-3178c6?style=flat-square&logo=typescript&logoColor=white">
+  <img alt="Python" src="https://img.shields.io/badge/Python-3776ab?style=flat-square&logo=python&logoColor=white">
+  <img alt="Node.js" src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white">
   <img alt="React" src="https://img.shields.io/badge/React-20232a?style=flat-square&logo=react&logoColor=61dafb">
   <img alt="Next.js" src="https://img.shields.io/badge/Next.js-111827?style=flat-square&logo=nextdotjs&logoColor=white">
-  <img alt="Node.js" src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white">
-  <img alt="Python" src="https://img.shields.io/badge/Python-3776ab?style=flat-square&logo=python&logoColor=white">
-  <img alt="Flutter" src="https://img.shields.io/badge/Flutter-02569b?style=flat-square&logo=flutter&logoColor=white">
-  <img alt="Docker" src="https://img.shields.io/badge/Docker-2496ed?style=flat-square&logo=docker&logoColor=white">
-  <img alt="Git" src="https://img.shields.io/badge/Git-f05032?style=flat-square&logo=git&logoColor=white">
   <br>
   <img alt="MCP Protocol" src="https://img.shields.io/badge/MCP_Protocol-7c3aed?style=flat-square">
   <img alt="Claude Code" src="https://img.shields.io/badge/Claude_Code-0891b2?style=flat-square">
   <img alt="OpenAI API" src="https://img.shields.io/badge/OpenAI_API-111827?style=flat-square&logo=openai&logoColor=white">
-  <img alt="Whisper" src="https://img.shields.io/badge/Whisper-64748b?style=flat-square">
-  <img alt="LanceDB" src="https://img.shields.io/badge/LanceDB-16a34a?style=flat-square">
-  <img alt="SQLite" src="https://img.shields.io/badge/SQLite-003b57?style=flat-square&logo=sqlite&logoColor=white">
 </p>
 
 ---
