@@ -1,0 +1,79 @@
+<svg width="1600" height="520" viewBox="0 0 1600 520" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">CabLate GitHub profile banner</title>
+  <desc id="desc">CabLate builds AI infrastructure, open-source tools, operating systems, and teaching material.</desc>
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1600" y2="520" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fbfaf7"/>
+      <stop offset="0.58" stop-color="#f6f2ea"/>
+      <stop offset="1" stop-color="#eef6f7"/>
+    </linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" stroke="#d8d3c8" stroke-width="1" opacity="0.28"/>
+    </pattern>
+  </defs>
+
+  <rect width="1600" height="520" rx="34" fill="url(#paper)"/>
+  <rect width="1600" height="520" rx="34" fill="url(#grid)"/>
+  <rect x="1.5" y="1.5" width="1597" height="517" rx="32.5" stroke="#d7d0c4" stroke-width="3"/>
+
+  <g transform="translate(88 78)">
+    <rect width="84" height="84" rx="22" fill="#1e293b"/>
+    <circle cx="42" cy="42" r="24" stroke="#f8fafc" stroke-width="5"/>
+    <path d="M54 30L45.5 47.5L28 56L36.5 38.5L54 30Z" fill="#8b5cf6"/>
+    <circle cx="42" cy="42" r="4" fill="#f8fafc"/>
+  </g>
+
+  <text x="198" y="126" fill="#1e293b" font-family="Noto Sans TC, Segoe UI, Arial, sans-serif" font-size="58" font-weight="800">CabLate</text>
+  <text x="198" y="166" fill="#64748b" font-family="Noto Sans TC, Segoe UI, Arial, sans-serif" font-size="23" font-weight="500">AI systems builder from Taiwan</text>
+
+  <text x="88" y="264" fill="#1e293b" font-family="Noto Sans TC, Segoe UI, Arial, sans-serif" font-size="48" font-weight="750">Build tools. Open-source them.</text>
+  <text x="88" y="318" fill="#1e293b" font-family="Noto Sans TC, Segoe UI, Arial, sans-serif" font-size="48" font-weight="750">Run the business on the same systems.</text>
+  <text x="88" y="372" fill="#1e293b" font-family="Noto Sans TC, Segoe UI, Arial, sans-serif" font-size="48" font-weight="750">Teach the workflows behind them.</text>
+
+  <g transform="translate(88 416)">
+    <rect width="186" height="44" rx="22" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="28" y="29" fill="#334155" font-family="Noto Sans TC, Segoe UI, Arial, sans-serif" font-size="20" font-weight="700">1,200+ stars</text>
+
+    <rect x="210" width="154" height="44" rx="22" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="238" y="29" fill="#334155" font-family="Noto Sans TC, Segoe UI, Arial, sans-serif" font-size="20" font-weight="700">MCP tools</text>
+
+    <rect x="388" width="206" height="44" rx="22" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="416" y="29" fill="#334155" font-family="Noto Sans TC, Segoe UI, Arial, sans-serif" font-size="20" font-weight="700">Claude Code</text>
+
+    <rect x="618" width="178" height="44" rx="22" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="646" y="29" fill="#334155" font-family="Noto Sans TC, Segoe UI, Arial, sans-serif" font-size="20" font-weight="700">AI pipelines</text>
+  </g>
+
+  <g transform="translate(1084 82)">
+    <rect width="396" height="356" rx="28" fill="#ffffff" fill-opacity="0.86" stroke="#d9e1ea" stroke-width="2"/>
+    <text x="36" y="58" fill="#64748b" font-family="Noto Sans TC, Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">OPERATING MAP</text>
+
+    <g transform="translate(36 90)">
+      <rect width="324" height="50" rx="14" fill="#f8fafc" stroke="#e2e8f0"/>
+      <circle cx="29" cy="25" r="6" fill="#8b5cf6"/>
+      <text x="52" y="32" fill="#1e293b" font-family="Noto Sans TC, Segoe UI, Arial, sans-serif" font-size="21" font-weight="750">Toolmaker</text>
+      <text x="176" y="32" fill="#64748b" font-family="Noto Sans TC, Segoe UI, Arial, sans-serif" font-size="18">MCP servers</text>
+    </g>
+
+    <g transform="translate(36 154)">
+      <rect width="324" height="50" rx="14" fill="#f8fafc" stroke="#e2e8f0"/>
+      <circle cx="29" cy="25" r="6" fill="#06b6d4"/>
+      <text x="52" y="32" fill="#1e293b" font-family="Noto Sans TC, Segoe UI, Arial, sans-serif" font-size="21" font-weight="750">Researcher</text>
+      <text x="185" y="32" fill="#64748b" font-family="Noto Sans TC, Segoe UI, Arial, sans-serif" font-size="18">agent systems</text>
+    </g>
+
+    <g transform="translate(36 218)">
+      <rect width="324" height="50" rx="14" fill="#f8fafc" stroke="#e2e8f0"/>
+      <circle cx="29" cy="25" r="6" fill="#f59e0b"/>
+      <text x="52" y="32" fill="#1e293b" font-family="Noto Sans TC, Segoe UI, Arial, sans-serif" font-size="21" font-weight="750">Operator</text>
+      <text x="162" y="32" fill="#64748b" font-family="Noto Sans TC, Segoe UI, Arial, sans-serif" font-size="18">real workflows</text>
+    </g>
+
+    <g transform="translate(36 282)">
+      <rect width="324" height="50" rx="14" fill="#f8fafc" stroke="#e2e8f0"/>
+      <circle cx="29" cy="25" r="6" fill="#16a34a"/>
+      <text x="52" y="32" fill="#1e293b" font-family="Noto Sans TC, Segoe UI, Arial, sans-serif" font-size="21" font-weight="750">Teacher</text>
+      <text x="150" y="32" fill="#64748b" font-family="Noto Sans TC, Segoe UI, Arial, sans-serif" font-size="18">workflows to people</text>
+    </g>
+  </g>
+</svg>
