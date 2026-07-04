@@ -4,7 +4,7 @@
   <a href="https://www.cablate.com"><img alt="Website: cablate.com" src="https://img.shields.io/badge/Website-cablate.com-243244?style=flat-square&logo=googlechrome&logoColor=white"></a>
   <a href="https://github.com/cablate/mcp-google-map"><img alt="mcp-google-map GitHub stars" src="https://img.shields.io/github/stars/cablate/mcp-google-map?style=flat-square&label=mcp-google-map&color=7c3aed"></a>
   <a href="https://github.com/cablate/banini-tracker"><img alt="banini-tracker GitHub stars" src="https://img.shields.io/github/stars/cablate/banini-tracker?style=flat-square&label=banini-tracker&color=f59e0b"></a>
-  <a href="https://www.youtube.com/channel/UCgwsSu8CGDt514CryVSDsYw"><img alt="YouTube: CabLate" src="https://img.shields.io/badge/YouTube-CabLate-c4302b?style=flat-square&logo=youtube&logoColor=white"></a>
+  <a href="https://github.com/cablate/Claude-Code-Board"><img alt="Claude-Code-Board GitHub stars" src="https://img.shields.io/github/stars/cablate/Claude-Code-Board?style=flat-square&label=Claude-Code-Board&color=0891b2"></a>
 </p>
 
 **CabLate** — 我打造 AI 基礎設施，開源它，然後用同一套東西經營自己的事業。<br>
