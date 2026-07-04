@@ -18,12 +18,12 @@ I build AI infrastructure, open-source it, and run my business on it.
 
 ## Start Here
 
-| If you are... | Start with | Why it matters |
+| Looking for... | Start with | What to notice |
 |---|---|---|
-| Building with agents | [mcp-google-map](https://github.com/cablate/mcp-google-map), [memory-lancedb-mcp](https://github.com/cablate/memory-lancedb-mcp), [Agentic-MCP-Skill](https://github.com/cablate/Agentic-MCP-Skill) | MCP tools, agent memory, and progressive tool loading. |
-| Working with Claude Code | [claude-code-research](https://github.com/cablate/claude-code-research), [Claude-Code-Board](https://github.com/cablate/Claude-Code-Board), [ai-toolkit](https://github.com/cablate/ai-toolkit) | Research notes, UI experiments, and battle-tested workflow assets. |
-| Turning AI into operations | [banini-tracker](https://github.com/cablate/banini-tracker), [finance-viewer](https://github.com/cablate/finance-viewer) | End-to-end pipelines with ingestion, analysis, review, and delivery. |
-| Not an engineer | [cablate.com](https://www.cablate.com) | Articles, courses, services, and plain-language AI workflow thinking. |
+| Public proof that the tools work | [mcp-google-map](https://github.com/cablate/mcp-google-map), [banini-tracker](https://github.com/cablate/banini-tracker) | Two 300+ star projects: one infrastructure tool, one end-to-end AI pipeline. |
+| Claude Code research and workflow design | [claude-code-research](https://github.com/cablate/claude-code-research), [Claude-Code-Board](https://github.com/cablate/Claude-Code-Board) | Research depth plus a practical interface for operating Claude Code. |
+| Knowledge systems for AI-assisted work | [llm-atomic-wiki](https://github.com/cablate/llm-atomic-wiki) | How I structure knowledge so humans and LLMs can reuse it. |
+| Non-engineering context | [cablate.com](https://www.cablate.com) | Articles, courses, services, and plain-language AI workflow thinking. |
 
 ---
 
