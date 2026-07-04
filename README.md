@@ -1,7 +1,7 @@
 <img src="/assets/brand/cablate-github-banner.webp" width="100%" alt="CabLate builds AI tools, open-sources them, runs the business on the same systems, and teaches the workflows behind them." />
 
 <p align="center">
-  <a href="https://www.cablate.com"><img alt="Website: cablate.com" src="https://img.shields.io/badge/Website-cablate.com-243244?style=flat-square&logo=googlechrome&logoColor=white"></a>
+  <a href="https://cablate.com"><img alt="Website: cablate.com" src="https://img.shields.io/badge/Website-cablate.com-243244?style=flat-square&logo=googlechrome&logoColor=white"></a>
   <a href="https://github.com/cablate/mcp-google-map"><img alt="mcp-google-map GitHub stars" src="https://img.shields.io/github/stars/cablate/mcp-google-map?style=flat-square&label=mcp-google-map&color=7c3aed"></a>
   <a href="https://github.com/cablate/banini-tracker"><img alt="banini-tracker GitHub stars" src="https://img.shields.io/github/stars/cablate/banini-tracker?style=flat-square&label=banini-tracker&color=f59e0b"></a>
   <a href="https://github.com/cablate/Claude-Code-Board"><img alt="Claude-Code-Board GitHub stars" src="https://img.shields.io/github/stars/cablate/Claude-Code-Board?style=flat-square&label=Claude-Code-Board&color=0891b2"></a>
@@ -23,7 +23,7 @@ I build AI infrastructure, open-source it, and run my business on it.
 | Public proof that the tools work | [mcp-google-map](https://github.com/cablate/mcp-google-map), [banini-tracker](https://github.com/cablate/banini-tracker) | Two 300+ star projects: one infrastructure tool, one end-to-end AI pipeline. |
 | Claude Code research and workflow design | [claude-code-research](https://github.com/cablate/claude-code-research), [Claude-Code-Board](https://github.com/cablate/Claude-Code-Board) | Research depth plus a practical interface for operating Claude Code. |
 | Knowledge systems for AI-assisted work | [llm-atomic-wiki](https://github.com/cablate/llm-atomic-wiki) | How I structure knowledge so humans and LLMs can reuse it. |
-| Non-engineering context | [cablate.com](https://www.cablate.com) | Articles, courses, services, and plain-language AI workflow thinking. |
+| Non-engineering context | [cablate.com](https://cablate.com) | Articles, courses, services, and plain-language AI workflow thinking. |
 
 ---
 
@@ -68,7 +68,7 @@ Reusable pieces will be extracted when they can be shared without exposing priva
 <p align="center">
   <a href="mailto:cablate@cablate.com">Email</a>
   ·
-  <a href="https://www.cablate.com/">Website</a>
+  <a href="https://cablate.com/">Website</a>
   ·
   <a href="https://medium.com/@reahtuoo310109">Medium</a>
   ·
