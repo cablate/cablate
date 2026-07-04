@@ -1,4 +1,4 @@
-<img src="/assets/brand/cablate-github-banner.jpg" width="100%" alt="CabLate builds AI tools, open-sources them, runs the business on the same systems, and teaches the workflows behind them." />
+<img src="/assets/brand/cablate-github-banner.webp" width="100%" alt="CabLate builds AI tools, open-sources them, runs the business on the same systems, and teaches the workflows behind them." />
 
 <p align="center">
   <a href="https://www.cablate.com"><img alt="Website: cablate.com" src="https://img.shields.io/badge/Website-cablate.com-243244?style=flat-square&logo=googlechrome&logoColor=white"></a>
